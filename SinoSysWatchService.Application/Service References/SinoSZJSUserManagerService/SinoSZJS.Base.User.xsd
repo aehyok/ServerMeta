@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.User" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.User" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Authorize" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfUserMappingInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserMappingInfo" nillable="true" type="tns:UserMappingInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserMappingInfo" nillable="true" type="tns:ArrayOfUserMappingInfo" />
+  <xs:complexType name="UserMappingInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:UserBaseInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TRD_LoginName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TRD_XM" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TRD_YHID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserMappingInfo" nillable="true" type="tns:UserMappingInfo" />
+  <xs:complexType name="UserBaseInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomsNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HeadShip" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Level" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Limit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LoginName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrgFullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrgID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrgShortName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PersonID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PoliceNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Secret" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sex" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserBaseInfo" nillable="true" type="tns:UserBaseInfo" />
+  <xs:complexType name="ArrayOfUserBaseInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserBaseInfo" nillable="true" type="tns:UserBaseInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserBaseInfo" nillable="true" type="tns:ArrayOfUserBaseInfo" />
+  <xs:complexType name="ArrayOfUserExtInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserExtInfo" nillable="true" type="tns:UserExtInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserExtInfo" nillable="true" type="tns:ArrayOfUserExtInfo" />
+  <xs:complexType name="UserExtInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EMAIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LogonName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mobile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserExtInfo" nillable="true" type="tns:UserExtInfo" />
+  <xs:complexType name="ArrayOfPersonBaseInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PersonBaseInfo" nillable="true" type="tns:PersonBaseInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPersonBaseInfo" nillable="true" type="tns:ArrayOfPersonBaseInfo" />
+  <xs:complexType name="PersonBaseInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HeadShip" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LoginName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrgFullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrgID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrgShortName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PersonBaseInfo" nillable="true" type="tns:PersonBaseInfo" />
+  <xs:complexType name="ArrayOfUserRightInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserRightInfo" nillable="true" type="tns:UserRightInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserRightInfo" nillable="true" type="tns:ArrayOfUserRightInfo" />
+  <xs:complexType name="UserRightInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DisplayOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="FatherRightID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HaveRight" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RightID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RightName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserRightInfo" nillable="true" type="tns:UserRightInfo" />
+  <xs:complexType name="ArrayOfUserQueryModelInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserQueryModelInfo" nillable="true" type="tns:UserQueryModelInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserQueryModelInfo" nillable="true" type="tns:ArrayOfUserQueryModelInfo" />
+  <xs:complexType name="UserQueryModelInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HaveRight" type="xs:boolean" />
+      <xs:element minOccurs="0" name="QueryModelID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QueryModelName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QueryModelNamespace" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QueryModelTitle" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserQueryModelInfo" nillable="true" type="tns:UserQueryModelInfo" />
+  <xs:complexType name="ArrayOfUserPostInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserPostInfo" nillable="true" type="tns:UserPostInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserPostInfo" nillable="true" type="tns:ArrayOfUserPostInfo" />
+  <xs:complexType name="UserPostInfo">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Authorize" minOccurs="0" name="UserPost" nillable="true" type="q1:SinoPost" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="UserPostInfo" nillable="true" type="tns:UserPostInfo" />
+</xs:schema>

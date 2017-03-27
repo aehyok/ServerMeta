@@ -1,0 +1,1330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.QueryModel" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.Define" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Report.DataCheck" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.DataCheck" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.InputModel" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.DataCompare" />
+  <xs:element name="ChangeDataCheckRule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_ruleID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_gzsf" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeDataCheckRuleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ChangeDataCheckRuleResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInputModelBlankData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_initGuideLineID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_getBlankGuideLineID" nillable="true" type="xs:string" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.QueryModel" minOccurs="0" name="_params" nillable="true" type="q1:ArrayOfMDQuery_GuideLineParameter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInputModelBlankDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetInputModelBlankDataResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+              <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDataByInputModel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_inputModelName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_changedData" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+              <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDataByInputModelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveDataByInputModelResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TestComputeExpress">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ExpressionString" nillable="true" type="xs:string" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.QueryModel" minOccurs="0" name="TableDefine" nillable="true" type="q2:MDModel_Table" />
+        <xs:element minOccurs="0" name="QueryString" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="resultDataType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TestComputeExpressResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="QueryString" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="resultDataType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveComputeFieldDefine">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Expression" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="QueryString" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ResultDataType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ModelName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveComputeFieldDefineResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonSavedComputField">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ModelName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonSavedComputFieldResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.QueryModel" minOccurs="0" name="GetPersonSavedComputFieldResult" nillable="true" type="q3:ArrayOfMDQuery_ComputeColumnDefine" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFunctionList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_type" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFunctionListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.Define" minOccurs="0" name="GetFunctionListResult" nillable="true" type="q4:ArrayOfMD_FUNCTION" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TestStatisticsExpress">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.QueryModel" minOccurs="0" name="_column" nillable="true" type="q5:MDModel_Table_Column" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.Define" minOccurs="0" name="FunctionDefine" nillable="true" type="q6:MD_FUNCTION" />
+        <xs:element minOccurs="0" name="queryString" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="resultDataType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TestStatisticsExpressResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="queryString" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="resultDataType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQueryModelDescription">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_modelName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQueryModelDescriptionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetQueryModelDescriptionResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRuleList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="QueryModelName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRuleListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetRuleListResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ImportRule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SrcRuleID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ImportRuleResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecoverRuleDefine">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TargetRuleID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SrcRuleID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecoverRuleDefineResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSjshInfo_HGJS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.QueryModel" minOccurs="0" name="_queryRequest" nillable="true" type="q7:MDQuery_Request" />
+        <xs:element minOccurs="0" name="MainKeyID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSjshInfo_HGJSResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetSjshInfo_HGJSResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSjsh_HisData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="QueryModelName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MainKeyID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="WHXH" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSjsh_HisDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Report.DataCheck" minOccurs="0" name="GetSjsh_HisDataResult" nillable="true" type="q8:ArrayOfReportHisDataRow" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataCheckBoardList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataCheckBoardListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDataCheckBoardListResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertNewDataCheckMsg">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_shjlid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_title" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_context" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_cddw" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_tel" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_sfkj" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertNewDataCheckMsgResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertNewDataCheckMsgResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSjshInfo_DWID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_shjlid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSjshInfo_DWIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetSjshInfo_DWIDResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataCheckMsg">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_ggjlid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataCheckMsgResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.DataCheck" minOccurs="0" name="GetDataCheckMsgResult" nillable="true" type="q9:MD_DataCheckMsg" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendDataCheckMsgFK">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_ggjlid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_fkjg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendDataCheckMsgFKResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SendDataCheckMsgFKResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateDataCheckMsg">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_ggjlid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_title" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_context" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_cddw" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_tel" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_sfkj" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateDataCheckMsgResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateDataCheckMsgResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteDataCheckMsg">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_ggjlid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteDataCheckMsgResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteDataCheckMsgResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGuideLineParamSetting">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_guideLineID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGuideLineParamSettingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.QueryModel" minOccurs="0" name="GetGuideLineParamSettingResult" nillable="true" type="q10:MD_GuideLine_ParamSetting" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveGuideLineParamSetting">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.QueryModel" minOccurs="0" name="_paramSetting" nillable="true" type="q11:MD_GuideLine_ParamSetting" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.QueryModel" minOccurs="0" name="_paramters" nillable="true" type="q12:ArrayOfMDQuery_GuideLineParameter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveGuideLineParamSettingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveGuideLineParamSettingResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInputGroupByID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InputGroupID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInputGroupByIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.InputModel" minOccurs="0" name="GetInputGroupByIDResult" nillable="true" type="q13:MD_InputModel_ColumnGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInputModelByID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InputModelID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInputModelByIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.InputModel" minOccurs="0" name="GetInputModelByIDResult" nillable="true" type="q14:MD_InputModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DelComputeFieldDefine">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ColumnName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DelComputeFieldDefineResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DelComputeFieldDefineResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompareData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.DataCompare" minOccurs="0" name="compareRequest" nillable="true" type="q15:MDCompare_Request" />
+        <xs:element minOccurs="0" name="srcData" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+              <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompareDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CompareDataResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAttachFileName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IndexString" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAttachFileNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetAttachFileNameResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAttachFileBytes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IndexString" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAttachFileBytesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetAttachFileBytesResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFLWSFileName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_indexString" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFLWSFileNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetFLWSFileNameResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFLWSFileBytes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_indexString" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFLWSFileBytesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetFLWSFileBytesResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTaskQueryLog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TaskID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTaskQueryLogResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetTaskQueryLogResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+              <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeQueryTaskRequestTime">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TaskID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RequestTime" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeQueryTaskRequestTimeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ChangeQueryTaskRequestTimeResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RebuildGuideLineParamSetting">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GuideLineID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RebuildGuideLineParamSettingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RebuildGuideLineParamSettingResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMDQueryModelDefine">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_queryModel" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMDQueryModelDefineResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.Define" minOccurs="0" name="GetMDQueryModelDefineResult" nillable="true" type="q16:MD_QueryModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.QueryModel" minOccurs="0" name="mDQuery_Request" nillable="true" type="q17:MDQuery_Request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="QueryDataResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMainTableDataByKey">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_queryModelName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_mainTableName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_keyid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMainTableDataByKeyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetMainTableDataByKeyResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+              <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChildTableDataByKey">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_queryModelName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_childTableName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_keyid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChildTableDataByKeyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetChildTableDataByKeyResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+              <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChildTableCountByKey">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_queryModelName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_childTableName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_keyid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChildTableCountByKeyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetChildTableCountByKeyResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChildRowCountList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_queryModelName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_keyid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChildRowCountListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.QueryModel" minOccurs="0" name="GetChildRowCountListResult" nillable="true" type="q18:ArrayOfMDQuery_ChildTableRowCount" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConceptList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConceptListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.Define" minOccurs="0" name="GetConceptListResult" nillable="true" type="q19:ArrayOfMD_ConceptGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQueryModels">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_queryModelNames" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQueryModelsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.Define" minOccurs="0" name="GetQueryModelsResult" nillable="true" type="q20:ArrayOfMD_QueryModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSearchResultColumn">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_searchText" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_searchType" type="xs:int" />
+        <xs:element minOccurs="0" name="_searchConceptGroup" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_queryModelName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSearchResultColumnResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.QueryModel" minOccurs="0" name="GetSearchResultColumnResult" nillable="true" type="q21:ArrayOfMDSearch_Column" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSearchResult">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_searchText" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_searchType" type="xs:int" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.QueryModel" minOccurs="0" name="_sc" nillable="true" type="q22:MDSearch_Column" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSearchResultResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.QueryModel" minOccurs="0" name="GetSearchResultResult" nillable="true" type="q23:ArrayOfMDSearch_ResultDataIndex" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMainTableKeyByChildKey">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.QueryModel" minOccurs="0" name="_childColumn" nillable="true" type="q24:MDSearch_Column" />
+        <xs:element minOccurs="0" name="_childKey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMainTableKeyByChildKeyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetMainTableKeyByChildKeyResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMainTableKeyByColumnCondition">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_modelName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_columnName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_data" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMainTableKeyByColumnConditionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetMainTableKeyByColumnConditionResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRootGuideLineList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="rootGuideLines" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRootGuideLineListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.QueryModel" minOccurs="0" name="GetRootGuideLineListResult" nillable="true" type="q25:ArrayOfMD_GuideLine" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGuideLineListByFatherID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_fatherID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGuideLineListByFatherIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.QueryModel" minOccurs="0" name="GetGuideLineListByFatherIDResult" nillable="true" type="q26:ArrayOfMD_GuideLine" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryGuideLine">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_guideLineID" nillable="true" type="xs:string" />
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.QueryModel" minOccurs="0" name="_param" nillable="true" type="q27:ArrayOfMDQuery_GuideLineParameter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryGuideLineResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="QueryGuideLineResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+              <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryGuideLineByDefault">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_guideLineID" nillable="true" type="xs:string" />
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.QueryModel" minOccurs="0" name="_param" nillable="true" type="q28:ArrayOfMDQuery_GuideLineParameter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryGuideLineByDefaultResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="QueryGuideLineByDefaultResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+              <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryGuideLineResultCount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_guideLineID" nillable="true" type="xs:string" />
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.QueryModel" minOccurs="0" name="_params" nillable="true" type="q29:ArrayOfMDQuery_GuideLineParameter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryGuideLineResultCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="QueryGuideLineResultCountResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGuideLineByID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_guideLineID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGuideLineByIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.QueryModel" minOccurs="0" name="GetGuideLineByIDResult" nillable="true" type="q30:MD_GuideLine" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewQueryTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_taskName" nillable="true" type="xs:string" />
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.QueryModel" minOccurs="0" name="_queryRequest" nillable="true" type="q31:MDQuery_Request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewQueryTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddNewQueryTaskResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQueryTaskRequestContext">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_taskID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQueryTaskRequestContextResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.QueryModel" minOccurs="0" name="GetQueryTaskRequestContextResult" nillable="true" type="q32:MDQuery_Request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQueryTaskList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQueryTaskListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.QueryModel" minOccurs="0" name="GetQueryTaskListResult" nillable="true" type="q33:ArrayOfMDQuery_Task" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQueryTaskStateByID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_taskID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQueryTaskStateByIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.QueryModel" minOccurs="0" name="GetQueryTaskStateByIDResult" nillable="true" type="q34:MDQuery_Task" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ClearQueryTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_taskID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ClearQueryTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ClearQueryTaskResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LockQueryTaskResult">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_taskID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LockQueryTaskResultResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LockQueryTaskResultResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancleQueryTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_taskID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancleQueryTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CancleQueryTaskResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTaskQueryResult_DataSet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_taskID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTaskQueryResult_DataSetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetTaskQueryResult_DataSetResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTaskQueryResult_ORA">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_taskID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTaskQueryResult_ORAResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetTaskQueryResult_ORAResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataCheckRuleDefine">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="QueryModelName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataCheckRuleDefineResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.DataCheck" minOccurs="0" name="GetDataCheckRuleDefineResult" nillable="true" type="q35:ArrayOfMD_CheckRule" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="IsPublic" type="xs:boolean" />
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.QueryModel" minOccurs="0" name="QueryRequest" nillable="true" type="q36:MDQuery_Request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveQueryResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSaveQueryList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="QueryModelName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSaveQueryListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetSaveQueryListResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+              <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveQueryID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.QueryModel" minOccurs="0" name="LoadQueryResult" nillable="true" type="q37:MDQuery_Request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryDataWithWHXH">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.QueryModel" minOccurs="0" name="_queryRequest" nillable="true" type="q38:MDQuery_Request" />
+        <xs:element minOccurs="0" name="_dwdm" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryDataWithWHXHResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="QueryDataWithWHXHResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+              <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInputModelByName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_modelName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInputModelByNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.InputModel" minOccurs="0" name="GetInputModelByNameResult" nillable="true" type="q39:MD_InputModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DelSavedQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_savedID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DelSavedQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DelSavedQueryResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserLevel">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserLevelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetUserLevelResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataCheckInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_modelName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_mainKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SHID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataCheckInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDataCheckInfoResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+              <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="SHID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataCheckInfoJLID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="QueryModelName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_mainkeyId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_level" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SHID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataCheckInfoJLIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDataCheckInfoJLIDResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SHID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDataCheckResult">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CurrentJLID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CurrentLevel" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CurrentID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_shjg" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_shr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_xgyj" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="WHXH" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDataCheckResultResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveDataCheckResultResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataCheckWHXH">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_tableName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_mainColumn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_mainKey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataCheckWHXHResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDataCheckWHXHResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveNewDataCheckRule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_ruleName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_queryModelName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_gzsf" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveNewDataCheckRuleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveNewDataCheckRuleResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DelDataCheckRule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_ruleID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DelDataCheckRuleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DelDataCheckRuleResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

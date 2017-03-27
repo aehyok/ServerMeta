@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{59A060BA-1D1D-43C2-9C4E-51E368F67FE3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SinoSystemWatch</RootNamespace>
+    <AssemblyName>SinoSystemWatch</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>GOAL!FIFAWorldCup2006065.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Printing.v12.2.Core, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v12.2, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v12.2, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v12.2, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v12.2, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v12.2, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v12.2, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v12.2, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="C_CheckInfoPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="C_CheckInfoPanel.Designer.cs">
+      <DependentUpon>C_CheckInfoPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="C_DetailPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="C_DetailPanel.Designer.cs">
+      <DependentUpon>C_DetailPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="C_SystemInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="C_SystemInfo.Designer.cs">
+      <DependentUpon>C_SystemInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Define\SystemSimpleInfoItem.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IInfoShow.cs" />
+    <Compile Include="InfoShow\Dialog_AddDBConnection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfoShow\Dialog_AddDBConnection.Designer.cs">
+      <DependentUpon>Dialog_AddDBConnection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InfoShow\Dialog_AddWCFServiceCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfoShow\Dialog_AddWCFServiceCheck.Designer.cs">
+      <DependentUpon>Dialog_AddWCFServiceCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InfoShow\Dialog_AddWinServiceCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfoShow\Dialog_AddWinServiceCheck.Designer.cs">
+      <DependentUpon>Dialog_AddWinServiceCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InfoShow\Dialog_IIS_BlockedList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfoShow\Dialog_IIS_BlockedList.Designer.cs">
+      <DependentUpon>Dialog_IIS_BlockedList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InfoShow\InfoShowBase.cs" />
+    <Compile Include="InfoShow\InfoShowCommon.cs" />
+    <Compile Include="InfoShow\InfoShowLib.cs" />
+    <Compile Include="InfoShow\InfoShow_DatabaseCheck.cs" />
+    <Compile Include="InfoShow\InfoShow_HDSpaceCheck.cs" />
+    <Compile Include="InfoShow\InfoShow_IISLogCheck.cs" />
+    <Compile Include="InfoShow\InfoShow_SystemLogCheck.cs" />
+    <Compile Include="InfoShow\InfoShow_TaskCheck.cs" />
+    <Compile Include="InfoShow\InfoShow_WCFServiceCheck.cs" />
+    <Compile Include="InfoShow\InfoShow_WinServiceCheck.cs" />
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServerNode\Dialog_AddNode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServerNode\Dialog_AddNode.Designer.cs">
+      <DependentUpon>Dialog_AddNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServerNode\Dialog_AddPlugin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServerNode\Dialog_AddPlugin.Designer.cs">
+      <DependentUpon>Dialog_AddPlugin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServerNode\Dialog_SelectPlugin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServerNode\Dialog_SelectPlugin.Designer.cs">
+      <DependentUpon>Dialog_SelectPlugin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServerNode\FrmServerNodeDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServerNode\FrmServerNodeDetail.Designer.cs">
+      <DependentUpon>FrmServerNodeDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SinoMoniterCommand\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SessionCache.cs" />
+    <Compile Include="SinoCommandExcute.cs" />
+    <EmbeddedResource Include="C_CheckInfoPanel.resx">
+      <DependentUpon>C_CheckInfoPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C_DetailPanel.resx">
+      <DependentUpon>C_DetailPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C_SystemInfo.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>C_SystemInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfoShow\Dialog_AddDBConnection.resx">
+      <DependentUpon>Dialog_AddDBConnection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfoShow\Dialog_AddWCFServiceCheck.resx">
+      <DependentUpon>Dialog_AddWCFServiceCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfoShow\Dialog_AddWinServiceCheck.resx">
+      <DependentUpon>Dialog_AddWinServiceCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfoShow\Dialog_IIS_BlockedList.resx">
+      <DependentUpon>Dialog_IIS_BlockedList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ServerNode\Dialog_AddNode.resx">
+      <DependentUpon>Dialog_AddNode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServerNode\Dialog_AddPlugin.resx">
+      <DependentUpon>Dialog_AddPlugin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServerNode\Dialog_SelectPlugin.resx">
+      <DependentUpon>Dialog_SelectPlugin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServerNode\FrmServerNodeDetail.resx">
+      <DependentUpon>FrmServerNodeDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Service References\SinoMoniterCommand\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoMoniterCommand\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoMoniterCommand\SinoMonitorCommand.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20061208094345476.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20061208094348920.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20061208094520511.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Resources\20061208094735616.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\SinoMoniterCommand\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SinoMoniterCommand\item.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SinoMoniterCommand\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SinoMoniterCommand\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SinoMoniterCommand\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SinoSystemWatch.Base\SinoSystemWatch.Base.csproj">
+      <Project>{937D10FA-6EBE-4B1E-A1E5-C76EA6DDE779}</Project>
+      <Name>SinoSystemWatch.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SinoSZJS.Base\SinoSZJS.Base.csproj">
+      <Project>{76FC4ED1-A1D0-4167-9C82-2B69EFF6A33B}</Project>
+      <Name>SinoSZJS.Base</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ni_png_0128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20061208094736649.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20061208094530743.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20061208094654784.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20061208094738834.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login_jk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GOAL!FIFAWorldCup2006065.ico" />
+    <None Include="Resources\pro2.ico" />
+    <None Include="Resources\pro.ico" />
+    <None Include="Resources\ni_png_0924.png" />
+    <None Include="Resources\ni_png_0919.png" />
+    <None Include="Resources\ni_png_0922.png" />
+    <None Include="Resources\ni_png_0431.png" />
+    <None Include="Resources\ni_png_0613.png" />
+    <None Include="Resources\ni_png_0301.png" />
+    <None Include="Resources\workstation1.ico" />
+    <None Include="Resources\file-doc.ico" />
+    <None Include="Resources\db-remove.ico" />
+    <None Include="Resources\db-add.ico" />
+    <None Include="Resources\GOAL!FIFAWorldCup2006065.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

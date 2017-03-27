@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{76C7EBEB-E1C0-466F-88E2-74C9323980B1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SinoSZJS.WCF.Lib</RootNamespace>
+    <AssemblyName>SinoSZJS.WCF.Lib</AssemblyName>
+    <ProjectTypeGuids>{3D9AD99F-2412-4246-B90B-4EAA41C64699};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <StartArguments>/client:"WcfTestClient.exe"</StartArguments>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AuthorizeService.cs" />
+    <Compile Include="CommonService.cs" />
+    <Compile Include="IAuthorizeService.cs" />
+    <Compile Include="ICommonService.cs" />
+    <Compile Include="IMetaDataQueryService.cs" />
+    <Compile Include="IMetaDataService.cs" />
+    <Compile Include="IReportService.cs" />
+    <Compile Include="ISinoBestMTS.cs" />
+    <Compile Include="ITokenService.cs" />
+    <Compile Include="IUserManagerService.cs" />
+    <Compile Include="MetaDataQueryService.cs" />
+    <Compile Include="MetaDataService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportService.cs" />
+    <Compile Include="SinoBestMTS.cs" />
+    <Compile Include="TokenService.cs" />
+    <Compile Include="UserManagerService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SinoSZJS.Base\SinoSZJS.Base.csproj">
+      <Project>{76FC4ED1-A1D0-4167-9C82-2B69EFF6A33B}</Project>
+      <Name>SinoSZJS.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SinoSZJS.CS.BizAuthorize\SinoSZJS.CS.BizAuthorize.csproj">
+      <Project>{C7B7CE5E-F791-4B0C-9291-B4BB9C02AB8C}</Project>
+      <Name>SinoSZJS.CS.BizAuthorize</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SinoSZJS.CS.BizMenu\SinoSZJS.CS.BizMenu.csproj">
+      <Project>{7BC2E5D0-98B7-4EDB-827D-971BF01F09B4}</Project>
+      <Name>SinoSZJS.CS.BizMenu</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SinoSZJS.CS.BizMetaDataManager\SinoSZJS.CS.BizMetaDataManager.csproj">
+      <Project>{FC8882DB-9DD2-4323-94D4-2EB1BAA77972}</Project>
+      <Name>SinoSZJS.CS.BizMetaDataManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SinoSZJS.CS.BizReport\SinoSZJS.CS.BizReport.csproj">
+      <Project>{A6B6F0AE-A17A-438A-AB54-0DC3D801346D}</Project>
+      <Name>SinoSZJS.CS.BizReport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SinoSZJS.CS.BizUser\SinoSZJS.CS.BizUser.csproj">
+      <Project>{AAAFD7E3-8930-4538-B413-F1EDA7DB3FC3}</Project>
+      <Name>SinoSZJS.CS.BizUser</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SinoSZJS.DataAccess\SinoSZJS.DataAccess.csproj">
+      <Project>{C41251E4-BC9E-4A3C-92D0-22682FBAA541}</Project>
+      <Name>SinoSZJS.DataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{3D9AD99F-2412-4246-B90B-4EAA41C64699}">
+        <WcfProjectProperties>
+          <AutoStart>False</AutoStart>
+        </WcfProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

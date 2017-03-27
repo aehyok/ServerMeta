@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.RefCode" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.RefCode" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="RefCodeTablePropertie">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodeFieldName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodeType" type="tns:RefCodeType" />
+      <xs:element minOccurs="0" name="DisplayTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HideCode" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LevelDownloadMode" type="xs:int" />
+      <xs:element minOccurs="0" name="LevelFormat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PyztFieldName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RefTableMode" type="xs:int" />
+      <xs:element minOccurs="0" name="SupportLevel" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SupportPyzt" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ValueFieldName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RefCodeTablePropertie" nillable="true" type="tns:RefCodeTablePropertie" />
+  <xs:simpleType name="RefCodeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Number" />
+      <xs:enumeration value="Alpha" />
+      <xs:enumeration value="AlphaNumber" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RefCodeType" nillable="true" type="tns:RefCodeType" />
+  <xs:complexType name="ArrayOfRefCodeData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RefCodeData" nillable="true" type="tns:RefCodeData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRefCodeData" nillable="true" type="tns:ArrayOfRefCodeData" />
+  <xs:complexType name="RefCodeData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CanInput" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanShow" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ChildData" nillable="true" type="tns:ArrayOfRefCodeData" />
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FatherCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HaveChilds" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEffective" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsLeaves" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Order" type="xs:int" />
+      <xs:element minOccurs="0" name="PYZT" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="RefCodeData" nillable="true" type="tns:RefCodeData" />
+</xs:schema>

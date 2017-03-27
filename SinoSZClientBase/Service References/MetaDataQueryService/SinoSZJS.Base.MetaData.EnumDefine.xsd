@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.EnumDefine" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.EnumDefine" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:simpleType name="MDType_DisplayType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="GridType" />
+      <xs:enumeration value="FormType" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MDType_DisplayType" nillable="true" type="tns:MDType_DisplayType" />
+  <xs:simpleType name="MDType_ViewTableRelation">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SingleChildRecord">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MultiChildRecord">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MDType_ViewTableRelation" nillable="true" type="tns:MDType_ViewTableRelation" />
+  <xs:simpleType name="MDType_ViewTable">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MainTable" />
+      <xs:enumeration value="ChildTable" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MDType_ViewTable" nillable="true" type="tns:MDType_ViewTable" />
+  <xs:simpleType name="MDType_RefDownloadMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FullDownload">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LevelDownload">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MDType_RefDownloadMode" nillable="true" type="tns:MDType_RefDownloadMode" />
+  <xs:simpleType name="MDType_RefParamMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Normal">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UserParam">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MDType_RefParamMode" nillable="true" type="tns:MDType_RefParamMode" />
+</xs:schema>

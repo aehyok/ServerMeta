@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SinoSZJS.Base.MetaData.QueryModel.MD_GuideLineFieldName" Collapsed="true">
+    <Position X="3.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAgAAAAAAAQAAAEEACgAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>MetaData\QueryModel\MD_GuideLineFieldName.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SinoSZJS.Base.MetaData.QueryModel.MD_GuideLineDetailDefine" Collapsed="true">
+    <Position X="6.75" Y="0.5" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAAAACAQCAAAA=</HashCode>
+      <FileName>MetaData\QueryModel\MD_GuideLineDetailDefine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SinoSZJS.Base.MetaData.QueryModel.MD_GuideLine" Collapsed="true">
+    <Position X="2.5" Y="1.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAARAAAAAAggAAGAgAEAQAAQAAAAAAIAIAAgQAAgAE=</HashCode>
+      <FileName>MetaData\QueryModel\MD_GuideLine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SinoSZJS.Base.MetaData.QueryModel.MD_GuideLineGroup" Collapsed="true">
+    <Position X="2.5" Y="2.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>CAACAAAAAABAAAAEAAAAAAAAAAAAABAAAAAAAACgAKA=</HashCode>
+      <FileName>MetaData\QueryModel\MD_GuideLineGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SinoSZJS.Base.MetaData.Define.MD_Nodes" Collapsed="true">
+    <Position X="5.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAgAEEAAAAAAEAEAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>MetaData\Define\MD_Nodes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SinoSZJS.Base.MetaData.Define.MD_Menu" Collapsed="true">
+    <Position X="8.5" Y="2.75" Width="2.25" />
+    <AssociationLine Name="MD_Nodes" Type="SinoSZJS.Base.MetaData.Define.MD_Nodes">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.206" Y="0.1" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAQAAIAACAAAAEAAEAAAAQASAABBAQAAACIAQAAAA=</HashCode>
+      <FileName>MetaData\Define\MD_Menu.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="MD_Nodes" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SinoSZJS.Base.MetaData.Define.MD_QueryModelGroup" Collapsed="true">
+    <Position X="2" Y="4" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAyAAAAAQAgAAAAAAAAAAAEAAAIAAAAQAABAAAAAE=</HashCode>
+      <FileName>MetaData\Define\MD_QueryModelGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SinoSZJS.Base.MetaData.Define.MD_Namespace" Collapsed="true">
+    <Position X="6" Y="3.75" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="Nodes" Type="SinoSZJS.Base.MetaData.Define.MD_Nodes">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.671" Y="0.352" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAgQADAAAQoAAAGAAAAAAAAEAAAAACAAAAAAAAAKAA=</HashCode>
+      <FileName>MetaData\Define\MD_Namespace.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Nodes" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SinoSZJS.Base.MetaData.Define.MD_RefTable" Collapsed="true">
+    <Position X="9.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAACAAIAAAQgAAAEAAAAAAAAAAAAMAAABAAACAAgAAA=</HashCode>
+      <FileName>MetaData\Define\MD_RefTable.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Namespace" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SinoSZJS.Base.MetaData.Define.MD_QueryModelGroupItem" Collapsed="true">
+    <Position X="2.5" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAEAIQAA=</HashCode>
+      <FileName>MetaData\Define\MD_QueryModelGroupItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SinoSZJS.Base.MetaData.Define.MD_QueryModel" Collapsed="true">
+    <Position X="5.5" Y="5" Width="2.5" />
+    <AssociationLine Name="Namespace" Type="SinoSZJS.Base.MetaData.Define.MD_Namespace">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.122" Y="0.173" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAwAAAAAQgAIAEAAAABBAAEAAAoAAAgQAABEAgAQA=</HashCode>
+      <FileName>MetaData\Define\MD_QueryModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Namespace" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SinoSZJS.Base.MetaData.Define.MD_Table" Collapsed="true">
+    <Position X="2.75" Y="6" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAEAEAAQgQAAEAAAAAAAAEAAAAAACAAAAAQggDAA=</HashCode>
+      <FileName>MetaData\Define\MD_Table.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SinoSZJS.Base.MetaData.Define.MD_TableColumn" Collapsed="true">
+    <Position X="8.75" Y="5.25" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="RefTable" Type="SinoSZJS.Base.MetaData.Define.MD_RefTable">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-1.39" Y="0.508" Height="0.16" Width="1.101" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAQDAEAAQoAIAAAANAAABAkQAAAAAAARAAAAAAOAg=</HashCode>
+      <FileName>MetaData\Define\MD_TableColumn.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="RefTable" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SinoSZJS.Base.MetaData.Define.MD_ViewTable" Collapsed="true">
+    <Position X="2.75" Y="7.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAEQQAACIQAAAAEAAAAQAAAEAAEAAEAgABAAUggEAA=</HashCode>
+      <FileName>MetaData\Define\MD_ViewTable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SinoSZJS.Base.MetaData.Define.MD_ViewTableColumn" Collapsed="true">
+    <Position X="6.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQABAAIQAIIAkAAAIAAAAAAAAAAAAAQAAAYAACAA=</HashCode>
+      <FileName>MetaData\Define\MD_ViewTableColumn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="SinoSZJS.Base.MetaData.EnumDefine.MDType_RefDownloadMode" Collapsed="true">
+    <Position X="12" Y="4" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MetaData\EnumDefine\MDType_RefDownloadMode.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SinoSZJS.Base.MetaData.EnumDefine.MDType_RefParamMode" Collapsed="true">
+    <Position X="12" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MetaData\EnumDefine\MDType_RefParamMode.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SinoSZJS.Base.MetaData.EnumDefine.MDType_ViewTableRelation" Collapsed="true">
+    <Position X="9" Y="8.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MetaData\EnumDefine\MDType_ViewTableRelation.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SinoSZJS.Base.MetaData.EnumDefine.MDType_ViewTable" Collapsed="true">
+    <Position X="3" Y="8.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>MetaData\EnumDefine\MDType_ViewTable.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

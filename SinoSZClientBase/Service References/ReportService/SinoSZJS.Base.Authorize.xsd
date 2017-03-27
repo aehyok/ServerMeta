@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Authorize" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Authorize" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="SinoOrganize">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CanSeleceted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Code" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DWDM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="FatherCode" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Function" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SinoOrganize" nillable="true" type="tns:SinoOrganize" />
+</xs:schema>

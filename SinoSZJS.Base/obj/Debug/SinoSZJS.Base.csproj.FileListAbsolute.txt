@@ -1,0 +1,5 @@
+E:\work\SinoCSConnection\SinoSZJS.Base\bin\Debug\SinoSZJS.Base.dll.config
+E:\work\SinoCSConnection\SinoSZJS.Base\bin\Debug\SinoSZJS.Base.dll
+E:\work\SinoCSConnection\SinoSZJS.Base\bin\Debug\SinoSZJS.Base.pdb
+E:\work\SinoCSConnection\SinoSZJS.Base\obj\Debug\SinoSZJS.Base.dll
+E:\work\SinoCSConnection\SinoSZJS.Base\obj\Debug\SinoSZJS.Base.pdb

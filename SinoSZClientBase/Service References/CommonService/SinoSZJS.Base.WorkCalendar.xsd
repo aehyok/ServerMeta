@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.WorkCalendar" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.WorkCalendar" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfWC_DataInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WC_DataInfo" nillable="true" type="tns:WC_DataInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWC_DataInfo" nillable="true" type="tns:ArrayOfWC_DataInfo" />
+  <xs:complexType name="WC_DataInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Day" type="xs:int" />
+      <xs:element minOccurs="0" name="GZ_Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsFXSBR" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsTJSBR" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsWorkDay" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Meta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Month" type="xs:int" />
+      <xs:element minOccurs="0" name="Year" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WC_DataInfo" nillable="true" type="tns:WC_DataInfo" />
+  <xs:complexType name="WC_TJSB_Settings">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Backup_Path" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FTP_Addr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FTP_Pass" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FTP_Path" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FTP_Port" type="xs:int" />
+      <xs:element minOccurs="0" name="FTP_User" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SBDay" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WC_TJSB_Settings" nillable="true" type="tns:WC_TJSB_Settings" />
+</xs:schema>

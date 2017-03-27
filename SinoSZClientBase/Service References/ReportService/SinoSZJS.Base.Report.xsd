@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Report" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Report" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfMD_ReportName">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MD_ReportName" nillable="true" type="tns:MD_ReportName" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMD_ReportName" nillable="true" type="tns:ArrayOfMD_ReportName" />
+  <xs:complexType name="MD_ReportName">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ReportName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportType" type="tns:SinoSZReportType" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="MD_ReportName" nillable="true" type="tns:MD_ReportName" />
+  <xs:simpleType name="SinoSZReportType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="ReportingService" />
+      <xs:enumeration value="SinoSZDefineReport" />
+      <xs:enumeration value="All" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SinoSZReportType" nillable="true" type="tns:SinoSZReportType" />
+  <xs:complexType name="ArrayOfMD_ReportItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MD_ReportItem" nillable="true" type="tns:MD_ReportItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMD_ReportItem" nillable="true" type="tns:ArrayOfMD_ReportItem" />
+  <xs:complexType name="MD_ReportItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Audited" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EndDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ReportDWID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportDWName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportName" nillable="true" type="tns:MD_ReportName" />
+      <xs:element minOccurs="0" name="ReportTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="MD_ReportItem" nillable="true" type="tns:MD_ReportItem" />
+  <xs:complexType name="MD_ReportVerifyInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OrgName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VerifyDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MD_ReportVerifyInfo" nillable="true" type="tns:MD_ReportVerifyInfo" />
+</xs:schema>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e1afde31-5991-4b8d-8dc1-e419d409752d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8732/Design_Time_Addresses/SinoSZJS.WCF.Lib/ReportService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="cfc5ce04-1c73-4723-a2fe-5fb2d134cdc4" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SinoSZJS.WCF.Lib/ReportService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="b48f18fa-2932-47e3-be88-ed6314f22cb1" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SinoSZJS.WCF.Lib/ReportService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="f2e7df96-8739-4382-8f00-110e6b2147d5" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SinoSZJS.WCF.Lib/ReportService/mex" />
+    <MetadataFile FileName="SinoSZJS.Base.Report.xsd" MetadataType="Schema" ID="6f439d84-f190-4910-94bc-e61b89c27543" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SinoSZJS.WCF.Lib/ReportService/mex" />
+    <MetadataFile FileName="SinoSZJS.Base.Authorize.xsd" MetadataType="Schema" ID="893a000c-32f6-4136-9710-a8298cc6722d" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SinoSZJS.WCF.Lib/ReportService/mex" />
+    <MetadataFile FileName="SinoSZJS.Base.Report.ReportGuideLine.xsd" MetadataType="Schema" ID="0cddc25a-e69b-4186-9b3b-fa6b67073763" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SinoSZJS.WCF.Lib/ReportService/mex" />
+    <MetadataFile FileName="service2.xsd" MetadataType="Schema" ID="7c302514-8a4d-4c40-9ac7-42321647035c" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SinoSZJS.WCF.Lib/ReportService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

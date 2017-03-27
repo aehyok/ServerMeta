@@ -1,0 +1,571 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.User" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Authorize" />
+  <xs:element name="HeartBeat">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HeartBeatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="HeartBeatResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveUserMapping">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TRD_YHID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="JSYW_YHID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TRD_YHM" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TRD_XM" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="JSYW_XM" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveUserMappingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveUserMappingResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTRDUserInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_logonName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dwid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTRDUserInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetTRDUserInfoResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserListMapping">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_orgid" type="xs:decimal" />
+        <xs:element minOccurs="0" name="_levelNum" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserListMappingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.User" minOccurs="0" name="GetUserListMappingResult" nillable="true" type="q1:ArrayOfUserMappingInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserListInOrg">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_orgid" type="xs:decimal" />
+        <xs:element minOccurs="0" name="_levelNum" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserListInOrgResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.User" minOccurs="0" name="GetUserListInOrgResult" nillable="true" type="q2:ArrayOfUserBaseInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserMobileList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_orgid" type="xs:decimal" />
+        <xs:element minOccurs="0" name="_LevelNum" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserMobileListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.User" minOccurs="0" name="GetUserMobileListResult" nillable="true" type="q3:ArrayOfUserExtInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersionListInOrg">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_orgid" type="xs:decimal" />
+        <xs:element minOccurs="0" name="_levelNum" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersionListInOrgResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.User" minOccurs="0" name="GetPersionListInOrgResult" nillable="true" type="q4:ArrayOfPersonBaseInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.User" minOccurs="0" name="_personBaseInfo" nillable="true" type="q5:PersonBaseInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RegisterUserResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoleList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoleListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Authorize" minOccurs="0" name="GetRoleListResult" nillable="true" type="q6:ArrayOfSinoRole" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewRole">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Authorize" minOccurs="0" name="_newRole" nillable="true" type="q7:SinoRole" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewRoleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddNewRoleResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRightListByRoleID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_roleID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRightListByRoleIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.User" minOccurs="0" name="GetRightListByRoleIDResult" nillable="true" type="q8:ArrayOfUserRightInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetModelRightListByRoleID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_roleID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetModelRightListByRoleIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.User" minOccurs="0" name="GetModelRightListByRoleIDResult" nillable="true" type="q9:ArrayOfUserQueryModelInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveRightsOfRole">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Authorize" minOccurs="0" name="_role" nillable="true" type="q10:SinoRole" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.User" minOccurs="0" name="_functionRights" nillable="true" type="q11:ArrayOfUserRightInfo" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.User" minOccurs="0" name="_modelRights" nillable="true" type="q12:ArrayOfUserQueryModelInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveRightsOfRoleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveRightsOfRoleResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteRole">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Authorize" minOccurs="0" name="_role" nillable="true" type="q13:SinoRole" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteRoleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteRoleResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPostListInOrg">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Authorize" minOccurs="0" name="CurrentOrg" nillable="true" type="q14:SinoOrganize" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPostListInOrgResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Authorize" minOccurs="0" name="GetPostListInOrgResult" nillable="true" type="q15:ArrayOfSinoPost" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPostOfOrg">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_postName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_postDescript" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_PostLevel" type="xs:int" />
+        <xs:element minOccurs="0" name="_orgID" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPostOfOrgResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddPostOfOrgResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DelPostOfOrg">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_postID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DelPostOfOrgResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DelPostOfOrgResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyPostOfOrg">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_postName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_postDescript" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_PostLevel" type="xs:int" />
+        <xs:element minOccurs="0" name="_postID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyPostOfOrgResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ModifyPostOfOrgResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoleOfPost">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_postID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoleOfPostResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Authorize" minOccurs="0" name="GetRoleOfPostResult" nillable="true" type="q16:ArrayOfSinoRole" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveRolesOfPost">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Authorize" minOccurs="0" name="_roleList" nillable="true" type="q17:ArrayOfSinoRole" />
+        <xs:element minOccurs="0" name="_postID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveRolesOfPostResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveRolesOfPostResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PastePostToOrg">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Authorize" minOccurs="0" name="_clipPad" nillable="true" type="q18:ArrayOfSinoPost" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Authorize" minOccurs="0" name="_org" nillable="true" type="q19:SinoOrganize" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PastePostToOrgResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PastePostToOrgResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRightListByPostID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_postID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRightListByPostIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.User" minOccurs="0" name="GetRightListByPostIDResult" nillable="true" type="q20:ArrayOfUserRightInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetModelRightListByPostID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_postID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetModelRightListByPostIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.User" minOccurs="0" name="GetModelRightListByPostIDResult" nillable="true" type="q21:ArrayOfUserQueryModelInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPostListByUserID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_userID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPostListByUserIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.User" minOccurs="0" name="GetPostListByUserIDResult" nillable="true" type="q22:ArrayOfUserPostInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsExistUserPost">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_postID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsExistUserPostResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsExistUserPostResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddUserPost">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_postID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddUserPostResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddUserPostResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnRegisterUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_userID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnRegisterUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UnRegisterUserResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteUserPost">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_postID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteUserPostResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteUserPostResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetDefaultUserPost">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_postID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetDefaultUserPostResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetDefaultUserPostResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsersOfPost">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_postID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsersOfPostResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.User" minOccurs="0" name="GetUsersOfPostResult" nillable="true" type="q23:ArrayOfUserBaseInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteUserOfPost">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_postID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_userID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteUserOfPostResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteUserOfPostResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsExistYHM">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_yhm" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsExistYHMResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsExistYHMResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddUserInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="YHM" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="XM" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="XB" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SFZH" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SSDW" type="xs:decimal" />
+        <xs:element minOccurs="0" name="DWGUID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="HGGH" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="JH" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ZWMC" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ZWJB" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="EMAIL" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddUserInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddUserInfoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDWGUID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DWID" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDWGUIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDWGUIDResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewOrg">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ShotName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Authorize" minOccurs="0" name="FatherOrg" nillable="true" type="q24:SinoOrganize" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewOrgResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddNewOrgResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DelOrg">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Authorize" minOccurs="0" name="sinoOrganize" nillable="true" type="q25:SinoOrganize" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DelOrgResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DelOrgResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsExistChildOrg">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DWID" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsExistChildOrgResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsExistChildOrgResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveUserExtInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LogonName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Mobile" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveUserExtInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveUserExtInfoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

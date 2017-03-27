@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="25869908-29fb-43d2-9ab8-14830e4368ff" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8732/Design_Time_Addresses/SinoSZJS.WCF.Lib/MetaDataQueryService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="d67e88a1-6656-418c-b0be-9cd8de50558d" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SinoSZJS.WCF.Lib/MetaDataQueryService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="b356afab-f4e5-4ed8-ac4a-d98281ba765c" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SinoSZJS.WCF.Lib/MetaDataQueryService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="29a66323-43b8-414c-945b-9db995d62a50" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SinoSZJS.WCF.Lib/MetaDataQueryService/mex" />
+    <MetadataFile FileName="SinoSZJS.Base.MetaData.QueryModel.xsd" MetadataType="Schema" ID="c7f98ef8-25ad-4a09-b57f-90923e3c1a45" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SinoSZJS.WCF.Lib/MetaDataQueryService/mex" />
+    <MetadataFile FileName="System.Data.xsd" MetadataType="Schema" ID="d79bcbda-d59e-4281-b0f5-3e4c53753bbd" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SinoSZJS.WCF.Lib/MetaDataQueryService/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="de51c370-4fa8-41ae-8955-e8b902f3e2f1" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SinoSZJS.WCF.Lib/MetaDataQueryService/mex" />
+    <MetadataFile FileName="SinoSZJS.Base.MetaData.Define.xsd" MetadataType="Schema" ID="6eb27d32-580e-4adf-b3a0-1f1f1ef30a54" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SinoSZJS.WCF.Lib/MetaDataQueryService/mex" />
+    <MetadataFile FileName="SinoSZJS.Base.MetaData.EnumDefine.xsd" MetadataType="Schema" ID="abff96ac-769d-4982-bf4d-3f932fb153e5" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SinoSZJS.WCF.Lib/MetaDataQueryService/mex" />
+    <MetadataFile FileName="service2.xsd" MetadataType="Schema" ID="d3754a6d-847d-4f81-8706-1672d78f0f2a" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SinoSZJS.WCF.Lib/MetaDataQueryService/mex" />
+    <MetadataFile FileName="SinoSZJS.Base.Report.DataCheck.xsd" MetadataType="Schema" ID="75bee402-6386-4dbf-97a2-ebf921526235" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SinoSZJS.WCF.Lib/MetaDataQueryService/mex" />
+    <MetadataFile FileName="SinoSZJS.Base.MetaData.DataCheck.xsd" MetadataType="Schema" ID="31218155-0665-4e37-a550-f14d289da240" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SinoSZJS.WCF.Lib/MetaDataQueryService/mex" />
+    <MetadataFile FileName="SinoSZJS.Base.InputModel.xsd" MetadataType="Schema" ID="4c80873d-c63f-4e15-8ef6-46de8141db01" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SinoSZJS.WCF.Lib/MetaDataQueryService/mex" />
+    <MetadataFile FileName="SinoSZJS.Base.MetaData.DataCompare.xsd" MetadataType="Schema" ID="1bcb806e-b591-47fe-93df-3c0c8d635c25" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SinoSZJS.WCF.Lib/MetaDataQueryService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

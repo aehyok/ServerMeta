@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.SystemLog" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.SystemLog" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfSystemLogRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SystemLogRecord" nillable="true" type="tns:SystemLogRecord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSystemLogRecord" nillable="true" type="tns:ArrayOfSystemLogRecord" />
+  <xs:complexType name="SystemLogRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CZSJ" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LogText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LogType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SystemLogRecord" nillable="true" type="tns:SystemLogRecord" />
+  <xs:complexType name="ArrayOfQueryLogRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QueryLogRecord" nillable="true" type="tns:QueryLogRecord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfQueryLogRecord" nillable="true" type="tns:ArrayOfQueryLogRecord" />
+  <xs:complexType name="QueryLogRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QueryString" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SJ" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueryLogRecord" nillable="true" type="tns:QueryLogRecord" />
+</xs:schema>

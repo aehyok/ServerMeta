@@ -1,0 +1,582 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3045A7FB-C841-4C65-978C-405D04151AC7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SinoSysWatchService.Application</RootNamespace>
+    <AssemblyName>SinoSysWatchService.Application</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\WatchDebugTemp\WatchService\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Oracle.DataAccess, Version=4.112.1.2, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="bapt\BAPTSystemCheck.cs" />
+    <Compile Include="bapt\WCFServiceCheck.cs" />
+    <Compile Include="IISLog\IISLogCheck.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelfCheck\TaskPlugin_ApplicationSelfCheck.cs" />
+    <Compile Include="SelfCheck\Task_ApplicationSelfCheck.cs" />
+    <Compile Include="Service References\AuthorizeService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SinoSZJSCommonService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SinoSZJSMetaDataQueryService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SinoSZJSMetaDataService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SinoSZJSReportService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SinoSZJSUserManagerService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SinSZJSSinoBestMTS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SystemLog\QueryLogCheck.cs" />
+    <Compile Include="SystemLog\SystemLogCheck.cs" />
+    <Compile Include="SystemLog\UserLogCheck.cs" />
+    <Compile Include="WatchApplicationServerPlugin.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SinoSystemWatch.Base\SinoSystemWatch.Base.csproj">
+      <Project>{937D10FA-6EBE-4B1E-A1E5-C76EA6DDE779}</Project>
+      <Name>SinoSystemWatch.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SinoSZJS.Base\SinoSZJS.Base.csproj">
+      <Project>{76FC4ED1-A1D0-4167-9C82-2B69EFF6A33B}</Project>
+      <Name>SinoSZJS.Base</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Thread\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.Authorize.SinoUser.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <None Include="Service References\AuthorizeService\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AuthorizeService\service.wsdl" />
+    <None Include="Service References\AuthorizeService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AuthorizeService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AuthorizeService\SinoSZJS.Base.Authorize.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSCommonService\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSCommonService\service.wsdl" />
+    <None Include="Service References\SinoSZJSCommonService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSCommonService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSCommonService\SinoSysWatchService.Application.SinoSZJSCommonService.firstPageItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSCommonService\SinoSysWatchService.Application.SinoSZJSCommonService.NotifyInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSCommonService\SinoSysWatchService.Application.SinoSZJSCommonService.OrgExtInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSCommonService\SinoSysWatchService.Application.SinoSZJSCommonService.QueryLogRecord.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSCommonService\SinoSysWatchService.Application.SinoSZJSCommonService.RefCodeData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSCommonService\SinoSysWatchService.Application.SinoSZJSCommonService.RefCodeTablePropertie.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSCommonService\SinoSysWatchService.Application.SinoSZJSCommonService.ServerConfig.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSCommonService\SinoSysWatchService.Application.SinoSZJSCommonService.SinoMenuItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSCommonService\SinoSysWatchService.Application.SinoSZJSCommonService.SinoOrganize.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSCommonService\SinoSysWatchService.Application.SinoSZJSCommonService.SinoTaskInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSCommonService\SinoSysWatchService.Application.SinoSZJSCommonService.SystemLogRecord.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSCommonService\SinoSysWatchService.Application.SinoSZJSCommonService.UserLogRecord.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSCommonService\SinoSysWatchService.Application.SinoSZJSCommonService.WC_DataInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSCommonService\SinoSysWatchService.Application.SinoSZJSCommonService.WC_TJSB_Settings.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSCommonService\SinoSZJS.Base.Authorize.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSCommonService\SinoSZJS.Base.Config.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSCommonService\SinoSZJS.Base.MenuType.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSCommonService\SinoSZJS.Base.Notify.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSCommonService\SinoSZJS.Base.OrganizeExt.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSCommonService\SinoSZJS.Base.RefCode.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSCommonService\SinoSZJS.Base.SystemLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSCommonService\SinoSZJS.Base.TaskInfo.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSCommonService\SinoSZJS.Base.UserLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSCommonService\SinoSZJS.Base.WorkCalendar.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSCommonService\System.Data.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataQueryService\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataQueryService\service.wsdl" />
+    <None Include="Service References\SinoSZJSMetaDataQueryService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataQueryService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataQueryService\service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataQueryService\SinoSysWatchService.Application.SinoSZJSMetaDataQueryService.MDQuery_ChildTableRowCount.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataQueryService\SinoSysWatchService.Application.SinoSZJSMetaDataQueryService.MDQuery_ComputeColumnDefine.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataQueryService\SinoSysWatchService.Application.SinoSZJSMetaDataQueryService.MDQuery_Request.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataQueryService\SinoSysWatchService.Application.SinoSZJSMetaDataQueryService.MDQuery_Task.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataQueryService\SinoSysWatchService.Application.SinoSZJSMetaDataQueryService.MDSearch_Column.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataQueryService\SinoSysWatchService.Application.SinoSZJSMetaDataQueryService.MDSearch_ResultDataIndex.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataQueryService\SinoSysWatchService.Application.SinoSZJSMetaDataQueryService.MD_CheckRule.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataQueryService\SinoSysWatchService.Application.SinoSZJSMetaDataQueryService.MD_ConceptGroup.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataQueryService\SinoSysWatchService.Application.SinoSZJSMetaDataQueryService.MD_DataCheckMsg.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataQueryService\SinoSysWatchService.Application.SinoSZJSMetaDataQueryService.MD_FUNCTION.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataQueryService\SinoSysWatchService.Application.SinoSZJSMetaDataQueryService.MD_GuideLine.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataQueryService\SinoSysWatchService.Application.SinoSZJSMetaDataQueryService.MD_GuideLine_ParamSetting.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataQueryService\SinoSysWatchService.Application.SinoSZJSMetaDataQueryService.MD_InputModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataQueryService\SinoSysWatchService.Application.SinoSZJSMetaDataQueryService.MD_InputModel_ColumnGroup.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataQueryService\SinoSysWatchService.Application.SinoSZJSMetaDataQueryService.MD_QueryModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataQueryService\SinoSysWatchService.Application.SinoSZJSMetaDataQueryService.ReportHisDataRow.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataQueryService\SinoSZJS.Base.InputModel.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataQueryService\SinoSZJS.Base.MetaData.DataCheck.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataQueryService\SinoSZJS.Base.MetaData.DataCompare.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataQueryService\SinoSZJS.Base.MetaData.Define.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataQueryService\SinoSZJS.Base.MetaData.EnumDefine.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataQueryService\SinoSZJS.Base.MetaData.QueryModel.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataQueryService\SinoSZJS.Base.Report.DataCheck.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataQueryService\System.Data.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataService\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataService\service.wsdl" />
+    <None Include="Service References\SinoSZJSMetaDataService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataService\SinoSysWatchService.Application.SinoSZJSMetaDataService.DB_ColumnMeta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataService\SinoSysWatchService.Application.SinoSZJSMetaDataService.DB_TableMeta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataService\SinoSysWatchService.Application.SinoSZJSMetaDataService.MD_ConceptGroup.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataService\SinoSysWatchService.Application.SinoSZJSMetaDataService.MD_ConceptItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataService\SinoSysWatchService.Application.SinoSZJSMetaDataService.MD_GuideLine.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataService\SinoSysWatchService.Application.SinoSZJSMetaDataService.MD_GuideLineGroup.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataService\SinoSysWatchService.Application.SinoSZJSMetaDataService.MD_InputModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataService\SinoSysWatchService.Application.SinoSZJSMetaDataService.MD_Menu.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataService\SinoSysWatchService.Application.SinoSZJSMetaDataService.MD_Namespace.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataService\SinoSysWatchService.Application.SinoSZJSMetaDataService.MD_Nodes.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataService\SinoSysWatchService.Application.SinoSZJSMetaDataService.MD_QueryModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataService\SinoSysWatchService.Application.SinoSZJSMetaDataService.MD_QueryModelGroup.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataService\SinoSysWatchService.Application.SinoSZJSMetaDataService.MD_QueryModel_ExRight.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataService\SinoSysWatchService.Application.SinoSZJSMetaDataService.MD_RefTable.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataService\SinoSysWatchService.Application.SinoSZJSMetaDataService.MD_RightDefine.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataService\SinoSysWatchService.Application.SinoSZJSMetaDataService.MD_Table.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataService\SinoSysWatchService.Application.SinoSZJSMetaDataService.MD_Table2View.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataService\SinoSysWatchService.Application.SinoSZJSMetaDataService.MD_TableColumn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataService\SinoSysWatchService.Application.SinoSZJSMetaDataService.MD_View2App.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataService\SinoSysWatchService.Application.SinoSZJSMetaDataService.MD_View2View.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataService\SinoSysWatchService.Application.SinoSZJSMetaDataService.MD_View2ViewGroup.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataService\SinoSysWatchService.Application.SinoSZJSMetaDataService.MD_ViewTable.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataService\SinoSysWatchService.Application.SinoSZJSMetaDataService.MD_View_GuideLine.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataService\SinoSZJS.Base.InputModel.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataService\SinoSZJS.Base.MetaData.Define.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataService\SinoSZJS.Base.MetaData.EnumDefine.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataService\SinoSZJS.Base.MetaData.QueryModel.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSMetaDataService\System.Data.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSReportService\service.wsdl" />
+    <None Include="Service References\SinoSZJSReportService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSReportService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSReportService\service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSReportService\SinoSysWatchService.Application.SinoSZJSReportService.MD_ReportGuideLineDefine.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSReportService\SinoSysWatchService.Application.SinoSZJSReportService.MD_ReportGuideLineItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSReportService\SinoSysWatchService.Application.SinoSZJSReportService.MD_ReportItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSReportService\SinoSysWatchService.Application.SinoSZJSReportService.MD_ReportName.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSReportService\SinoSysWatchService.Application.SinoSZJSReportService.MD_ReportVerifyInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSReportService\SinoSZJS.Base.Authorize.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSReportService\SinoSZJS.Base.Report.ReportGuideLine.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSReportService\SinoSZJS.Base.Report.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSUserManagerService\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSUserManagerService\service.wsdl" />
+    <None Include="Service References\SinoSZJSUserManagerService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSUserManagerService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSUserManagerService\SinoSysWatchService.Application.SinoSZJSUserManagerService.PersonBaseInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSUserManagerService\SinoSysWatchService.Application.SinoSZJSUserManagerService.SinoPost.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSUserManagerService\SinoSysWatchService.Application.SinoSZJSUserManagerService.SinoRole.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSUserManagerService\SinoSysWatchService.Application.SinoSZJSUserManagerService.UserBaseInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSUserManagerService\SinoSysWatchService.Application.SinoSZJSUserManagerService.UserExtInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSUserManagerService\SinoSysWatchService.Application.SinoSZJSUserManagerService.UserMappingInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSUserManagerService\SinoSysWatchService.Application.SinoSZJSUserManagerService.UserPostInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSUserManagerService\SinoSysWatchService.Application.SinoSZJSUserManagerService.UserQueryModelInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSUserManagerService\SinoSysWatchService.Application.SinoSZJSUserManagerService.UserRightInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SinoSZJSUserManagerService\SinoSZJS.Base.Authorize.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinoSZJSUserManagerService\SinoSZJS.Base.User.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinSZJSSinoBestMTS\service.wsdl" />
+    <None Include="Service References\SinSZJSSinoBestMTS\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SinSZJSSinoBestMTS\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AuthorizeService\" />
+    <WCFMetadataStorage Include="Service References\SinoSZJSCommonService\" />
+    <WCFMetadataStorage Include="Service References\SinoSZJSMetaDataQueryService\" />
+    <WCFMetadataStorage Include="Service References\SinoSZJSMetaDataService\" />
+    <WCFMetadataStorage Include="Service References\SinoSZJSReportService\" />
+    <WCFMetadataStorage Include="Service References\SinoSZJSUserManagerService\" />
+    <WCFMetadataStorage Include="Service References\SinSZJSSinoBestMTS\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SinoSZJSCommonService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SinoSZJSCommonService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SinoSZJSCommonService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SinoSZJSMetaDataService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SinoSZJSMetaDataService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SinoSZJSMetaDataService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SinoSZJSReportService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SinoSZJSReportService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SinoSZJSReportService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SinoSZJSUserManagerService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SinoSZJSUserManagerService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SinoSZJSUserManagerService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SinoSZJSMetaDataQueryService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SinoSZJSMetaDataQueryService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SinoSZJSMetaDataQueryService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SinSZJSSinoBestMTS\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SinSZJSSinoBestMTS\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SinSZJSSinoBestMTS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AuthorizeService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AuthorizeService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AuthorizeService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

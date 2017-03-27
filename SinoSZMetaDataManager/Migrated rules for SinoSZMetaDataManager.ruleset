@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RuleSet Name="Migrated rules for SinoSZMetaDataManager.ruleset" Description="已通过项目“E:\升级处理临时目录\SinoSZMetaDataManager\SinoSZMetaDataManager.csproj”中的“JSCASys (Any CPU)”配置的 CodeAnalysisRules 属性创建此规则集。" ToolsVersion="10.0">
+  <RuleHintPaths>
+    <Path>C:\Program Files\Microsoft Visual Studio 8\Team Tools\Static Analysis Tools\FxCop\\rules</Path>
+  </RuleHintPaths>
+</RuleSet>

@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Report" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Authorize" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Report.ReportGuideLine" />
+  <xs:element name="HeartBeat">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HeartBeatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="HeartBeatResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReportNames">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ReportNames" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ReportType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReportNamesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Report" minOccurs="0" name="GetReportNamesResult" nillable="true" type="q1:ArrayOfMD_ReportName" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReportsByName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Report" minOccurs="0" name="ReportName" nillable="true" type="q2:MD_ReportName" />
+        <xs:element minOccurs="0" name="ReportType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReportsByNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Report" minOccurs="0" name="GetReportsByNameResult" nillable="true" type="q3:ArrayOfMD_ReportItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReports">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="EndDate" type="xs:dateTime" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Report" minOccurs="0" name="ReportItems" nillable="true" type="q4:ArrayOfMD_ReportName" />
+        <xs:element minOccurs="0" name="ReportType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReportsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Report" minOccurs="0" name="GetReportsResult" nillable="true" type="q5:ArrayOfMD_ReportItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReportsOfOrg">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Report" minOccurs="0" name="ReportName" nillable="true" type="q6:MD_ReportName" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Authorize" minOccurs="0" name="Org" nillable="true" type="q7:SinoOrganize" />
+        <xs:element minOccurs="0" name="ReportType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReportsOfOrgResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Report" minOccurs="0" name="GetReportsOfOrgResult" nillable="true" type="q8:ArrayOfMD_ReportItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReportsBySelected">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="EndDate" type="xs:dateTime" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Report" minOccurs="0" name="SelectReportNames" nillable="true" type="q9:ArrayOfMD_ReportName" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Authorize" minOccurs="0" name="Org" nillable="true" type="q10:SinoOrganize" />
+        <xs:element minOccurs="0" name="ReportType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReportsBySelectedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Report" minOccurs="0" name="GetReportsBySelectedResult" nillable="true" type="q11:ArrayOfMD_ReportItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Report" minOccurs="0" name="ReportItem" nillable="true" type="q12:MD_ReportItem" />
+        <xs:element minOccurs="0" name="Format" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ReportType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetReportResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReportVerifyInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Report" minOccurs="0" name="ReportItem" nillable="true" type="q13:MD_ReportItem" />
+        <xs:element minOccurs="0" name="ReportType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReportVerifyInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Report" minOccurs="0" name="GetReportVerifyInfoResult" nillable="true" type="q14:MD_ReportVerifyInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Report" minOccurs="0" name="ReportName" nillable="true" type="q15:MD_ReportName" />
+        <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="EndDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="ReportType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateReportResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReBuildReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Report" minOccurs="0" name="ReportItem" nillable="true" type="q16:MD_ReportItem" />
+        <xs:element minOccurs="0" name="ReportType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReBuildReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ReBuildReportResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerifyReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Report" minOccurs="0" name="ReportItem" nillable="true" type="q17:MD_ReportItem" />
+        <xs:element minOccurs="0" name="VerifyDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="ReportType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerifyReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VerifyReportResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReportGuideLines">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Report" minOccurs="0" name="ReportName" nillable="true" type="q18:MD_ReportName" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReportGuideLinesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Report.ReportGuideLine" minOccurs="0" name="GetReportGuideLinesResult" nillable="true" type="q19:ArrayOfMD_ReportGuideLineItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReportGuideLineDefine">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReportGuideLineDefineResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Report.ReportGuideLine" minOccurs="0" name="GetReportGuideLineDefineResult" nillable="true" type="q20:MD_ReportGuideLineDefine" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReportGuideLineData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Report.ReportGuideLine" minOccurs="0" name="ReportGuideLineDefine" nillable="true" type="q21:MD_ReportGuideLineDefine" />
+        <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="EndDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="DWDM" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReportGuideLineDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetReportGuideLineDataResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReportGuideLineDetailData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Report.ReportGuideLine" minOccurs="0" name="ReportGuideLineDefine" nillable="true" type="q22:MD_ReportGuideLineDefine" />
+        <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="EndDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="DWDM" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReportGuideLineDetailDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetReportGuideLineDetailDataResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

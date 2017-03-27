@@ -1,0 +1,944 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ABDD3C32-17A9-4EA0-BFF8-7FCBEDF38F5D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SinoSZClientBase</RootNamespace>
+    <AssemblyName>SinoSZClientBase</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\SinoSZClientBase.XML</DocumentationFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'SHThread|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\SHThread\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>bin\Debug\SinoSZClientBase.XML</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'FsDiSystem|AnyCPU' ">
+    <OutputPath>bin\FsDiSystem\</OutputPath>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'FsDiSys|AnyCPU' ">
+    <OutputPath>bin\FsDiSys\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'JSCASys|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\JSCASys\bin\JSCASys\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleAssemblies>
+    </CodeAnalysisRuleAssemblies>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <CodeAnalysisRuleSet>Migrated rules for SinoSZClientBase.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'SinoSZWebVss|AnyCPU' ">
+    <OutputPath>bin\SinoSZWebVss\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleAssemblies>
+    </CodeAnalysisRuleAssemblies>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>Migrated rules for SinoSZClientBase.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'X86|AnyCPU' ">
+    <OutputPath>bin\X86\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleAssemblies>
+    </CodeAnalysisRuleAssemblies>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>Migrated rules for SinoSZClientBase.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Spreadsheet.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v14.1.UI, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v14.1.Extensions, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\DevExpress 14.1\Components\Bin\Framework\DevExpress.XtraCharts.v14.1.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v14.1.UI, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\DevExpress 14.1\Components\Bin\Framework\DevExpress.XtraCharts.v14.1.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v14.1.Wizard, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\DevExpress 14.1\Components\Bin\Framework\DevExpress.XtraCharts.v14.1.Wizard.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraSpreadsheet.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutoUpdateDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AutoUpdateDlg.Designer.cs">
+      <DependentUpon>AutoUpdateDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AutoUpdater\AutoUpdater.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AutoUpdater\AutoUpdater.Designer.cs">
+      <DependentUpon>AutoUpdater.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cache\MetaDataCache.cs" />
+    <Compile Include="ChinaSimpleGridLocalizer.cs" />
+    <Compile Include="ChinaSimpleLocalizer.cs" />
+    <Compile Include="ChinaSimpleTreeListLocalizer.cs" />
+    <Compile Include="DevLocalizerCHS.cs" />
+    <Compile Include="D_UserHistory.cs" />
+    <Compile Include="Export\Dialog_ExportGridViewData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Export\Dialog_ExportGridViewData.Designer.cs">
+      <DependentUpon>Dialog_ExportGridViewData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Export\SinoSZEXport_DevChart.cs" />
+    <Compile Include="Export\SinoSZExport_GridViewData.cs" />
+    <Compile Include="frmBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBase.Designer.cs">
+      <DependentUpon>frmBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChangePass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChangePass.Designer.cs">
+      <DependentUpon>frmChangePass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainForm.Designer.cs">
+      <DependentUpon>frmMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProgress.Designer.cs">
+      <DependentUpon>frmProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetParameter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetParameter.Designer.cs">
+      <DependentUpon>frmSetParameter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVersionShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVersionShow.Designer.cs">
+      <DependentUpon>frmVersionShow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Organize\OrgEventArgs.cs" />
+    <Compile Include="Organize\OrgTreeItem.cs" />
+    <Compile Include="Organize\OrgTreeList.cs" />
+    <Compile Include="Organize\SinoUC_OrgCheckBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Organize\SinoUC_OrgCheckBox.Designer.cs">
+      <DependentUpon>SinoUC_OrgCheckBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Organize\SinoUC_OrgComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Organize\SinoUC_OrgTree.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Organize\SinoUC_OrgTree.Designer.cs">
+      <DependentUpon>SinoUC_OrgTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PendingAlert\Dialog_PendingAlert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PendingAlert\Dialog_PendingAlert.Designer.cs">
+      <DependentUpon>Dialog_PendingAlert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PendingAlert\PendingAlertIndexItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PendingAlert\PendingAlertIndexItem.Designer.cs">
+      <DependentUpon>PendingAlertIndexItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PortalItem\PortalItemDefine.cs" />
+    <Compile Include="PortalItem\SinoSZUC_PortalItemBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PortalItem\SinoSZUC_PortalItemBase.Designer.cs">
+      <DependentUpon>SinoSZUC_PortalItemBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Post\PostListItem.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RefCode\RefCodeBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RefCode\RefCodeManager.cs" />
+    <Compile Include="RefTableConfig.cs" />
+    <Compile Include="Service References\AuthorizeService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\CommonService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\MetaDataQueryService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\MetaDataService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ReportService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\UserManagerService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ShowChart\ChartClass.cs" />
+    <Compile Include="ShowChart\ChartFieldItem.cs" />
+    <Compile Include="ShowChart\ChartUC_Bar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShowChart\ChartUC_Bar.Designer.cs">
+      <DependentUpon>ChartUC_Bar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowChart\ChartUC_ICS.cs" />
+    <Compile Include="ShowChart\ChartUC_Line.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShowChart\ChartUC_Line.Designer.cs">
+      <DependentUpon>ChartUC_Line.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowChart\ChartUC_Pie.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShowChart\ChartUC_Pie.Designer.cs">
+      <DependentUpon>ChartUC_Pie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowChart\DevChartClass.cs" />
+    <Compile Include="ShowChart\frmChartShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowChart\frmChartShow.Designer.cs">
+      <DependentUpon>frmChartShow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowChart\frmFilterRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowChart\frmFilterRecord.Designer.cs">
+      <DependentUpon>frmFilterRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SinoCommonGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SinoMenuService.cs" />
+    <Compile Include="SinoSZProgressController.cs" />
+    <Compile Include="SinoSZResources.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AutoUpdateDlg.resx">
+      <DependentUpon>AutoUpdateDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Export\Dialog_ExportGridViewData.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Dialog_ExportGridViewData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBase.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChangePass.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmChangePass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProgress.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetParameter.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSetParameter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVersionShow.resx">
+      <DependentUpon>frmVersionShow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Organize\SinoUC_OrgCheckBox.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SinoUC_OrgCheckBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Organize\SinoUC_OrgTree.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SinoUC_OrgTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PendingAlert\Dialog_PendingAlert.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Dialog_PendingAlert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PendingAlert\PendingAlertIndexItem.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PendingAlertIndexItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PortalItem\SinoSZUC_PortalItemBase.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SinoSZUC_PortalItemBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowChart\ChartUC_Bar.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ChartUC_Bar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowChart\ChartUC_Line.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ChartUC_Line.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowChart\ChartUC_Pie.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ChartUC_Pie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowChart\frmChartShow.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmChartShow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowChart\frmFilterRecord.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmFilterRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SinoCommonGrid.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SinoCommonGrid.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SinoSZJS.Base\SinoSZJS.Base.csproj">
+      <Project>{29F48920-647F-48A2-A222-34276057D81A}</Project>
+      <Name>SinoSZJS.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SinoSZPluginFramework\SinoSZPluginFramework.csproj">
+      <Project>{C855A639-511E-4B4F-8A71-3224083C5D40}</Project>
+      <Name>SinoSZPluginFramework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Migrated rules for SinoSZClientBase.ruleset" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.Authorize.SinoOrganize.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.Authorize.SinoPost.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.Authorize.SinoRole.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.Authorize.SinoUser.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.Config.ServerConfig.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.InputModel.MD_InputModel.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.InputModel.MD_InputModel_ColumnGroup.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.JSGDS.GDSCommanderDefine.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.JSGDS.GDSTokenRecord.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MenuType.firstPageItem.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MenuType.SinoMenuItem.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MetaData.DataCheck.MD_CheckRule.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MetaData.DataCheck.MD_DataCheckMsg.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MetaData.Define.DB_ColumnMeta.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MetaData.Define.DB_TableMeta.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MetaData.Define.MD_ConceptGroup.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MetaData.Define.MD_ConceptItem.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MetaData.Define.MD_FUNCTION.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MetaData.Define.MD_Menu.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MetaData.Define.MD_Namespace.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MetaData.Define.MD_Nodes.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MetaData.Define.MD_QueryModel.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MetaData.Define.MD_QueryModelGroup.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MetaData.Define.MD_QueryModel_ExRight.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MetaData.Define.MD_RefTable.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MetaData.Define.MD_RightDefine.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MetaData.Define.MD_Table.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MetaData.Define.MD_Table2View.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MetaData.Define.MD_TableColumn.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MetaData.Define.MD_View2App.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MetaData.Define.MD_View2View.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MetaData.Define.MD_View2ViewGroup.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MetaData.Define.MD_ViewTable.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MetaData.Define.MD_View_GuideLine.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MetaData.QueryModel.MDModel_QueryModel.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MetaData.QueryModel.MDQuery_ChildTableRowCount.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MetaData.QueryModel.MDQuery_ComputeColumnDefine.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MetaData.QueryModel.MDQuery_Request.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MetaData.QueryModel.MDQuery_Task.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MetaData.QueryModel.MDSearch_Column.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MetaData.QueryModel.MDSearch_ResultDataIndex.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MetaData.QueryModel.MD_GuideLine.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MetaData.QueryModel.MD_GuideLineGroup.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MetaData.QueryModel.MD_GuideLine_ParamSetting.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.Notify.NotifyInfo.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.OrganizeExt.OrgExtInfo.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.RefCode.RefCodeData.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.RefCode.RefCodeTablePropertie.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.Report.DataCheck.ReportHisDataRow.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.Report.MD_ReportItem.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.Report.MD_ReportName.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.Report.MD_ReportVerifyInfo.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.Report.ReportGuideLine.MD_ReportGuideLineDefine.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.Report.ReportGuideLine.MD_ReportGuideLineItem.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.SystemLog.QueryLogRecord.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.SystemLog.SystemLogRecord.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.TaskInfo.SinoTaskInfo.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.User.PersonBaseInfo.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.User.UserBaseInfo.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.User.UserExtInfo.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.User.UserMappingInfo.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.User.UserPostInfo.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.User.UserQueryModelInfo.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.User.UserRightInfo.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.UserLog.UserLogRecord.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.WorkCalendar.WC_DataInfo.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.WorkCalendar.WC_TJSB_Settings.datasource" />
+    <None Include="Properties\DataSources\SinoSZMetaDataBase.Define.MD_QueryModel_ExRight.datasource" />
+    <None Include="Properties\DataSources\SinoSZMetaDataBase.Define.MD_Table2View.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <None Include="Resources\login2.png" />
+    <None Include="Service References\AuthorizeService\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AuthorizeService\service.wsdl" />
+    <None Include="Service References\AuthorizeService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AuthorizeService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AuthorizeService\SinoSZJS.Base.Authorize.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\service.wsdl" />
+    <None Include="Service References\CommonService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\SinoSZJS.Base.Authorize.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\SinoSZJS.Base.Config.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\SinoSZJS.Base.JSGDS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\SinoSZJS.Base.MenuType.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\SinoSZJS.Base.Notify.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\SinoSZJS.Base.OrganizeExt.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\SinoSZJS.Base.RefCode.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\SinoSZJS.Base.SystemLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\SinoSZJS.Base.TaskInfo.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\SinoSZJS.Base.UserLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\SinoSZJS.Base.WorkCalendar.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonService\System.Data.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MetaDataQueryService\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MetaDataQueryService\service.wsdl" />
+    <None Include="Service References\MetaDataQueryService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MetaDataQueryService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MetaDataQueryService\service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MetaDataQueryService\SinoSZJS.Base.InputModel.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MetaDataQueryService\SinoSZJS.Base.MetaData.DataCheck.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MetaDataQueryService\SinoSZJS.Base.MetaData.DataCompare.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MetaDataQueryService\SinoSZJS.Base.MetaData.Define.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MetaDataQueryService\SinoSZJS.Base.MetaData.EnumDefine.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MetaDataQueryService\SinoSZJS.Base.MetaData.QueryModel.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MetaDataQueryService\SinoSZJS.Base.Report.DataCheck.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MetaDataQueryService\System.Data.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MetaDataService\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MetaDataService\service.wsdl" />
+    <None Include="Service References\MetaDataService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MetaDataService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MetaDataService\SinoSZJS.Base.InputModel.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MetaDataService\SinoSZJS.Base.MetaData.Define.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MetaDataService\SinoSZJS.Base.MetaData.EnumDefine.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MetaDataService\SinoSZJS.Base.MetaData.QueryModel.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MetaDataService\System.Data.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ReportService\service.wsdl" />
+    <None Include="Service References\ReportService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ReportService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ReportService\service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ReportService\SinoSZJS.Base.Authorize.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ReportService\SinoSZJS.Base.Report.ReportGuideLine.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ReportService\SinoSZJS.Base.Report.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserManagerService\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserManagerService\service.wsdl" />
+    <None Include="Service References\UserManagerService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserManagerService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserManagerService\SinoSZJS.Base.Authorize.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserManagerService\SinoSZJS.Base.User.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check-out_16x16.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pawn_glass_green.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\finances_%28add%29_16x16.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foward2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChangePass.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KEY_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alert.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\attention1_16x16.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\information_16x16.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChartWithLegend.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChartNoLegendL.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChartWithLabel.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChartNoLable.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SJDC.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LabelAsNormal.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LabelAsLog.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g25.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g21.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g22.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g23.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g24.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\X8.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b25.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b19.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b20.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b21.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b22.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b23.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b24.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x3.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\y2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\y3.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\y11.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\y12.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\comment1_16x16.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\keyboard2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\keyboard2_cordless.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_16x16.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nbHeaderGroup3.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\db.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dbborder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dbend.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\format1_16x16.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AuthorizeService\" />
+    <WCFMetadataStorage Include="Service References\CommonService\" />
+    <WCFMetadataStorage Include="Service References\MetaDataQueryService\" />
+    <WCFMetadataStorage Include="Service References\MetaDataService\" />
+    <WCFMetadataStorage Include="Service References\ReportService\" />
+    <WCFMetadataStorage Include="Service References\UserManagerService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AuthorizeService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AuthorizeService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AuthorizeService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CommonService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CommonService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CommonService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\UserManagerService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\UserManagerService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\UserManagerService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MetaDataQueryService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MetaDataQueryService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MetaDataQueryService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ReportService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ReportService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ReportService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MetaDataService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MetaDataService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MetaDataService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="VersionInfo.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

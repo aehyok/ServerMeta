@@ -1,0 +1,6 @@
+E:\work\SinoCSConnection\SinoSZJS.DataAccess\bin\Debug\SinoSZJS.DataAccess.dll
+E:\work\SinoCSConnection\SinoSZJS.DataAccess\bin\Debug\SinoSZJS.DataAccess.pdb
+E:\work\SinoCSConnection\SinoSZJS.DataAccess\bin\Debug\Oracle.DataAccess.dll
+E:\work\SinoCSConnection\SinoSZJS.DataAccess\obj\Debug\SinoSZJS.DataAccess.csprojResolveAssemblyReference.cache
+E:\work\SinoCSConnection\SinoSZJS.DataAccess\obj\Debug\SinoSZJS.DataAccess.dll
+E:\work\SinoCSConnection\SinoSZJS.DataAccess\obj\Debug\SinoSZJS.DataAccess.pdb

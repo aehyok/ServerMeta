@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.JSGDS" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.JSGDS" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfGDSCommanderDefine">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GDSCommanderDefine" nillable="true" type="tns:GDSCommanderDefine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGDSCommanderDefine" nillable="true" type="tns:ArrayOfGDSCommanderDefine" />
+  <xs:complexType name="GDSCommanderDefine">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CallParamDefine" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CommandName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DWDM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descript" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IcsConfig" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IcsType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReturnDefine" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TokenType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GDSCommanderDefine" nillable="true" type="tns:GDSCommanderDefine" />
+  <xs:complexType name="ArrayOfGDSTokenRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GDSTokenRecord" nillable="true" type="tns:GDSTokenRecord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGDSTokenRecord" nillable="true" type="tns:ArrayOfGDSTokenRecord" />
+  <xs:complexType name="GDSTokenRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CommandName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RemoteIP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TokenData" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GDSTokenRecord" nillable="true" type="tns:GDSTokenRecord" />
+</xs:schema>

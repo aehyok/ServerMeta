@@ -1,0 +1,939 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AA4CC8BC-ED5B-413A-AE40-80879057DA99}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SinoSZMetaDataManager</RootNamespace>
+    <AssemblyName>SinoSZMetaDataManager</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\DebugTemp\Client\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'SHThread|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\SHThread\bin\SHThread\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'FsDiSystem|AnyCPU' ">
+    <OutputPath>bin\FsDiSystem\</OutputPath>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'FsDiSys|AnyCPU' ">
+    <OutputPath>..\FsDiSys\bin\FsDiSys\</OutputPath>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DocumentationFile>..\FsDiSys\bin\FsDiSys\SinoSZMetaDataManager.XML</DocumentationFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'JSCASys|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\JSCASys\bin\JSCASys\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DocumentationFile>..\FsDiSys\bin\FsDiSys\SinoSZMetaDataManager.XML</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleAssemblies>
+    </CodeAnalysisRuleAssemblies>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <CodeAnalysisRuleSet>Migrated rules for SinoSZMetaDataManager.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'SZZHSys|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\SZZHSys\bin\SZZHSys\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleAssemblies>
+    </CodeAnalysisRuleAssemblies>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>Migrated rules for SinoSZMetaDataManager.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'SinoSZWebVss|AnyCPU' ">
+    <OutputPath>bin\SinoSZWebVss\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleAssemblies>
+    </CodeAnalysisRuleAssemblies>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>Migrated rules for SinoSZMetaDataManager.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'X86|AnyCPU' ">
+    <OutputPath>bin\X86\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleAssemblies>
+    </CodeAnalysisRuleAssemblies>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>Migrated rules for SinoSZMetaDataManager.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\DevExpress 14.1\Components\Bin\Framework\DevExpress.Data.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\DevExpress 14.1\Components\Bin\Framework\DevExpress.Printing.v14.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\DevExpress 14.1\Components\Bin\Framework\DevExpress.Utils.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\DevExpress 14.1\Components\Bin\Framework\DevExpress.XtraBars.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\DevExpress 14.1\Components\Bin\Framework\DevExpress.XtraEditors.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\DevExpress 14.1\Components\Bin\Framework\DevExpress.XtraGrid.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\DevExpress 14.1\Components\Bin\Framework\DevExpress.XtraLayout.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\DevExpress 14.1\Components\Bin\Framework\DevExpress.XtraNavBar.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\DevExpress 14.1\Components\Bin\Framework\DevExpress.XtraPrinting.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\DevExpress 14.1\Components\Bin\Framework\DevExpress.XtraTreeList.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConceptGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ConceptGroup.Designer.cs">
+      <DependentUpon>ConceptGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConceptTag.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ConceptTag.Designer.cs">
+      <DependentUpon>ConceptTag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_AddConceptGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_AddConceptGroup.Designer.cs">
+      <DependentUpon>Dialog_AddConceptGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_AddConceptTag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_AddConceptTag.Designer.cs">
+      <DependentUpon>Dialog_AddConceptTag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_AddExtendRight.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_AddExtendRight.Designer.cs">
+      <DependentUpon>Dialog_AddExtendRight.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_AddGuideLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_AddGuideLine.Designer.cs">
+      <DependentUpon>Dialog_AddGuideLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_AddGuideLineGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_AddGuideLineGroup.Designer.cs">
+      <DependentUpon>Dialog_AddGuideLineGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_AddMainTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_AddMainTable.Designer.cs">
+      <DependentUpon>Dialog_AddMainTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_AddNameSpace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_AddNameSpace.Designer.cs">
+      <DependentUpon>Dialog_AddNameSpace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_AddNode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_AddNode.Designer.cs">
+      <DependentUpon>Dialog_AddNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_AddQueryModel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_AddQueryModel.Designer.cs">
+      <DependentUpon>Dialog_AddQueryModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_AddRefTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_AddRefTable.Designer.cs">
+      <DependentUpon>Dialog_AddRefTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_AddTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_AddTable.Designer.cs">
+      <DependentUpon>Dialog_AddTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_AddTableRelationView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_AddTableRelationView.Designer.cs">
+      <DependentUpon>Dialog_AddTableRelationView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_AddView2App.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_AddView2App.Designer.cs">
+      <DependentUpon>Dialog_AddView2App.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_AddView2GL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_AddView2GL.Designer.cs">
+      <DependentUpon>Dialog_AddView2GL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_EditGuideLineDetailParam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_EditGuideLineDetailParam.Designer.cs">
+      <DependentUpon>Dialog_EditGuideLineDetailParam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_EditGuideLineRefTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_EditGuideLineRefTable.Designer.cs">
+      <DependentUpon>Dialog_EditGuideLineRefTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_ExportGuideLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_ExportGuideLine.Designer.cs">
+      <DependentUpon>Dialog_ExportGuideLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_ExportNamespace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_ExportNamespace.Designer.cs">
+      <DependentUpon>Dialog_ExportNamespace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_ImportGuideLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_ImportGuideLine.Designer.cs">
+      <DependentUpon>Dialog_ImportGuideLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_ImportNamesapce.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_ImportNamesapce.Designer.cs">
+      <DependentUpon>Dialog_ImportNamesapce.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_MoveFieldToGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_MoveFieldToGroup.Designer.cs">
+      <DependentUpon>Dialog_MoveFieldToGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_SelectGuideLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_SelectGuideLine.Designer.cs">
+      <DependentUpon>Dialog_SelectGuideLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGlobalManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGlobalManager.Designer.cs">
+      <DependentUpon>frmGlobalManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGuideLineManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGuideLineManager.Designer.cs">
+      <DependentUpon>frmGuideLineManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNodeManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNodeManager.Designer.cs">
+      <DependentUpon>frmNodeManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GuideLineGroupManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GuideLineGroupManager.Designer.cs">
+      <DependentUpon>GuideLineGroupManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GuideLineManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GuideLineManager.Designer.cs">
+      <DependentUpon>GuideLineManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IControlMenu.cs" />
+    <Compile Include="MD_ConstDefine.cs" />
+    <Compile Include="MD_Title.cs" />
+    <Compile Include="MenuController.cs" />
+    <Compile Include="MenuDefine.cs" />
+    <Compile Include="MenuManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MenuManager.Designer.cs">
+      <DependentUpon>MenuManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NameSpaceManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NameSpaceManager.Designer.cs">
+      <DependentUpon>NameSpaceManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NodeManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NodeManager.Designer.cs">
+      <DependentUpon>NodeManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NodeRightDefine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NodeRightDefine.Designer.cs">
+      <DependentUpon>NodeRightDefine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QueryModelChildTableManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QueryModelChildTableManager.Designer.cs">
+      <DependentUpon>QueryModelChildTableManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QueryModelEditor\frmQueryModelEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QueryModelEditor\frmQueryModelEditor.Designer.cs">
+      <DependentUpon>frmQueryModelEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QueryModelEditor\SinoUC_QME_QueryModelInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QueryModelEditor\SinoUC_QME_QueryModelInfo.Designer.cs">
+      <DependentUpon>SinoUC_QME_QueryModelInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QueryModelEditor\SinoUC_QME_TableInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QueryModelEditor\SinoUC_QME_TableInfo.Designer.cs">
+      <DependentUpon>SinoUC_QME_TableInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QueryModelEditor\SinoUC_QME_View2APP.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QueryModelEditor\SinoUC_QME_View2APP.Designer.cs">
+      <DependentUpon>SinoUC_QME_View2APP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QueryModelEditor\View2ViewGroupInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QueryModelEditor\View2ViewGroupInfo.Designer.cs">
+      <DependentUpon>View2ViewGroupInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QueryModelEditor\View2ViewInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QueryModelEditor\View2ViewInfo.Designer.cs">
+      <DependentUpon>View2ViewInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QueryModelExRightManger.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QueryModelExRightManger.Designer.cs">
+      <DependentUpon>QueryModelExRightManger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QueryModelMainTableManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QueryModelMainTableManager.Designer.cs">
+      <DependentUpon>QueryModelMainTableManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QueryModelManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QueryModelManager.Designer.cs">
+      <DependentUpon>QueryModelManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RefTableManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RefTableManager.Designer.cs">
+      <DependentUpon>RefTableManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SinoSZCheckBoxList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SinoSZComboEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SinoSZGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SinoSZMemoEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SinoSZMetaDataManagerPlugin.cs" />
+    <Compile Include="SinoSZTextEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Table2ViewManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Table2ViewManager.Designer.cs">
+      <DependentUpon>Table2ViewManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TableManager.Designer.cs">
+      <DependentUpon>TableManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TreeObject\TreeObj_GuideLineFieldGroup.cs" />
+    <Compile Include="TreeObject\TreeObj_GuideLineFieldList.cs" />
+    <Compile Include="TreeObject\TreeObj_GuidelLineFieldItem.cs" />
+    <Compile Include="UC_View2GLInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_View2GLInfo.Designer.cs">
+      <DependentUpon>UC_View2GLInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewGuideLineManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewGuideLineManager.Designer.cs">
+      <DependentUpon>ViewGuideLineManager.cs</DependentUpon>
+    </Compile>
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ConceptGroup.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ConceptGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConceptTag.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ConceptTag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_AddConceptGroup.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Dialog_AddConceptGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_AddConceptTag.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Dialog_AddConceptTag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_AddExtendRight.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Dialog_AddExtendRight.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_AddGuideLine.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Dialog_AddGuideLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_AddGuideLineGroup.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Dialog_AddGuideLineGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_AddMainTable.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Dialog_AddMainTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_AddNameSpace.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Dialog_AddNameSpace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_AddNode.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Dialog_AddNode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_AddQueryModel.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Dialog_AddQueryModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_AddRefTable.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Dialog_AddRefTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_AddTable.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Dialog_AddTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_AddTableRelationView.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Dialog_AddTableRelationView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_AddView2App.resx">
+      <DependentUpon>Dialog_AddView2App.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_AddView2GL.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Dialog_AddView2GL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_EditGuideLineDetailParam.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Dialog_EditGuideLineDetailParam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_EditGuideLineRefTable.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Dialog_EditGuideLineRefTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_ExportGuideLine.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Dialog_ExportGuideLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_ExportNamespace.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Dialog_ExportNamespace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_ImportGuideLine.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Dialog_ImportGuideLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_ImportNamesapce.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Dialog_ImportNamesapce.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_MoveFieldToGroup.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Dialog_MoveFieldToGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_SelectGuideLine.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Dialog_SelectGuideLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGlobalManager.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmGlobalManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGuideLineManager.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmGuideLineManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNodeManager.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmNodeManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GuideLineGroupManager.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>GuideLineGroupManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GuideLineManager.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>GuideLineManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuManager.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MenuManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NameSpaceManager.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>NameSpaceManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NodeManager.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>NodeManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NodeRightDefine.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>NodeRightDefine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QueryModelChildTableManager.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>QueryModelChildTableManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QueryModelEditor\frmQueryModelEditor.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmQueryModelEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QueryModelEditor\SinoUC_QME_QueryModelInfo.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SinoUC_QME_QueryModelInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QueryModelEditor\SinoUC_QME_TableInfo.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SinoUC_QME_TableInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QueryModelEditor\SinoUC_QME_View2APP.resx">
+      <DependentUpon>SinoUC_QME_View2APP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QueryModelEditor\View2ViewGroupInfo.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>View2ViewGroupInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QueryModelEditor\View2ViewInfo.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>View2ViewInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QueryModelExRightManger.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>QueryModelExRightManger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QueryModelMainTableManager.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>QueryModelMainTableManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QueryModelManager.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>QueryModelManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RefTableManager.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>RefTableManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Table2ViewManager.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Table2ViewManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableManager.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TableManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_View2GLInfo.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>UC_View2GLInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewGuideLineManager.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ViewGuideLineManager.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SinoSZClientBase\SinoSZClientBase.csproj">
+      <Project>{ABDD3C32-17A9-4EA0-BFF8-7FCBEDF38F5D}</Project>
+      <Name>SinoSZClientBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SinoSZJS.Base\SinoSZJS.Base.csproj">
+      <Project>{76FC4ED1-A1D0-4167-9C82-2B69EFF6A33B}</Project>
+      <Name>SinoSZJS.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SinoSZMetaDataQuery\SinoSZMetaDataQuery.csproj">
+      <Project>{381DC38A-CE47-4568-91B4-0E776F5201E3}</Project>
+      <Name>SinoSZMetaDataQuery</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SinoSZPluginFramework\SinoSZPluginFramework.csproj">
+      <Project>{C855A639-511E-4B4F-8A71-3224083C5D40}</Project>
+      <Name>SinoSZPluginFramework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Migrated rules for SinoSZMetaDataManager.ruleset" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.InputModel.MD_InputModel.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MetaData.Define.MD_Namespace.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MetaData.Define.MD_Nodes.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MetaData.Define.MD_QueryModel.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MetaData.Define.MD_RefTable.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MetaData.Define.MD_Table.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MetaData.Define.MD_TableColumn.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MetaData.Define.MD_View2View.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MetaData.Define.MD_View2ViewGroup.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MetaData.Define.MD_ViewTable.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MetaData.QueryModel.MD_GuideLine.datasource" />
+    <None Include="Properties\DataSources\SinoSZJS.Base.MetaData.QueryModel.MD_GuideLineGroup.datasource" />
+    <None Include="Properties\DataSources\SinoSZMetaDataBase.Define.DB_ColumnMeta.datasource" />
+    <None Include="Properties\DataSources\SinoSZMetaDataBase.Define.DB_TableMeta.datasource" />
+    <None Include="Properties\DataSources\SinoSZMetaDataBase.Define.MD_ConceptGroup.datasource" />
+    <None Include="Properties\DataSources\SinoSZMetaDataBase.Define.MD_ConceptItem.datasource" />
+    <None Include="Properties\DataSources\SinoSZMetaDataBase.Define.MD_GuideLine.datasource" />
+    <None Include="Properties\DataSources\SinoSZMetaDataBase.Define.MD_GuideLineGroup.datasource" />
+    <None Include="Properties\DataSources\SinoSZMetaDataBase.Define.MD_Menu.datasource" />
+    <None Include="Properties\DataSources\SinoSZMetaDataBase.Define.MD_Namespace.datasource" />
+    <None Include="Properties\DataSources\SinoSZMetaDataBase.Define.MD_Nodes.datasource" />
+    <None Include="Properties\DataSources\SinoSZMetaDataBase.Define.MD_QueryModel.datasource" />
+    <None Include="Properties\DataSources\SinoSZMetaDataBase.Define.MD_QueryModelGroup.datasource" />
+    <None Include="Properties\DataSources\SinoSZMetaDataBase.Define.MD_QueryModel_ExRight.datasource" />
+    <None Include="Properties\DataSources\SinoSZMetaDataBase.Define.MD_RefTable.datasource" />
+    <None Include="Properties\DataSources\SinoSZMetaDataBase.Define.MD_RightDefine.datasource" />
+    <None Include="Properties\DataSources\SinoSZMetaDataBase.Define.MD_Table.datasource" />
+    <None Include="Properties\DataSources\SinoSZMetaDataBase.Define.MD_Table2View.datasource" />
+    <None Include="Properties\DataSources\SinoSZMetaDataBase.Define.MD_TableColumn.datasource" />
+    <None Include="Properties\DataSources\SinoSZMetaDataBase.Define.MD_View2View.datasource" />
+    <None Include="Properties\DataSources\SinoSZMetaDataBase.Define.MD_View2ViewGroup.datasource" />
+    <None Include="Properties\DataSources\SinoSZMetaDataBase.Define.MD_ViewTable.datasource" />
+    <None Include="Properties\DataSources\SinoSZMetaDataBase.Define.MD_View_GuideLine.datasource" />
+    <None Include="Properties\DataSources\SinoSZMetaDataBase.InputModel.MD_InputModel.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <None Include="Resources\g41.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g3.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g4.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g5.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g6.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g7.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g8.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g9.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g10.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g11.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g12.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g13.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g14.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g15.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g16.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g17.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g18.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g19.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g20.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g21.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g22.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g23.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g24.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g25.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g26.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g27.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g28.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g30.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g31.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g33.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g34.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g35.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g36.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g37.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g38.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g40.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xx.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x3.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x4.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x5.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\e8.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\e9.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\down.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\up.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

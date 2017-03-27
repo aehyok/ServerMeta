@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.OrganizeExt" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.OrganizeExt" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ArrayOfOrgExtFieldDefine">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OrgExtFieldDefine" nillable="true" type="tns:OrgExtFieldDefine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrgExtFieldDefine" nillable="true" type="tns:ArrayOfOrgExtFieldDefine" />
+  <xs:complexType name="OrgExtFieldDefine">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DisplayTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FieldType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrgExtFieldDefine" nillable="true" type="tns:OrgExtFieldDefine" />
+  <xs:complexType name="ArrayOfOrgExtInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OrgExtInfo" nillable="true" type="tns:OrgExtInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrgExtInfo" nillable="true" type="tns:ArrayOfOrgExtInfo" />
+  <xs:complexType name="OrgExtInfo">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ExtProperties" nillable="true" type="q1:ArrayOfKeyValueOfstringstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrgExtInfo" nillable="true" type="tns:OrgExtInfo" />
+</xs:schema>

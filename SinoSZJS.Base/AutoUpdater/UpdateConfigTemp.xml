@@ -1,0 +1,5 @@
+﻿<VersionConfig>
+  <FileName Name="JSIS.dll" Version="1.1.0.8" AppFileURL="http://10.54.224.4/JSISUpdate/JSIS.zip"/>
+  <FileName Name="JSIS2.dll" Version="1.2.0.8" AppFileURL="http://10.54.224.4/JSISUpdate/JSIS2.zip"/>
+  <FileName Name="JSIS3.dll" Version="1.1.1.8" AppFileURL="http://10.54.224.4/JSISUpdate/JSIS3.zip"/>
+</VersionConfig>

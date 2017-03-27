@@ -1,0 +1,407 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.QueryModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.QueryModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.Define" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfMDQuery_GuideLineParameter">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MDQuery_GuideLineParameter" nillable="true" type="tns:MDQuery_GuideLineParameter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMDQuery_GuideLineParameter" nillable="true" type="tns:ArrayOfMDQuery_GuideLineParameter" />
+  <xs:complexType name="MDQuery_GuideLineParameter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Data" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="DisplayTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IncludeChildren" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ParameterName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParameterType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParameterValue" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="Paramter" nillable="true" type="tns:MD_GuideLineParameter" />
+      <xs:element minOccurs="0" name="RefTableName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SelectAllCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MDQuery_GuideLineParameter" nillable="true" type="tns:MDQuery_GuideLineParameter" />
+  <xs:complexType name="MD_GuideLineParameter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DefaultValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="DisplayTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IncludeChildren" type="xs:boolean" />
+      <xs:element minOccurs="0" name="InputWidth" type="xs:int" />
+      <xs:element minOccurs="0" name="ParameterName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParameterType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RefTableName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SelectAllCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MD_GuideLineParameter" nillable="true" type="tns:MD_GuideLineParameter" />
+  <xs:complexType name="MDModel_Table">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AliasDict" nillable="true" type="q1:ArrayOfKeyValueOfstringMDModel_Table_Columnw_SWDkve1" />
+      <xs:element minOccurs="0" name="Columns" nillable="true" type="tns:ArrayOfMDModel_Table_Column" />
+      <xs:element minOccurs="0" name="DWDM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="DisplayTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayType" type="xs:int" />
+      <xs:element minOccurs="0" name="ExtSecret" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FatherID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IntegratedApp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsSingleRelation" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MainKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Priority" type="xs:int" />
+      <xs:element minOccurs="0" name="QueryModelName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResourceType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecretFun" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.Define" minOccurs="0" name="TableDefine" nillable="true" type="q2:MD_ViewTable" />
+      <xs:element minOccurs="0" name="TableID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TableRelation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TableType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ViewID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ViewTableID" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="MDModel_Table" nillable="true" type="tns:MDModel_Table" />
+  <xs:complexType name="MDModel_Table_Column">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CTAG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CanConditionShow" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanDisplay" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanModify" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanResultShow" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ColWidth" type="xs:int" />
+      <xs:element minOccurs="0" name="ColumnAlgorithm" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ColumnAlias" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ColumnDataType" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.Define" minOccurs="0" name="ColumnDefine" nillable="true" type="q3:MD_ViewTableColumn" />
+      <xs:element minOccurs="0" name="ColumnName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ColumnRefDMB" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ColumnTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ColumnType" type="tns:QueryColumnType" />
+      <xs:element minOccurs="0" name="DMBLevelFormat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DWDM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DefaultShow" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DisplayFormat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayHeight" type="xs:int" />
+      <xs:element minOccurs="0" name="DisplayLength" type="xs:int" />
+      <xs:element minOccurs="0" name="DisplayOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="DisplayTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FixQueryItem" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsNullable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Length" type="xs:int" />
+      <xs:element minOccurs="0" name="Precision" type="xs:int" />
+      <xs:element minOccurs="0" name="Priority" type="xs:int" />
+      <xs:element minOccurs="0" name="QueryModelName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RefWordTB" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Scale" type="xs:int" />
+      <xs:element minOccurs="0" name="SecretLevel" type="xs:int" />
+      <xs:element minOccurs="0" name="TCID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VTCID" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="MDModel_Table_Column" nillable="true" type="tns:MDModel_Table_Column" />
+  <xs:simpleType name="QueryColumnType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TableColumn" />
+      <xs:enumeration value="CalculationColumn" />
+      <xs:enumeration value="StatisticsColumn" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="QueryColumnType" nillable="true" type="tns:QueryColumnType" />
+  <xs:complexType name="ArrayOfMDModel_Table_Column">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MDModel_Table_Column" nillable="true" type="tns:MDModel_Table_Column" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMDModel_Table_Column" nillable="true" type="tns:ArrayOfMDModel_Table_Column" />
+  <xs:complexType name="ArrayOfMDQuery_ComputeColumnDefine">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MDQuery_ComputeColumnDefine" nillable="true" type="tns:MDQuery_ComputeColumnDefine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMDQuery_ComputeColumnDefine" nillable="true" type="tns:ArrayOfMDQuery_ComputeColumnDefine" />
+  <xs:complexType name="MDQuery_ComputeColumnDefine">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ColumnDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ColumnMethod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ColumnName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DisplayMethod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FullModelName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsPublic" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ResultDataType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MDQuery_ComputeColumnDefine" nillable="true" type="tns:MDQuery_ComputeColumnDefine" />
+  <xs:complexType name="MDQuery_Request">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChildResultTables" nillable="true" type="tns:ArrayOfMDQuery_ResultTable" />
+      <xs:element minOccurs="0" name="ConditionExpressions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConditionItems" nillable="true" type="tns:ArrayOfMDQuery_ConditionItem" />
+      <xs:element minOccurs="0" name="MainResultTable" nillable="true" type="tns:MDQuery_ResultTable" />
+      <xs:element minOccurs="0" name="QueryModelName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MDQuery_Request" nillable="true" type="tns:MDQuery_Request" />
+  <xs:complexType name="ArrayOfMDQuery_ResultTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MDQuery_ResultTable" nillable="true" type="tns:MDQuery_ResultTable" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMDQuery_ResultTable" nillable="true" type="tns:ArrayOfMDQuery_ResultTable" />
+  <xs:complexType name="MDQuery_ResultTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Columns" nillable="true" type="tns:ArrayOfMDQuery_TableColumn" />
+      <xs:element minOccurs="0" name="DisplayTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MDQuery_ResultTable" nillable="true" type="tns:MDQuery_ResultTable" />
+  <xs:complexType name="ArrayOfMDQuery_TableColumn">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MDQuery_TableColumn" nillable="true" type="tns:MDQuery_TableColumn" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMDQuery_TableColumn" nillable="true" type="tns:ArrayOfMDQuery_TableColumn" />
+  <xs:complexType name="MDQuery_TableColumn">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ColumnAlgorithm" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ColumnAlias" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ColumnDataType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ColumnLength" type="xs:int" />
+      <xs:element minOccurs="0" name="ColumnName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ColumnTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ColumnType" type="tns:QueryColumnType" />
+      <xs:element minOccurs="0" name="DisplayFormat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayLength" type="xs:int" />
+      <xs:element minOccurs="0" name="DisplayOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="QueryModelName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RefDMB" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RefWord" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Source" nillable="true" type="tns:MDQuery_ColumnSource" />
+      <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MDQuery_TableColumn" nillable="true" type="tns:MDQuery_TableColumn" />
+  <xs:complexType name="MDQuery_ColumnSource">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ColumnName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QueryModelName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MDQuery_ColumnSource" nillable="true" type="tns:MDQuery_ColumnSource" />
+  <xs:complexType name="ArrayOfMDQuery_ConditionItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MDQuery_ConditionItem" nillable="true" type="tns:MDQuery_ConditionItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMDQuery_ConditionItem" nillable="true" type="tns:ArrayOfMDQuery_ConditionItem" />
+  <xs:complexType name="MDQuery_ConditionItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CaseSensitive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Column" nillable="true" type="tns:MDQuery_TableColumn" />
+      <xs:element minOccurs="0" name="ColumnIndex" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Operator" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Values" nillable="true" type="q4:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MDQuery_ConditionItem" nillable="true" type="tns:MDQuery_ConditionItem" />
+  <xs:complexType name="MD_GuideLine_ParamSetting">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CSID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DWID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GuideLineID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParamMeta" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MD_GuideLine_ParamSetting" nillable="true" type="tns:MD_GuideLine_ParamSetting" />
+  <xs:complexType name="ArrayOfMDQuery_ChildTableRowCount">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MDQuery_ChildTableRowCount" nillable="true" type="tns:MDQuery_ChildTableRowCount" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMDQuery_ChildTableRowCount" nillable="true" type="tns:ArrayOfMDQuery_ChildTableRowCount" />
+  <xs:complexType name="MDQuery_ChildTableRowCount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RowCount" type="xs:int" />
+      <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MDQuery_ChildTableRowCount" nillable="true" type="tns:MDQuery_ChildTableRowCount" />
+  <xs:complexType name="ArrayOfMDSearch_Column">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MDSearch_Column" nillable="true" type="tns:MDSearch_Column" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMDSearch_Column" nillable="true" type="tns:ArrayOfMDSearch_Column" />
+  <xs:complexType name="MDSearch_Column">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ColumnName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ColumnTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModelName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.Define" minOccurs="0" name="QueryModel" nillable="true" type="q5:MD_QueryModel" />
+      <xs:element minOccurs="0" name="TableKeyColumn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TableTitle" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MDSearch_Column" nillable="true" type="tns:MDSearch_Column" />
+  <xs:complexType name="ArrayOfMDSearch_ResultDataIndex">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MDSearch_ResultDataIndex" nillable="true" type="tns:MDSearch_ResultDataIndex" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMDSearch_ResultDataIndex" nillable="true" type="tns:ArrayOfMDSearch_ResultDataIndex" />
+  <xs:complexType name="MDSearch_ResultDataIndex">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Content" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataLocation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataSource" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MainKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MatchPosition" type="xs:int" />
+      <xs:element minOccurs="0" name="SourceColumn" nillable="true" type="tns:MDSearch_Column" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MDSearch_ResultDataIndex" nillable="true" type="tns:MDSearch_ResultDataIndex" />
+  <xs:complexType name="ArrayOfMD_GuideLine">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MD_GuideLine" nillable="true" type="tns:MD_GuideLine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMD_GuideLine" nillable="true" type="tns:ArrayOfMD_GuideLine" />
+  <xs:complexType name="MD_GuideLine">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Children" nillable="true" type="tns:ArrayOfMD_GuideLine" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetailDefines" nillable="true" type="tns:ArrayOfMD_GuideLineDetailDefine" />
+      <xs:element minOccurs="0" name="DetailMeta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="FatherID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GuideLineMeta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GuideLineMethod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GuideLineName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GuideLineQueryMethod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MD_GuideLineGroup" nillable="true" type="tns:MD_GuideLineGroup" />
+      <xs:element minOccurs="0" name="Parameters" nillable="true" type="tns:ArrayOfMD_GuideLineParameter" />
+      <xs:element minOccurs="0" name="ResultGroups" nillable="true" type="tns:ArrayOfMD_GuideLineFieldGroup" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="MD_GuideLine" nillable="true" type="tns:MD_GuideLine" />
+  <xs:complexType name="ArrayOfMD_GuideLineDetailDefine">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MD_GuideLineDetailDefine" nillable="true" type="tns:MD_GuideLineDetailDefine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMD_GuideLineDetailDefine" nillable="true" type="tns:ArrayOfMD_GuideLineDetailDefine" />
+  <xs:complexType name="MD_GuideLineDetailDefine">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DetailLinkMeta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetailMethodID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetailParameterMeta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QueryDetailType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TargetFieldName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MD_GuideLineDetailDefine" nillable="true" type="tns:MD_GuideLineDetailDefine" />
+  <xs:complexType name="MD_GuideLineGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChildGuideLines" nillable="true" type="tns:ArrayOfMD_GuideLine" />
+      <xs:element minOccurs="0" name="LX" type="xs:int" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.Define" minOccurs="0" name="MD_Nodes" nillable="true" type="q6:MD_Nodes" />
+      <xs:element minOccurs="0" name="NamespaceName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QXLX" type="xs:int" />
+      <xs:element minOccurs="0" name="SSDW" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZBZTMC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZBZTSM" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="MD_GuideLineGroup" nillable="true" type="tns:MD_GuideLineGroup" />
+  <xs:complexType name="ArrayOfMD_GuideLineParameter">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MD_GuideLineParameter" nillable="true" type="tns:MD_GuideLineParameter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMD_GuideLineParameter" nillable="true" type="tns:ArrayOfMD_GuideLineParameter" />
+  <xs:complexType name="ArrayOfMD_GuideLineFieldGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MD_GuideLineFieldGroup" nillable="true" type="tns:MD_GuideLineFieldGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMD_GuideLineFieldGroup" nillable="true" type="tns:ArrayOfMD_GuideLineFieldGroup" />
+  <xs:complexType name="MD_GuideLineFieldGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CanHide" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DefaultStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="DisplayTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fields" nillable="true" type="tns:ArrayOfMD_GuideLineFieldName" />
+      <xs:element minOccurs="0" name="GroupName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TextAlign" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MD_GuideLineFieldGroup" nillable="true" type="tns:MD_GuideLineFieldGroup" />
+  <xs:complexType name="ArrayOfMD_GuideLineFieldName">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MD_GuideLineFieldName" nillable="true" type="tns:MD_GuideLineFieldName" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMD_GuideLineFieldName" nillable="true" type="tns:ArrayOfMD_GuideLineFieldName" />
+  <xs:complexType name="MD_GuideLineFieldName">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CanHide" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DisplayFormat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="DisplayTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayWidth" type="xs:int" />
+      <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TextAlign" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MD_GuideLineFieldName" nillable="true" type="tns:MD_GuideLineFieldName" />
+  <xs:complexType name="ArrayOfMDQuery_Task">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MDQuery_Task" nillable="true" type="tns:MDQuery_Task" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMDQuery_Task" nillable="true" type="tns:ArrayOfMDQuery_Task" />
+  <xs:complexType name="MDQuery_Task">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClearTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FinishedTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OutTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Priority" type="xs:int" />
+      <xs:element minOccurs="0" name="RequestPostDWID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequestPostDwName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequestPostID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequestPostName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequestTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RequestUserID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequestUserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResultLocked" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TaskID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaskName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaskState" type="xs:int" />
+      <xs:element minOccurs="0" name="TaskType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MDQuery_Task" nillable="true" type="tns:MDQuery_Task" />
+</xs:schema>

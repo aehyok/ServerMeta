@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6c401f37-2a04-4197-83d5-dae5e9fa7365" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8732/Design_Time_Addresses/SinoSZJS.WCF.Lib/SinoBestMTS/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="161e35f2-6ae8-4c34-bd6b-d498455348a9" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SinoSZJS.WCF.Lib/SinoBestMTS/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="58a31f8c-15b3-47b3-8967-c937ae9b61cb" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SinoSZJS.WCF.Lib/SinoBestMTS/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="796033d4-3ed3-4509-9375-22357a4666da" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SinoSZJS.WCF.Lib/SinoBestMTS/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

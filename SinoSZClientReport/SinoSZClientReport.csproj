@@ -1,0 +1,754 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9133B7C0-9555-48C8-8CC2-1ADC32A8859A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SinoSZClientReport</RootNamespace>
+    <AssemblyName>SinoSZClientReport</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\DebugTemp\Client\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'FsDiSys|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\FsDiSys\bin\FsDiSys\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <DocumentationFile>
+    </DocumentationFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'JSCASys|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\JSCASys\bin\JSCASys\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleAssemblies>
+    </CodeAnalysisRuleAssemblies>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>Migrated rules for SinoSZClientReport.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'SZZHSys|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\SZZHSys\bin\SZZHSys\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleAssemblies>
+    </CodeAnalysisRuleAssemblies>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>Migrated rules for SinoSZClientReport.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'SinoSZWebVss|AnyCPU' ">
+    <OutputPath>bin\SinoSZWebVss\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleAssemblies>
+    </CodeAnalysisRuleAssemblies>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>Migrated rules for SinoSZClientReport.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'X86|AnyCPU' ">
+    <OutputPath>bin\X86\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleAssemblies>
+    </CodeAnalysisRuleAssemblies>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>Migrated rules for SinoSZClientReport.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Spreadsheet.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v14.1.UI, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraSpreadsheet.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\SinoUC_BrowseReportInputDate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\SinoUC_BrowseReportInputDate.Designer.cs">
+      <DependentUpon>SinoUC_BrowseReportInputDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\SinoUC_BrowseReportInputHalfYear.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\SinoUC_BrowseReportInputHalfYear.Designer.cs">
+      <DependentUpon>SinoUC_BrowseReportInputHalfYear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\SinoUC_BrowseReportInputMonth.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\SinoUC_BrowseReportInputMonth.Designer.cs">
+      <DependentUpon>SinoUC_BrowseReportInputMonth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\SinoUC_BrowseReportInputYear.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\SinoUC_BrowseReportInputYear.Designer.cs">
+      <DependentUpon>SinoUC_BrowseReportInputYear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\SinoUC_BrowseReportInputSeason.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\SinoUC_BrowseReportInputSeason.Designer.cs">
+      <DependentUpon>SinoUC_BrowseReportInputSeason.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\SinoUC_InitData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\SinoUC_InitData.Designer.cs">
+      <DependentUpon>SinoUC_InitData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\SinoUC_InputReportDate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\SinoUC_InputReportDate.Designer.cs">
+      <DependentUpon>SinoUC_InputReportDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\SinoUC_InputReportDateBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\SinoUC_InputReportDateBase.Designer.cs">
+      <DependentUpon>SinoUC_InputReportDateBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\SinoUC_InputReportHalfYear.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\SinoUC_InputReportHalfYear.Designer.cs">
+      <DependentUpon>SinoUC_InputReportHalfYear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\SinoUC_InputReportMonth.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\SinoUC_InputReportMonth.Designer.cs">
+      <DependentUpon>SinoUC_InputReportMonth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\SinoUC_InputReportSeason.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\SinoUC_InputReportSeason.Designer.cs">
+      <DependentUpon>SinoUC_InputReportSeason.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\SinoUC_InputReportYear.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\SinoUC_InputReportYear.Designer.cs">
+      <DependentUpon>SinoUC_InputReportYear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\SinoUC_ReportDateInput.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\SinoUC_ReportDateInput.Designer.cs">
+      <DependentUpon>SinoUC_ReportDateInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\SinoUC_ReportHalfYearInput.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\SinoUC_ReportHalfYearInput.Designer.cs">
+      <DependentUpon>SinoUC_ReportHalfYearInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\SinoUC_ReportSeasonInput.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\SinoUC_ReportSeasonInput.Designer.cs">
+      <DependentUpon>SinoUC_ReportSeasonInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\SinoUC_ReportYearInput.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\SinoUC_ReportYearInput.Designer.cs">
+      <DependentUpon>SinoUC_ReportYearInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\SinoUC_ReportInputBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\SinoUC_ReportMonthInput.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\SinoUC_ReportMonthInput.Designer.cs">
+      <DependentUpon>SinoUC_ReportMonthInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataCheck\Board\Dialog_SHMsgInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataCheck\Board\Dialog_SHMsgInfo.Designer.cs">
+      <DependentUpon>Dialog_SHMsgInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataCheck\Board\frmDataCheckBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataCheck\Board\frmDataCheckBoard.Designer.cs">
+      <DependentUpon>frmDataCheckBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataCheck\DC_DataCheckParam.cs" />
+    <Compile Include="DataCheck\DC_FilterDefine.cs" />
+    <Compile Include="DataCheck\Dialg_ModifyRule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataCheck\Dialg_ModifyRule.Designer.cs">
+      <DependentUpon>Dialg_ModifyRule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataCheck\Dialog_AddRule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataCheck\Dialog_AddRule.Designer.cs">
+      <DependentUpon>Dialog_AddRule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataCheck\Dialog_ImportRules.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataCheck\Dialog_ImportRules.Designer.cs">
+      <DependentUpon>Dialog_ImportRules.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataCheck\Dialog_InputSHInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataCheck\Dialog_InputSHInfo.Designer.cs">
+      <DependentUpon>Dialog_InputSHInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataCheck\Dialog_ShowHisData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataCheck\Dialog_ShowHisData.Designer.cs">
+      <DependentUpon>Dialog_ShowHisData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataCheck\frmCheckSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataCheck\frmCheckSearch.designer.cs">
+      <DependentUpon>frmCheckSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataCheck\frmDataCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataCheck\frmDataCheck.Designer.cs">
+      <DependentUpon>frmDataCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataCheck\frm_DataCheckInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataCheck\frm_DataCheckInfo.Designer.cs">
+      <DependentUpon>frm_DataCheckInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataCheck\MC_CheckRule.cs" />
+    <Compile Include="DataCheck\Meta_TableFieldBuilder.cs" />
+    <Compile Include="DataCheck\SinoUC_CheckDataSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DataCheck\SinoUC_CheckDataSearch.Designer.cs">
+      <DependentUpon>SinoUC_CheckDataSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataCheck\SinoUC_SHInput.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DataCheck\SinoUC_SHInput.Designer.cs">
+      <DependentUpon>SinoUC_SHInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_CreateReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_CreateReport.Designer.cs">
+      <DependentUpon>Dialog_CreateReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_VerifyReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_VerifyReport.Designer.cs">
+      <DependentUpon>Dialog_VerifyReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExcelReport\ShowExcelReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExcelReport\ShowExcelReport.Designer.cs">
+      <DependentUpon>ShowExcelReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBrowseReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBrowseReport.Designer.cs">
+      <DependentUpon>frmBrowseReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCreateReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCreateReport.Designer.cs">
+      <DependentUpon>frmCreateReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTMLReport\Dialog_ExportReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HTMLReport\Dialog_ExportReport.Designer.cs">
+      <DependentUpon>Dialog_ExportReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTMLReport\frmShowHTMLReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HTMLReport\frmShowHTMLReport.Designer.cs">
+      <DependentUpon>frmShowHTMLReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuController.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RDSLReport\frmShowRsReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RDSLReport\frmShowRsReport.Designer.cs">
+      <DependentUpon>frmShowRsReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RDSLReport\SinoUC_ShowRDSLReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RDSLReport\SinoUC_ShowRDSLReport.Designer.cs">
+      <DependentUpon>SinoUC_ShowRDSLReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportGuideLine\frmReportGuideLineQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportGuideLine\frmReportGuideLineQuery.Designer.cs">
+      <DependentUpon>frmReportGuideLineQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportGuideLine\ReportGuideLineUC_InputTJRQ.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReportGuideLine\ReportGuideLineUC_InputTJRQ.Designer.cs">
+      <DependentUpon>ReportGuideLineUC_InputTJRQ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportGuideLine\ReportGuideLineUC_Query.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReportGuideLine\ReportGuideLineUC_Query.Designer.cs">
+      <DependentUpon>ReportGuideLineUC_Query.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SinoSZClientReportPlugin.cs" />
+    <Compile Include="Common\SinoUC_BrowseReportInputBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\SinoUC_BrowseReportInputBase.Designer.cs">
+      <DependentUpon>SinoUC_BrowseReportInputBase.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SinoSZClientBase\SinoSZClientBase.csproj">
+      <Project>{ABDD3C32-17A9-4EA0-BFF8-7FCBEDF38F5D}</Project>
+      <Name>SinoSZClientBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SinoSZJS.Base\SinoSZJS.Base.csproj">
+      <Project>{29F48920-647F-48A2-A222-34276057D81A}</Project>
+      <Name>SinoSZJS.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SinoSZMetaDataQuery\SinoSZMetaDataQuery.csproj">
+      <Project>{381DC38A-CE47-4568-91B4-0E776F5201E3}</Project>
+      <Name>SinoSZMetaDataQuery</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SinoSZPluginFramework\SinoSZPluginFramework.csproj">
+      <Project>{C855A639-511E-4B4F-8A71-3224083C5D40}</Project>
+      <Name>SinoSZPluginFramework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Common\SinoUC_BrowseReportInputDate.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SinoUC_BrowseReportInputDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\SinoUC_BrowseReportInputHalfYear.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SinoUC_BrowseReportInputHalfYear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\SinoUC_BrowseReportInputMonth.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SinoUC_BrowseReportInputMonth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\SinoUC_BrowseReportInputYear.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SinoUC_BrowseReportInputYear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\SinoUC_BrowseReportInputSeason.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SinoUC_BrowseReportInputSeason.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\SinoUC_InitData.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SinoUC_InitData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\SinoUC_InputReportDate.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SinoUC_InputReportDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\SinoUC_InputReportDateBase.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SinoUC_InputReportDateBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\SinoUC_InputReportHalfYear.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SinoUC_InputReportHalfYear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\SinoUC_InputReportMonth.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SinoUC_InputReportMonth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\SinoUC_InputReportSeason.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SinoUC_InputReportSeason.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\SinoUC_InputReportYear.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SinoUC_InputReportYear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\SinoUC_ReportDateInput.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SinoUC_ReportDateInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\SinoUC_ReportHalfYearInput.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SinoUC_ReportHalfYearInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\SinoUC_ReportSeasonInput.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SinoUC_ReportSeasonInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\SinoUC_ReportYearInput.resx">
+      <DependentUpon>SinoUC_ReportYearInput.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\SinoUC_ReportInputBase.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SinoUC_ReportInputBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\SinoUC_ReportMonthInput.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SinoUC_ReportMonthInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataCheck\Board\Dialog_SHMsgInfo.resx">
+      <DependentUpon>Dialog_SHMsgInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataCheck\Board\frmDataCheckBoard.resx">
+      <DependentUpon>frmDataCheckBoard.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataCheck\Dialg_ModifyRule.resx">
+      <DependentUpon>Dialg_ModifyRule.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataCheck\Dialog_AddRule.resx">
+      <DependentUpon>Dialog_AddRule.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataCheck\Dialog_ImportRules.resx">
+      <DependentUpon>Dialog_ImportRules.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataCheck\Dialog_InputSHInfo.resx">
+      <DependentUpon>Dialog_InputSHInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataCheck\Dialog_ShowHisData.resx">
+      <DependentUpon>Dialog_ShowHisData.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataCheck\frmCheckSearch.resx">
+      <DependentUpon>frmCheckSearch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataCheck\frmDataCheck.resx">
+      <DependentUpon>frmDataCheck.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataCheck\frm_DataCheckInfo.resx">
+      <DependentUpon>frm_DataCheckInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataCheck\SinoUC_CheckDataSearch.resx">
+      <DependentUpon>SinoUC_CheckDataSearch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataCheck\SinoUC_SHInput.resx">
+      <DependentUpon>SinoUC_SHInput.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_CreateReport.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Dialog_CreateReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_VerifyReport.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Dialog_VerifyReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExcelReport\ShowExcelReport.resx">
+      <DependentUpon>ShowExcelReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBrowseReport.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmBrowseReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCreateReport.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmCreateReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTMLReport\Dialog_ExportReport.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Dialog_ExportReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTMLReport\frmShowHTMLReport.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmShowHTMLReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RDSLReport\frmShowRsReport.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmShowRsReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RDSLReport\JS01.rdlc" />
+    <EmbeddedResource Include="RDSLReport\SinoUC_ShowRDSLReport.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SinoUC_ShowRDSLReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\SinoUC_BrowseReportInputBase.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SinoUC_BrowseReportInputBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportGuideLine\frmReportGuideLineQuery.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmReportGuideLineQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportGuideLine\ReportGuideLineUC_InputTJRQ.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ReportGuideLineUC_InputTJRQ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportGuideLine\ReportGuideLineUC_Query.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ReportGuideLineUC_Query.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Migrated rules for SinoSZClientReport.ruleset" />
+    <None Include="Resources\line2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Waiting7.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d11.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d3.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d4.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d5.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d6.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d7.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d8.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d9.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d10.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xx.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x3.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x4.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\p4.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\p3.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\p6.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="InitDataSet\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g16.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g17.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b5.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tableline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b15.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\action_check.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\action_delete.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\001_11.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b22.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blank.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

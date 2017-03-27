@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.QueryModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.QueryModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.Define" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfMD_GuideLineGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MD_GuideLineGroup" nillable="true" type="tns:MD_GuideLineGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMD_GuideLineGroup" nillable="true" type="tns:ArrayOfMD_GuideLineGroup" />
+  <xs:complexType name="MD_GuideLineGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChildGuideLines" nillable="true" type="tns:ArrayOfMD_GuideLine" />
+      <xs:element minOccurs="0" name="LX" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.Define" minOccurs="0" name="MD_Nodes" nillable="true" type="q1:MD_Nodes" />
+      <xs:element minOccurs="0" name="NamespaceName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QXLX" type="xs:int" />
+      <xs:element minOccurs="0" name="SSDW" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZBZTMC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZBZTSM" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="MD_GuideLineGroup" nillable="true" type="tns:MD_GuideLineGroup" />
+  <xs:complexType name="ArrayOfMD_GuideLine">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MD_GuideLine" nillable="true" type="tns:MD_GuideLine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMD_GuideLine" nillable="true" type="tns:ArrayOfMD_GuideLine" />
+  <xs:complexType name="MD_GuideLine">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Children" nillable="true" type="tns:ArrayOfMD_GuideLine" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetailDefines" nillable="true" type="tns:ArrayOfMD_GuideLineDetailDefine" />
+      <xs:element minOccurs="0" name="DetailMeta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="FatherID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GuideLineMeta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GuideLineMethod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GuideLineName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GuideLineQueryMethod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MD_GuideLineGroup" nillable="true" type="tns:MD_GuideLineGroup" />
+      <xs:element minOccurs="0" name="Parameters" nillable="true" type="tns:ArrayOfMD_GuideLineParameter" />
+      <xs:element minOccurs="0" name="ResultGroups" nillable="true" type="tns:ArrayOfMD_GuideLineFieldGroup" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="MD_GuideLine" nillable="true" type="tns:MD_GuideLine" />
+  <xs:complexType name="ArrayOfMD_GuideLineDetailDefine">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MD_GuideLineDetailDefine" nillable="true" type="tns:MD_GuideLineDetailDefine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMD_GuideLineDetailDefine" nillable="true" type="tns:ArrayOfMD_GuideLineDetailDefine" />
+  <xs:complexType name="MD_GuideLineDetailDefine">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DetailLinkMeta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetailMethodID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetailParameterMeta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QueryDetailType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TargetFieldName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MD_GuideLineDetailDefine" nillable="true" type="tns:MD_GuideLineDetailDefine" />
+  <xs:complexType name="ArrayOfMD_GuideLineParameter">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MD_GuideLineParameter" nillable="true" type="tns:MD_GuideLineParameter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMD_GuideLineParameter" nillable="true" type="tns:ArrayOfMD_GuideLineParameter" />
+  <xs:complexType name="MD_GuideLineParameter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DefaultValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="DisplayTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IncludeChildren" type="xs:boolean" />
+      <xs:element minOccurs="0" name="InputWidth" type="xs:int" />
+      <xs:element minOccurs="0" name="ParameterName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParameterType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RefTableName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SelectAllCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MD_GuideLineParameter" nillable="true" type="tns:MD_GuideLineParameter" />
+  <xs:complexType name="ArrayOfMD_GuideLineFieldGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MD_GuideLineFieldGroup" nillable="true" type="tns:MD_GuideLineFieldGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMD_GuideLineFieldGroup" nillable="true" type="tns:ArrayOfMD_GuideLineFieldGroup" />
+  <xs:complexType name="MD_GuideLineFieldGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CanHide" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DefaultStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="DisplayTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fields" nillable="true" type="tns:ArrayOfMD_GuideLineFieldName" />
+      <xs:element minOccurs="0" name="GroupName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TextAlign" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MD_GuideLineFieldGroup" nillable="true" type="tns:MD_GuideLineFieldGroup" />
+  <xs:complexType name="ArrayOfMD_GuideLineFieldName">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MD_GuideLineFieldName" nillable="true" type="tns:MD_GuideLineFieldName" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMD_GuideLineFieldName" nillable="true" type="tns:ArrayOfMD_GuideLineFieldName" />
+  <xs:complexType name="MD_GuideLineFieldName">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CanHide" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DisplayFormat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="DisplayTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayWidth" type="xs:int" />
+      <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TextAlign" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MD_GuideLineFieldName" nillable="true" type="tns:MD_GuideLineFieldName" />
+</xs:schema>

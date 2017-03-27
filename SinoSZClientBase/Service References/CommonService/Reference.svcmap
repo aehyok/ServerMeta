@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f17e668d-4dd0-4448-8f82-446c94adc28e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8732/Design_Time_Addresses/SinoSZJS.WCF.Lib/CommonService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="fb8abc17-d4e2-4b59-a010-0744b867057f" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SinoSZJS.WCF.Lib/CommonService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="b2bd1f5d-b6c9-4deb-9315-17d84ea06c29" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SinoSZJS.WCF.Lib/CommonService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="78e96971-47fa-4492-9730-e27f732990f6" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SinoSZJS.WCF.Lib/CommonService/mex" />
+    <MetadataFile FileName="SinoSZJS.Base.Authorize.xsd" MetadataType="Schema" ID="b2d32457-d3d8-46b7-8e7c-58540db03e23" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SinoSZJS.WCF.Lib/CommonService/mex" />
+    <MetadataFile FileName="SinoSZJS.Base.Config.xsd" MetadataType="Schema" ID="a6038e24-8723-4c0a-970e-aac42d6b25a6" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SinoSZJS.WCF.Lib/CommonService/mex" />
+    <MetadataFile FileName="SinoSZJS.Base.MenuType.xsd" MetadataType="Schema" ID="d1e45c40-ef1c-4742-bb93-fc015e9a7e78" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SinoSZJS.WCF.Lib/CommonService/mex" />
+    <MetadataFile FileName="SinoSZJS.Base.UserLog.xsd" MetadataType="Schema" ID="a09dd3ff-d8c8-4323-b165-544c3e8ac7de" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SinoSZJS.WCF.Lib/CommonService/mex" />
+    <MetadataFile FileName="SinoSZJS.Base.SystemLog.xsd" MetadataType="Schema" ID="549d6a7d-7bdd-4e6d-a2ae-819a2181aa17" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SinoSZJS.WCF.Lib/CommonService/mex" />
+    <MetadataFile FileName="System.Data.xsd" MetadataType="Schema" ID="76d4183b-9b2a-422c-a2e8-421f9b93bafb" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SinoSZJS.WCF.Lib/CommonService/mex" />
+    <MetadataFile FileName="SinoSZJS.Base.Notify.xsd" MetadataType="Schema" ID="3bebd716-24ab-4ef9-8ecd-2ab80ab61d8d" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SinoSZJS.WCF.Lib/CommonService/mex" />
+    <MetadataFile FileName="SinoSZJS.Base.OrganizeExt.xsd" MetadataType="Schema" ID="9e697dbc-31b0-4119-91d0-6d0226d94889" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SinoSZJS.WCF.Lib/CommonService/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="c052f799-00a2-46c7-9686-03501a65da42" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SinoSZJS.WCF.Lib/CommonService/mex" />
+    <MetadataFile FileName="SinoSZJS.Base.TaskInfo.xsd" MetadataType="Schema" ID="6f4fd73c-bed7-42b9-8465-f0ad60a49dc9" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SinoSZJS.WCF.Lib/CommonService/mex" />
+    <MetadataFile FileName="SinoSZJS.Base.RefCode.xsd" MetadataType="Schema" ID="1fe6a918-d350-48ed-809a-96de26ddfce0" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SinoSZJS.WCF.Lib/CommonService/mex" />
+    <MetadataFile FileName="SinoSZJS.Base.WorkCalendar.xsd" MetadataType="Schema" ID="9a533e05-e446-4ec2-bd9d-62efe3e3e554" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SinoSZJS.WCF.Lib/CommonService/mex" />
+    <MetadataFile FileName="SinoSZJS.Base.JSGDS.xsd" MetadataType="Schema" ID="ab75e7ac-086c-4b1a-84e1-0e332779b465" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/SinoSZJS.WCF.Lib/CommonService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

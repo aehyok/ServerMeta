@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2297853B-C19B-42CE-9CD1-376885BFAF32}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SinoSZJS.Configs</RootNamespace>
+    <AssemblyName>SinoSZJS.Configs</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Content Include="执法办案平台\Client\测试环境\Web_SZ.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="执法办案平台\Client\测试环境\Web_SZ.Debug.config">
+      <DependentUpon>Web_SZ.config</DependentUpon>
+    </Content>
+    <Content Include="执法办案平台\Client\测试环境\Web_SZ.Release.config">
+      <DependentUpon>Web_SZ.config</DependentUpon>
+    </Content>
+    <None Include="执法办案平台\AutoUpdate\App.config" />
+    <None Include="执法办案平台\Client\运行环境\测试主机_x64_统计系统测试版.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="执法办案平台\Client\开发环境\深圳_开发_统计系统测试版.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="执法办案平台\Client\测试环境\租用主机_测试_x64_统计系统测试版.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="执法办案平台\Client\运行环境\管理网测试主机.config" />
+    <None Include="执法办案平台\Server\开发环境\公司_253_SJGK.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="执法办案平台\Server\开发环境\南京_开发.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="执法办案平台\Server\开发环境\江门_开发.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="执法办案平台\Server\开发环境\黄埔_开发.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="执法办案平台\Server\开发环境\深圳_开发.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="执法办案平台\Server\测试环境\App_JSYW.config" />
+    <None Include="执法办案平台\Server\测试环境\正式环境自己验证SinoSZJS.CS.Server.exe.config" />
+    <None Include="执法办案平台\Server\测试环境\租用主机_测试_x64.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="执法办案平台\Server\运行环境\测试主机_x64.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="执法办案平台\WebServer\开发环境\App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="执法办案平台\WebServer\测试环境\App_JSYW.config" />
+    <Content Include="执法办案平台\Web\开发环境\Web.config" />
+    <Content Include="执法办案平台\Web\开发环境\Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="执法办案平台\Web\开发环境\Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="执法办案平台\Web\测试环境\三统一测试.config" />
+    <Content Include="执法办案平台\Web\测试环境\Web.Debug.config">
+      <DependentUpon>三统一测试.config</DependentUpon>
+    </Content>
+    <Content Include="执法办案平台\Web\测试环境\Web.Release.config">
+      <DependentUpon>三统一测试.config</DependentUpon>
+    </Content>
+    <None Include="执法办案平台\WebServer\运行环境\App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="执法办案平台\Web\运行环境\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="执法办案平台\Web\运行环境\Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="执法办案平台\Web\运行环境\Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <None Include="执法办案平台\WebServer\运行环境\SinoSZJS.WebServer.exe.config" />
+    <None Include="执法办案平台\Web\测试环境\SinoSZJS.WebQueryServer2.exe.config" />
+    <None Include="执法办案平台\Web\测试环境\Web深加工库.config" />
+    <None Include="执法办案平台\Web\测试环境\正式环境测试.config" />
+    <None Include="执法办案平台\Web\运行环境\WebService服务.config" />
+    <None Include="统计系统\AutoUpdate\App.config" />
+    <None Include="统计系统\Client\运行环境_正式地址.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="统计系统\Client\运行环境_测试地址.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="统计系统\Server\正式运行环境_152.config" />
+    <None Include="统计系统\Server\运行环境_正式地址.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="统计系统\Server\虚拟主机测试地址.config" />
+    <None Include="统计系统\Server\运行环境_测试地址.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,592 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{76FC4ED1-A1D0-4167-9C82-2B69EFF6A33B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SinoSZJS.Base</RootNamespace>
+    <AssemblyName>SinoSZJS.Base</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\SinoSZJS.Base.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>bin\Debug\SinoSZJS.Base.XML</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\SinoSZJS.Base.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;F:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;F:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\SinoSZJS.Base.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;F:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;F:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppRegEnity\AppInfo.cs" />
+    <Compile Include="AppRegEnity\RegisterInfo.cs" />
+    <Compile Include="AppRegEnity\ResourceInfo.cs" />
+    <Compile Include="AppRegEnity\SinoAppMenu.cs" />
+    <Compile Include="AssistCase\AppManagerInfo.cs" />
+    <Compile Include="AssistCase\AssessInfo.cs" />
+    <Compile Include="AssistCase\CaseDocWSMLInfo.cs" />
+    <Compile Include="AssistCase\Case_WPCQLIST.cs" />
+    <Compile Include="AssistCase\ExTaxInfo.cs" />
+    <Compile Include="AssistCase\GoodsInfo.cs" />
+    <Compile Include="AssistCase\WPBMXHInfo.cs" />
+    <Compile Include="Authorize\ConOrgTreeModel.cs" />
+    <Compile Include="Authorize\CSSinoRole.cs" />
+    <Compile Include="Authorize\CUPPA\CUPPAPassportConfig.cs" />
+    <Compile Include="Authorize\FindOrgByStr.cs" />
+    <Compile Include="Authorize\IAuthorize.cs" />
+    <Compile Include="Authorize\ISinoCurrent.cs" />
+    <Compile Include="Authorize\IUserInfoCTX.cs" />
+    <Compile Include="Authorize\LogonUserLib.cs" />
+    <Compile Include="Authorize\ModelExRightFlag.cs" />
+    <Compile Include="Authorize\ModelRightFlag.cs" />
+    <Compile Include="Authorize\RemotingUserCTX.cs" />
+    <Compile Include="Authorize\RightFunctions.cs" />
+    <Compile Include="Authorize\SessionClass.cs" />
+    <Compile Include="Authorize\SinoAppUserCurrent.cs" />
+    <Compile Include="Authorize\SinoDWList.cs" />
+    <Compile Include="Authorize\SinoOrganize.cs" />
+    <Compile Include="Authorize\SinoOrganizeComparer.cs" />
+    <Compile Include="Authorize\SinoPost.cs" />
+    <Compile Include="Authorize\SinoPricipal.cs" />
+    <Compile Include="Authorize\SinoRequestUser.cs" />
+    <Compile Include="Authorize\SinoRightItem.cs" />
+    <Compile Include="Authorize\SinoRole.cs" />
+    <Compile Include="Authorize\SinoSZTicketInfo.cs" />
+    <Compile Include="Authorize\SinoUser.cs" />
+    <Compile Include="Authorize\SinoUserBaseInfo.cs" />
+    <Compile Include="Authorize\SinoUserCTX.cs" />
+    <Compile Include="Authorize\SinoUserCurrent.cs" />
+    <Compile Include="Authorize\TicketLib.cs" />
+    <Compile Include="Authorize\UserRightFlag.cs" />
+    <Compile Include="Authorize\UserRightItem.cs" />
+    <Compile Include="Authorize\WCFUserCTX.cs" />
+    <Compile Include="AutoUpdater\AutoUpdateConfig.cs" />
+    <Compile Include="AutoUpdater\ClientPluginInfo.cs" />
+    <Compile Include="AutoUpdater\PluginConfigurationCollection.cs" />
+    <Compile Include="AutoUpdater\PluginConfigurationElement.cs" />
+    <Compile Include="AutoUpdater\PluginConfigurationSection.cs" />
+    <Compile Include="AutoUpdater\UpdateFileInfo.cs" />
+    <Compile Include="BackLog\BackLogGroup.cs" />
+    <Compile Include="BackLog\BackLogRegInfo.cs" />
+    <Compile Include="CalcMemory.cs" />
+    <Compile Include="Case\ProcessEntity.cs" />
+    <Compile Include="ChartEnity\ChartInfo.cs" />
+    <Compile Include="CloneSerializeObject.cs" />
+    <Compile Include="Clue\ClueRelationEntity.cs" />
+    <Compile Include="CommonEventArgs.cs" />
+    <Compile Include="Config\MVCConfig.cs" />
+    <Compile Include="Config\LocalConfigData.cs" />
+    <Compile Include="Config\ServerConfig.cs" />
+    <Compile Include="Controller\MC_CompareRequsetFactory.cs" />
+    <Compile Include="Controller\MC_FindRightByStr.cs" />
+    <Compile Include="Controller\MC_QueryRequsetFactory.cs" />
+    <Compile Include="Controller\MC_RightComparer.cs" />
+    <Compile Include="DataFormater\DateTimeHalfYearFormater.cs" />
+    <Compile Include="DataFormater\DateTimeSeasonFormater.cs" />
+    <Compile Include="DateTimeDefine\SinoSZ_Season.cs" />
+    <Compile Include="DeleteEntity\DeletedEntity.cs" />
+    <Compile Include="Document\Attachment.cs" />
+    <Compile Include="Document\DocDW.cs" />
+    <Compile Include="Document\DocEntity.cs" />
+    <Compile Include="Document\DocItem.cs" />
+    <Compile Include="Document\DocItemMX.cs" />
+    <Compile Include="Document\DocState.cs" />
+    <Compile Include="Document\DomAddActionsEntity.cs" />
+    <Compile Include="Document\WSConfige.cs" />
+    <Compile Include="Document\WSFLEntity.cs" />
+    <Compile Include="Document\WSListEntity.cs" />
+    <Compile Include="Document\WSLXEntity.cs" />
+    <Compile Include="Esb\EsbMessageHZ2011.cs" />
+    <Compile Include="Esb\EsbMessageManager.cs" />
+    <Compile Include="Excel\ExcelColumnAlias.cs" />
+    <Compile Include="Expression\Expression.cs" />
+    <Compile Include="Expression\ExpressionException.cs" />
+    <Compile Include="Expression\ExpressionToken.cs" />
+    <Compile Include="Expression\FuncFactory.cs" />
+    <Compile Include="Expression\FunctionBase.cs" />
+    <Compile Include="Expression\Functions.cs" />
+    <Compile Include="Expression\OperatorType.cs" />
+    <Compile Include="Expression\QueryExpression.cs" />
+    <Compile Include="Flow\ActionEntity.cs" />
+    <Compile Include="Flow\BizEntityAction.cs" />
+    <Compile Include="Flow\FlowEntity.cs" />
+    <Compile Include="Flow\FlowEntityConfigItem.cs" />
+    <Compile Include="Flow\Flow_BaseDefine.cs" />
+    <Compile Include="Flow\Flow_Direction.cs" />
+    <Compile Include="Flow\Flow_DirectionUnit.cs" />
+    <Compile Include="Flow\Flow_StateActionDefine.cs" />
+    <Compile Include="Flow\Flow_StateDefine.cs" />
+    <Compile Include="Flow\Flow_StateUnitDefine.cs" />
+    <Compile Include="Flow\IDirectionUnit.cs" />
+    <Compile Include="Flow\LocationActionMap.cs" />
+    <Compile Include="Flow\SinoButton_Parameter.cs" />
+    <Compile Include="Flow\StateEntity.cs" />
+    <Compile Include="Flow\SystemFlow.cs" />
+    <Compile Include="FunctionRegister\Fun_Register.cs" />
+    <Compile Include="GuideLine\GridInfo.cs" />
+    <Compile Include="GuideLine\GuideLineEntity.cs" />
+    <Compile Include="GuideLine\GuideLineModel.cs" />
+    <Compile Include="IMetaData\IMetaDataFactroy.cs" />
+    <Compile Include="IMetaData\IMetaDataQueryFactroy.cs" />
+    <Compile Include="InputModel\MD_ChildEntity.cs" />
+    <Compile Include="InputModel\MD_InputEntity.cs" />
+    <Compile Include="InputModel\MD_InputEntitys.cs" />
+    <Compile Include="InputModel\MD_InputModel.cs" />
+    <Compile Include="InputModel\MD_InputModel_Child.cs" />
+    <Compile Include="InputModel\MD_InputModel_ChildParam.cs" />
+    <Compile Include="InputModel\MD_InputModel_Column.cs" />
+    <Compile Include="InputModel\MD_InputModel_ColumnGroup.cs" />
+    <Compile Include="InputModel\MD_InputModel_SaveTable.cs" />
+    <Compile Include="InputModel\MD_InputModel_SaveTableColumn.cs" />
+    <Compile Include="InputModel\Test.cs" />
+    <Compile Include="Instruments\Entity_DocAction.cs" />
+    <Compile Include="Instruments\Entity_DocAdditionalAction.cs" />
+    <Compile Include="Instruments\Entity_DocClass.cs" />
+    <Compile Include="Instruments\Entity_DocConfig.cs" />
+    <Compile Include="Instruments\Entity_DocType.cs" />
+    <Compile Include="Instruments\Entity_DocTypeDetails.cs" />
+    <Compile Include="JQueryResult.cs" />
+    <Compile Include="JSGDS\GDSCommanderDefine.cs" />
+    <Compile Include="JSGDS\GDSTokenRecord.cs" />
+    <Compile Include="LogEnity\InterfaceLogParameter.cs" />
+    <Compile Include="LogEnity\QueryLogParameter.cs" />
+    <Compile Include="LogEnity\SinoInterfaceLog.cs" />
+    <Compile Include="LogEnity\SinoQueryLog.cs" />
+    <Compile Include="LogEnity\SinoSystemLog.cs" />
+    <Compile Include="LogEnity\SinoUserLog.cs" />
+    <Compile Include="LogEnity\SystemLogParameter.cs" />
+    <Compile Include="LogEnity\UserLogParameter.cs" />
+    <Compile Include="MenuType\firstPageItem.cs" />
+    <Compile Include="MenuType\ISinoMenu.cs" />
+    <Compile Include="MenuType\MenuTypeBase.cs" />
+    <Compile Include="MenuType\MenuTypeCollection.cs" />
+    <Compile Include="MenuType\MenuTypeCreator.cs" />
+    <Compile Include="MenuType\MTC_AJLL.cs" />
+    <Compile Include="MenuType\MTC_AJYJ.cs" />
+    <Compile Include="MenuType\MTC_BAJD.cs" />
+    <Compile Include="MenuType\MTC_NAMESPACE.cs" />
+    <Compile Include="MenuType\MTC_QD_QYXX.cs" />
+    <Compile Include="MenuType\MTC_QD_SJBD.cs" />
+    <Compile Include="MenuType\MTC_QD_SJJY.cs" />
+    <Compile Include="MenuType\MTC_QD_SJWH.cs" />
+    <Compile Include="MenuType\MTC_QD_TJBB.cs" />
+    <Compile Include="MenuType\MTC_REPORT.cs" />
+    <Compile Include="MenuType\MTC_StartPage.cs" />
+    <Compile Include="MenuType\MTC_WebFirstPage.cs" />
+    <Compile Include="MenuType\MTC_WFWGDA.cs" />
+    <Compile Include="MenuType\MTC_XTGL.cs" />
+    <Compile Include="MenuType\MTC_XXBL.cs" />
+    <Compile Include="MenuType\MTC_ZFPG.cs" />
+    <Compile Include="MenuType\SinoMenuItem.cs" />
+    <Compile Include="MenuType\SinoMTC_MetaDataManager.cs" />
+    <Compile Include="MetaData\Common\MC_GuideLine.cs" />
+    <Compile Include="MetaData\Common\MC_QueryModel.cs" />
+    <Compile Include="MetaData\Common\QueryModelCommon.cs" />
+    <Compile Include="MetaData\DataCheck\MD_CheckRule.cs" />
+    <Compile Include="MetaData\DataCheck\MD_DataCheckMsg.cs" />
+    <Compile Include="MetaData\DataCompare\MDCompare_ConditionItem.cs" />
+    <Compile Include="MetaData\DataCompare\MDCompare_Request.cs" />
+    <Compile Include="MetaData\Define\DB_ColumnMeta.cs" />
+    <Compile Include="MetaData\Define\DB_TableMeta.cs" />
+    <Compile Include="MetaData\Define\MD_ConceptGroup.cs" />
+    <Compile Include="MetaData\Define\MD_ConceptItem.cs" />
+    <Compile Include="MetaData\Define\MD_FUNCTION.cs" />
+    <Compile Include="MetaData\Define\MD_GLFieldGroup_Comparer.cs" />
+    <Compile Include="MetaData\Define\MD_GLParameter_Comparer.cs" />
+    <Compile Include="MetaData\Define\MD_Menu.cs" />
+    <Compile Include="MetaData\Define\MD_Namespace.cs" />
+    <Compile Include="MetaData\Define\MD_Nodes.cs" />
+    <Compile Include="MetaData\Define\MD_NsShareState.cs" />
+    <Compile Include="MetaData\Define\MD_QueryModel.cs" />
+    <Compile Include="MetaData\Define\MD_QueryModelGroup.cs" />
+    <Compile Include="MetaData\Define\MD_QueryModelGroupItem.cs" />
+    <Compile Include="MetaData\Define\MD_QueryModel_ExRight.cs" />
+    <Compile Include="MetaData\Define\MD_RefTable.cs" />
+    <Compile Include="MetaData\Define\MD_RightDefine.cs" />
+    <Compile Include="MetaData\Define\MD_Table.cs" />
+    <Compile Include="MetaData\Define\MD_Table2View.cs" />
+    <Compile Include="MetaData\Define\MD_TableColumn.cs" />
+    <Compile Include="MetaData\Define\MD_View2App.cs" />
+    <Compile Include="MetaData\Define\MD_View2View.cs" />
+    <Compile Include="MetaData\Define\MD_View2ViewGroup.cs" />
+    <Compile Include="MetaData\Define\MD_ViewTable.cs" />
+    <Compile Include="MetaData\Define\MD_ViewTableColumn.cs" />
+    <Compile Include="MetaData\Define\MD_View_GuideLine.cs" />
+    <Compile Include="MetaData\EnumDefine\MDType_DisplayType.cs" />
+    <Compile Include="MetaData\EnumDefine\MDType_RefDownloadMode.cs" />
+    <Compile Include="MetaData\EnumDefine\MDType_RefParamMode.cs" />
+    <Compile Include="MetaData\EnumDefine\MDType_ViewTable.cs" />
+    <Compile Include="MetaData\EnumDefine\MDType_ViewTableRelation.cs" />
+    <Compile Include="AssistCase\AssistGuideLine.cs" />
+    <Compile Include="MetaData\QueryModel\MainQueryModel.cs" />
+    <Compile Include="MetaData\QueryModel\MDModel_ColumnComparer.cs" />
+    <Compile Include="MetaData\QueryModel\MDModel_QueryModel.cs" />
+    <Compile Include="MetaData\QueryModel\MDModel_Table.cs" />
+    <Compile Include="MetaData\QueryModel\MDModel_Table_Column.cs" />
+    <Compile Include="MetaData\QueryModel\MDModel_View2GL.cs" />
+    <Compile Include="MetaData\QueryModel\MDModel_View2View.cs" />
+    <Compile Include="MetaData\QueryModel\MDModel_View2ViewGroup.cs" />
+    <Compile Include="MetaData\QueryModel\MDQueryResult_Table.cs" />
+    <Compile Include="MetaData\QueryModel\MDQueryResult_TableRow.cs" />
+    <Compile Include="MetaData\QueryModel\MDQuery_ChildTableRowCount.cs" />
+    <Compile Include="MetaData\QueryModel\MDQuery_ColumnSource.cs" />
+    <Compile Include="MetaData\QueryModel\MDQuery_ComputeColumnDefine.cs" />
+    <Compile Include="MetaData\QueryModel\MDQuery_ConditionItem.cs" />
+    <Compile Include="MetaData\QueryModel\MDQuery_GuideLineParameter.cs" />
+    <Compile Include="MetaData\QueryModel\MDQuery_Request.cs" />
+    <Compile Include="MetaData\QueryModel\MDQuery_ResultTable.cs" />
+    <Compile Include="MetaData\QueryModel\MDQuery_TableColumn.cs" />
+    <Compile Include="MetaData\QueryModel\MDQuery_Task.cs" />
+    <Compile Include="MetaData\QueryModel\MDSearchResult.cs" />
+    <Compile Include="MetaData\QueryModel\MDSearchResult_DataPreview.cs" />
+    <Compile Include="MetaData\QueryModel\MDSearchResult_TableRow.cs" />
+    <Compile Include="MetaData\QueryModel\MDSearch_Column.cs" />
+    <Compile Include="MetaData\QueryModel\MDSearch_ResultDataIndex.cs" />
+    <Compile Include="MetaData\QueryModel\MD_GuideLine.cs" />
+    <Compile Include="MetaData\QueryModel\MD_GuideLineDetailDefine.cs" />
+    <Compile Include="MetaData\QueryModel\MD_GuideLineDetailParameter.cs" />
+    <Compile Include="MetaData\QueryModel\MD_GuideLineFieldGroup.cs" />
+    <Compile Include="MetaData\QueryModel\MD_GuideLineFieldName.cs" />
+    <Compile Include="MetaData\QueryModel\MD_GuideLineGroup.cs" />
+    <Compile Include="MetaData\QueryModel\MD_GuideLineParameter.cs" />
+    <Compile Include="MetaData\QueryModel\MD_GuideLineSimpleParam.cs" />
+    <Compile Include="MetaData\QueryModel\MD_GuideLine_ParamSetting.cs" />
+    <Compile Include="MetaData\QueryModel\MDQuery_Condition.cs" />
+    <Compile Include="MetaData\QueryModel\MD_RelativeChildResult.cs" />
+    <Compile Include="MetaData\QueryModel\MD_RelativeMainTable.cs" />
+    <Compile Include="MetaData\QueryModel\MD_RelativeResult_colsAndVals.cs" />
+    <Compile Include="MetaData\QueryModel\MD_ResultColsAndVals.cs" />
+    <Compile Include="MetaData\QueryModel\QueryColumnType.cs" />
+    <Compile Include="Misc\BinDataTable.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Misc\ConfigFile.cs" />
+    <Compile Include="Misc\DataConvert.cs" />
+    <Compile Include="Misc\DataSecurityTransHelper.cs" />
+    <Compile Include="Misc\DataSourceCreator.cs" />
+    <Compile Include="Misc\Date.cs" />
+    <Compile Include="Misc\MD5Base64.cs" />
+    <Compile Include="Misc\MDQueryResultConverter.cs" />
+    <Compile Include="Misc\ObjectConvert.cs" />
+    <Compile Include="Misc\SerializeHelper.cs" />
+    <Compile Include="Misc\StrUtils.cs" />
+    <Compile Include="Misc\Time.cs" />
+    <Compile Include="Misc\Utils.cs" />
+    <Compile Include="Misc\Win32API.cs" />
+    <Compile Include="Notify\NotifyInfo.cs" />
+    <Compile Include="OrganizeExt\OrgExtCommon.cs" />
+    <Compile Include="OrganizeExt\OrgExtComparer.cs" />
+    <Compile Include="OrganizeExt\OrgExtFieldDefine.cs" />
+    <Compile Include="OrganizeExt\OrgExtFinder.cs" />
+    <Compile Include="OrganizeExt\OrgExtInfo.cs" />
+    <Compile Include="PagingParas.cs" />
+    <Compile Include="PAnalize\MD_PAnalizeProject.cs" />
+    <Compile Include="PAnalize\MD_PATable_Column.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RefCode\ConTreeModel.cs" />
+    <Compile Include="RefCode\DMCode.cs" />
+    <Compile Include="RefCode\ICS_RefCode.cs" />
+    <Compile Include="RefCode\RefCodeData.cs" />
+    <Compile Include="RefCode\RefCodeModel.cs" />
+    <Compile Include="RefCode\RefCodeMulti.cs" />
+    <Compile Include="RefCode\RefCodes.cs" />
+    <Compile Include="RefCode\RefCodeTable.cs" />
+    <Compile Include="RefCode\RefCodeTablePropertie.cs" />
+    <Compile Include="RefCode\RefCodeTableSet.cs" />
+    <Compile Include="RefCode\RefCodeType.cs" />
+    <Compile Include="RefCode\SinoBizParameter.cs" />
+    <Compile Include="RefCode\SinoSpecialAction.cs" />
+    <Compile Include="ReportEnity\ReportBody.cs" />
+    <Compile Include="ReportEnity\ReportCell.cs" />
+    <Compile Include="ReportEnity\ReportDefined.cs" />
+    <Compile Include="ReportEnity\ReportEntity_TJ.cs" />
+    <Compile Include="ReportEnity\ReportHeader_Footer.cs" />
+    <Compile Include="ReportEnity\ReportTemplate.cs" />
+    <Compile Include="ReportEnity\ReportTitleColumn.cs" />
+    <Compile Include="ReportEnity\ReportEnity.cs" />
+    <Compile Include="ReportEnity\ReportTitleRow.cs" />
+    <Compile Include="ReportEnity\ReportYTJZB.cs" />
+    <Compile Include="Report\ChangeReportDataAsXML.cs" />
+    <Compile Include="Report\DataCheck\ReportHisDataRow.cs" />
+    <Compile Include="Report\IReportFactroy.cs" />
+    <Compile Include="Report\MD_ReportDataEntity.cs" />
+    <Compile Include="Report\MD_ReportItem.cs" />
+    <Compile Include="Report\MD_ReportName.cs" />
+    <Compile Include="Report\MD_ReportVerifyInfo.cs" />
+    <Compile Include="Report\ReportGuideLine\Comparer_RGL_FieldDefine.cs" />
+    <Compile Include="Report\ReportGuideLine\Enum_ReportGuideLineItemType.cs" />
+    <Compile Include="Report\ReportGuideLine\MD_ReportGuideLineDefine.cs" />
+    <Compile Include="Report\ReportGuideLine\MD_ReportGuideLineItem.cs" />
+    <Compile Include="Report\ReportGuideLine\MD_RGL_FieldDefine.cs" />
+    <Compile Include="Report\ReportWebItem.cs" />
+    <Compile Include="Report\SinoSZReportType.cs" />
+    <Compile Include="Service References\TokenService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SinoBestMTS\ISinoBestMTSAdatper.cs" />
+    <Compile Include="SinoBestMTS\SinoBestMTSMessage.cs" />
+    <Compile Include="SinoSZDateFunction.cs" />
+    <Compile Include="SinoSZNumberFunction.cs" />
+    <Compile Include="SinoSZStopWatch.cs" />
+    <Compile Include="SyntaxAnalyse\SyntaxException.cs" />
+    <Compile Include="SyntaxAnalyse\SyntaxTreeAnalyse.cs" />
+    <Compile Include="SyntaxAnalyse\TokenRecord\Method\TokenMethod.cs" />
+    <Compile Include="SyntaxAnalyse\TokenRecord\Symbol\TokenSymbol.cs" />
+    <Compile Include="SyntaxAnalyse\TokenRecord\TokenProperty.cs" />
+    <Compile Include="SyntaxAnalyse\TokenRecord\TokenRecord.cs" />
+    <Compile Include="SyntaxAnalyse\TokenRecord\TokenValue.cs" />
+    <Compile Include="SystemInterface\SystemICS_SJJH.cs" />
+    <Compile Include="SystemInterface\SystemICS_SJJH_DataTable.cs" />
+    <Compile Include="SystemInterface\SystemICS_SJJH_DownloadLog.cs" />
+    <Compile Include="SystemInterface\SystemICS_SJJH_Node.cs" />
+    <Compile Include="SystemInterface\SystemICS_SJJH_NodeComparer.cs" />
+    <Compile Include="SystemInterface\SystemICS_SJJH_NodeFinder.cs" />
+    <Compile Include="SystemInterface\SystemICS_SJJH_TableColumn.cs" />
+    <Compile Include="SystemLog\BlankSystemLog.cs" />
+    <Compile Include="SystemLog\DataBaseSystemLog.cs" />
+    <Compile Include="SystemLog\EventLogSystemLog.cs" />
+    <Compile Include="SystemLog\FileSystemLog.cs" />
+    <Compile Include="SystemLog\ISystemLog.cs" />
+    <Compile Include="SystemLog\QueryLogRecord.cs" />
+    <Compile Include="SystemLog\SystemLogRecord.cs" />
+    <Compile Include="SystemLog\SystemLogWriter.cs" />
+    <Compile Include="TaskInfo\SinoTaskInfo.cs" />
+    <Compile Include="Token\TokenController.cs" />
+    <Compile Include="UpdateProgessEventArgs.cs" />
+    <Compile Include="UserLog\IUserLog.cs" />
+    <Compile Include="UserLog\UserLogRecord.cs" />
+    <Compile Include="UserLog\UserLogWriter.cs" />
+    <Compile Include="User\Comparer\UserRightInfoComparer.cs" />
+    <Compile Include="User\ConCheckListModel.cs" />
+    <Compile Include="User\Finder\UserRightFinder.cs" />
+    <Compile Include="User\IUserManager.cs" />
+    <Compile Include="User\PersonBaseInfo.cs" />
+    <Compile Include="User\PostUserList.cs" />
+    <Compile Include="User\UserBaseInfo.cs" />
+    <Compile Include="User\UserExtInfo.cs" />
+    <Compile Include="User\UserMappingInfo.cs" />
+    <Compile Include="User\UserPostInfo.cs" />
+    <Compile Include="User\UserQueryModelInfo.cs" />
+    <Compile Include="User\UserRightInfo.cs" />
+    <Compile Include="V2\Authorize\ConOrgTreeModel.cs" />
+    <Compile Include="V2\Authorize\ISinoCurrent.cs" />
+    <Compile Include="V2\Authorize\SinoMenuItem.cs" />
+    <Compile Include="V2\Authorize\SinoOrganize.cs" />
+    <Compile Include="V2\Authorize\SinoPost.cs" />
+    <Compile Include="V2\Authorize\SinoRequestUser.cs" />
+    <Compile Include="V2\Authorize\SinoRightItem.cs" />
+    <Compile Include="V2\Authorize\SinoRole.cs" />
+    <Compile Include="V2\Authorize\SinoUserBaseInfo.cs" />
+    <Compile Include="V2\Authorize\SinoUserCurrent.cs" />
+    <Compile Include="V2\Authorize\UserRightFlag.cs" />
+    <Compile Include="V2\Authorize\UserRightItem.cs" />
+    <Compile Include="V2\Config\ClientConfig.cs" />
+    <Compile Include="V2\Config\ServerConfig.cs" />
+    <Compile Include="V2\Define\MD_Namespace.cs" />
+    <Compile Include="V2\Define\MD_Nodes.cs" />
+    <Compile Include="V2\Define\MD_QueryModel.cs" />
+    <Compile Include="V2\Define\MD_RefTable.cs" />
+    <Compile Include="V2\Define\MD_Table.cs" />
+    <Compile Include="V2\Define\MD_TableColumn.cs" />
+    <Compile Include="V2\Define\MD_View2App.cs" />
+    <Compile Include="V2\Define\MD_View2View.cs" />
+    <Compile Include="V2\Define\MD_View2ViewGroup.cs" />
+    <Compile Include="V2\Define\MD_ViewTable.cs" />
+    <Compile Include="V2\Define\MD_ViewTableColumn.cs" />
+    <Compile Include="V2\Define\MD_View_GuideLine.cs" />
+    <Compile Include="V2\Document\DocActionConfig.cs" />
+    <Compile Include="V2\Document\DocAppend.cs" />
+    <Compile Include="V2\Document\DocClass.cs" />
+    <Compile Include="V2\Document\DocConfig.cs" />
+    <Compile Include="V2\Document\DocEntity.cs" />
+    <Compile Include="V2\Document\DocItem.cs" />
+    <Compile Include="V2\Document\DocItemDetail.cs" />
+    <Compile Include="V2\Document\DocList.cs" />
+    <Compile Include="V2\Document\DocSort.cs" />
+    <Compile Include="V2\Document\DocType.cs" />
+    <Compile Include="V2\Document\DocTypeDetails.cs" />
+    <Compile Include="V2\EnumDefine\MDType_DisplayType.cs" />
+    <Compile Include="V2\EnumDefine\MDType_RefDownloadMode.cs" />
+    <Compile Include="V2\EnumDefine\MDType_RefParamMode.cs" />
+    <Compile Include="V2\EnumDefine\MDType_ViewTable.cs" />
+    <Compile Include="V2\EnumDefine\MDType_ViewTableRelation.cs" />
+    <Compile Include="V2\Flow\ActionEntity.cs" />
+    <Compile Include="V2\Flow\BizEntityAction.cs" />
+    <Compile Include="V2\Flow\FlowEntity.cs" />
+    <Compile Include="V2\Flow\Flow_BaseDefine.cs" />
+    <Compile Include="V2\Flow\Flow_Direction.cs" />
+    <Compile Include="V2\Flow\Flow_DirectionUnit.cs" />
+    <Compile Include="V2\Flow\Flow_LocationActionMap.cs" />
+    <Compile Include="V2\Flow\Flow_StateActionDefine.cs" />
+    <Compile Include="V2\Flow\Flow_StateDefine.cs" />
+    <Compile Include="V2\Flow\Flow_StateUnitDefine.cs" />
+    <Compile Include="V2\Flow\StateEntity.cs" />
+    <Compile Include="V2\Flow\SystemFlow.cs" />
+    <Compile Include="V2\InputModel\MD_Input.cs" />
+    <Compile Include="V2\InputModel\MD_InputChild.cs" />
+    <Compile Include="V2\InputModel\MD_InputEntity.cs" />
+    <Compile Include="V2\InputModel\MD_InputModel.cs" />
+    <Compile Include="V2\InputModel\MD_InputModel_Child.cs" />
+    <Compile Include="V2\InputModel\MD_InputModel_ChildParam.cs" />
+    <Compile Include="V2\InputModel\MD_InputModel_Column.cs" />
+    <Compile Include="V2\InputModel\MD_InputModel_ColumnGroup.cs" />
+    <Compile Include="V2\InputModel\MD_InputModel_SaveTable.cs" />
+    <Compile Include="V2\InputModel\MD_InputModel_SaveTableColumn.cs" />
+    <Compile Include="V2\MetaData\Common\MC_GuideLine.cs" />
+    <Compile Include="V2\MetaData\Common\QueryModelCommon.cs" />
+    <Compile Include="V2\MetaData\QueryModel\MDModel_QueryModel.cs" />
+    <Compile Include="V2\MetaData\QueryModel\MDModel_Table.cs" />
+    <Compile Include="V2\MetaData\QueryModel\MDModel_Table_Column.cs" />
+    <Compile Include="V2\MetaData\QueryModel\MDModel_View2GL.cs" />
+    <Compile Include="V2\MetaData\QueryModel\MDModel_View2View.cs" />
+    <Compile Include="V2\MetaData\QueryModel\MDModel_View2ViewGroup.cs" />
+    <Compile Include="V2\MetaData\QueryModel\MDQueryResult_Table.cs" />
+    <Compile Include="V2\MetaData\QueryModel\MDQueryResult_TableRow.cs" />
+    <Compile Include="V2\MetaData\QueryModel\MDQuery_ColumnSource.cs" />
+    <Compile Include="V2\MetaData\QueryModel\MDQuery_ConditionItem.cs" />
+    <Compile Include="V2\MetaData\QueryModel\MDQuery_GuideLineParameter.cs" />
+    <Compile Include="V2\MetaData\QueryModel\MDQuery_Request.cs" />
+    <Compile Include="V2\MetaData\QueryModel\MDQuery_ResultTable.cs" />
+    <Compile Include="V2\MetaData\QueryModel\MDQuery_TableColumn.cs" />
+    <Compile Include="V2\MetaData\QueryModel\MD_GuideLine.cs" />
+    <Compile Include="V2\MetaData\QueryModel\MD_GuideLineDetailDefine.cs" />
+    <Compile Include="V2\MetaData\QueryModel\MD_GuideLineFieldGroup.cs" />
+    <Compile Include="V2\MetaData\QueryModel\MD_GuideLineFieldName.cs" />
+    <Compile Include="V2\MetaData\QueryModel\MD_GuideLineGroup.cs" />
+    <Compile Include="V2\MetaData\QueryModel\MD_GuideLineParameter.cs" />
+    <Compile Include="V2\MetaData\QueryModel\QueryColumnType.cs" />
+    <Compile Include="V2\Misc\DataConverter.cs" />
+    <Compile Include="V2\Misc\SHA256Encrypt.cs" />
+    <Compile Include="V2\Misc\StrUtils.cs" />
+    <Compile Include="V2\Misc\Utils.cs" />
+    <Compile Include="V2\RefCode\ConTreeModel.cs" />
+    <Compile Include="V2\RefCode\RefCodeData.cs" />
+    <Compile Include="V2\RefCode\RefCodeModel.cs" />
+    <Compile Include="V2\RefCode\RefCodeMulti.cs" />
+    <Compile Include="V2\RefCode\RefCodes.cs" />
+    <Compile Include="V2\RefCode\RefCodeTablePropertie.cs" />
+    <Compile Include="V2\RefCode\RefCodeType.cs" />
+    <Compile Include="Report\CS\TreeNodeType.cs" />
+    <Compile Include="Report\CS\ReportTreeEntity.cs" />
+    <Compile Include="Report\CS\YM_ReportHeaderFooterColumn.cs" />
+    <Compile Include="Report\CS\YM_Report.cs" />
+    <Compile Include="Report\CS\YM_ReportColumn.cs" />
+    <Compile Include="Report\CS\YM_ReportRow.cs" />
+    <Compile Include="V2\User\PostUserList.cs" />
+    <Compile Include="WCF\Client\ClientInterpector.cs" />
+    <Compile Include="WCF\Client\MyClientBehavior.cs" />
+    <Compile Include="WCF\Client\SinoBestTicketCache.cs" />
+    <Compile Include="WCF\Client\WcfExtensions.cs" />
+    <Compile Include="WCF\Service\MyServiceBehavior.cs" />
+    <Compile Include="WCF\Service\ServiceInterpector.cs" />
+    <Compile Include="WCF\Service\WCFClientInfo.cs" />
+    <Compile Include="WorkCalendar\WC_DataInfo.cs" />
+    <Compile Include="WorkCalendar\WC_TJSB_Settings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AutoUpdater\UpdateConfigTemp.xml" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Service References\TokenService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\TokenService\configuration.svcinfo" />
+    <None Include="Service References\TokenService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="MetaData\Define\MetaDataClassDiagram.cd" />
+    <None Include="Service References\TokenService\service.wsdl" />
+    <None Include="Service References\TokenService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TokenService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SyntaxAnalyse\TokenRecord\TokenRecord.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="PendingAlert\" />
+    <Folder Include="SyntaxAnalyse\TokenRecord\Symbol\Compart\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\TokenService\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

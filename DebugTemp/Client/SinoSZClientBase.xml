@@ -1,0 +1,946 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SinoSZClientBase</name>
+    </assembly>
+    <members>
+        <member name="F:SinoSZClientBase.ShowChart.frmFilterRecord.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.ShowChart.frmFilterRecord.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SinoSZClientBase.ShowChart.frmFilterRecord.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:SinoSZClientBase.ShowChart.ChartUC_Line.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.ShowChart.ChartUC_Line.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SinoSZClientBase.ShowChart.ChartUC_Line.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:SinoSZClientBase.Properties.Resources">
+            <summary>
+              一个强类型的资源类，用于查找本地化的字符串等。
+            </summary>
+        </member>
+        <member name="P:SinoSZClientBase.Properties.Resources.ResourceManager">
+            <summary>
+              返回此类使用的缓存的 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:SinoSZClientBase.Properties.Resources.Culture">
+            <summary>
+              使用此强类型资源类，为所有资源查找
+              重写当前线程的 CurrentUICulture 属性。
+            </summary>
+        </member>
+        <member name="F:SinoSZClientBase.ShowChart.ChartUC_Bar.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.ShowChart.ChartUC_Bar.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SinoSZClientBase.ShowChart.ChartUC_Bar.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:SinoSZClientBase.ShowChart.ChartFieldItem">
+            <summary>
+            图表展示用的字段定义
+            </summary>
+        </member>
+        <member name="T:SinoSZClientBase.Post.PostListItem">
+            <summary>
+            岗位列表项
+            </summary>
+        </member>
+        <member name="P:SinoSZClientBase.Post.PostListItem.Post">
+            <summary>
+            岗位定义
+            </summary>
+        </member>
+        <member name="F:SinoSZClientBase.PendingAlert.Dialog_PendingAlert.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.PendingAlert.Dialog_PendingAlert.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SinoSZClientBase.PendingAlert.Dialog_PendingAlert.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:SinoSZClientBase.frmVersionShow.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.frmVersionShow.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SinoSZClientBase.frmVersionShow.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:SinoSZClientBase.frmSetParameter.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.frmSetParameter.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SinoSZClientBase.frmSetParameter.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.frmChangePass.ValidPasswordComplexity(System.String)">
+            <summary>
+            验证新口令的复杂性
+            </summary>
+            <param name="_passString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SinoSZClientBase.frmChangePass.ValidOldPass(System.String)">
+            <summary>
+            验证旧口令的正确性
+            </summary>
+            <param name="_oldPass"></param>
+        </member>
+        <member name="F:SinoSZClientBase.frmChangePass.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.frmChangePass.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SinoSZClientBase.frmChangePass.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:SinoSZClientBase.frmBase.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.frmBase.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SinoSZClientBase.frmBase.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:SinoSZClientBase.SinoMenuService">
+            <summary>
+            SinoSZ 菜单服务
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.SinoMenuService.LoadMenus">
+            <summary>
+            通过元数据加载菜单
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.SinoMenuService.CreateChildItems(SinoSZPluginFramework.FrmMenuItem,System.Collections.Generic.List{SinoSZJS.Base.MenuType.SinoMenuItem})">
+            <summary>
+            建三级子菜单记录
+            </summary>
+            <param name="_mitem"></param>
+            <param name="_menuList"></param>
+            <returns></returns>
+        </member>
+        <member name="E:SinoSZClientBase.SinoMenuService.LoadError">
+            <summary>
+            当加载菜单时发生错误
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.ShowChart.frmChartShow.CreateColumnList">
+            <summary>
+            建立字段列表
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.ShowChart.frmChartShow.ConvertDecimalToDouble(System.Data.DataTable)">
+            <summary>
+            将表中Decimal类型数据转换为Double
+            </summary>
+            <param name="_data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SinoSZClientBase.ShowChart.frmChartShow.CreatChart">
+            <summary>
+            显示图表
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.ShowChart.frmChartShow.ReCountData(System.String)">
+            <summary>
+            筛选记录个数
+            </summary>
+            <param name="DataSource"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SinoSZClientBase.ShowChart.frmChartShow.FilterData">
+            <summary>
+            筛选横坐标记录
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.ShowChart.frmChartShow.GetXFields">
+            <summary>
+            取X坐标字段
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SinoSZClientBase.ShowChart.frmChartShow.ReDrawLable">
+            <summary>
+            重绘LABEL
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.ShowChart.frmChartShow.ReDrawLegend">
+            <summary>
+            重绘注解
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.ShowChart.frmChartShow.ExportChart">
+            <summary>
+            导出图表
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.ShowChart.frmChartShow.ReDrawValueType">
+            <summary>
+            重绘坐标值类型
+            </summary>
+        </member>
+        <member name="F:SinoSZClientBase.ShowChart.frmChartShow.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.ShowChart.frmChartShow.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SinoSZClientBase.ShowChart.frmChartShow.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:SinoSZClientBase.PortalItem.SinoSZUC_PortalItemBase.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.PortalItem.SinoSZUC_PortalItemBase.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SinoSZClientBase.PortalItem.SinoSZUC_PortalItemBase.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.PortalItem.SinoSZUC_PortalItemBase.ClickMore">
+            <summary>
+            点击详细
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.PortalItem.SinoSZUC_PortalItemBase.GetMenuGroup">
+            <summary>
+            取菜单
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.PortalItem.SinoSZUC_PortalItemBase.ExcuteCommand(System.String)">
+            <summary>
+            执行菜单命令
+            </summary>
+            <param name="_commandName"></param>
+            <returns></returns>
+        </member>
+        <member name="P:SinoSZClientBase.PortalItem.SinoSZUC_PortalItemBase.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="F:SinoSZClientBase.Organize.SinoUC_OrgCheckBox.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.Organize.SinoUC_OrgCheckBox.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SinoSZClientBase.Organize.SinoUC_OrgCheckBox.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:SinoSZClientBase.frmMainForm">
+            <summary>
+            主界面框架
+            </summary>
+        </member>
+        <member name="F:SinoSZClientBase.frmMainForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.frmMainForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SinoSZClientBase.frmMainForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:SinoSZClientBase.frmMainForm.serviceContainer">
+            <summary>
+            服务容器
+            </summary>
+        </member>
+        <member name="F:SinoSZClientBase.frmMainForm.pluginService">
+            <summary>
+            插件服务
+            </summary>
+        </member>
+        <member name="F:SinoSZClientBase.frmMainForm.toolStripService">
+            <summary>
+            工具栏服务
+            </summary>
+        </member>
+        <member name="F:SinoSZClientBase.frmMainForm.menuService">
+            <summary>
+            菜单服务
+            </summary>
+        </member>
+        <member name="F:SinoSZClientBase.frmMainForm.frmContainer">
+            <summary>
+            子窗口字典
+            </summary>
+        </member>
+        <member name="F:SinoSZClientBase.frmMainForm.CanChangePassword">
+            <summary>
+            是否可修改用户口令
+            </summary>
+        </member>
+        <member name="F:SinoSZClientBase.frmMainForm.ReLoginForm">
+            <summary>
+            注销登录界面
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.frmMainForm.#ctor">
+            <summary>
+            主界面
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.frmMainForm.InitForm">
+            <summary>
+            初始化Form
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SinoSZClientBase.frmMainForm.WriteMessage(System.String)">
+            <summary>
+            写系统消息
+            </summary>
+            <param name="_msg"></param>
+        </member>
+        <member name="M:SinoSZClientBase.frmMainForm.IsExistForm(System.String)">
+            <summary>
+            是否存在指定Form
+            </summary>
+            <param name="_frmName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SinoSZClientBase.frmMainForm.AddForm(System.String,System.Windows.Forms.Form)">
+            <summary>
+            添加Form
+            </summary>
+            <param name="_frmName"></param>
+            <param name="_frm"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SinoSZClientBase.frmMainForm.ChangeMenu(DevExpress.XtraBars.Ribbon.RibbonPageCategoryCollection,SinoSZPluginFramework.IChildForm)">
+            <summary>
+            修正菜单
+            </summary>
+            <param name="ribbonPageCategoryCollection"></param>
+            <param name="_c"></param>
+        </member>
+        <member name="M:SinoSZClientBase.frmMainForm.ShowHideFormatCategory(SinoSZPluginFramework.IChildForm)">
+            <summary>
+            修正菜单
+            </summary>
+            <param name="_c"></param>
+        </member>
+        <member name="M:SinoSZClientBase.frmMainForm.RemoveForm(System.String)">
+            <summary>
+            移除Form
+            </summary>
+            <param name="_frmName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SinoSZClientBase.frmMainForm.SetFormActive(System.String)">
+            <summary>
+            激活Form
+            </summary>
+            <param name="_frmName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SinoSZClientBase.frmMainForm.ShowMessagePopup">
+            <summary>
+            显示信息窗
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.frmMainForm.menuService_LoadError(System.Object,SinoSZJS.Base.CommonEventArgs)">
+            <summary>
+            菜单服务加载错误
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SinoSZClientBase.frmMainForm.WriteSysMsgBox(System.String)">
+            <summary>
+            向系统消息框添加内容
+            </summary>
+            <param name="_msg"></param>
+        </member>
+        <member name="M:SinoSZClientBase.frmMainForm.timer1_Tick(System.Object,System.EventArgs)">
+            <summary>
+            触发显示消息事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="P:SinoSZClientBase.frmMainForm.CurrentForm">
+            <summary>
+            当前Form
+            </summary>
+        </member>
+        <member name="P:SinoSZClientBase.frmMainForm.ActiveChildForm">
+            <summary>
+            当前激活的Form
+            </summary>
+        </member>
+        <member name="F:SinoSZClientBase.PendingAlert.PendingAlertIndexItem.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.PendingAlert.PendingAlertIndexItem.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SinoSZClientBase.PendingAlert.PendingAlertIndexItem.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:SinoSZClientBase.ShowChart.ChartUC_Pie.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.ShowChart.ChartUC_Pie.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SinoSZClientBase.ShowChart.ChartUC_Pie.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.RefCode.RefCodeBox._ShowMultiText">
+            <summary>
+            多选时显示
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.RefCode.RefCodeBox._ShowMatchItems">
+            <summary>
+            显示匹配项
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.RefCode.RefCodeBox.InitPopupControl">
+            <summary>
+            初始化弹出窗
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.RefCode.RefCodeBox._ChangeText(SinoSZJS.Base.RefCode.RefCodeData,System.Boolean,System.Boolean)">
+            <summary>
+            修改代码
+            </summary>
+            <param name="code"></param>
+            <param name="text"></param>
+            <param name="raiseCodeChanged"></param>
+            <param name="raiseCodeChangedByUser"></param>
+        </member>
+        <member name="M:SinoSZClientBase.RefCode.RefCodeBox._TrySelectNode(DevExpress.XtraTreeList.Nodes.TreeListNode)">
+            <summary>
+            用户选取某个节点(还需要判断是否可以选择)
+            </summary>
+            <param name="node"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SinoSZClientBase.RefCode.RefCodeBox._TryCollapseNode(DevExpress.XtraTreeList.Nodes.TreeListNode)">
+            <summary>
+            收起此点
+            </summary>
+            <param name="treeListNode"></param>
+        </member>
+        <member name="M:SinoSZClientBase.RefCode.RefCodeBox.ClearValue">
+            <summary>
+            清除所有值
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.RefCode.RefCodeBox.GetValues">
+            <summary>
+            取所有值
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:SinoSZClientBase.RefCode.RefCodeBox.LevelFormat">
+            <summary>
+            分级格式            //最版本中的用法,现已经无意义
+            </summary>
+        </member>
+        <member name="P:SinoSZClientBase.RefCode.RefCodeBox.CanMultiSelect">
+            <summary>
+            是否可多选
+            </summary>
+        </member>
+        <member name="P:SinoSZClientBase.RefCode.RefCodeBox.Code">
+            <summary>
+            当前所选/录入的代码
+            </summary>
+        </member>
+        <member name="P:SinoSZClientBase.RefCode.RefCodeBox.CanEdit">
+            <summary>
+            是否可以编辑. 不可编辑则像DropDownList风格的ComboBox, 只可选择不能输入
+            </summary>
+        </member>
+        <member name="P:SinoSZClientBase.RefCode.RefCodeBox.ReadOnly">
+            <summary>
+            是否只读
+            </summary>
+        </member>
+        <member name="P:SinoSZClientBase.RefCode.RefCodeBox.RefTableName">
+            <summary>
+            代码表
+            </summary>
+        </member>
+        <member name="F:SinoSZClientBase.LoginForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.LoginForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SinoSZClientBase.LoginForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.LoginForm.GetDomainName">
+            <summary>
+            域名
+            </summary>
+        </member>
+        <member name="T:SinoSZClientBase.LoginForm.ShowMessageDelegate">
+            <summary>
+            显示错误信息委托声明
+            </summary>
+            <param name="_msg"></param>
+        </member>
+        <member name="F:SinoSZClientBase.Organize.SinoUC_OrgTree.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.Organize.SinoUC_OrgTree.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SinoSZClientBase.Organize.SinoUC_OrgTree.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:SinoSZClientBase.frmProgress.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.frmProgress.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SinoSZClientBase.frmProgress.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.Organize.SinoUC_OrgComboBox._TrySelectNode(DevExpress.XtraTreeList.Nodes.TreeListNode)">
+            <summary>
+            用户选取某个节点(还需要判断是否可以选择)
+            </summary>
+            <param name="node"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SinoSZClientBase.Organize.SinoUC_OrgComboBox._TryShowNextLevel(DevExpress.XtraTreeList.Nodes.TreeListNode)">
+            <summary>
+            显示下级单位
+            </summary>
+            <param name="_node"></param>
+        </member>
+        <member name="M:SinoSZClientBase.Organize.SinoUC_OrgComboBox._TryCollapseNode(DevExpress.XtraTreeList.Nodes.TreeListNode)">
+            <summary>
+            收起此点
+            </summary>
+            <param name="treeListNode"></param>
+        </member>
+        <member name="M:SinoSZClientBase.Organize.SinoUC_OrgComboBox._ChangeText(SinoSZJS.Base.Authorize.SinoOrganize,System.Boolean,System.Boolean)">
+            <summary>
+            修改代码
+            </summary>
+            <param name="code"></param>
+            <param name="text"></param>
+            <param name="raiseCodeChanged"></param>
+            <param name="raiseCodeChangedByUser"></param>
+        </member>
+        <member name="M:SinoSZClientBase.Organize.SinoUC_OrgComboBox._CanSelectNode(DevExpress.XtraTreeList.Nodes.TreeListNode)">
+            <summary>
+            节点是否可以被选取
+            </summary>
+            <param name="node"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SinoSZClientBase.Organize.SinoUC_OrgComboBox._BeepNotify">
+            <summary>
+            提示音
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.Organize.SinoUC_OrgComboBox._BeepError">
+            <summary>
+            警告音
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.Organize.SinoUC_OrgComboBox.listTree_DoubleClick(System.Object,System.EventArgs)">
+            <summary>
+            处理双击树节点
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SinoSZClientBase.Organize.SinoUC_OrgComboBox.listTree_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            处理下拉选择树的事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param> 
+        </member>
+        <member name="M:SinoSZClientBase.Organize.SinoUC_OrgComboBox._pwListTree_BeforeExpand(System.Object,DevExpress.XtraTreeList.BeforeExpandEventArgs)">
+            <summary>
+            展开下级树
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SinoSZClientBase.Organize.SinoUC_OrgComboBox.OrgComboBox_ButtonClick(System.Object,DevExpress.XtraEditors.Controls.ButtonPressedEventArgs)">
+            <summary>
+            点击按钮后
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SinoSZClientBase.Organize.SinoUC_OrgComboBox.popupContainer_Resize(System.Object,System.EventArgs)">
+            <summary>
+            改变弹出窗口大小
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SinoSZClientBase.Organize.SinoUC_OrgComboBox.OrgComboBox_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            在录入窗中按键时
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SinoSZClientBase.Organize.SinoUC_OrgComboBox.OrgComboBox_KeyUp(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            抬起按键时
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SinoSZClientBase.Organize.SinoUC_OrgComboBox.OrgComboBox_Leave(System.Object,System.EventArgs)">
+            <summary>
+            焦点离开　
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SinoSZClientBase.Organize.SinoUC_OrgComboBox.OrgComboBox_Closed(System.Object,DevExpress.XtraEditors.Controls.ClosedEventArgs)">
+            <summary>
+            关闭
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SinoSZClientBase.Organize.SinoUC_OrgComboBox.Timer_Tick(System.Object,System.EventArgs)">
+            <summary>
+            延时处理
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="P:SinoSZClientBase.Organize.SinoUC_OrgComboBox.ReadOnly">
+            <summary>
+            是否只读
+            </summary>
+        </member>
+        <member name="P:SinoSZClientBase.Organize.SinoUC_OrgComboBox.OrgItem">
+            <summary>
+            当前所选/录入的单位
+            </summary>
+        </member>
+        <member name="P:SinoSZClientBase.Organize.SinoUC_OrgComboBox.Code">
+            <summary>
+            当前所选/录入的单位ID
+            </summary>
+        </member>
+        <member name="P:SinoSZClientBase.Organize.SinoUC_OrgComboBox.Name">
+            <summary>
+            当前所选/录入的单位名称
+            </summary>
+        </member>
+        <member name="P:SinoSZClientBase.Organize.SinoUC_OrgComboBox.FullName">
+            <summary>
+            当前所选/录入的单位全称
+            </summary>
+        </member>
+        <member name="P:SinoSZClientBase.Organize.SinoUC_OrgComboBox.DWDM">
+            <summary>
+            当前所选/录入的单位编码
+            </summary>
+        </member>
+        <member name="E:SinoSZClientBase.Organize.SinoUC_OrgComboBox.CodeChanged">
+            <summary>
+            当前选择改变
+            </summary>
+        </member>
+        <member name="E:SinoSZClientBase.Organize.SinoUC_OrgComboBox.CodeChangedByUser">
+            <summary>
+            用户改变当前选择
+            </summary>
+        </member>
+        <member name="E:SinoSZClientBase.Organize.SinoUC_OrgComboBox.SelectionChangeCommitted">
+            <summary>
+            提交选择改变
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.AutoUpdater.AutoUpdater.TryUpdate">
+            <summary>
+            TryUpdate: Invoke this method when you are ready to run the update checking thread
+            此方法用于调用升级进程
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.AutoUpdater.AutoUpdater.updateThread">
+            <summary>
+            updateThread: This is the Thread that runs for checking updates against the config file
+            此方法先通过与配置文件进行比较，然后下载版本最新的程序
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.AutoUpdater.AutoUpdater.downloadFile(System.String,System.String)">
+            <summary>
+            downloadFile: Download a file from the specified url and copy it to the specified path
+            下载升级文件
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.AutoUpdater.AutoUpdater.DecompressFile(System.String,System.String)">
+            <summary>
+            新版解压缩方法
+            </summary>
+            <param name="sourceFile"></param>
+            <param name="destinationFile"></param>
+        </member>
+        <member name="M:SinoSZClientBase.AutoUpdater.AutoUpdater.restart">
+            <summary>
+            restart: Restart the app, the AppStarter will be responsible for actually restarting the main application.
+            退出老程序，并重新启动引导程序
+            </summary>
+        </member>
+        <member name="F:SinoSZClientBase.AutoUpdater.AutoUpdater.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.AutoUpdater.AutoUpdater.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SinoSZClientBase.AutoUpdater.AutoUpdater.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:SinoSZClientBase.DevLocalizerCHS">
+            <summary>
+            中文化界面
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.DevLocalizerCHS.Init">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="F:SinoSZClientBase.Export.Dialog_ExportGridViewData.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.Export.Dialog_ExportGridViewData.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SinoSZClientBase.Export.Dialog_ExportGridViewData.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:SinoSZClientBase.ShowChart.ChartClass">
+            <summary>
+            ChartClass 的摘要说明。
+            </summary>
+        </member>
+        <member name="P:SinoSZClientBase.Organize.OrgTreeItem.ID">
+            <summary>
+            单位ID码
+            </summary>
+        </member>
+        <member name="P:SinoSZClientBase.Organize.OrgTreeItem.FatherID">
+            <summary>
+            父单位ID码
+            </summary>
+        </member>
+        <member name="P:SinoSZClientBase.Organize.OrgTreeItem.Name">
+            <summary>
+            单位名称
+            </summary>
+        </member>
+        <member name="P:SinoSZClientBase.Organize.OrgTreeItem.FullName">
+            <summary>
+            单位全称
+            </summary>
+        </member>
+        <member name="P:SinoSZClientBase.Organize.OrgTreeItem.DWDM">
+            <summary>
+            单位代码
+            </summary>
+        </member>
+        <member name="F:SinoSZClientBase.AutoUpdateDlg.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SinoSZClientBase.AutoUpdateDlg.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SinoSZClientBase.AutoUpdateDlg.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+    </members>
+</doc>

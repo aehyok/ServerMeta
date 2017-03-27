@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.InputModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.InputModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="MD_InputModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AfterWrite" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BeforeWrite" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChildInputModel" nillable="true" type="tns:ArrayOfMD_InputModel_Child" />
+      <xs:element minOccurs="0" name="Columns" nillable="true" type="tns:ArrayOfMD_InputModel_Column" />
+      <xs:element minOccurs="0" name="DWDM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeleteRule" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descript" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="GetDataGuideLine" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GetNewRecordGuideLine" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Groups" nillable="true" type="tns:ArrayOfMD_InputModel_ColumnGroup" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InitGuideLine" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IntegretedApplication" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsMixModel" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ModelName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModelType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NameSpace" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderField" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Param" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParamterType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResourceType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WriteTableNames" nillable="true" type="tns:ArrayOfMD_InputModel_SaveTable" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MD_InputModel" nillable="true" type="tns:MD_InputModel" />
+  <xs:complexType name="ArrayOfMD_InputModel_Child">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MD_InputModel_Child" nillable="true" type="tns:MD_InputModel_Child" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMD_InputModel_Child" nillable="true" type="tns:ArrayOfMD_InputModel_Child" />
+  <xs:complexType name="MD_InputModel_Child">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChildModel" nillable="true" type="tns:MD_InputModel" />
+      <xs:element minOccurs="0" name="ChildModelName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InputModelName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IntegratedApp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Parameters" nillable="true" type="tns:ArrayOfMD_InputModel_ChildParam" />
+      <xs:element minOccurs="0" name="ResType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SelectMode" type="xs:int" />
+      <xs:element minOccurs="0" name="ShowCondition" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="MD_InputModel_Child" nillable="true" type="tns:MD_InputModel_Child" />
+  <xs:complexType name="ArrayOfMD_InputModel_ChildParam">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MD_InputModel_ChildParam" nillable="true" type="tns:MD_InputModel_ChildParam" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMD_InputModel_ChildParam" nillable="true" type="tns:ArrayOfMD_InputModel_ChildParam" />
+  <xs:complexType name="MD_InputModel_ChildParam">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DataType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MD_InputModel_ChildParam" nillable="true" type="tns:MD_InputModel_ChildParam" />
+  <xs:complexType name="ArrayOfMD_InputModel_Column">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MD_InputModel_Column" nillable="true" type="tns:MD_InputModel_Column" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMD_InputModel_Column" nillable="true" type="tns:ArrayOfMD_InputModel_Column" />
+  <xs:complexType name="MD_InputModel_Column">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CanDisplay" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanEditRule" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CanSave" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ColumnID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ColumnName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ColumnType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DWDM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataChangedEvent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DefaultShow" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DefaultValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayFormat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="EditFormat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InputModelID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InputRule" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsCompute" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineHeight" type="xs:int" />
+      <xs:element minOccurs="0" name="MaxInputLength" type="xs:int" />
+      <xs:element minOccurs="0" name="ReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Required" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TextAlign" type="xs:int" />
+      <xs:element minOccurs="0" name="ToolTipText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Width" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MD_InputModel_Column" nillable="true" type="tns:MD_InputModel_Column" />
+  <xs:complexType name="ArrayOfMD_InputModel_ColumnGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MD_InputModel_ColumnGroup" nillable="true" type="tns:MD_InputModel_ColumnGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMD_InputModel_ColumnGroup" nillable="true" type="tns:ArrayOfMD_InputModel_ColumnGroup" />
+  <xs:complexType name="MD_InputModel_ColumnGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AppRegUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Columns" nillable="true" type="tns:ArrayOfMD_InputModel_Column" />
+      <xs:element minOccurs="0" name="DisplayOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="DisplayTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupParam" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModelID" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="MD_InputModel_ColumnGroup" nillable="true" type="tns:MD_InputModel_ColumnGroup" />
+  <xs:complexType name="ArrayOfMD_InputModel_SaveTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MD_InputModel_SaveTable" nillable="true" type="tns:MD_InputModel_SaveTable" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMD_InputModel_SaveTable" nillable="true" type="tns:ArrayOfMD_InputModel_SaveTable" />
+  <xs:complexType name="MD_InputModel_SaveTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Columns" nillable="true" type="tns:ArrayOfMD_InputModel_SaveTableColumn" />
+      <xs:element minOccurs="0" name="DisplayOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InputModelID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsLock" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SaveMode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TableTitle" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="MD_InputModel_SaveTable" nillable="true" type="tns:MD_InputModel_SaveTable" />
+  <xs:complexType name="ArrayOfMD_InputModel_SaveTableColumn">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MD_InputModel_SaveTableColumn" nillable="true" type="tns:MD_InputModel_SaveTableColumn" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMD_InputModel_SaveTableColumn" nillable="true" type="tns:ArrayOfMD_InputModel_SaveTableColumn" />
+  <xs:complexType name="MD_InputModel_SaveTableColumn">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DesColumn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descript" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Method" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SrcColumn" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MD_InputModel_SaveTableColumn" nillable="true" type="tns:MD_InputModel_SaveTableColumn" />
+</xs:schema>

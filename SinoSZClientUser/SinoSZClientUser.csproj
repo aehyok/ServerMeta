@@ -1,0 +1,544 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{25D9BE3E-3FE8-4ADF-9154-F1C43C41B5D1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SinoSZClientUser</RootNamespace>
+    <AssemblyName>SinoSZClientUser</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\DebugTemp\Client\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\FsDiSys\bin\FsDiSys\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'FsDiSys|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\FsDiSys\bin\FsDiSys\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'JSCASys|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\JSCASys\bin\JSCASys\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleAssemblies>
+    </CodeAnalysisRuleAssemblies>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>Migrated rules for SinoSZClientUser.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'SZZHSys|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\SZZHSys\bin\SZZHSys\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleAssemblies>
+    </CodeAnalysisRuleAssemblies>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>Migrated rules for SinoSZClientUser.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'SinoSZWebVss|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\SinoSZWebVss\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleAssemblies>
+    </CodeAnalysisRuleAssemblies>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>Migrated rules for SinoSZClientUser.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'X86|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\X86\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleAssemblies>
+    </CodeAnalysisRuleAssemblies>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>Migrated rules for SinoSZClientUser.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\DevExpress 14.1\Components\Bin\Framework\DevExpress.Data.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\DevExpress 14.1\Components\Bin\Framework\DevExpress.Printing.v14.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\DevExpress 14.1\Components\Bin\Framework\DevExpress.Utils.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\DevExpress 14.1\Components\Bin\Framework\DevExpress.XtraBars.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\DevExpress 14.1\Components\Bin\Framework\DevExpress.XtraEditors.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\DevExpress 14.1\Components\Bin\Framework\DevExpress.XtraGrid.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\DevExpress 14.1\Components\Bin\Framework\DevExpress.XtraLayout.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\DevExpress 14.1\Components\Bin\Framework\DevExpress.XtraTreeList.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\PostList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PostList.Designer.cs">
+      <DependentUpon>PostList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PostRoleList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PostRoleList.Designer.cs">
+      <DependentUpon>PostRoleList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PostUserList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PostUserList.Designer.cs">
+      <DependentUpon>PostUserList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserList.Designer.cs">
+      <DependentUpon>UserList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserMappingList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserMappingList.Designer.cs">
+      <DependentUpon>UserMappingList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUserDefine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUserDefine.Designer.cs">
+      <DependentUpon>frmUserDefine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuController.cs" />
+    <Compile Include="MobileNumber\Dialog_ChangeUserExtInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MobileNumber\Dialog_ChangeUserExtInfo.Designer.cs">
+      <DependentUpon>Dialog_ChangeUserExtInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MobileNumber\frmUserMobile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MobileNumber\frmUserMobile.Designer.cs">
+      <DependentUpon>frmUserMobile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PostManager\Dialog_AddPost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PostManager\Dialog_AddPost.Designer.cs">
+      <DependentUpon>Dialog_AddPost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PostManager\Dialog_AddPostUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PostManager\Dialog_AddPostUser.Designer.cs">
+      <DependentUpon>Dialog_AddPostUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PostManager\Dialog_ShowPostRight.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PostManager\Dialog_ShowPostRight.Designer.cs">
+      <DependentUpon>Dialog_ShowPostRight.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PostManager\frmPostDefine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PostManager\frmPostDefine.Designer.cs">
+      <DependentUpon>frmPostDefine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PostManager\PostItem.cs" />
+    <Compile Include="PostManager\PostUserAddArgs.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RoleManager\Dialog_AddRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoleManager\Dialog_AddRole.Designer.cs">
+      <DependentUpon>Dialog_AddRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoleManager\frmRoleDefine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoleManager\frmRoleDefine.Designer.cs">
+      <DependentUpon>frmRoleDefine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoleManager\SinoSZUC_RoleInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RoleManager\SinoSZUC_RoleInfo.Designer.cs">
+      <DependentUpon>SinoSZUC_RoleInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SinoSZClientUserPlugin.cs" />
+    <Compile Include="Controls\UserPostList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserPostList.Designer.cs">
+      <DependentUpon>UserPostList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TreeObject\TObj_ModelRightItem.cs" />
+    <Compile Include="TreeObject\TObj_ModelRightList.cs" />
+    <Compile Include="TreeObject\TObj_RightItem.cs" />
+    <Compile Include="TreeObject\TObj_RightItemList.cs" />
+    <Compile Include="UserManager\Dialog_AddOrgInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserManager\Dialog_AddOrgInfo.Designer.cs">
+      <DependentUpon>Dialog_AddOrgInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserManager\Dialog_AddUserInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserManager\Dialog_AddUserInfo.Designer.cs">
+      <DependentUpon>Dialog_AddUserInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserManager\Dialog_AddUserPost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserManager\Dialog_AddUserPost.Designer.cs">
+      <DependentUpon>Dialog_AddUserPost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserManager\Dialog_RegisterUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserManager\Dialog_RegisterUser.Designer.cs">
+      <DependentUpon>Dialog_RegisterUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserManager\SelectPersonBaseInfoItem.cs" />
+    <Compile Include="UserMapping\frmUserMapping_CUPAA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserMapping\frmUserMapping_CUPAA.Designer.cs">
+      <DependentUpon>frmUserMapping_CUPAA.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SinoSZClientBase\SinoSZClientBase.csproj">
+      <Project>{ABDD3C32-17A9-4EA0-BFF8-7FCBEDF38F5D}</Project>
+      <Name>SinoSZClientBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SinoSZJS.Base\SinoSZJS.Base.csproj">
+      <Project>{29F48920-647F-48A2-A222-34276057D81A}</Project>
+      <Name>SinoSZJS.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SinoSZPluginFramework\SinoSZPluginFramework.csproj">
+      <Project>{C855A639-511E-4B4F-8A71-3224083C5D40}</Project>
+      <Name>SinoSZPluginFramework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\PostList.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PostList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PostRoleList.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PostRoleList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PostUserList.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PostUserList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserList.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>UserList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserMappingList.resx">
+      <DependentUpon>UserMappingList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUserDefine.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmUserDefine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MobileNumber\Dialog_ChangeUserExtInfo.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Dialog_ChangeUserExtInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MobileNumber\frmUserMobile.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmUserMobile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PostManager\Dialog_AddPost.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Dialog_AddPost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PostManager\Dialog_AddPostUser.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Dialog_AddPostUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PostManager\Dialog_ShowPostRight.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Dialog_ShowPostRight.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PostManager\frmPostDefine.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmPostDefine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserPostList.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>UserPostList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoleManager\Dialog_AddRole.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Dialog_AddRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoleManager\frmRoleDefine.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmRoleDefine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoleManager\SinoSZUC_RoleInfo.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SinoSZUC_RoleInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserManager\Dialog_AddOrgInfo.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Dialog_AddOrgInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserManager\Dialog_AddUserInfo.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Dialog_AddUserInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserManager\Dialog_AddUserPost.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Dialog_AddUserPost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserManager\Dialog_RegisterUser.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Dialog_RegisterUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserMapping\frmUserMapping_CUPAA.resx">
+      <DependentUpon>frmUserMapping_CUPAA.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Migrated rules for SinoSZClientUser.ruleset" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\e16.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\e1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\e2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\e3.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\e4.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\e5.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\e6.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\e7.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\e8.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\e9.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\e10.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\e11.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\e12.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\e13.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\e14.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\e15.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xx.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x3.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x4.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x5.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g5.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g6.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\e20.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

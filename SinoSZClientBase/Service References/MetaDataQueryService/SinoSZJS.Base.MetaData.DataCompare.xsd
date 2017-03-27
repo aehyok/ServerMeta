@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.DataCompare" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.DataCompare" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.QueryModel" />
+  <xs:complexType name="MDCompare_Request">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.QueryModel" base="q1:MDQuery_Request">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ColumnDictionary" nillable="true" type="q2:ArrayOfKeyValueOfstringstring" />
+          <xs:element minOccurs="0" name="CompareConditionExpression" nillable="true" type="xs:string" />
+          <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CompareItems" nillable="true" type="q3:ArrayOfKeyValueOfstringMDCompare_ConditionItemgyst8IcK" />
+          <xs:element minOccurs="0" name="ExcelData" nillable="true">
+            <xs:complexType>
+              <xs:annotation>
+                <xs:appinfo>
+                  <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                </xs:appinfo>
+              </xs:annotation>
+              <xs:sequence>
+                <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MDCompare_Request" nillable="true" type="tns:MDCompare_Request" />
+  <xs:complexType name="MDCompare_ConditionItem">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.QueryModel" minOccurs="0" name="Column" nillable="true" type="q4:MDQuery_TableColumn" />
+      <xs:element minOccurs="0" name="ColumnIndex" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompareTagetField" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Operator" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MDCompare_ConditionItem" nillable="true" type="tns:MDCompare_ConditionItem" />
+</xs:schema>

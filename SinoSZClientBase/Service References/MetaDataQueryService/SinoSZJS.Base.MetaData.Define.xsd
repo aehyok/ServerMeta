@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.Define" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.Define" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.EnumDefine" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="MD_ViewTableColumn">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CanModify" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanShowAsCondition" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanShowAsResult" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ColumnID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DWDM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DefaultResult" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DisplayOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="IsFixQueryItem" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Priority" type="xs:int" />
+      <xs:element minOccurs="0" name="TID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TableColumn" nillable="true" type="tns:MD_TableColumn" />
+      <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ViewTableColumnID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ViewTableID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MD_ViewTableColumn" nillable="true" type="tns:MD_ViewTableColumn" />
+  <xs:complexType name="MD_TableColumn">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CTag" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CanDisplay" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ColWidth" type="xs:int" />
+      <xs:element minOccurs="0" name="ColumnID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ColumnName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ColumnType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DMBLevelFormat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DWDM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayFormat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayHeight" type="xs:int" />
+      <xs:element minOccurs="0" name="DisplayLength" type="xs:int" />
+      <xs:element minOccurs="0" name="DisplayOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="DisplayTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsNullable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Length" type="xs:int" />
+      <xs:element minOccurs="0" name="Precision" type="xs:int" />
+      <xs:element minOccurs="0" name="RefDMB" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RefTable" nillable="true" type="tns:MD_RefTable" />
+      <xs:element minOccurs="0" name="RefWordTableName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Scale" type="xs:int" />
+      <xs:element minOccurs="0" name="SecretLevel" type="xs:int" />
+      <xs:element minOccurs="0" name="TID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MD_TableColumn" nillable="true" type="tns:MD_TableColumn" />
+  <xs:complexType name="MD_RefTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DWDM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HideCode" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LevelFormat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Namespace" nillable="true" type="tns:MD_Namespace" />
+      <xs:element minOccurs="0" name="NamespaceName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.EnumDefine" minOccurs="0" name="RefDownloadMode" type="q1:MDType_RefDownloadMode" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.EnumDefine" minOccurs="0" name="RefParamMode" type="q2:MDType_RefParamMode" />
+      <xs:element minOccurs="0" name="RefTableID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RefTableName" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="MD_RefTable" nillable="true" type="tns:MD_RefTable" />
+  <xs:complexType name="MD_Namespace">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Concepts" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DWDM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="DisplayTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MenuPosition" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NameSpace" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nodes" nillable="true" type="tns:MD_Nodes" />
+      <xs:element minOccurs="0" name="Owner" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QueryModelList" nillable="true" type="tns:ArrayOfMD_QueryModel" />
+      <xs:element minOccurs="0" name="RefTableList" nillable="true" type="tns:ArrayOfMD_RefTable" />
+      <xs:element minOccurs="0" name="TableList" nillable="true" type="tns:ArrayOfMD_Table" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MD_Namespace" nillable="true" type="tns:MD_Namespace" />
+  <xs:complexType name="MD_Nodes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DWDM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descript" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NameSpaces" nillable="true" type="tns:ArrayOfMD_Namespace" />
+      <xs:element minOccurs="0" name="NodeName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MD_Nodes" nillable="true" type="tns:MD_Nodes" />
+  <xs:complexType name="ArrayOfMD_Namespace">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MD_Namespace" nillable="true" type="tns:MD_Namespace" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMD_Namespace" nillable="true" type="tns:ArrayOfMD_Namespace" />
+  <xs:complexType name="ArrayOfMD_QueryModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MD_QueryModel" nillable="true" type="tns:MD_QueryModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMD_QueryModel" nillable="true" type="tns:ArrayOfMD_QueryModel" />
+  <xs:complexType name="MD_QueryModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChildTables" nillable="true" type="tns:ArrayOfMD_ViewTable" />
+      <xs:element minOccurs="0" name="DWDM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="DisplayTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EXTMeta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsDataAuditing" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsFixQuery" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsRelationQuery" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MainTable" nillable="true" type="tns:MD_ViewTable" />
+      <xs:element minOccurs="0" name="Namespace" nillable="true" type="tns:MD_Namespace" />
+      <xs:element minOccurs="0" name="NamespaceName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QueryInterface" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QueryModelID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QueryModelName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="View2Application" nillable="true" type="tns:ArrayOfMD_View2App" />
+      <xs:element minOccurs="0" name="View2GuideLines" nillable="true" type="tns:ArrayOfMD_View_GuideLine" />
+      <xs:element minOccurs="0" name="View2ViewGroup" nillable="true" type="tns:ArrayOfMD_View2ViewGroup" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="MD_QueryModel" nillable="true" type="tns:MD_QueryModel" />
+  <xs:complexType name="ArrayOfMD_ViewTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MD_ViewTable" nillable="true" type="tns:MD_ViewTable" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMD_ViewTable" nillable="true" type="tns:ArrayOfMD_ViewTable" />
+  <xs:complexType name="MD_ViewTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChildTables" nillable="true" type="tns:ArrayOfMD_ViewTable" />
+      <xs:element minOccurs="0" name="Columns" nillable="true" type="tns:ArrayOfMD_ViewTableColumn" />
+      <xs:element minOccurs="0" name="DWDM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="DisplayTitle" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.EnumDefine" minOccurs="0" name="DisplayType" type="q3:MDType_DisplayType" />
+      <xs:element minOccurs="0" name="FatherTable" nillable="true" type="tns:MD_ViewTable" />
+      <xs:element minOccurs="0" name="FatherTableID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IntegratedApp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NamespaceName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Priority" type="xs:int" />
+      <xs:element minOccurs="0" name="QueryModelID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RelationString" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Table" nillable="true" type="tns:MD_Table" />
+      <xs:element minOccurs="0" name="TableID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ViewTableID" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.EnumDefine" minOccurs="0" name="ViewTableRelationType" type="q4:MDType_ViewTableRelation" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.MetaData.EnumDefine" minOccurs="0" name="ViewTableType" type="q5:MDType_ViewTable" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="MD_ViewTable" nillable="true" type="tns:MD_ViewTable" />
+  <xs:complexType name="ArrayOfMD_ViewTableColumn">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MD_ViewTableColumn" nillable="true" type="tns:MD_ViewTableColumn" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMD_ViewTableColumn" nillable="true" type="tns:ArrayOfMD_ViewTableColumn" />
+  <xs:complexType name="MD_Table">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Columns" nillable="true" type="tns:ArrayOfMD_TableColumn" />
+      <xs:element minOccurs="0" name="DWDM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExtSecret" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MainKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MainKeyColumn" nillable="true" type="tns:MD_TableColumn" />
+      <xs:element minOccurs="0" name="NamespaceName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ResourceType" nillable="true" type="q6:ArrayOfstring" />
+      <xs:element minOccurs="0" name="SecretFun" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TableType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MD_Table" nillable="true" type="tns:MD_Table" />
+  <xs:complexType name="ArrayOfMD_TableColumn">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MD_TableColumn" nillable="true" type="tns:MD_TableColumn" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMD_TableColumn" nillable="true" type="tns:ArrayOfMD_TableColumn" />
+  <xs:complexType name="ArrayOfMD_View2App">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MD_View2App" nillable="true" type="tns:MD_View2App" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMD_View2App" nillable="true" type="tns:ArrayOfMD_View2App" />
+  <xs:complexType name="MD_View2App">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AppName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayHeight" type="xs:int" />
+      <xs:element minOccurs="0" name="DisplayOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Meta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ViewID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MD_View2App" nillable="true" type="tns:MD_View2App" />
+  <xs:complexType name="ArrayOfMD_View_GuideLine">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MD_View_GuideLine" nillable="true" type="tns:MD_View_GuideLine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMD_View_GuideLine" nillable="true" type="tns:ArrayOfMD_View_GuideLine" />
+  <xs:complexType name="MD_View_GuideLine">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DisplayOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="DisplayTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RelationParam" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TargetGuideLineID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ViewID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MD_View_GuideLine" nillable="true" type="tns:MD_View_GuideLine" />
+  <xs:complexType name="ArrayOfMD_View2ViewGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MD_View2ViewGroup" nillable="true" type="tns:MD_View2ViewGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMD_View2ViewGroup" nillable="true" type="tns:ArrayOfMD_View2ViewGroup" />
+  <xs:complexType name="MD_View2ViewGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DisplayOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="DisplayTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QueryModelID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="View2Views" nillable="true" type="tns:ArrayOfMD_View2View" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="MD_View2ViewGroup" nillable="true" type="tns:MD_View2ViewGroup" />
+  <xs:complexType name="ArrayOfMD_View2View">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MD_View2View" nillable="true" type="tns:MD_View2View" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMD_View2View" nillable="true" type="tns:ArrayOfMD_View2View" />
+  <xs:complexType name="MD_View2View">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DisplayOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="DisplayTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QueryModelID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RelationString" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TargetViewName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ViewGroupID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MD_View2View" nillable="true" type="tns:MD_View2View" />
+  <xs:complexType name="ArrayOfMD_RefTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MD_RefTable" nillable="true" type="tns:MD_RefTable" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMD_RefTable" nillable="true" type="tns:ArrayOfMD_RefTable" />
+  <xs:complexType name="ArrayOfMD_Table">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MD_Table" nillable="true" type="tns:MD_Table" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMD_Table" nillable="true" type="tns:ArrayOfMD_Table" />
+  <xs:complexType name="ArrayOfMD_FUNCTION">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MD_FUNCTION" nillable="true" type="tns:MD_FUNCTION" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMD_FUNCTION" nillable="true" type="tns:ArrayOfMD_FUNCTION" />
+  <xs:complexType name="MD_FUNCTION">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FunctionType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ParamList" nillable="true" type="q7:ArrayOfstring" />
+      <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ParamTypeDict" nillable="true" type="q8:ArrayOfKeyValueOfstringstring" />
+      <xs:element minOccurs="0" name="ResultType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MD_FUNCTION" nillable="true" type="tns:MD_FUNCTION" />
+  <xs:complexType name="ArrayOfMD_ConceptGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MD_ConceptGroup" nillable="true" type="tns:MD_ConceptGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMD_ConceptGroup" nillable="true" type="tns:ArrayOfMD_ConceptGroup" />
+  <xs:complexType name="MD_ConceptGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DWDM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="Items" nillable="true" type="tns:ArrayOfMD_ConceptItem" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="MD_ConceptGroup" nillable="true" type="tns:MD_ConceptGroup" />
+  <xs:complexType name="ArrayOfMD_ConceptItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MD_ConceptItem" nillable="true" type="tns:MD_ConceptItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMD_ConceptItem" nillable="true" type="tns:ArrayOfMD_ConceptItem" />
+  <xs:complexType name="MD_ConceptItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CRule" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CTag" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DWDM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="GroupName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MD_ConceptItem" nillable="true" type="tns:MD_ConceptItem" />
+</xs:schema>

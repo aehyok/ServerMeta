@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Authorize" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SinoSZJS.Base.Authorize" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfSinoRole">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SinoRole" nillable="true" type="tns:SinoRole" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSinoRole" nillable="true" type="tns:ArrayOfSinoRole" />
+  <xs:complexType name="SinoRole">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descript" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsOwn" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RoleDwid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoleID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserRights" nillable="true" type="tns:ArrayOfSinoRightItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SinoRole" nillable="true" type="tns:SinoRole" />
+  <xs:complexType name="ArrayOfSinoRightItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SinoRightItem" nillable="true" type="tns:SinoRightItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSinoRightItem" nillable="true" type="tns:ArrayOfSinoRightItem" />
+  <xs:complexType name="SinoRightItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FatherRightID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MenuID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RightDescript" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RightID" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="RightLevels" nillable="true" type="q1:ArrayOfanyType" />
+      <xs:element minOccurs="0" name="RightMeta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RightName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RightType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SinoRightItem" nillable="true" type="tns:SinoRightItem" />
+  <xs:complexType name="SinoOrganize">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CanSeleceted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Code" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DWDM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="FatherCode" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Function" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SinoOrganize" nillable="true" type="tns:SinoOrganize" />
+  <xs:complexType name="ArrayOfSinoPost">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SinoPost" nillable="true" type="tns:SinoPost" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSinoPost" nillable="true" type="tns:ArrayOfSinoPost" />
+  <xs:complexType name="SinoPost">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DisplayOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="IsDefaultPost" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PostDWDM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PostDWGUID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PostDWMC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PostDescript" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PostDwID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PostID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PostName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Rights" nillable="true" type="q2:ArrayOfKeyValueOfstringUserRightItem0T15VX5_P" />
+      <xs:element minOccurs="0" name="Roles" nillable="true" type="tns:ArrayOfSinoRole" />
+      <xs:element minOccurs="0" name="SecretLevel" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SinoPost" nillable="true" type="tns:SinoPost" />
+  <xs:complexType name="UserRightItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Level" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Right" nillable="true" type="tns:SinoRightItem" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="UserRightItem" nillable="true" type="tns:UserRightItem" />
+</xs:schema>
