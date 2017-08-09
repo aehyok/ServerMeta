@@ -11,12 +11,19 @@ namespace SinoSZJS.CS.BizMenu.DAL
 {
         public class OraMenuFactory : ISinoMenu
         {
-                #region ISinoMenu Members
-                /// <summary>
-                /// 取所有指定岗位下的菜单
-                /// </summary>
-                /// <param name="_postID">岗位ID</param>
-                /// <returns></returns>
+        #region ISinoMenu Members
+        /// <summary>
+        /// 取所有指定岗位下的菜单
+        /// </summary>
+        /// <param name="_postID">岗位ID</param>
+        /// <returns></returns>
+        private const string yhmenu_systemId = @"select yhmenu.*,level from 
+                                                 (
+                                                 select men2.*,1 canuse from md_mainmenu men2
+                                                /*  where men2.systemid=strSYSTEMID*/
+                                                   ) yhmenu
+                                              start with yhmenu.fatherid=0
+                                              connect by prior yhmenu.id=yhmenu.fatherid";
                 public List<SinoMenuItem> GetAllMenus(string _postID)
                 {
                         OracleDataReader dr;
@@ -50,8 +57,9 @@ namespace SinoSZJS.CS.BizMenu.DAL
                                 _param[2].Value = ConfigFile.SystemID;
 
 
-                                dr = OracleHelper.ExecuteReader(OracleHelper.ConnectionStringProfile, CommandType.StoredProcedure,
-                                                                _sql, _param);
+                //dr = OracleHelper.ExecuteReader(OracleHelper.ConnectionStringProfile, CommandType.StoredProcedure,
+                //                                _sql, _param);
+                dr = OracleHelper.ExecuteReader(OracleHelper.ConnectionStringProfile, CommandType.Text, yhmenu_systemId, null);
                         }
 
                         while (dr.Read())
