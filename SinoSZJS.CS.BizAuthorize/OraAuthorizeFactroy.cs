@@ -219,18 +219,27 @@ namespace SinoSZJS.CS.BizAuthorize
         /// <param name="_rootDwid"></param>
         /// <param name="_levelNum"></param>
         /// <returns></returns>
+        private const string Sql_GetRootDwList = @"SELECT  jg.zzjgid,jg.zzjgdm,jg.zzjgmc,jg.jgqc,LEVEL ,jg.sjdwid,SYS_CONNECT_BY_PATH(jg.zzjgid, '/')  CONNECT_BY_PATH
+                                                ,fj.DISPLAYORDER 
+                                                FROM qx2_zzjg jg
+                                                   join QX2_JGFJXX fj on jg.ZZJGID=fj.ZZJGID
+                                                WHERE level <= :nLevel 
+                                                START WITH (jg.ZZJGID = :nParent )
+                                                CONNECT BY prior   jg.zzjgid=jg.SJDWID
+                                                order by fj.DISPLAYORDER";
         public List<SinoOrganize> GetRootDwList(string _rootDwid, decimal _levelNum)
         {
             string _sql = "zhtj_zzjg2.get_tree_js_qx";
             OracleParameter[] _param = {
-                              new OracleParameter("nParent",OracleDbType.Decimal),
-                               new OracleParameter("nLevel",OracleDbType.Decimal),
-                               new OracleParameter("curTree",OracleDbType.RefCursor, DBNull.Value, ParameterDirection.Output)
+                               new OracleParameter(":nLevel",OracleDbType.Decimal),
+                               new OracleParameter(":nParent",OracleDbType.Decimal)
+                              // new OracleParameter("curTree",OracleDbType.RefCursor, DBNull.Value, ParameterDirection.Output)
                            };
-            _param[0].Value = decimal.Parse(_rootDwid);
-            _param[1].Value = _levelNum;
-
-            OracleDataReader dr = OracleHelper.ExecuteReader(OracleHelper.ConnectionStringProfile, CommandType.StoredProcedure, _sql, _param);
+            
+            _param[0].Value = _levelNum;
+            _param[1].Value = decimal.Parse(_rootDwid);
+            OracleDataReader dr = OracleHelper.ExecuteReader(OracleHelper.ConnectionStringProfile, CommandType.Text, Sql_GetRootDwList, _param);
+            //OracleDataReader dr = OracleHelper.ExecuteReader(OracleHelper.ConnectionStringProfile, CommandType.StoredProcedure, _sql, _param);
             List<SinoOrganize> _ret = new List<SinoOrganize>();
 
             while (dr.Read())
