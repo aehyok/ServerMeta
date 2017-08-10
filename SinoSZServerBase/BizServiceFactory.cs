@@ -68,7 +68,6 @@ namespace SinoSZServerBase
                         {
                                 return _plugin.GetServiceObject(_serviceName);
                         }
-                        return null;
                 }
 
                 #endregion

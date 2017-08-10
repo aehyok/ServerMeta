@@ -14,6 +14,7 @@ using System.IO;
 using SinoSZJS.Base.SystemLog;
 using System.Diagnostics;
 using System.ServiceModel;
+using SinoSZJS.DataAccess.Sql;
 
 namespace SinoSZServerBase
 {
@@ -84,7 +85,7 @@ namespace SinoSZServerBase
                 this.textBox1.AppendText(_sb.ToString());
                 this.textBox1.AppendText("\r\n");
             }
-            SystemLogWriter.WriteLog(_sb.ToString(), EventLogEntryType.Information);
+            LogWriter.WriteSystemLog(_sb.ToString(), "Info");
             return true;
         }
 

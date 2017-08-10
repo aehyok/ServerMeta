@@ -19,8 +19,8 @@ namespace SinoSZJS.Base.Misc
                 }
                 catch (Exception e)
                 {
-                    SystemLogWriter.WriteLog(string.Format("无法取到配置参数：SZ_CustomsQueryUrl，错误信息{0}", e.Message)
-                        , System.Diagnostics.EventLogEntryType.Error);
+                    //SystemLogWriter.WriteLog(string.Format("无法取到配置参数：SZ_CustomsQueryUrl，错误信息{0}", e.Message)
+                    //    , System.Diagnostics.EventLogEntryType.Error);
                     return "";
                 }
             }
@@ -39,8 +39,8 @@ namespace SinoSZJS.Base.Misc
                 }
                 catch (Exception e)
                 {
-                    SystemLogWriter.WriteLog(string.Format("无法取到配置参数：OraleSerivceName，错误信息{0}", e.Message)
-                        , System.Diagnostics.EventLogEntryType.Error);
+                    //SystemLogWriter.WriteLog(string.Format("无法取到配置参数：OraleSerivceName，错误信息{0}", e.Message)
+                    //    , System.Diagnostics.EventLogEntryType.Error);
                     return "";
                 }
             }
@@ -57,8 +57,8 @@ namespace SinoSZJS.Base.Misc
                 }
                 catch (Exception e)
                 {
-                    SystemLogWriter.WriteLog(string.Format("无法取到配置参数：TitleImage，错误信息{0}", e.Message)
-                       , System.Diagnostics.EventLogEntryType.Error);
+                    //SystemLogWriter.WriteLog(string.Format("无法取到配置参数：TitleImage，错误信息{0}", e.Message)
+                    //   , System.Diagnostics.EventLogEntryType.Error);
                     return "";
                 }
             }
@@ -75,8 +75,8 @@ namespace SinoSZJS.Base.Misc
                 }
                 catch (Exception e)
                 {
-                    SystemLogWriter.WriteLog(string.Format("无法取到配置参数：SystemDisplayName，错误信息{0}", e.Message)
-                       , System.Diagnostics.EventLogEntryType.Error);
+                    //SystemLogWriter.WriteLog(string.Format("无法取到配置参数：SystemDisplayName，错误信息{0}", e.Message)
+                    //   , System.Diagnostics.EventLogEntryType.Error);
                     return "";
                 }
             }
@@ -276,8 +276,8 @@ namespace SinoSZJS.Base.Misc
                 }
                 catch (Exception e)
                 {
-                    SystemLogWriter.WriteLog(string.Format("无法取到配置参数：ICS_TcpSvcPort，错误信息{0}", e.Message)
-                      , System.Diagnostics.EventLogEntryType.Error);
+                    //SystemLogWriter.WriteLog(string.Format("无法取到配置参数：ICS_TcpSvcPort，错误信息{0}", e.Message)
+                     // , System.Diagnostics.EventLogEntryType.Error);
                     throw new Exception("配置文件中的ICS_TcpSvcPort错误!");
                 }
             }
@@ -297,8 +297,8 @@ namespace SinoSZJS.Base.Misc
                 }
                 catch (Exception e)
                 {
-                    SystemLogWriter.WriteLog(string.Format("无法取到配置参数：ICS_HttpSvcPort，错误信息{0}", e.Message)
-                      , System.Diagnostics.EventLogEntryType.Error);
+                    //SystemLogWriter.WriteLog(string.Format("无法取到配置参数：ICS_HttpSvcPort，错误信息{0}", e.Message)
+                     // , System.Diagnostics.EventLogEntryType.Error);
                     throw new Exception("配置文件中的ICS_TcpSvcPort错误!");
                 }
             }

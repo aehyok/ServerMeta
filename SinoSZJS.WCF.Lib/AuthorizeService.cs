@@ -9,7 +9,7 @@ using SinoSZJS.CS.BizAuthorize;
 using SinoSZJS.Base.SystemLog;
 using SinoSZJS.Base.WCF.Service;
 using System.Net;
-
+using SinoSZJS.DataAccess.Sql;
 
 namespace SinoSZJS.WCF.Lib
 {
@@ -23,8 +23,9 @@ namespace SinoSZJS.WCF.Lib
             {
                 OraAuthorizeFactroy _of = new OraAuthorizeFactroy();
                 _su = _of.LoginSys(SystemID, UserName, Password,CheckType);
-                SystemLogWriter.WriteUserLog(decimal.Parse(_su.UserID), "系统登录(执法办案平台CS客户端)", string.Format("用户{0}登录执法办案平台CS客户端成功!", UserName),
-                    1, _su.IPAddress, _su.HostName, SystemID);
+                //LogWriter(decimal.Parse(_su.UserID), "系统登录(执法办案平台CS客户端)", string.Format("用户{0}登录执法办案平台CS客户端成功!", UserName),
+                //    1, _su.IPAddress, _su.HostName, SystemID);
+                LogWriter.WriteSystemLog("登录成功！", "Info");
                 return _su;
             }
             catch (Exception ex)
@@ -39,8 +40,8 @@ namespace SinoSZJS.WCF.Lib
                 {
                     _hostName = _ipaddr;
                 }
-                SystemLogWriter.WriteUserLog(-1, "系统登录(执法办案平台CS客户端)", string.Format("用户{0}登录执法办案平台CS客户端失败!", UserName),
-                    2, _ipaddr, _hostName, SystemID);
+                //SystemLogWriter.WriteUserLog(-1, "系统登录(执法办案平台CS客户端)", string.Format("用户{0}登录执法办案平台CS客户端失败!", UserName),
+                //    2, _ipaddr, _hostName, SystemID);
                 return null;
             }
         }

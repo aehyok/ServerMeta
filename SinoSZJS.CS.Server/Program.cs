@@ -15,6 +15,21 @@ namespace SinoSZJS.CS.Server
 {
     static class Program
     {
+        static void LogUnhandledException(object exceptionobj)
+        {              //Log the exception here or report it to developer          }  
+        }
+
+        static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
+        {
+            MessageBox.Show("抱歉，您的操作没有能够完成，请再试一次或者联系软件提供商");
+            LogUnhandledException(e.ExceptionObject);
+        }
+        static void Application_ThreadException(object sender, System.Threading.ThreadExceptionEventArgs e)
+        {
+            MessageBox.Show("抱歉，您的操作没有能够完成，请再试一次或者联系软件提供商");
+            LogUnhandledException(e.Exception);
+        }
+
         /// <summary>
         /// 应用程序的主入口点。
         /// </summary>
@@ -22,8 +37,9 @@ namespace SinoSZJS.CS.Server
         {
             //	初始化服务器端配置        
             //建立系统日志和用户日志的写入器
-            //SystemLogWriter.ICS_SystemLog = new OraSysLogWriter();
-            //UserLogWriter.ICS_UserLog = new OraUserLogWriter();
+
+            Application.ThreadException += new System.Threading.ThreadExceptionEventHandler(Application_ThreadException);
+            AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(CurrentDomain_UnhandledException);
 
             Dictionary<string, ServiceHost> hostLib = new Dictionary<string, ServiceHost>();
             hostLib.Add("AuthorizeService", new ServiceHost(typeof(AuthorizeService)));

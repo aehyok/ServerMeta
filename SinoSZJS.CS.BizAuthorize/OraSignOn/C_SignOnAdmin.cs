@@ -30,7 +30,7 @@ namespace SinoSZJS.CS.BizAuthorize.OraSignOn
                 {
                         //1.读取数据库中的用户信息，验证密码
                         string CheckStr = string.Format("SELECT count(*) FROM zhtj_csb WHERE CSNAME='AdminPass' and CSDATA='{0}' ", MD5Base64.Encode(_pass));
-                        decimal _ret = (decimal)SqlHelper.ExecuteScalar(SqlHelper.ConnectionStringProfile,CommandType.Text,CheckStr);
+                        int _ret = (int)SqlHelper.ExecuteScalar(SqlHelper.ConnectionStringProfile,CommandType.Text,CheckStr);
                         return (_ret > 0);
                 }
 

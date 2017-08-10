@@ -2079,3 +2079,11 @@ SinoSZJS.CS.Server/obj/x86/Release/SinoSZJS.CS.Server.exe
 SinoSZJS.CS.Server/obj/x86/Release/SinoSZJS.CS.Server.pdb
 SinoSZJS.CS.Server/obj/x86/Release/SinoSZJS.CS.Server.Properties.Resources.resources
 SinoSZJS.CS.Server/obj/x86/Release/SinoSZJS.CS.Server.ServiceInstaller.resources
+SinoSZJS.CS.Server/obj/x86/Release/DesignTimeResolveAssemblyReferences.cache
+SinoSZClientBase/obj/Debug/DesignTimeResolveAssemblyReferences.cache
+SinoSZClientBase/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+SinoSZClientReport/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+SinoSZClientSysManager/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+SinoSZClientUser/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+SinoSZMetaDataManager/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+SinoSZMetaDataQuery/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache

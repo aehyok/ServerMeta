@@ -36,7 +36,7 @@ namespace SinoSZJS.WCF.Lib
             catch (Exception ex)
             {
                 string _error = string.Format("取RootDWList[RootDWID={1} LevelNum={2}]时发生错误！{0}", ex.Message, RootDWID, LevelNum);
-                SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
+                //SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
                 return new List<Base.Authorize.SinoOrganize>();
             }
         }
@@ -51,7 +51,7 @@ namespace SinoSZJS.WCF.Lib
             catch (Exception ex)
             {
                 string _error = string.Format("取GetRootDwListEx[RootDWID={1} LevelNum={2} OrgType={3}]时发生错误！{0}", ex.Message, RootDWID, LevelNum, OrgType);
-                SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
+                //SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
                 return new List<Base.Authorize.SinoOrganize>();
             }
         }
@@ -70,7 +70,7 @@ namespace SinoSZJS.WCF.Lib
             catch (Exception ex)
             {
                 string _error = string.Format("取GetServerConfig时发生错误！{0}", ex.Message);
-                SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
+                //SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
                 throw new FaultException(_error, new FaultCode("服务"));
             }
 
@@ -86,7 +86,7 @@ namespace SinoSZJS.WCF.Lib
             catch (Exception ex)
             {
                 string _error = string.Format("取GetDWIDByDWDM[{1}]时发生错误！{0}", ex.Message, _dwdm);
-                SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
+                //SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
                 throw new FaultException(_error, new FaultCode("服务"));
             }
         }
@@ -101,7 +101,7 @@ namespace SinoSZJS.WCF.Lib
             catch (Exception ex)
             {
                 string _error = string.Format("写入导出日志时[ExportRowCount={1} ExportDataMsg={2}]时发生错误！{0}", ex.Message, ExportRowCount, ExportDataMsg);
-                SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
+                //SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
                 throw new FaultException(_error, new FaultCode("服务"));
             }
         }
@@ -116,7 +116,7 @@ namespace SinoSZJS.WCF.Lib
             catch (Exception ex)
             {
                 string _error = string.Format("写入客户端用户日志时[Message={1} LogType={2}]时发生错误！{0}", ex.Message, Message, LogType);
-                SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
+                //SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
                 throw new FaultException(_error, new FaultCode("服务"));
             }
         }
@@ -132,7 +132,7 @@ namespace SinoSZJS.WCF.Lib
             catch (Exception ex)
             {
                 string _error = string.Format("取所有菜单定义时[PostID={1}]时发生错误！{0}", ex.Message, PostID);
-                SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
+                //SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
                 return new List<Base.MenuType.SinoMenuItem>();
             }
         }
@@ -147,7 +147,7 @@ namespace SinoSZJS.WCF.Lib
             catch (Exception ex)
             {
                 string _error = string.Format("取首页定义数据时发生错误！{0}", ex.Message);
-                SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
+                //SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
                 return new List<Base.MenuType.firstPageItem>();
             }
         }
@@ -163,7 +163,7 @@ namespace SinoSZJS.WCF.Lib
             catch (Exception ex)
             {
                 string _error = string.Format("写入用户操作日志时时发生错误！{0}", ex.Message);
-                SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
+                //SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
                 return false;
             }
         }
@@ -178,7 +178,7 @@ namespace SinoSZJS.WCF.Lib
             catch (Exception ex)
             {
                 string _error = string.Format("取用户操作日志时[UserName={1} Context={2}]时发生错误！{0}", ex.Message, UserName, Context);
-                SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
+                //SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
                 return new List<Base.UserLog.UserLogRecord>();
             }
         }
@@ -193,7 +193,7 @@ namespace SinoSZJS.WCF.Lib
             catch (Exception ex)
             {
                 string _error = string.Format("取系统运行日志时时发生错误！{0}", ex.Message);
-                SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
+                //SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
                 return new List<SystemLogRecord>();
             }
         }
@@ -208,7 +208,7 @@ namespace SinoSZJS.WCF.Lib
             catch (Exception ex)
             {
                 string _error = string.Format("取提示列表时发生错误！{0}", ex.Message);
-                SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
+                //SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
                 return null;
             }
         }
@@ -223,7 +223,7 @@ namespace SinoSZJS.WCF.Lib
             catch (Exception ex)
             {
                 string _error = string.Format("取提示信息[MsgID={1}]时发生错误！{0}", ex.Message, _msgid);
-                SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
+                //SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
                 return null;
             }
         }
@@ -238,7 +238,7 @@ namespace SinoSZJS.WCF.Lib
             catch (Exception ex)
             {
                 string _error = string.Format("保存提示信息时发生错误！{0}", ex.Message);
-                SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
+                //SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
                 return false;
             }
         }
@@ -253,7 +253,7 @@ namespace SinoSZJS.WCF.Lib
             catch (Exception ex)
             {
                 string _error = string.Format("删除提示信息[NotifyInfoID={1}]时发生错误！{0}", ex.Message, CurrentInfo.ID);
-                SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
+                ///SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
                 return false;
             }
         }
@@ -268,7 +268,7 @@ namespace SinoSZJS.WCF.Lib
             catch (Exception ex)
             {
                 string _error = string.Format("取扩展组织机构数据信息时发生错误！{0}", ex.Message);
-                SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
+                //SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
                 return new List<Base.OrganizeExt.OrgExtInfo>();
             }
         }
@@ -283,7 +283,7 @@ namespace SinoSZJS.WCF.Lib
             catch (Exception ex)
             {
                 string _error = string.Format("取扩展组织机构子数据信息时发生错误！{0}", ex.Message);
-                SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
+                //SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
                 return new List<Base.OrganizeExt.OrgExtInfo>();
             }
         }
@@ -298,7 +298,7 @@ namespace SinoSZJS.WCF.Lib
             catch (Exception ex)
             {
                 string _error = string.Format("保存扩展组织机构信息时发生错误！{0}", ex.Message);
-                SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
+                //SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
                 return false;
             }
         }
@@ -313,7 +313,7 @@ namespace SinoSZJS.WCF.Lib
             catch (Exception ex)
             {
                 string _error = string.Format("取任务信息[TaskID={1}]时发生错误！{0}", ex.Message, TaskID);
-                SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
+                //SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
                 return null;
             }
         }
@@ -328,7 +328,7 @@ namespace SinoSZJS.WCF.Lib
             catch (Exception ex)
             {
                 string _error = string.Format("取任务处理日志[TaskID={1}]时发生错误！{0}", ex.Message, TaskID);
-                SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
+                //SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
                 return null;
             }
         }
@@ -343,7 +343,7 @@ namespace SinoSZJS.WCF.Lib
             catch (Exception ex)
             {
                 string _error = string.Format("设置任务状态[TaskID={1}]时发生错误！{0}", ex.Message, TaskID);
-                SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
+                ///SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
                 return "";
             }
         }
@@ -358,7 +358,7 @@ namespace SinoSZJS.WCF.Lib
             catch (Exception ex)
             {
                 string _error = string.Format("重置任务参数[TaskID={1}]时发生错误！{0}", ex.Message, TaskID);
-                SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
+                //SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
                 return null;
             }
         }
@@ -373,7 +373,7 @@ namespace SinoSZJS.WCF.Lib
             catch (Exception ex)
             {
                 string _error = string.Format("取查询日志信息[UserName={1}]时发生错误！{0}", ex.Message, _userName);
-                SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
+                //SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
                 return new List<QueryLogRecord>();
             }
         }
@@ -389,7 +389,7 @@ namespace SinoSZJS.WCF.Lib
             catch (Exception ex)
             {
                 string _error = string.Format("取代码表属性定义[RefCodeName={1}]时发生错误！{0}", ex.Message, _refCodeName);
-                SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
+                //SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
                 return null;
             }
         }
@@ -404,7 +404,7 @@ namespace SinoSZJS.WCF.Lib
             catch (Exception ex)
             {
                 string _error = string.Format("取完整代码表数据[RefCodeName={1}]时发生错误！{0}", ex.Message, _refCodeName);
-                SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
+                //SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
                 return new List<Base.RefCode.RefCodeData>();
             }
         }
@@ -419,7 +419,7 @@ namespace SinoSZJS.WCF.Lib
             catch (Exception ex)
             {
                 string _error = string.Format("取代码表子级记录[RefCodeName={1}  FatherCode={2}]时发生错误！{0}", ex.Message, _refCodeName, _fatherCode);
-                SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
+                //SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
                 return new List<Base.RefCode.RefCodeData>();
             }
         }
@@ -434,7 +434,7 @@ namespace SinoSZJS.WCF.Lib
             catch (Exception ex)
             {
                 string _error = string.Format("通过代码值取代码数据记录[RefCodeName={1}  Code={2}]时发生错误！{0}", ex.Message, _refCodeName, _value);
-                SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
+                //SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
                 return null;
             }
         }
@@ -449,7 +449,7 @@ namespace SinoSZJS.WCF.Lib
             catch (Exception ex)
             {
                 string _error = string.Format("取工作日历记录[YEAR={1}  ]时发生错误！{0}", ex.Message, Year);
-                SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
+                ///SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
                 return new List<WC_DataInfo>();
             }
         }
@@ -464,7 +464,7 @@ namespace SinoSZJS.WCF.Lib
             catch (Exception ex)
             {
                 string _error = string.Format("取统计上报日默认日期时发生错误！{0}", ex.Message);
-                SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
+                //SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
                 return null;
             }
         }
@@ -480,7 +480,7 @@ namespace SinoSZJS.WCF.Lib
             catch (Exception ex)
             {
                 string _error = string.Format("保存统计上报日默认日期时发生错误！{0}", ex.Message);
-                SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
+                //SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
                 return false;
             }
         }
@@ -496,7 +496,7 @@ namespace SinoSZJS.WCF.Lib
             catch (Exception ex)
             {
                 string _error = string.Format("保存工作日历的日期设置时发生错误！{0}", ex.Message);
-                SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
+                //SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
                 return false;
             }
         }
@@ -533,7 +533,7 @@ namespace SinoSZJS.WCF.Lib
             catch (Exception ex)
             {
                 string _error = string.Format("停止服务[{1}]时发生错误！{0} ", ex.Message, ServiceName);
-                SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
+                //SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
                 return false;
             }
         }
@@ -568,7 +568,7 @@ namespace SinoSZJS.WCF.Lib
             catch (Exception ex)
             {
                 string _error = string.Format("启动服务[{1}]时发生错误！{0} ", ex.Message, ServiceName);
-                SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
+                //SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
                 return false;
             }
         }
@@ -583,7 +583,7 @@ namespace SinoSZJS.WCF.Lib
             catch (Exception ex)
             {
                 string _error = string.Format("取服务[{1}]的状态时发生错误！{0} ", ex.Message, ServiceName);
-                SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
+                ////SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
                 return "ERROR";
             }
         }
@@ -605,7 +605,7 @@ namespace SinoSZJS.WCF.Lib
             catch (Exception ex)
             {
                 string _error = string.Format("回收IIS应用程序池[{1}]时发生错误！{0} ", ex.Message, AppPoolName);
-                SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
+                //SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
                 return "ERROR";
             }
         }
@@ -627,7 +627,7 @@ namespace SinoSZJS.WCF.Lib
             catch (Exception ex)
             {
                 string _error = string.Format("取通用接口定义列表信息时发生错误！{0}", ex.Message);
-                SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
+                //SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
                 return null;
             }
         }
@@ -642,7 +642,7 @@ namespace SinoSZJS.WCF.Lib
             catch (Exception ex)
             {
                 string _error = string.Format("保存通用接口定义信息时发生错误！{0}", ex.Message);
-                SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
+                //SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
                 return false;
             }
         }
@@ -657,7 +657,7 @@ namespace SinoSZJS.WCF.Lib
             catch (Exception ex)
             {
                 string _error = string.Format("删除通用接口定义信息时发生错误！{0}", ex.Message);
-                SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
+                //SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
                 return false;
             }
         }
@@ -674,7 +674,7 @@ namespace SinoSZJS.WCF.Lib
             catch (Exception ex)
             {
                 string _error = string.Format("取通用接口的令牌信息时发生错误！{0}", ex.Message);
-                SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
+                //SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
             }
             return _ret;
         }
@@ -689,7 +689,7 @@ namespace SinoSZJS.WCF.Lib
             catch (Exception ex)
             {
                 string _error = string.Format("添加通用接口令牌信息时发生错误！{0}", ex.Message);
-                SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
+                //SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
                 return false;
             }
         }
@@ -704,7 +704,7 @@ namespace SinoSZJS.WCF.Lib
             catch (Exception ex)
             {
                 string _error = string.Format("修改通用接口令牌信息时发生错误！{0}", ex.Message);
-                SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
+                //SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
                 return false;
             }
         }
@@ -720,7 +720,7 @@ namespace SinoSZJS.WCF.Lib
             catch (Exception ex)
             {
                 string _error = string.Format("删除通用接口令牌信息时发生错误！{0}", ex.Message);
-                SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
+                //SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
                 return false;
             }
         }
@@ -736,7 +736,7 @@ namespace SinoSZJS.WCF.Lib
             catch (Exception ex)
             {
                 string _error = string.Format("取通用接口日志信息时发生错误！{0}", ex.Message);
-                SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
+                //SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
                 return null;
             }
         }
@@ -773,7 +773,7 @@ namespace SinoSZJS.WCF.Lib
             catch (Exception ex)
             {
                 string _error = string.Format("取服务器EXE和DLL文件的版本信息时发生错误！{0}", ex.Message);
-                SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
+                //SystemLogWriter.WriteLog(_error, System.Diagnostics.EventLogEntryType.Error);
                 return _error;
             }
         }

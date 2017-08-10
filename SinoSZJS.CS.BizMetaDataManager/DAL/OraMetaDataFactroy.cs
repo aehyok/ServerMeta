@@ -3654,7 +3654,7 @@ namespace SinoSZJS.CS.BizMetaDataManager.DAL
             }
             catch (Exception e)
             {
-                SystemLogWriter.WriteLog(e.Message, EventLogEntryType.Error);
+                //SystemLogWriter.WriteLog(e.Message, EventLogEntryType.Error);
                 return false;
             }
         }
@@ -3755,7 +3755,7 @@ namespace SinoSZJS.CS.BizMetaDataManager.DAL
             }
             catch (Exception e)
             {
-                SystemLogWriter.WriteLog(string.Format("插入录入模型的分组[{0}]记录时出错！{1}", Group.GroupID, e.Message), EventLogEntryType.Error);
+                LogWriter.WriteSystemLog(string.Format("插入录入模型的分组[{0}]记录时出错！{1}", Group.GroupID, e.Message), "ERROR");
                 return false;
             }
         }

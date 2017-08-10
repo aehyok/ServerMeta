@@ -156,8 +156,6 @@
     </Compile>
     <Compile Include="Interfaces\SinoTRDWebService.cs" />
     <Compile Include="OracleService.cs" />
-    <Compile Include="OraSysLogWriter.cs" />
-    <Compile Include="OraUserLogWriter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>

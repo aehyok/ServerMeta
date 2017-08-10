@@ -35,7 +35,7 @@ namespace SinoSZJS.Base.DataFormater
                         catch (Exception ex)
                         {
                                 string log = string.Format("转换{0}成季度格式时出错！{1}", arg, ex.Message);
-                                SystemLogWriter.WriteLog(log, EventLogEntryType.Warning);
+                                //SystemLogWriter.WriteLog(log, EventLogEntryType.Warning);
                                 return "";
                         }
                         return _result;

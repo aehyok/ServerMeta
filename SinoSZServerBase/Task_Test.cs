@@ -29,15 +29,15 @@ namespace SinoSZServerBase
 
                 public override void ThreadProc()
                 {
-                        WriteRWState();
+                        WriteRWState(); 
                         string _startTime = DateTime.Now.ToString("yyyyMMddHHmmss");
                         string _log = string.Format("开始执行测试任务。任务ID：{0} 执行时间：{1}", _Rwid, _startTime);                      
-                        SystemLogWriter.WriteLog(_log,EventLogEntryType.Information);
+                        //SystemLogWriter.WriteLog(_log,EventLogEntryType.Information);
 
                         Thread.Sleep(50000);
 
                         _log = string.Format("完成测试任务执行。任务ID：{0}　完成时间：{1}", _Rwid, DateTime.Now);
-                        SystemLogWriter.WriteLog(_log, EventLogEntryType.Information);
+                        //SystemLogWriter.WriteLog(_log, EventLogEntryType.Information);
 
                         WriteResult();
                 }

@@ -47,11 +47,11 @@ namespace SinoSZJS.CS.BizAuthorize.OraSignOn
             _adminPost.Rights = new Dictionary<string, UserRightItem>();
 
             StringBuilder _sb = new StringBuilder();
-            _sb.Append("SELECT zhtj_zzjg2.GETDWDM_hgjs(:DWID) dwdm,zhtj_zzjg2.GETDWMC(:DWID2) DWMC ");
-            _sb.Append("FROM DUAL ");
+            _sb.Append("SELECT dbo.GETDWDM_hgjs(@DWID) dwdm,dbo.GETDWMC(@DWID2) DWMC ");
+            //_sb.Append("FROM DUAL ");
             SqlParameter[] _param = {
-                                new SqlParameter(":DWID", SqlDbType.Decimal),
-                                new SqlParameter(":DWID2",SqlDbType.Decimal),
+                                new SqlParameter("@DWID", SqlDbType.Decimal),
+                                new SqlParameter("@DWID2",SqlDbType.Decimal),
                            
                         };
             _param[0].Value = decimal.Parse(_adminPost.PostDwID);

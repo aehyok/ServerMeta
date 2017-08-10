@@ -80,7 +80,7 @@ namespace SinoSZServerBase
             _sb.Append("] ");
             _sb.Append(_message);
 
-            SystemLogWriter.WriteLog(_sb.ToString(), EventLogEntryType.Information);
+            LogWriter.WriteSystemLog(_sb.ToString(), "Info");
             return true;
         }
 
