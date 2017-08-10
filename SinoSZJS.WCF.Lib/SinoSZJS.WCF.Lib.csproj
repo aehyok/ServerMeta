@@ -93,10 +93,6 @@
       <Project>{AAAFD7E3-8930-4538-B413-F1EDA7DB3FC3}</Project>
       <Name>SinoSZJS.CS.BizUser</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SinoSZJS.DataAccess\SinoSZJS.DataAccess.csproj">
-      <Project>{C41251E4-BC9E-4A3C-92D0-22682FBAA541}</Project>
-      <Name>SinoSZJS.DataAccess</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

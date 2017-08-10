@@ -1,18 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Oracle.DataAccess.Client;
 using System.Data;
-using SinoSZJS.Base.Authorize;
-using Oracle.DataAccess.Types;
 using System.IO;
-using SinoSZJS.Base.Report;
-using SinoSZJS.Base.Report.ReportGuideLine;
-using SinoSZJS.DataAccess;
 using SinoSZJS.CS.BizReport.ReportService2008;
 using System.Web.Services.Protocols;
 using System.Data.SqlClient;
 using SinoSZJS.DataAccess.Sql;
+using SinoSZJS.Base.Report;
+using SinoSZJS.Base.Authorize;
+using SinoSZJS.Base.Report.ReportGuideLine;
 
 namespace SinoSZJS.CS.BizReport
 {
@@ -1062,6 +1059,17 @@ namespace SinoSZJS.CS.BizReport
                 return _ret;
             }
         }
+
+        List<MD_ReportGuideLineItem> IReportFactroy.GetReportGuideLines(MD_ReportName mD_ReportName)
+        {
+            throw new NotImplementedException();
+        }
+
+        MD_ReportGuideLineDefine IReportFactroy.GetReportGuideLineDefine(string _id)
+        {
+            throw new NotImplementedException();
+        }
+
 
         #endregion
     }

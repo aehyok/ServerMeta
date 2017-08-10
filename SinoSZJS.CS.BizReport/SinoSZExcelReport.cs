@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Data;
-using Oracle.DataAccess.Client;
 using System.IO;
 using SinoSZJS.Base.Misc;
 using SinoSZJS.Base.Authorize;

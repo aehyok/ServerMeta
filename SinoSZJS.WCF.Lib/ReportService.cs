@@ -9,7 +9,6 @@ using SinoSZJS.Base.Report;
 using SinoSZJS.Base.Report.ReportGuideLine;
 using System.Data;
 using System.DirectoryServices.ActiveDirectory;
-using SinoSZJS.DataAccess;
 
 namespace SinoSZJS.WCF.Lib
 {

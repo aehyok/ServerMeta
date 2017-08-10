@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using SinoSZJS.DataAccess;
-using Oracle.DataAccess.Client;
 using System.Data;
 using SinoSZJS.DataAccess.Sql;
 using System.Data.SqlClient;

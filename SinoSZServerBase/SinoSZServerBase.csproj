@@ -137,7 +137,6 @@
     <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Oracle.DataAccess, Version=4.112.1.2, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -192,17 +191,13 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SinoSZJS.Base\SinoSZJS.Base.csproj">
+      <Project>{76fc4ed1-a1d0-4167-9c82-2b69eff6a33b}</Project>
+      <Name>SinoSZJS.Base</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SinoSZJS.DataAccess.Sql\SinoSZJS.DataAccess.Sql.csproj">
       <Project>{0CCDAD03-D337-4437-BD04-62FFFD03681A}</Project>
       <Name>SinoSZJS.DataAccess.Sql</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SinoSZJS.DataAccess\SinoSZJS.DataAccess.csproj">
-      <Project>{C41251E4-BC9E-4A3C-92D0-22682FBAA541}</Project>
-      <Name>SinoSZJS.DataAccess</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SinoSZJS.Base\SinoSZJS.Base.csproj">
-      <Project>{29F48920-647F-48A2-A222-34276057D81A}</Project>
-      <Name>SinoSZJS.Base</Name>
     </ProjectReference>
     <ProjectReference Include="..\SinoSZPluginFramework\SinoSZPluginFramework.csproj">
       <Project>{C855A639-511E-4B4F-8A71-3224083C5D40}</Project>

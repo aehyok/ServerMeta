@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Oracle.DataAccess.Client;
 using System.Data;
 using SinoSZJS.Base.UserLog;
 using SinoSZJS.DataAccess;
