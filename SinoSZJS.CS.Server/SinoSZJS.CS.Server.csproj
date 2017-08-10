@@ -98,6 +98,10 @@
       <Project>{309CFAA9-3F2B-479C-BDC4-47FD9ABC67A6}</Project>
       <Name>SinoSZJS.CS.Tasks</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SinoSZJS.DataAccess.Sql\SinoSZJS.DataAccess.Sql.csproj">
+      <Project>{0CCDAD03-D337-4437-BD04-62FFFD03681A}</Project>
+      <Name>SinoSZJS.DataAccess.Sql</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SinoSZJS.WCF.Lib\SinoSZJS.WCF.Lib.csproj">
       <Project>{76C7EBEB-E1C0-466F-88E2-74C9323980B1}</Project>
       <Name>SinoSZJS.WCF.Lib</Name>
