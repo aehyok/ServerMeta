@@ -11,6 +11,8 @@ using System.Data;
 using System.IO;
 using SinoSZJS.CS.Tasks.Common;
 using System.Threading;
+using System.Data.SqlClient;
+using SinoSZJS.DataAccess.Sql;
 
 namespace SinoSZJS.CS.Tasks.Customs.TJS
 {
@@ -56,9 +58,9 @@ namespace SinoSZJS.CS.Tasks.Customs.TJS
         private string Get_ZHTJ_CS(string CSNAME)
         {
 
-            using (OracleConnection cn = OracleHelper.OpenConnection())
+            using (SqlConnection cn = SqlHelper.OpenConnection())
             {
-                OracleCommand _cmd = new OracleCommand(SQL_GetZHTJ_CS, cn);
+                SqlCommand _cmd = new SqlCommand(SQL_GetZHTJ_CS, cn);
                 _cmd.Parameters.Add(":CSNAME", CSNAME);
                 object csz = _cmd.ExecuteScalar();
                 if (csz == null)
@@ -75,15 +77,15 @@ namespace SinoSZJS.CS.Tasks.Customs.TJS
         private bool RunStoreProcess(string _clny)
         {
             //执行存贮过程
-            OracleCommand cmd = new OracleCommand();
-            using (OracleConnection cn = OracleHelper.OpenConnection())
+            SqlCommand cmd = new SqlCommand();
+            using (SqlConnection cn = SqlHelper.OpenConnection())
             {
                 try
                 {
                     cmd.Connection = cn;
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "ZHTJ_BTJS.BTJS";
-                    cmd.Parameters.Add(new OracleParameter("strNY", _clny));
+                    cmd.Parameters.Add(new SqlParameter("strNY", _clny));
                     cmd.ExecuteNonQuery();//执行存储过程
                     return true;
                 }
@@ -102,14 +104,14 @@ namespace SinoSZJS.CS.Tasks.Customs.TJS
             //检查处理结果
             try
             {
-                using (OracleConnection cn = OracleHelper.OpenConnection())
+                using (SqlConnection cn = SqlHelper.OpenConnection())
                 {
-                    OracleCommand cmd = new OracleCommand();
+                    SqlCommand cmd = new SqlCommand();
                     cmd.Connection = cn;
                     cmd.CommandType = CommandType.Text;
                     cmd.CommandText = " Select  runok from TJ_TJSOK where NY=:NY";
-                    cmd.Parameters.Add(new OracleParameter(":NY", clny));
-                    using (OracleDataReader myReader = cmd.ExecuteReader())
+                    cmd.Parameters.Add(new SqlParameter(":NY", clny));
+                    using (SqlDataReader myReader = cmd.ExecuteReader())
                     {
                         while (myReader.Read())
                         {
@@ -195,17 +197,17 @@ namespace SinoSZJS.CS.Tasks.Customs.TJS
             StreamWriter sr = null;
             try
             {
-                using (OracleConnection cn = OracleHelper.OpenConnection())
+                using (SqlConnection cn = SqlHelper.OpenConnection())
                 {
                     sr = File.CreateText(_fname);
 
-                    OracleCommand cmd = new OracleCommand();
+                    SqlCommand cmd = new SqlCommand();
                     cmd.Connection = cn;
                     cmd.CommandType = CommandType.Text;
                     cmd.CommandText = SQL_WriteFile;
-                    cmd.Parameters.Add(new OracleParameter(":dtBegin", beginDate));
-                    cmd.Parameters.Add(new OracleParameter(":dtEnd", endDate));
-                    OracleDataReader myReader = cmd.ExecuteReader();
+                    cmd.Parameters.Add(new SqlParameter(":dtBegin", beginDate));
+                    cmd.Parameters.Add(new SqlParameter(":dtEnd", endDate));
+                    SqlDataReader myReader = cmd.ExecuteReader();
                     while (myReader.Read())
                     {
                         sr.WriteLine(myReader.GetString(0));
@@ -282,10 +284,10 @@ namespace SinoSZJS.CS.Tasks.Customs.TJS
         public override DateTime GetNextTime()
         {
             DateTime _nt = this._startTime;
-            OracleCommand cmd = new OracleCommand();
+            SqlCommand cmd = new SqlCommand();
             try
             {
-                using (OracleConnection cn = OracleHelper.OpenConnection())
+                using (SqlConnection cn = SqlHelper.OpenConnection())
                 {
 
                     //取工作日历记录
@@ -299,9 +301,9 @@ namespace SinoSZJS.CS.Tasks.Customs.TJS
                         _year++;
                         _month = 1;
                     }
-                    cmd.Parameters.Add(new OracleParameter(":YEAR", _year.ToString()));
-                    cmd.Parameters.Add(new OracleParameter(":MONTH", _month.ToString()));
-                    using (OracleDataReader myReader = cmd.ExecuteReader())
+                    cmd.Parameters.Add(new SqlParameter(":YEAR", _year.ToString()));
+                    cmd.Parameters.Add(new SqlParameter(":MONTH", _month.ToString()));
+                    using (SqlDataReader myReader = cmd.ExecuteReader())
                     {
                         int _day = -1;
                         while (myReader.Read())

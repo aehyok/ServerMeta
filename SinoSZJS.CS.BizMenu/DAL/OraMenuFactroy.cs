@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Oracle.DataAccess.Client;
 using System.Data;
-using SinoSZJS.DataAccess;
 using SinoSZJS.Base.MenuType;
 using SinoSZJS.Base.Misc;
+using SinoSZJS.DataAccess.Sql;
+using System.Data.SqlClient;
 
 namespace SinoSZJS.CS.BizMenu.DAL
 {
@@ -26,40 +26,40 @@ namespace SinoSZJS.CS.BizMenu.DAL
                                               connect by prior yhmenu.id=yhmenu.fatherid";
                 public List<SinoMenuItem> GetAllMenus(string _postID)
                 {
-                        OracleDataReader dr;
+                        SqlDataReader dr;
                         List<SinoMenuItem> _ret = new List<SinoMenuItem>();
                         if (_postID != "0")
                         {
                                 //string _sql = "zhtj_zzjg2.get_yhmenu_systemid";
                                 string _sql = "zhtj_zzjg2.Get_GWMENU";
-                                OracleParameter[] _param = {
-                                        new OracleParameter("nGWID", OracleDbType.Decimal),
-                                        new OracleParameter("nhavemeta",OracleDbType.Decimal),                            
-                                        new OracleParameter("curMENU",OracleDbType.RefCursor,DBNull.Value,ParameterDirection.Output)
+                                SqlParameter[] _param = {
+                                        new SqlParameter("nGWID", SqlDbType.Decimal),
+                                        new SqlParameter("nhavemeta",SqlDbType.Decimal),                            
+                                        //new SqlParameter("curMENU",SqlDbType.RefCursor,DBNull.Value,ParameterDirection.Output)
                                   };
                                 _param[0].Value = decimal.Parse(_postID);
                                 _param[1].Value = (decimal)1;
 
-                                dr = OracleHelper.ExecuteReader(OracleHelper.ConnectionStringProfile, CommandType.StoredProcedure,
+                                dr = SqlHelper.ExecuteReader(SqlHelper.ConnectionStringProfile, CommandType.StoredProcedure,
                                                                 _sql, _param);
                         }
                         else
                         {
                                 string _sql = "zhtj_zzjg2.get_yhmenu_systemid";
-                                OracleParameter[] _param = {
-                                        new OracleParameter("nyhid", OracleDbType.Decimal),
-                                        new OracleParameter("nhavemeta",OracleDbType.Decimal),
-                                        new OracleParameter("strsystemid",OracleDbType.Varchar2,12),
-                                        new OracleParameter("curMENU",OracleDbType.RefCursor,DBNull.Value,ParameterDirection.Output)
+                                SqlParameter[] _param = {
+                                        new SqlParameter("nyhid", SqlDbType.Decimal),
+                                        new SqlParameter("nhavemeta",SqlDbType.Decimal),
+                                        new SqlParameter("strsystemid",SqlDbType.VarChar,12),
+                                        //new SqlParameter("curMENU",SqlDbType.RefCursor,DBNull.Value,ParameterDirection.Output)
                                 };
                                 _param[0].Value = (decimal)0;
                                 _param[1].Value = (decimal)1;
                                 _param[2].Value = ConfigFile.SystemID;
 
 
-                //dr = OracleHelper.ExecuteReader(OracleHelper.ConnectionStringProfile, CommandType.StoredProcedure,
+                //dr = SqlHelper.ExecuteReader(SqlHelper.ConnectionStringProfile, CommandType.StoredProcedure,
                 //                                _sql, _param);
-                dr = OracleHelper.ExecuteReader(OracleHelper.ConnectionStringProfile, CommandType.Text, yhmenu_systemId, null);
+                dr = SqlHelper.ExecuteReader(SqlHelper.ConnectionStringProfile, CommandType.Text, yhmenu_systemId, null);
                         }
 
                         while (dr.Read())
@@ -88,10 +88,10 @@ namespace SinoSZJS.CS.BizMenu.DAL
                 public List<firstPageItem> GetfirstPage()
                 {
                         List<firstPageItem> _ret = new List<firstPageItem>();
-                        OracleDataReader dr;
+                        SqlDataReader dr;
                         string _sql = "select \"ID\",\"TYPE\",\"CS\",\"CAPTION\" from md_firstpage t order by xh";
 
-                        dr = OracleHelper.ExecuteReader(OracleHelper.ConnectionStringProfile, CommandType.Text, _sql);
+                        dr = SqlHelper.ExecuteReader(SqlHelper.ConnectionStringProfile, CommandType.Text, _sql);
                         while (dr.Read())
                         {
                                 firstPageItem _mitem = new firstPageItem(

@@ -8,7 +8,8 @@ using System.Data;
 using System.Web.Script.Serialization;
 using Oracle.DataAccess.Client;
 using SinoSZJS.DataAccess;
-
+using System.Data.SqlClient;
+using SinoSZJS.DataAccess.Sql;
 
 namespace SinoSZJS.CS.Tasks.HP.Inspection
 {
@@ -97,9 +98,9 @@ namespace SinoSZJS.CS.Tasks.HP.Inspection
         {
             try
             {
-                using (OracleConnection cn = OracleHelper.OpenConnection())
+                using (SqlConnection cn = SqlHelper.OpenConnection())
                 {
-                    OracleCommand cmd = new OracleCommand
+                    SqlCommand cmd = new SqlCommand
                     {
                         Connection = cn,
                         CommandType = CommandType.Text,
@@ -128,16 +129,16 @@ namespace SinoSZJS.CS.Tasks.HP.Inspection
            //获取待发送记录
             try
             {
-                using (OracleConnection cn = OracleHelper.OpenConnection())
+                using (SqlConnection cn = SqlHelper.OpenConnection())
                 {
-                    OracleCommand cmd = new OracleCommand
+                    SqlCommand cmd = new SqlCommand
                     {
                         Connection = cn,
                         CommandType = CommandType.Text,
                         CommandText =
                             " Select  * from YW_QD_DBSX where DB_APPLICATION_NAME = 'HPCYApp' and  FSZT not in '已发送'"
                     };
-                    using (OracleDataAdapter adapter = new OracleDataAdapter(cmd))
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
                     {
                         adapter.Fill(datatable);
                     }

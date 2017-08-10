@@ -4,6 +4,7 @@ using System.Text;
 using SinoSZPluginFramework;
 using System.Threading;
 using SinoSZJS.DataAccess;
+using SinoSZJS.DataAccess.Sql;
 
 namespace SinoSZServerBase
 {
@@ -29,7 +30,7 @@ namespace SinoSZServerBase
                         }
                         catch (Exception ex)
                         {
-                                OralceLogWriter.WriteSystemLog(ex.Message, "ERROR");
+                                LogWriter.WriteSystemLog(ex.Message, "ERROR");
                         }
                 }
         }

@@ -16,7 +16,8 @@ using SinoSZJS.CS.BizMetaDataManager.DAL;
 using SinoSZJS.Base.WorkCalendar;
 using System.Diagnostics;
 using SinoSZJS.Base.JSGDS;
-
+using SinoSZJS.DataAccess.Sql;
+using System.Data.SqlClient;
 
 namespace SinoSZJS.CS.BizUser
 {
@@ -49,14 +50,14 @@ namespace SinoSZJS.CS.BizUser
             }
 
             _sql += " order by CZSJ DESC ";
-            OracleParameter[] _param = {
-                                        new OracleParameter(":KSRQ", OracleDbType.Date),
-                                        new OracleParameter(":JSRQ",OracleDbType.Date)
+            SqlParameter[] _param = {
+                                        new SqlParameter(":KSRQ", SqlDbType.Date),
+                                        new SqlParameter(":JSRQ",SqlDbType.Date)
                                  };
             _param[0].Value = _startDate;
             _param[1].Value = _endDate;
 
-            OracleDataReader dr = OracleHelper.ExecuteReader(OracleHelper.ConnectionStringProfile, CommandType.Text,
+            SqlDataReader dr = SqlHelper.ExecuteReader(SqlHelper.ConnectionStringProfile, CommandType.Text,
                                 _sql, _param);
 
             while (dr.Read())
@@ -100,14 +101,14 @@ namespace SinoSZJS.CS.BizUser
             }
 
             _sql += " order by CZSJ DESC ";
-            OracleParameter[] _param = {
-                                        new OracleParameter(":KSRQ", OracleDbType.Date),
-                                        new OracleParameter(":JSRQ",OracleDbType.Date)
+            SqlParameter[] _param = {
+                                        new SqlParameter(":KSRQ", SqlDbType.Date),
+                                        new SqlParameter(":JSRQ",SqlDbType.Date)
                                  };
             _param[0].Value = _startDate;
             _param[1].Value = _endDate;
 
-            OracleDataReader dr = OracleHelper.ExecuteReader(OracleHelper.ConnectionStringProfile, CommandType.Text,
+            SqlDataReader dr = SqlHelper.ExecuteReader(SqlHelper.ConnectionStringProfile, CommandType.Text,
                                 _sql, _param);
 
             while (dr.Read())
@@ -129,7 +130,7 @@ namespace SinoSZJS.CS.BizUser
         {
             string _select = string.Format("select ID,(select ZZJGMC from QX2_ZZJG WHERE ZZJGDM = FBDW) FBDWMC, FBDW,FBR,FBSJ,XXBT from XT_GGXX where  ZH_SHANGJI('{0}',FBDW) ='1' ORDER BY FBSJ DESC", SinoUserCtx.CurUser.CurrentPost.PostDWDM);
             string _sql = string.Format(" select * from ({0}) where rownum<={1}", _select, _num);
-            DataTable _ret = OracleHelper.Get_Data(_sql, "TZTG");
+            DataTable _ret = SqlHelper.Get_Data(_sql, "TZTG");
             return _ret;
         }
 
@@ -141,11 +142,11 @@ namespace SinoSZJS.CS.BizUser
             StringBuilder _sb = new StringBuilder();
             _sb.Append(" select ID,XXBT,XXNR,FBDW,(select ZZJGMC from QX2_ZZJG WHERE ZZJGDM = FBDW) FBDWMC,FBR,LXDH,DZYJ,FBSJ from XT_GGXX");
             _sb.Append(" where id=:ID ");
-            OracleParameter[] _param = {
-                                        new OracleParameter(":ID", OracleDbType.Decimal)                                      
+            SqlParameter[] _param = {
+                                        new SqlParameter(":ID", SqlDbType.Decimal)                                      
                                  };
             _param[0].Value = Decimal.Parse(_msgid);
-            OracleDataReader dr = OracleHelper.ExecuteReader(OracleHelper.ConnectionStringProfile, CommandType.Text,
+            SqlDataReader dr = SqlHelper.ExecuteReader(SqlHelper.ConnectionStringProfile, CommandType.Text,
                              _sb.ToString(), _param);
 
             while (dr.Read())
@@ -178,13 +179,13 @@ namespace SinoSZJS.CS.BizUser
             }
             else
             {
-                using (OracleConnection cn = OracleHelper.OpenConnection())
+                using (SqlConnection cn = SqlHelper.OpenConnection())
                 {
-                    OracleTransaction _txn = cn.BeginTransaction();
+                    SqlTransaction _txn = cn.BeginTransaction();
 
                     try
                     {
-                        OracleCommand _cmd = new OracleCommand(SQL_SaveNotifyInfo, cn);
+                        SqlCommand _cmd = new SqlCommand(SQL_SaveNotifyInfo, cn);
                         _cmd.Parameters.Add(":LXDH", _info.TelNum);
                         _cmd.Parameters.Add(":DZYJ", _info.Email);
                         _cmd.Parameters.Add(":XXBT", _info.Title);
@@ -199,7 +200,7 @@ namespace SinoSZJS.CS.BizUser
                     {
                         string _errmsg = string.Format("修改ID={1}的通知通告信息时出错,错误信息为:{0}!",
                               e.Message, _info.ID);
-                        OralceLogWriter.WriteSystemLog(_errmsg, "ERROR");
+                        LogWriter.WriteSystemLog(_errmsg, "ERROR");
                         _txn.Rollback();
                         return false;
                     }
@@ -217,13 +218,13 @@ namespace SinoSZJS.CS.BizUser
         private bool SaveNewNotifyInfo(NotifyInfo _info)
         {
 
-            using (OracleConnection cn = OracleHelper.OpenConnection())
+            using (SqlConnection cn = SqlHelper.OpenConnection())
             {
-                OracleTransaction _txn = cn.BeginTransaction();
+                SqlTransaction _txn = cn.BeginTransaction();
 
                 try
                 {
-                    OracleCommand _cmd = new OracleCommand(SQL_SaveNewNotifyInfo, cn);
+                    SqlCommand _cmd = new SqlCommand(SQL_SaveNewNotifyInfo, cn);
                     _cmd.Parameters.Add(":FBDW", SinoUserCtx.CurUser.CurrentPost.PostDWDM);
                     _cmd.Parameters.Add(":FBR", SinoUserCtx.CurUser.UserName);
                     _cmd.Parameters.Add(":LXDH", _info.TelNum);
@@ -236,7 +237,7 @@ namespace SinoSZJS.CS.BizUser
                 {
                     string _errmsg = string.Format("删除ID={1}的通知通告信息时出错,错误信息为:{0}!",
                           e.Message, _info.ID);
-                    OralceLogWriter.WriteSystemLog(_errmsg, "ERROR");
+                    LogWriter.WriteSystemLog(_errmsg, "ERROR");
                     _txn.Rollback();
                     return false;
                 }
@@ -252,13 +253,13 @@ namespace SinoSZJS.CS.BizUser
         {
             string _sql = " delete from XT_GGXX where ID=:ID AND FBDW=:FBDWDM ";
 
-            using (OracleConnection cn = OracleHelper.OpenConnection())
+            using (SqlConnection cn = SqlHelper.OpenConnection())
             {
-                OracleTransaction _txn = cn.BeginTransaction();
+                SqlTransaction _txn = cn.BeginTransaction();
 
                 try
                 {
-                    OracleCommand _cmd = new OracleCommand(_sql, cn);
+                    SqlCommand _cmd = new SqlCommand(_sql, cn);
                     _cmd.Parameters.Add(":ID", decimal.Parse(CurrentInfo.ID));
                     _cmd.Parameters.Add(":FBDWDM", SinoUserCtx.CurUser.CurrentPost.PostDWDM);
                     _cmd.ExecuteNonQuery();
@@ -267,7 +268,7 @@ namespace SinoSZJS.CS.BizUser
                 {
                     string _errmsg = string.Format("删除ID={1}的通知通告信息时出错,错误信息为:{0}!",
                           e.Message, CurrentInfo.ID);
-                    OralceLogWriter.WriteSystemLog(_errmsg, "ERROR");
+                    LogWriter.WriteSystemLog(_errmsg, "ERROR");
                     _txn.Rollback();
                     return false;
                 }
@@ -285,7 +286,7 @@ namespace SinoSZJS.CS.BizUser
             _sb.Append(" select YHID,DISPLAYNAME,YHM,DWID, ZHTJ_ZZJG2.GETDWMC(DWID) DWMC,METADATA from sjjh_yhb");
             _sb.Append(" order by dwid ");
 
-            OracleDataReader dr = OracleHelper.ExecuteReader(OracleHelper.ConnectionStringProfile, CommandType.Text, _sb.ToString());
+            SqlDataReader dr = SqlHelper.ExecuteReader(SqlHelper.ConnectionStringProfile, CommandType.Text, _sb.ToString());
 
             while (dr.Read())
             {
@@ -309,12 +310,12 @@ namespace SinoSZJS.CS.BizUser
             StringBuilder _sb = new StringBuilder();
             _sb.Append(" select YHM,TABLENAME,WHERECONDITION,SECRETFUN from sjjh_dcsjblb");
             _sb.Append(" where YHM=:YHM ");
-            OracleParameter[] _param = {
-                                        new OracleParameter(":YHM", OracleDbType.Varchar2)                                      
+            SqlParameter[] _param = {
+                                        new SqlParameter(":YHM", SqlDbType.VarChar)                                      
                                  };
             _param[0].Value = _yhm;
 
-            OracleDataReader dr = OracleHelper.ExecuteReader(OracleHelper.ConnectionStringProfile, CommandType.Text, _sb.ToString(), _param);
+            SqlDataReader dr = SqlHelper.ExecuteReader(SqlHelper.ConnectionStringProfile, CommandType.Text, _sb.ToString(), _param);
 
             while (dr.Read())
             {
@@ -339,7 +340,7 @@ namespace SinoSZJS.CS.BizUser
             _sb.Append(" select id,fid,displayName,yhm,lx,xh from sjjh_nodes");
             _sb.Append(" order by xh ");
 
-            OracleDataReader dr = OracleHelper.ExecuteReader(OracleHelper.ConnectionStringProfile, CommandType.Text, _sb.ToString());
+            SqlDataReader dr = SqlHelper.ExecuteReader(SqlHelper.ConnectionStringProfile, CommandType.Text, _sb.ToString());
 
             while (dr.Read())
             {
@@ -366,12 +367,12 @@ namespace SinoSZJS.CS.BizUser
             StringBuilder _sb = new StringBuilder();
             _sb.Append(" select TABLENAME,COLUMNNAME,TYPE,LENGTH,REFDMB from sjjh_tablecolumn");
             _sb.Append(" where TABLENAME=:TABLENAME ");
-            OracleParameter[] _param = {
-                                        new OracleParameter(":TABLENAME", OracleDbType.Varchar2)                                      
+            SqlParameter[] _param = {
+                                        new SqlParameter(":TABLENAME", SqlDbType.VarChar)                                      
                                  };
             _param[0].Value = _tableName;
 
-            OracleDataReader dr = OracleHelper.ExecuteReader(OracleHelper.ConnectionStringProfile, CommandType.Text, _sb.ToString(), _param);
+            SqlDataReader dr = SqlHelper.ExecuteReader(SqlHelper.ConnectionStringProfile, CommandType.Text, _sb.ToString(), _param);
 
             while (dr.Read())
             {
@@ -442,12 +443,12 @@ namespace SinoSZJS.CS.BizUser
             _sb.Append(" START WITH (jg.ZZJGID = :nParent ) ");
             _sb.Append(" CONNECT BY prior   jg.zzjgid=jg.SJDWID ");
 
-            OracleParameter[] _param = {
-                                        new OracleParameter(":nParent", OracleDbType.Decimal)                                      
+            SqlParameter[] _param = {
+                                        new SqlParameter(":nParent", SqlDbType.Decimal)                                      
                                  };
             _param[0].Value = decimal.Parse(_fid);
 
-            OracleDataReader dr = OracleHelper.ExecuteReader(OracleHelper.ConnectionStringProfile, CommandType.Text, _sb.ToString(), _param);
+            SqlDataReader dr = SqlHelper.ExecuteReader(SqlHelper.ConnectionStringProfile, CommandType.Text, _sb.ToString(), _param);
 
             while (dr.Read())
             {
@@ -483,31 +484,31 @@ namespace SinoSZJS.CS.BizUser
             }
             _sb.Append(" where ZZJGID=:ZZJGID ");
 
-            using (OracleConnection cn = OracleHelper.OpenConnection())
+            using (SqlConnection cn = SqlHelper.OpenConnection())
             {
-                OracleTransaction _txn = cn.BeginTransaction();
+                SqlTransaction _txn = cn.BeginTransaction();
                 foreach (OrgExtInfo _item in BeSavedDataList)
                 {
                     try
                     {
-                        List<OracleParameter> _plist = new List<OracleParameter>();
-                        _plist.Add(new OracleParameter(":JGXSMC", _item.GetValue("JGXSMC")));
-                        _plist.Add(new OracleParameter(":ISDISPLAY", _item.GetValue("ISDISPLAY")));
-                        _plist.Add(new OracleParameter(":DISPLAYORDER", _item.GetValue("DISPLAYORDER")));
+                        List<SqlParameter> _plist = new List<SqlParameter>();
+                        _plist.Add(new SqlParameter(":JGXSMC", _item.GetValue("JGXSMC")));
+                        _plist.Add(new SqlParameter(":ISDISPLAY", _item.GetValue("ISDISPLAY")));
+                        _plist.Add(new SqlParameter(":DISPLAYORDER", _item.GetValue("DISPLAYORDER")));
                         foreach (OrgExtFieldDefine _field in PropertieDefines)
                         {
-                            _plist.Add(new OracleParameter(string.Format(":{0}", _field.FieldName), _item.GetValue(_field.FieldName)));
+                            _plist.Add(new SqlParameter(string.Format(":{0}", _field.FieldName), _item.GetValue(_field.FieldName)));
                         }
-                        _plist.Add(new OracleParameter(":ZZJGID", Convert.ToDecimal(_item.GetValue("ZZJGID"))));
-                        OracleParameter[] _ps = _plist.ToArray();
-                        OracleHelper.ExecuteNonQuery(cn, CommandType.Text, _sb.ToString(), _ps);
+                        _plist.Add(new SqlParameter(":ZZJGID", Convert.ToDecimal(_item.GetValue("ZZJGID"))));
+                        SqlParameter[] _ps = _plist.ToArray();
+                        SqlHelper.ExecuteNonQuery(cn, CommandType.Text, _sb.ToString(), _ps);
 
                     }
                     catch (Exception e)
                     {
                         string _errmsg = string.Format("写入{1}的组织机构扩展信息时出错,错误信息为:{0}!",
                               e.Message, _item.GetValue("ZZJGID"));
-                        OralceLogWriter.WriteSystemLog(_errmsg, "ERROR");
+                        LogWriter.WriteSystemLog(_errmsg, "ERROR");
                         _txn.Rollback();
                         return false;
                     }
@@ -525,12 +526,12 @@ namespace SinoSZJS.CS.BizUser
         private const string SQL_GetFsDataLoadAlertMailReceiver = "select * from YW_FS_SJJZTSJSR where LX=:LX";
         public DataTable GetFsDataLoadAlertMailReceiver(string _selectedStr)
         {
-            OracleParameter[] _param = {
-                                        new OracleParameter(":LX", OracleDbType.Varchar2)                                      
+            SqlParameter[] _param = {
+                                        new SqlParameter(":LX", SqlDbType.VarChar)                                      
                                  };
             _param[0].Value = _selectedStr;
 
-            return OracleHelper.FillDataTable(OracleHelper.ConnectionStringProfile, CommandType.Text, SQL_GetFsDataLoadAlertMailReceiver, _param);
+            return SqlHelper.FillDataTable(SqlHelper.ConnectionStringProfile, CommandType.Text, SQL_GetFsDataLoadAlertMailReceiver, _param);
 
         }
 
@@ -538,40 +539,40 @@ namespace SinoSZJS.CS.BizUser
         private const string SQL_DelFsDataLoadAlertReceiver = "delete from YW_FS_SJJZTSJSR where id=:ID";
         public bool DelFsDataLoadAlertReceiver(string id)
         {
-            OracleParameter[] _param = {
-                                        new OracleParameter(":ID", OracleDbType.Decimal)                                      
+            SqlParameter[] _param = {
+                                        new SqlParameter(":ID", SqlDbType.Decimal)                                      
                                  };
             _param[0].Value = Decimal.Parse(id);
 
-            int _ret = OracleHelper.ExecuteNonQuery(OracleHelper.ConnectionStringProfile, CommandType.Text, SQL_DelFsDataLoadAlertReceiver, _param);
+            int _ret = SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionStringProfile, CommandType.Text, SQL_DelFsDataLoadAlertReceiver, _param);
             return true;
         }
 
         private const string SQL_ModifyFsDataLoadAlertReceiver = "update YW_FS_SJJZTSJSR set JSR=:JSR where id=:ID";
         public bool ModifyFsDataLoadAlertReceiver(string id, string EmailAddr)
         {
-            OracleParameter[] _param = {
-					new OracleParameter(":LX", OracleDbType.Varchar2) ,
-                                        new OracleParameter(":ID", OracleDbType.Decimal)                                      
+            SqlParameter[] _param = {
+					new SqlParameter(":LX", SqlDbType.VarChar) ,
+                                        new SqlParameter(":ID", SqlDbType.Decimal)                                      
                                  };
             _param[0].Value = EmailAddr;
             _param[1].Value = Decimal.Parse(id);
 
-            int _ret = OracleHelper.ExecuteNonQuery(OracleHelper.ConnectionStringProfile, CommandType.Text, SQL_ModifyFsDataLoadAlertReceiver, _param);
+            int _ret = SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionStringProfile, CommandType.Text, SQL_ModifyFsDataLoadAlertReceiver, _param);
             return true;
         }
 
         private const string SQL_AddFsDataLoadAlertReceiver = "insert into YW_FS_SJJZTSJSR (id,lx,jsr) values (SEQ_QX2.nextval,:LX,:JSR)";
         public bool AddFsDataLoadAlertReceiver(string lx, string EmailAddr)
         {
-            OracleParameter[] _param = {
-					new OracleParameter(":LX", OracleDbType.Varchar2) ,
-                                        new OracleParameter(":JSR", OracleDbType.Varchar2)                                      
+            SqlParameter[] _param = {
+					new SqlParameter(":LX", SqlDbType.VarChar) ,
+                                        new SqlParameter(":JSR", SqlDbType.VarChar)                                      
                                  };
             _param[0].Value = lx;
             _param[1].Value = EmailAddr;
 
-            int _ret = OracleHelper.ExecuteNonQuery(OracleHelper.ConnectionStringProfile, CommandType.Text, SQL_AddFsDataLoadAlertReceiver, _param);
+            int _ret = SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionStringProfile, CommandType.Text, SQL_AddFsDataLoadAlertReceiver, _param);
             return true;
         }
 
@@ -606,13 +607,13 @@ namespace SinoSZJS.CS.BizUser
         public SinoTaskInfo GetTaskInfo(string TaskID)
         {
             SinoTaskInfo _ret = null;
-            OracleParameter[] _param = {
-					new OracleParameter(":RWID", OracleDbType.Decimal)                               
+            SqlParameter[] _param = {
+					new SqlParameter(":RWID", SqlDbType.Decimal)                               
                                  };
             _param[0].Value = decimal.Parse(TaskID);
             try
             {
-                OracleDataReader _dr = OracleHelper.ExecuteReader(OracleHelper.ConnectionStringProfile, CommandType.Text, SQL_GetTaskInfo, _param);
+                SqlDataReader _dr = SqlHelper.ExecuteReader(SqlHelper.ConnectionStringProfile, CommandType.Text, SQL_GetTaskInfo, _param);
                 while (_dr.Read())
                 {
                     _ret = new SinoTaskInfo();
@@ -633,7 +634,7 @@ namespace SinoSZJS.CS.BizUser
             {
                 string _errmsg = string.Format("取RWID={1}的工作任务信息时出错,错误信息为:{0}!",
                                     ex.Message, TaskID);
-                OralceLogWriter.WriteSystemLog(_errmsg, "ERROR");
+                LogWriter.WriteSystemLog(_errmsg, "ERROR");
                 return null;
             }
         }
@@ -641,38 +642,38 @@ namespace SinoSZJS.CS.BizUser
         private const string SQL_GetTaskLog = @" select  t.* from (select r.* from GZRW_RZ r where r.rwid=:RWID and r.runtime>:LASTTIME  and runflag>:HAVEERROR order by runtime desc) t where rownum<:LINENUM";
         public DataTable GetTaskLog(string TaskID, DateTime LastTime, bool GetStartData, bool OnlyErrorData)
         {
-            OracleParameter[] _param = {
-					new OracleParameter(":RWID", OracleDbType.Decimal),
-                                        new OracleParameter(":LASTTIME",OracleDbType.Date),
-                                        new OracleParameter(":HAVEERROR",OracleDbType.Decimal),
-                                        new OracleParameter(":LINENUM",OracleDbType.Decimal)
+            SqlParameter[] _param = {
+					new SqlParameter(":RWID", SqlDbType.Decimal),
+                                        new SqlParameter(":LASTTIME",SqlDbType.Date),
+                                        new SqlParameter(":HAVEERROR",SqlDbType.Decimal),
+                                        new SqlParameter(":LINENUM",SqlDbType.Decimal)
                                  };
             _param[0].Value = decimal.Parse(TaskID);
             _param[1].Value = LastTime;
             _param[2].Value = (OnlyErrorData ? (decimal)0 : (decimal)-1);
             _param[3].Value = (GetStartData ? (decimal)31 : (decimal)30000);
-            return OracleHelper.FillDataTable(OracleHelper.ConnectionStringProfile, CommandType.Text, SQL_GetTaskLog, _param);
+            return SqlHelper.FillDataTable(SqlHelper.ConnectionStringProfile, CommandType.Text, SQL_GetTaskLog, _param);
 
         }
 
         private const string SQL_SetTaskState = @"update GZRW set RWZT=:NEWZT where RWID=:RWID and RWZT=:LIMIT";
         public string SetTaskState(string TaskID, int NewState, int LimitState)
         {
-            using (OracleConnection cn = OracleHelper.OpenConnection())
+            using (SqlConnection cn = SqlHelper.OpenConnection())
             {
-                OracleTransaction txn = cn.BeginTransaction();
+                SqlTransaction txn = cn.BeginTransaction();
                 try
                 {
-                    OracleParameter[] _param = {
-					                new OracleParameter(":NEWZT", OracleDbType.Decimal) ,
-                                                        new OracleParameter(":RWID", OracleDbType.Decimal),
-                                                        new OracleParameter(":LIMIT", OracleDbType.Decimal)           
+                    SqlParameter[] _param = {
+					                new SqlParameter(":NEWZT", SqlDbType.Decimal) ,
+                                                        new SqlParameter(":RWID", SqlDbType.Decimal),
+                                                        new SqlParameter(":LIMIT", SqlDbType.Decimal)           
                                                  };
                     _param[0].Value = Convert.ToDecimal(NewState);
                     _param[1].Value = decimal.Parse(TaskID);
                     _param[2].Value = Convert.ToDecimal(LimitState);
 
-                    int _ret = OracleHelper.ExecuteNonQuery(cn, CommandType.Text, SQL_SetTaskState, _param);
+                    int _ret = SqlHelper.ExecuteNonQuery(cn, CommandType.Text, SQL_SetTaskState, _param);
                     txn.Commit();
                     return "";
                 }
@@ -686,22 +687,22 @@ namespace SinoSZJS.CS.BizUser
         private const string SQL_ResetTaskParam = @"update GZRW set NEXTTIME=:NEXT,RWML=:RWMC where RWID=:RWID and RWZT<>1";
         public string ResetTaskParam(string TaskID, DateTime NextTime, string NewParam)
         {
-            using (OracleConnection cn = OracleHelper.OpenConnection())
+            using (SqlConnection cn = SqlHelper.OpenConnection())
             {
-                OracleTransaction txn = cn.BeginTransaction();
+                SqlTransaction txn = cn.BeginTransaction();
                 try
                 {
-                    OracleParameter[] _param = {
-					                new OracleParameter(":NEXT", OracleDbType.Date) ,
-                                                        new OracleParameter(":RWMC",OracleDbType.Varchar2),
-                                                        new OracleParameter(":RWID", OracleDbType.Decimal)        
+                    SqlParameter[] _param = {
+					                new SqlParameter(":NEXT", SqlDbType.Date) ,
+                                                        new SqlParameter(":RWMC",SqlDbType.VarChar),
+                                                        new SqlParameter(":RWID", SqlDbType.Decimal)        
                                                  };
                     _param[0].Value = NextTime;
                     _param[1].Value = NewParam;
                     _param[2].Value = decimal.Parse(TaskID);
 
 
-                    int _ret = OracleHelper.ExecuteNonQuery(cn, CommandType.Text, SQL_ResetTaskParam, _param);
+                    int _ret = SqlHelper.ExecuteNonQuery(cn, CommandType.Text, SQL_ResetTaskParam, _param);
                     txn.Commit();
                     return "";
                 }
@@ -730,14 +731,14 @@ namespace SinoSZJS.CS.BizUser
 
 
             _sql += " order by SJ DESC ";
-            OracleParameter[] _param = {
-                                        new OracleParameter(":KSRQ", OracleDbType.Date),
-                                        new OracleParameter(":JSRQ",OracleDbType.Date)
+            SqlParameter[] _param = {
+                                        new SqlParameter(":KSRQ", SqlDbType.Date),
+                                        new SqlParameter(":JSRQ",SqlDbType.Date)
                                  };
             _param[0].Value = _startDate;
             _param[1].Value = _endDate;
 
-            OracleDataReader dr = OracleHelper.ExecuteReader(OracleHelper.ConnectionStringProfile, CommandType.Text,
+            SqlDataReader dr = SqlHelper.ExecuteReader(SqlHelper.ConnectionStringProfile, CommandType.Text,
                                 _sql, _param);
 
             while (dr.Read())
@@ -761,14 +762,14 @@ namespace SinoSZJS.CS.BizUser
         public List<WC_DataInfo> GetDataInfo(int Year)
         {
             List<WC_DataInfo> _ret = new List<WC_DataInfo>();
-            OracleParameter[] _param = {
-                                        new OracleParameter(":STARTDATE", OracleDbType.Varchar2,8),
-                                        new OracleParameter(":ENDDATE",OracleDbType.Varchar2,8)
+            SqlParameter[] _param = {
+                                        new SqlParameter(":STARTDATE", SqlDbType.VarChar,8),
+                                        new SqlParameter(":ENDDATE",SqlDbType.VarChar,8)
                                  };
             _param[0].Value = (new DateTime(Year - 1, 12, 1)).ToString("yyyyMMdd");
             _param[1].Value = (new DateTime(Year + 1, 1, 31)).ToString("yyyyMMdd");
 
-            OracleDataReader dr = OracleHelper.ExecuteReader(OracleHelper.ConnectionStringProfile, CommandType.Text,
+            SqlDataReader dr = SqlHelper.ExecuteReader(SqlHelper.ConnectionStringProfile, CommandType.Text,
                                 SQL_GetDataInfo, _param);
             while (dr.Read())
             {
@@ -796,16 +797,16 @@ namespace SinoSZJS.CS.BizUser
                                                     values (:GZ_DATE,:GZ_META,:GZ_YEAR,:GZ_MONTH,:GZ_DAY,:GZ_LX,:GZ_SFGZR,:GZ_FXSB)";
         public bool SaveDataInfo(WC_DataInfo DataInfo)
         {
-            using (OracleConnection cn = OracleHelper.OpenConnection())
+            using (SqlConnection cn = SqlHelper.OpenConnection())
             {
-                OracleTransaction _txn = cn.BeginTransaction();
+                SqlTransaction _txn = cn.BeginTransaction();
                 try
                 {
-                    OracleCommand _cmd = new OracleCommand(SQL_DelDataInfo, cn);
+                    SqlCommand _cmd = new SqlCommand(SQL_DelDataInfo, cn);
                     _cmd.Parameters.Add(":GZDATE", DataInfo.GZ_Date.ToString("yyyyMMdd"));
                     _cmd.ExecuteNonQuery();
 
-                    OracleCommand _cmd2 = new OracleCommand(SQL_InsDataInfo, cn);
+                    SqlCommand _cmd2 = new SqlCommand(SQL_InsDataInfo, cn);
                     _cmd2.Parameters.Add(":GZDATA", DataInfo.GZ_Date.ToString("yyyyMMdd"));
                     _cmd2.Parameters.Add(":GZ_META", DataInfo.Meta);
                     _cmd2.Parameters.Add(":GZ_YEAR", Convert.ToDecimal(DataInfo.GZ_Date.Year));
@@ -821,7 +822,7 @@ namespace SinoSZJS.CS.BizUser
                 catch (Exception ex)
                 {
                     string _err = string.Format("写入GZRL日期:{0}时发生错误:{1}", DataInfo.GZ_Date, ex.Message);
-                    OralceLogWriter.WriteSystemLog(_err, "ERROR");
+                    LogWriter.WriteSystemLog(_err, "ERROR");
                     _txn.Rollback();
                     return false;
                 }
@@ -855,9 +856,9 @@ namespace SinoSZJS.CS.BizUser
         private string Get_ZHTJ_CS(string CSNAME)
         {
 
-            using (OracleConnection cn = OracleHelper.OpenConnection())
+            using (SqlConnection cn = SqlHelper.OpenConnection())
             {
-                OracleCommand _cmd = new OracleCommand(SQL_GetZHTJ_CS, cn);
+                SqlCommand _cmd = new SqlCommand(SQL_GetZHTJ_CS, cn);
                 _cmd.Parameters.Add(":CSNAME", CSNAME);
                 object csz = _cmd.ExecuteScalar();
                 if (csz == null)
@@ -891,16 +892,16 @@ namespace SinoSZJS.CS.BizUser
         private bool Save_ZHTJ_CS(string CSNAME, string CSDATA, string Des)
         {
 
-            using (OracleConnection cn = OracleHelper.OpenConnection())
+            using (SqlConnection cn = SqlHelper.OpenConnection())
             {
-                OracleTransaction _txn = cn.BeginTransaction();
+                SqlTransaction _txn = cn.BeginTransaction();
                 try
                 {
-                    OracleCommand _cmd = new OracleCommand(SQL_DelZHTJ_CS, cn);
+                    SqlCommand _cmd = new SqlCommand(SQL_DelZHTJ_CS, cn);
                     _cmd.Parameters.Add(":CSNAME", CSNAME);
                     _cmd.ExecuteNonQuery();
 
-                    OracleCommand _cmd2 = new OracleCommand(SQL_InsZHTJ_CS, cn);
+                    SqlCommand _cmd2 = new SqlCommand(SQL_InsZHTJ_CS, cn);
                     _cmd2.Parameters.Add(":CSNAME", CSNAME);
                     _cmd2.Parameters.Add(":CSDATA", CSDATA);
                     _cmd2.Parameters.Add(":CSDESC", Des);
@@ -911,7 +912,7 @@ namespace SinoSZJS.CS.BizUser
                 catch (Exception ex)
                 {
                     string _err = string.Format("写入参数{0}时发生错误:{1}", CSNAME, ex.Message);
-                    OralceLogWriter.WriteSystemLog(_err, "ERROR");
+                    LogWriter.WriteSystemLog(_err, "ERROR");
                     _txn.Rollback();
                     return false;
                 }
@@ -922,9 +923,9 @@ namespace SinoSZJS.CS.BizUser
         public List<GDSCommanderDefine> GetGDSList()
         {
             List<GDSCommanderDefine> _ret = new List<GDSCommanderDefine>();
-            using (OracleConnection cn = OracleHelper.OpenConnection())
+            using (SqlConnection cn = SqlHelper.OpenConnection())
             {
-                OracleDataReader dr = OracleHelper.ExecuteReader(OracleHelper.ConnectionStringProfile, CommandType.Text, SQL_GetGDSList, null);
+                SqlDataReader dr = SqlHelper.ExecuteReader(SqlHelper.ConnectionStringProfile, CommandType.Text, SQL_GetGDSList, null);
                 while (dr.Read())
                 {
                     GDSCommanderDefine _gd = new GDSCommanderDefine();
@@ -959,18 +960,18 @@ namespace SinoSZJS.CS.BizUser
 
         public bool SaveGDSDefine(GDSCommanderDefine GDSDefine)
         {
-            using (OracleConnection cn = OracleHelper.OpenConnection())
+            using (SqlConnection cn = SqlHelper.OpenConnection())
             {
-                OracleTransaction _txn = cn.BeginTransaction();
+                SqlTransaction _txn = cn.BeginTransaction();
                 try
                 {
-                    OracleCommand _cmd = new OracleCommand(SQL_HaveGDSDefine, cn);
+                    SqlCommand _cmd = new SqlCommand(SQL_HaveGDSDefine, cn);
                     _cmd.Parameters.Add(":ID", GDSDefine.ID);
                     decimal _count = (decimal)_cmd.ExecuteScalar();
 
                     if (_count > 0)
                     {
-                        OracleCommand _upCmd = new OracleCommand(SQL_SaveGDSDefine, cn);
+                        SqlCommand _upCmd = new SqlCommand(SQL_SaveGDSDefine, cn);
                         _upCmd.Parameters.Add(":ICSNAME", GDSDefine.CommandName);
                         _upCmd.Parameters.Add(":DWDM", GDSDefine.DWDM);
                         _upCmd.Parameters.Add(":DES", GDSDefine.Descript);
@@ -986,7 +987,7 @@ namespace SinoSZJS.CS.BizUser
                     }
                     else
                     {
-                        OracleCommand _insCmd = new OracleCommand(SQL_InsertGDSDefine, cn);
+                        SqlCommand _insCmd = new SqlCommand(SQL_InsertGDSDefine, cn);
                         _insCmd.Parameters.Add(":ID", GDSDefine.ID);
                         _insCmd.Parameters.Add(":ICSNAME", GDSDefine.CommandName);
                         _insCmd.Parameters.Add(":DWDM", GDSDefine.DWDM);
@@ -1005,7 +1006,7 @@ namespace SinoSZJS.CS.BizUser
                 catch (Exception ex)
                 {
                     string _err = string.Format("保存通用接口定义信息{0}时发生错误:{1}", GDSDefine.ID, ex.Message);
-                    OralceLogWriter.WriteSystemLog(_err, "ERROR");
+                    LogWriter.WriteSystemLog(_err, "ERROR");
                     _txn.Rollback();
                     return false;
                 }
@@ -1015,12 +1016,12 @@ namespace SinoSZJS.CS.BizUser
         private const string SQL_DelGDSDefine = @"delete md_icsdefine where ID=:ID";
         public bool DelGDSDefine(string GDSDefineID)
         {
-            using (OracleConnection cn = OracleHelper.OpenConnection())
+            using (SqlConnection cn = SqlHelper.OpenConnection())
             {
-                OracleTransaction _txn = cn.BeginTransaction();
+                SqlTransaction _txn = cn.BeginTransaction();
                 try
                 {
-                    OracleCommand _cmd = new OracleCommand(SQL_DelGDSDefine, cn);
+                    SqlCommand _cmd = new SqlCommand(SQL_DelGDSDefine, cn);
                     _cmd.Parameters.Add(":ID", GDSDefineID);
                     _cmd.ExecuteNonQuery();
                     _txn.Commit();
@@ -1029,7 +1030,7 @@ namespace SinoSZJS.CS.BizUser
                 catch (Exception ex)
                 {
                     string _err = string.Format("删除通用接口定义信息{0}时发生错误:{1}", GDSDefineID, ex.Message);
-                    OralceLogWriter.WriteSystemLog(_err, "ERROR");
+                    LogWriter.WriteSystemLog(_err, "ERROR");
                     _txn.Rollback();
                     return false;
                 }
@@ -1040,11 +1041,11 @@ namespace SinoSZJS.CS.BizUser
         public List<GDSTokenRecord> GetTokenRecord(string GDSCommandName)
         {
             List<GDSTokenRecord> _ret = new List<GDSTokenRecord>();
-            using (OracleConnection cn = OracleHelper.OpenConnection())
+            using (SqlConnection cn = SqlHelper.OpenConnection())
             {
-                OracleCommand _cmd = new OracleCommand(SQL_GetTokenRecord, cn);
+                SqlCommand _cmd = new SqlCommand(SQL_GetTokenRecord, cn);
                 _cmd.Parameters.Add(":COMMANDNAME", GDSCommandName);
-                OracleDataReader dr = _cmd.ExecuteReader();
+                SqlDataReader dr = _cmd.ExecuteReader();
                 while (dr.Read())
                 {
                     GDSTokenRecord _gd = new GDSTokenRecord();
@@ -1062,12 +1063,12 @@ namespace SinoSZJS.CS.BizUser
         private const string SQL_InsertTokenRecord = @"insert into xt_icsqx (ID,COMMANDNAME,REMOTEIP,TOKENDATA) values (:ID,:COMMANDNAME,:REMOTEIP,:TOKENDATA)";
         public bool InsertICSTokenRecord(GDSTokenRecord Record)
         {
-            using (OracleConnection cn = OracleHelper.OpenConnection())
+            using (SqlConnection cn = SqlHelper.OpenConnection())
             {
-                OracleTransaction _txn = cn.BeginTransaction();
+                SqlTransaction _txn = cn.BeginTransaction();
                 try
                 {
-                    OracleCommand _cmd = new OracleCommand(SQL_InsertTokenRecord, cn);
+                    SqlCommand _cmd = new SqlCommand(SQL_InsertTokenRecord, cn);
                     _cmd.Parameters.Add(":ID", Record.ID);
                     _cmd.Parameters.Add(":COMMANDNAME", Record.CommandName);
                     _cmd.Parameters.Add(":REMOTEIP", Record.RemoteIP);
@@ -1079,7 +1080,7 @@ namespace SinoSZJS.CS.BizUser
                 catch (Exception ex)
                 {
                     string _err = string.Format("添加通用接口令牌信息{0}时发生错误:{1}", Record.RemoteIP, ex.Message);
-                    OralceLogWriter.WriteSystemLog(_err, "ERROR");
+                    LogWriter.WriteSystemLog(_err, "ERROR");
                     _txn.Rollback();
                     return false;
                 }
@@ -1089,12 +1090,12 @@ namespace SinoSZJS.CS.BizUser
         private const string SQL_UpdateICSTokenRecord = @"update  xt_icsqx set TOKENDATA = :TOKENDATA WHERE id=:ID";
         public bool UpdateICSTokenRecord(GDSTokenRecord Record)
         {
-            using (OracleConnection cn = OracleHelper.OpenConnection())
+            using (SqlConnection cn = SqlHelper.OpenConnection())
             {
-                OracleTransaction _txn = cn.BeginTransaction();
+                SqlTransaction _txn = cn.BeginTransaction();
                 try
                 {
-                    OracleCommand _cmd = new OracleCommand(SQL_UpdateICSTokenRecord, cn);
+                    SqlCommand _cmd = new SqlCommand(SQL_UpdateICSTokenRecord, cn);
                     _cmd.Parameters.Add(":TOKENDATA", Record.TokenData);
                     _cmd.Parameters.Add(":ID", Record.ID);
                     _cmd.ExecuteNonQuery();
@@ -1112,12 +1113,12 @@ namespace SinoSZJS.CS.BizUser
         private const string SQL_DelICSTokenRecord = @"Delete from xt_icsqx where id=:ID";
         public bool DelICSTokenRecord(string RecordID)
         {
-            using (OracleConnection cn = OracleHelper.OpenConnection())
+            using (SqlConnection cn = SqlHelper.OpenConnection())
             {
-                OracleTransaction _txn = cn.BeginTransaction();
+                SqlTransaction _txn = cn.BeginTransaction();
                 try
                 {
-                    OracleCommand _cmd = new OracleCommand(SQL_DelICSTokenRecord, cn);
+                    SqlCommand _cmd = new SqlCommand(SQL_DelICSTokenRecord, cn);
                     _cmd.Parameters.Add(":ID", RecordID);
                     _cmd.ExecuteNonQuery();
                     _txn.Commit();
@@ -1138,16 +1139,16 @@ namespace SinoSZJS.CS.BizUser
         public DataTable GetICSLogRecord(string CommandName, decimal RowCount)
         {
 
-            using (OracleConnection cn = OracleHelper.OpenConnection())
+            using (SqlConnection cn = SqlHelper.OpenConnection())
             {
-                OracleTransaction _txn = cn.BeginTransaction();
+                SqlTransaction _txn = cn.BeginTransaction();
                 try
                 {
-                    OracleParameter[] _param = {  new OracleParameter(":TYPENAME",OracleDbType.Varchar2),
-                                          new OracleParameter(":ROWCOUNT", OracleDbType.Decimal)   };
+                    SqlParameter[] _param = {  new SqlParameter(":TYPENAME",SqlDbType.VarChar),
+                                          new SqlParameter(":ROWCOUNT", SqlDbType.Decimal)   };
                     _param[0].Value = "JSGDS_" + CommandName;
                     _param[1].Value = RowCount;
-                    DataTable _dt = OracleHelper.FillDataTable(cn, CommandType.Text, SQL_GetICSLogRecord, _param);
+                    DataTable _dt = SqlHelper.FillDataTable(cn, CommandType.Text, SQL_GetICSLogRecord, _param);
                     return _dt;
                 }
                 catch (Exception ex)

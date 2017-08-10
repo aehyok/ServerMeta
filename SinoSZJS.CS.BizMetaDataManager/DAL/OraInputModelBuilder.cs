@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Text;
 using SinoSZJS.Base.Misc;
 using System.Data;
-using Oracle.DataAccess.Client;
 using SinoSZJS.Base.Authorize;
 using System.Reflection;
-using SinoSZJS.DataAccess;
 using SinoSZJS.Base.MetaData.QueryModel;
 using SinoSZJS.Base.InputModel;
+using System.Data.SqlClient;
+using SinoSZJS.DataAccess.Sql;
 
 namespace SinoSZJS.CS.BizMetaDataManager.DAL
 {
@@ -191,9 +191,9 @@ namespace SinoSZJS.CS.BizMetaDataManager.DAL
         public bool WriteEntity(MD_InputEntity _entity)
         {
             bool _ret = false;
-            using (OracleConnection cn = OracleHelper.OpenConnection())
+            using (SqlConnection cn = SqlHelper.OpenConnection())
             {
-                OracleTransaction _txn = cn.BeginTransaction();
+                SqlTransaction _txn = cn.BeginTransaction();
                 try
                 {
                     if (_entity.IsNewData)
@@ -237,14 +237,14 @@ namespace SinoSZJS.CS.BizMetaDataManager.DAL
                 {
                     _txn.Rollback();
                     string _errmsg = string.Format("采用录入模型写入数据出错！错误信息:{0}!", ex.Message);
-                    OralceLogWriter.WriteSystemLog(_errmsg, "ERROR");
+                    LogWriter.WriteSystemLog(_errmsg, "ERROR");
                     return false;
                 }
                 cn.Close();
             }
         }
 
-        public bool WriteEntity(MD_InputEntity _entity, OracleConnection cn)
+        public bool WriteEntity(MD_InputEntity _entity, SqlConnection cn)
         {
             bool _ret = false;
             if (_entity.IsNewData)
@@ -263,7 +263,7 @@ namespace SinoSZJS.CS.BizMetaDataManager.DAL
         /// </summary>
         /// <param name="_entity"></param>
         /// <returns></returns>
-        private bool UpdateEntity(MD_InputEntity _entity, OracleConnection cn)
+        private bool UpdateEntity(MD_InputEntity _entity, SqlConnection cn)
         {
             foreach (MD_InputModel_SaveTable _table in InputModel.WriteTableNames)
             {
@@ -277,7 +277,7 @@ namespace SinoSZJS.CS.BizMetaDataManager.DAL
             return true;
         }
 
-        private void UpdateTableData(MD_InputModel_SaveTable _table, MD_InputEntity _entity, OracleConnection cn)
+        private void UpdateTableData(MD_InputModel_SaveTable _table, MD_InputEntity _entity, SqlConnection cn)
         {
             List<string> _mainKeyList = MetaDataFactory.GetDBPrimayKeyList(_table.TableName);
 
@@ -338,7 +338,7 @@ namespace SinoSZJS.CS.BizMetaDataManager.DAL
                 _fg = " and ";
             }
 
-            List<OracleParameter> _plist = new List<OracleParameter>(); //OracleCommand _cmd = new OracleCommand(_sb.ToString(), cn);
+            List<SqlParameter> _plist = new List<SqlParameter>(); //SqlCommand _cmd = new SqlCommand(_sb.ToString(), cn);
             //添加更新字段参数
             foreach (MD_InputModel_SaveTableColumn _col in _table.Columns)
             {
@@ -348,7 +348,7 @@ namespace SinoSZJS.CS.BizMetaDataManager.DAL
                     string _data = _entity.InputData.ContainsKey(_cname) ? _entity.InputData[_cname] : null;
                     if (!_mainKeyList.Contains(_col.DesColumn))
                     {
-                        _plist.Add(new OracleParameter(string.Format(":{0}", _col.DesColumn), _data));
+                        _plist.Add(new SqlParameter(string.Format(":{0}", _col.DesColumn), _data));
                     }
                 }
             }
@@ -359,12 +359,12 @@ namespace SinoSZJS.CS.BizMetaDataManager.DAL
                 if (_kcol != null)
                 {
                     string _data = _entity.InputData.ContainsKey(_kcol.SrcColumn) ? _entity.InputData[_kcol.SrcColumn] : null;
-                    _plist.Add(new OracleParameter(string.Format(":{0}", _key), _data));
+                    _plist.Add(new SqlParameter(string.Format(":{0}", _key), _data));
                 }
             }
 
-            OracleParameter[] _params = _plist.ToArray();
-            OracleHelper.ExecuteNonQuery(cn, CommandType.Text, _sb.ToString(), _params);
+            SqlParameter[] _params = _plist.ToArray();
+            SqlHelper.ExecuteNonQuery(cn, CommandType.Text, _sb.ToString(), _params);
             //_cmd.ExecuteNonQuery();
         }
 
@@ -382,7 +382,7 @@ namespace SinoSZJS.CS.BizMetaDataManager.DAL
         /// </summary>
         /// <param name="_entity"></param>
         /// <returns></returns>
-        private bool WriteNewEntity(MD_InputEntity _entity, OracleConnection cn)
+        private bool WriteNewEntity(MD_InputEntity _entity, SqlConnection cn)
         {
             foreach (MD_InputModel_SaveTable _table in InputModel.WriteTableNames)
             {
@@ -396,7 +396,7 @@ namespace SinoSZJS.CS.BizMetaDataManager.DAL
             return true;
         }
 
-        private void WriteChildData(MD_InputEntity _entity, OracleConnection cn)
+        private void WriteChildData(MD_InputEntity _entity, SqlConnection cn)
         {
             foreach (MD_InputModel_Child _child in InputModel.ChildInputModel)
             {
@@ -413,7 +413,7 @@ namespace SinoSZJS.CS.BizMetaDataManager.DAL
             }
         }
 
-        private void WriteGridChildData(MD_InputModel_Child _child, object ChildData, OracleConnection cn)
+        private void WriteGridChildData(MD_InputModel_Child _child, object ChildData, SqlConnection cn)
         {
             DataTable _srcData = ChildData as DataTable;
             if (_srcData == null) return;
@@ -426,15 +426,15 @@ namespace SinoSZJS.CS.BizMetaDataManager.DAL
                 foreach (MD_InputModel_SaveTable _table in _child.ChildModel.WriteTableNames)
                 {
                     string _sql = string.Format("select * from {0} ", _table.TableName);
-                    //OracleDataAdapter adapter = new OracleDataAdapter(_sql, cn);
-                    //OracleCommandBuilder builder = new OracleCommandBuilder(adapter);
+                    //SqlDataAdapter adapter = new SqlDataAdapter(_sql, cn);
+                    //SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
                     if (_newData != null && _newData.Rows.Count > 0)
                     {
-                        OracleHelper.UpdateData(cn, _sql, _newData.GetChanges());
+                        SqlHelper.UpdateData(cn, _sql, _newData.GetChanges());
                     }
                     if (_modifyData != null && _modifyData.Rows.Count > 0)
                     {
-                        OracleHelper.UpdateData(cn, _sql, _modifyData.GetChanges());
+                        SqlHelper.UpdateData(cn, _sql, _modifyData.GetChanges());
                     }
                 }
             }
@@ -445,7 +445,7 @@ namespace SinoSZJS.CS.BizMetaDataManager.DAL
                 {
                     MD_InputModel_SaveTable _table = _child.ChildModel.WriteTableNames[i - 1];
                     string _sql = string.Format("select * from {0} ", _table.TableName);
-                    OracleHelper.UpdateData(cn, _sql, _delData.GetChanges());
+                    SqlHelper.UpdateData(cn, _sql, _delData.GetChanges());
 
                 }
             }
@@ -453,7 +453,7 @@ namespace SinoSZJS.CS.BizMetaDataManager.DAL
 
 
 
-        private void WriteNewTableData(MD_InputModel_SaveTable _table, MD_InputEntity _entity, OracleConnection cn)
+        private void WriteNewTableData(MD_InputModel_SaveTable _table, MD_InputEntity _entity, SqlConnection cn)
         {
             StringBuilder _vStr = new StringBuilder();
             _vStr.Append(" values ( ");
@@ -498,18 +498,18 @@ namespace SinoSZJS.CS.BizMetaDataManager.DAL
             _sb.Append(_vStr.ToString());
             _sb.Append(" ) ");
 
-            List<OracleParameter> _plist = new List<OracleParameter>();
+            List<SqlParameter> _plist = new List<SqlParameter>();
             foreach (MD_InputModel_SaveTableColumn _col in _table.Columns)
             {
                 string _cname = _col.SrcColumn;
                 if (_cname != "")
                 {
                     string _data = _entity.InputData.ContainsKey(_cname) ? _entity.InputData[_cname] : null;
-                    _plist.Add(new OracleParameter(string.Format(":{0}", _col.DesColumn), _data));
+                    _plist.Add(new SqlParameter(string.Format(":{0}", _col.DesColumn), _data));
                 }
             }
-            OracleParameter[] _params=  _plist.ToArray();
-            OracleHelper.ExecuteNonQuery(cn, CommandType.Text, _sb.ToString(), _params);
+            SqlParameter[] _params=  _plist.ToArray();
+            SqlHelper.ExecuteNonQuery(cn, CommandType.Text, _sb.ToString(), _params);
          
         }
 

@@ -4,7 +4,7 @@ using System.Text;
 using SinoSZJS.Base.Misc;
 using System.Data;
 using SinoSZJS.DataAccess;
-
+using SinoSZJS.DataAccess.Sql;
 
 namespace SinoSZJS.CS.BizAuthorize.OraSignOn
 {
@@ -30,7 +30,7 @@ namespace SinoSZJS.CS.BizAuthorize.OraSignOn
                 {
                         //1.读取数据库中的用户信息，验证密码
                         string CheckStr = string.Format("SELECT count(*) FROM zhtj_csb WHERE CSNAME='AdminPass' and CSDATA='{0}' ", MD5Base64.Encode(_pass));
-                        decimal _ret = (decimal)OracleHelper.ExecuteScalar(OracleHelper.ConnectionStringProfile,CommandType.Text,CheckStr);
+                        decimal _ret = (decimal)SqlHelper.ExecuteScalar(SqlHelper.ConnectionStringProfile,CommandType.Text,CheckStr);
                         return (_ret > 0);
                 }
 
@@ -45,7 +45,7 @@ namespace SinoSZJS.CS.BizAuthorize.OraSignOn
                 {
                         //1.读取数据库中的用户信息，验证密码
                         string CheckStr = string.Format("SELECT count(*) FROM zhtj_csb WHERE CSNAME='AdminPass' and CSDATA='{0}' ", MD5Base64.Encode(_oldpass));
-                        decimal _ret = (decimal)OracleHelper.ExecuteScalar(OracleHelper.ConnectionStringProfile, CommandType.Text, CheckStr);
+                        decimal _ret = (decimal)SqlHelper.ExecuteScalar(SqlHelper.ConnectionStringProfile, CommandType.Text, CheckStr);
                         if (_ret < 1)
                         {
                                 return -1;
@@ -53,7 +53,7 @@ namespace SinoSZJS.CS.BizAuthorize.OraSignOn
                         string Changepass = string.Format("Update ZHTJ_CSB set CSDATA='{0}' where CSNAME='AdminPass'", MD5Base64.Encode(_newpass));
                         try
                         {
-                                OracleHelper.ExecuteNonQuery(OracleHelper.ConnectionStringProfile, CommandType.Text, Changepass);
+                                SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionStringProfile, CommandType.Text, Changepass);
                                 return 1;
                         }
                         catch (Exception e)
@@ -73,7 +73,7 @@ namespace SinoSZJS.CS.BizAuthorize.OraSignOn
                         string Changepass = string.Format("Update ZHTJ_CSB set CSDATA='{0}' where CSNAME='AdminPass'", MD5Base64.Encode(_pass));
                         try
                         {
-                                OracleHelper.ExecuteNonQuery(OracleHelper.ConnectionStringProfile, CommandType.Text, Changepass);
+                                SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionStringProfile, CommandType.Text, Changepass);
                                 return 1;
                         }
                         catch (Exception e)

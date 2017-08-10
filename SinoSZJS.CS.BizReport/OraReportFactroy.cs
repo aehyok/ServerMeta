@@ -11,7 +11,8 @@ using SinoSZJS.Base.Report.ReportGuideLine;
 using SinoSZJS.DataAccess;
 using SinoSZJS.CS.BizReport.ReportService2008;
 using System.Web.Services.Protocols;
-
+using System.Data.SqlClient;
+using SinoSZJS.DataAccess.Sql;
 
 namespace SinoSZJS.CS.BizReport
 {
@@ -118,7 +119,7 @@ namespace SinoSZJS.CS.BizReport
             zjbbstr += ") ORDER BY BBMC";
 
             List<MD_ReportName> _ret = new List<MD_ReportName>();
-            OracleDataReader dr = OracleHelper.ExecuteReader(OracleHelper.ConnectionStringProfile, CommandType.Text, zjbbstr, null);
+            SqlDataReader dr = SqlHelper.ExecuteReader(SqlHelper.ConnectionStringProfile, CommandType.Text, zjbbstr, null);
 
             while (dr.Read())
             {
@@ -150,7 +151,7 @@ namespace SinoSZJS.CS.BizReport
             zjbbstr += ") ORDER BY BBMC";
 
 
-            OracleDataReader dr = OracleHelper.ExecuteReader(OracleHelper.ConnectionStringProfile, CommandType.Text, zjbbstr, null);
+            SqlDataReader dr = SqlHelper.ExecuteReader(SqlHelper.ConnectionStringProfile, CommandType.Text, zjbbstr, null);
 
             while (dr.Read())
             {
@@ -175,13 +176,13 @@ namespace SinoSZJS.CS.BizReport
             _sql += " and a2.nf = t.nf and a2.yf = t.yf and a2.tbrq is not null ) ysh ";
             _sql += " from BB_BBJLXXST t where t.bbmc=:BBMC and T.TJDW = :TJDW";
 
-            OracleParameter[] _param = { new OracleParameter(":BBMC", OracleDbType.Varchar2,50),
-                                                new OracleParameter(":TJDW",OracleDbType.Varchar2,12)};
+            SqlParameter[] _param = { new SqlParameter(":BBMC", SqlDbType.VarChar,50),
+                                                new SqlParameter(":TJDW",SqlDbType.VarChar,12)};
             _param[0].Value = _ReportName.ReportName;
             _param[1].Value = SinoUserCtx.CurUser.CurrentPost.PostDWDM;
 
             List<MD_ReportItem> _ret = new List<MD_ReportItem>();
-            OracleDataReader dr = OracleHelper.ExecuteReader(OracleHelper.ConnectionStringProfile, CommandType.Text, _sql, _param);
+            SqlDataReader dr = SqlHelper.ExecuteReader(SqlHelper.ConnectionStringProfile, CommandType.Text, _sql, _param);
 
             while (dr.Read())
             {
@@ -213,13 +214,13 @@ namespace SinoSZJS.CS.BizReport
             _sql += " and a2.nf = t.nf and a2.yf = t.yf and a2.tbrq is not null ) ysh ";
             _sql += " from BB_BBJLXXST t where t.bbmc=:BBMC and T.TJDW = :TJDW";
 
-            OracleParameter[] _param = { new OracleParameter(":BBMC", OracleDbType.Varchar2,50),
-                                                new OracleParameter(":TJDW",OracleDbType.Varchar2,12)};
+            SqlParameter[] _param = { new SqlParameter(":BBMC", SqlDbType.VarChar,50),
+                                                new SqlParameter(":TJDW",SqlDbType.VarChar,12)};
             _param[0].Value = _ReportName.ReportName;
             _param[1].Value = _Org.DWDM;
 
             List<MD_ReportItem> _ret = new List<MD_ReportItem>();
-            OracleDataReader dr = OracleHelper.ExecuteReader(OracleHelper.ConnectionStringProfile, CommandType.Text, _sql, _param);
+            SqlDataReader dr = SqlHelper.ExecuteReader(SqlHelper.ConnectionStringProfile, CommandType.Text, _sql, _param);
 
             while (dr.Read())
             {
@@ -263,16 +264,16 @@ namespace SinoSZJS.CS.BizReport
             }
             _sql += ")";
 
-            OracleParameter[] _param = { new OracleParameter(":TJDW",OracleDbType.Varchar2,12),
-                                                new OracleParameter(":NF",OracleDbType.Char,4),
-                                                new OracleParameter(":YF",OracleDbType.Char,2)
+            SqlParameter[] _param = { new SqlParameter(":TJDW",SqlDbType.VarChar,12),
+                                                new SqlParameter(":NF",SqlDbType.Char,4),
+                                                new SqlParameter(":YF",SqlDbType.Char,2)
                                 };
             _param[0].Value = SinoUserCtx.CurUser.CurrentPost.PostDWDM;
             _param[1].Value = _yearstr;
             _param[2].Value = _monthstr;
 
             List<MD_ReportItem> _ret = new List<MD_ReportItem>();
-            OracleDataReader dr = OracleHelper.ExecuteReader(OracleHelper.ConnectionStringProfile, CommandType.Text, _sql, _param);
+            SqlDataReader dr = SqlHelper.ExecuteReader(SqlHelper.ConnectionStringProfile, CommandType.Text, _sql, _param);
 
             while (dr.Read())
             {
@@ -311,16 +312,16 @@ namespace SinoSZJS.CS.BizReport
             }
             _sql += ")";
 
-            OracleParameter[] _param = { new OracleParameter(":TJDW",OracleDbType.Varchar2,12),
-                                                new OracleParameter(":NF",OracleDbType.Char,4),
-                                                new OracleParameter(":YF",OracleDbType.Char,2)
+            SqlParameter[] _param = { new SqlParameter(":TJDW",SqlDbType.VarChar,12),
+                                                new SqlParameter(":NF",SqlDbType.Char,4),
+                                                new SqlParameter(":YF",SqlDbType.Char,2)
                                 };
             _param[0].Value = _Org.DWDM;
             _param[1].Value = _yearstr;
             _param[2].Value = _monthstr;
 
             List<MD_ReportItem> _ret = new List<MD_ReportItem>();
-            OracleDataReader dr = OracleHelper.ExecuteReader(OracleHelper.ConnectionStringProfile, CommandType.Text, _sql, _param);
+            SqlDataReader dr = SqlHelper.ExecuteReader(SqlHelper.ConnectionStringProfile, CommandType.Text, _sql, _param);
 
             while (dr.Read())
             {
@@ -380,28 +381,28 @@ namespace SinoSZJS.CS.BizReport
                 _fg = ",";
             }
 
-            using (OracleConnection cn = OracleHelper.OpenConnection())
+            using (SqlConnection cn = SqlHelper.OpenConnection())
             {
-                OracleCommand _cmd = new OracleCommand();
+                SqlCommand _cmd = new SqlCommand();
                 _cmd.CommandText = "zhtj_zdybb.getbbmc";
                 _cmd.CommandType = CommandType.StoredProcedure;
                 _cmd.Connection = cn;
 
-                OracleParameter _p1 = _cmd.Parameters.Add("strtjdw", OracleDbType.Varchar2);
+                SqlParameter _p1 = _cmd.Parameters.Add("strtjdw", SqlDbType.VarChar);
                 _p1.Value = SinoUserCtx.CurUser.QxszDWDM;
 
-                OracleParameter _p2 = _cmd.Parameters.Add("dtbegin_p", OracleDbType.Varchar2);
+                SqlParameter _p2 = _cmd.Parameters.Add("dtbegin_p", SqlDbType.VarChar);
                 _p2.Value = (_startDate == DateTime.MinValue) ? "" : _startDate.ToString("yyyyMMdd");
 
-                OracleParameter _p3 = _cmd.Parameters.Add("dtend_p", OracleDbType.Varchar2);
+                SqlParameter _p3 = _cmd.Parameters.Add("dtend_p", SqlDbType.VarChar);
                 _p3.Value = (_endDate == DateTime.MaxValue) ? "" : _endDate.ToString("yyyyMMdd");
 
-                OracleParameter _p4 = _cmd.Parameters.Add("strbbmc", OracleDbType.Varchar2);
+                SqlParameter _p4 = _cmd.Parameters.Add("strbbmc", SqlDbType.VarChar);
                 _p4.Value = _rnString;
 
-                _cmd.Parameters.Add("recret", OracleDbType.RefCursor, DBNull.Value, ParameterDirection.Output);
+                //_cmd.Parameters.Add("recret", SqlDbType.RefCursor, DBNull.Value, ParameterDirection.Output);
 
-                OracleDataReader _dr = _cmd.ExecuteReader();
+                SqlDataReader _dr = _cmd.ExecuteReader();
                 while (_dr.Read())
                 {
                     bool _isauth = _dr.IsDBNull(6) ? false : (_dr.GetString(6) == "已审核");
@@ -433,28 +434,28 @@ namespace SinoSZJS.CS.BizReport
                 _fg = ",";
             }
 
-            using (OracleConnection cn = OracleHelper.OpenConnection())
+            using (SqlConnection cn = SqlHelper.OpenConnection())
             {
-                OracleCommand _cmd = new OracleCommand();
+                SqlCommand _cmd = new SqlCommand();
                 _cmd.CommandText = "zhtj_zdybb.getbbmc";
                 _cmd.CommandType = CommandType.StoredProcedure;
                 _cmd.Connection = cn;
 
-                OracleParameter _p1 = _cmd.Parameters.Add("strtjdw", OracleDbType.Varchar2);
+                SqlParameter _p1 = _cmd.Parameters.Add("strtjdw", SqlDbType.VarChar);
                 _p1.Value = _Org.DWDM;
 
-                OracleParameter _p2 = _cmd.Parameters.Add("dtbegin_p", OracleDbType.Varchar2);
+                SqlParameter _p2 = _cmd.Parameters.Add("dtbegin_p", SqlDbType.VarChar);
                 _p2.Value = (_startDate == DateTime.MinValue) ? "" : _startDate.ToString("yyyyMMdd");
 
-                OracleParameter _p3 = _cmd.Parameters.Add("dtend_p", OracleDbType.Varchar2);
+                SqlParameter _p3 = _cmd.Parameters.Add("dtend_p", SqlDbType.VarChar);
                 _p3.Value = (_endDate == DateTime.MaxValue) ? "" : _endDate.ToString("yyyyMMdd");
 
-                OracleParameter _p4 = _cmd.Parameters.Add("strbbmc", OracleDbType.Varchar2);
+                SqlParameter _p4 = _cmd.Parameters.Add("strbbmc", SqlDbType.VarChar);
                 _p4.Value = _rnString;
 
-                _cmd.Parameters.Add("recret", OracleDbType.RefCursor, DBNull.Value, ParameterDirection.Output);
+                //_cmd.Parameters.Add("recret", SqlDbType.RefCursor, DBNull.Value, ParameterDirection.Output);
 
-                OracleDataReader _dr = _cmd.ExecuteReader();
+                SqlDataReader _dr = _cmd.ExecuteReader();
                 while (_dr.Read())
                 {
                     bool _isauth = _dr.IsDBNull(6) ? false : (_dr.GetString(6) == "已审核");
@@ -568,7 +569,7 @@ namespace SinoSZJS.CS.BizReport
             }
             catch (SoapException e)
             {
-                OralceLogWriter.WriteSystemLog(e.Detail.OuterXml, "ERROR");               
+                LogWriter.WriteSystemLog(e.Detail.OuterXml, "ERROR");               
             }
             return result;
         }
@@ -625,7 +626,7 @@ namespace SinoSZJS.CS.BizReport
                         _reportItem.ReportName, _reportItem.StartDate.Year.ToString() + _reportItem.StartDate.Month.ToString("D2"),
                         string.Format("{0}[{1}]", _reportItem.ReportDWID, _reportItem.ReportDWName), e.Message);
                 // Write an informational entry to the event log. 
-                OralceLogWriter.WriteSystemLog(_eStr, "ERROR");
+                LogWriter.WriteSystemLog(_eStr, "ERROR");
                 return null;
             }
         }
@@ -649,10 +650,10 @@ namespace SinoSZJS.CS.BizReport
         {
             byte[] cbuffer = null;
 
-            using (OracleConnection cn = OracleHelper.OpenConnection())
+            using (SqlConnection cn = SqlHelper.OpenConnection())
             {
                 long actual = 0;
-                OracleCommand _cmd = new OracleCommand();
+                SqlCommand _cmd = new SqlCommand();
                 _cmd.CommandText = SQL_GetSinoSZDefineReport_Excel;
                 _cmd.CommandType = CommandType.Text;
                 _cmd.Connection = cn;
@@ -661,16 +662,16 @@ namespace SinoSZJS.CS.BizReport
                 _cmd.Parameters.Add(":KSRQ", _reportItem.StartDate);
                 _cmd.Parameters.Add(":JZRQ", _reportItem.EndDate);
 
-                OracleDataReader myOracleDataReader = _cmd.ExecuteReader();
-                bool _readflag = myOracleDataReader.Read();
-                OracleBlob myOracleClob = myOracleDataReader.GetOracleBlob(0);
-                long lobLength = myOracleClob.Length;
-                cbuffer = new byte[lobLength];
-                actual = myOracleClob.Read(cbuffer, 0, cbuffer.Length);
+                SqlDataReader mySqlDataReader = _cmd.ExecuteReader();
+                bool _readflag = mySqlDataReader.Read();
+                //OracleBlob myOracleClob = mySqlDataReader.GetOracleBlob(0);
+                //long lobLength = myOracleClob.Length;
+                //cbuffer = new byte[lobLength];
+                //actual = myOracleClob.Read(cbuffer, 0, cbuffer.Length);
 
-                myOracleDataReader.Close();
+                mySqlDataReader.Close();
 
-                return cbuffer;
+                return null;// cbuffer;
             }
         }
 
@@ -684,9 +685,9 @@ namespace SinoSZJS.CS.BizReport
             int actual = 0;
             string _resStr = "";
 
-            using (OracleConnection cn = OracleHelper.OpenConnection())
+            using (SqlConnection cn = SqlHelper.OpenConnection())
             {
-                OracleCommand _cmd = new OracleCommand();
+                SqlCommand _cmd = new SqlCommand();
                 _cmd.CommandText = "select BBJG_C from TJ_ZDYBBFJXXB where  BBMC = :BBMC AND TJDW=:TJDW AND KSRQ=:KSRQ AND JZRQ=:JZRQ ";
                 _cmd.CommandType = CommandType.Text;
                 _cmd.Connection = cn;
@@ -695,21 +696,21 @@ namespace SinoSZJS.CS.BizReport
                 _cmd.Parameters.Add(":KSRQ", _reportItem.StartDate);
                 _cmd.Parameters.Add(":JZRQ", _reportItem.EndDate);
 
-                using (OracleDataReader myOracleDataReader = _cmd.ExecuteReader())
+                using (SqlDataReader mySqlDataReader = _cmd.ExecuteReader())
                 {
-                    myOracleDataReader.Read();
+                    mySqlDataReader.Read();
 
-                    OracleClob myOracleClob = myOracleDataReader.IsDBNull(0) ? null : myOracleDataReader.GetOracleClob(0);
-                    if (myOracleClob == null) return null;
+                    //OracleClob myOracleClob = mySqlDataReader.IsDBNull(0) ? null : mySqlDataReader.GetOracleClob(0);
+                    //if (myOracleClob == null) return null;
 
-                    StreamReader streamreader = new StreamReader(myOracleClob, System.Text.Encoding.Unicode);
+                    //StreamReader streamreader = new StreamReader(myOracleClob, System.Text.Encoding.Unicode);
 
-                    // step 3: get the CLOB data using the Read() method
-                    char[] cbuffer = new char[100];
-                    while ((actual = streamreader.Read(cbuffer, 0 /*buffer offset*/, cbuffer.Length /*count*/)) > 0)
-                        _resStr += new string(cbuffer, 0, actual);
+                    //// step 3: get the CLOB data using the Read() method
+                    //char[] cbuffer = new char[100];
+                    //while ((actual = streamreader.Read(cbuffer, 0 /*buffer offset*/, cbuffer.Length /*count*/)) > 0)
+                    //    _resStr += new string(cbuffer, 0, actual);
 
-                    myOracleDataReader.Close();
+                    //mySqlDataReader.Close();
                 }
                 cn.Close();
                 System.Text.UnicodeEncoding converter = new System.Text.UnicodeEncoding();
@@ -741,17 +742,17 @@ namespace SinoSZJS.CS.BizReport
             string _sql = "select TBR,TBRQ,TBDW from BB_BBJLFJXXB where ";
             _sql += " TJDW =:TJDW AND NF=:NF AND YF=:YF AND BBMC=:BBMC ";
 
-            OracleParameter[] _param = { new OracleParameter(":TJDW",OracleDbType.Varchar2),
-                                 new OracleParameter(":NF",OracleDbType.Varchar2),
-                                 new OracleParameter(":YF",OracleDbType.Varchar2),
-                                 new OracleParameter(":BBMC",OracleDbType.Varchar2)                
+            SqlParameter[] _param = { new SqlParameter(":TJDW",SqlDbType.VarChar),
+                                 new SqlParameter(":NF",SqlDbType.VarChar),
+                                 new SqlParameter(":YF",SqlDbType.VarChar),
+                                 new SqlParameter(":BBMC",SqlDbType.VarChar)                
                          };
             _param[0].Value = _ritem.ReportDWID;
             _param[1].Value = _ritem.StartDate.Year.ToString();
             _param[2].Value = _ritem.StartDate.Month.ToString("D2");
             _param[3].Value = _ritem.ReportName.ReportName;
 
-            OracleDataReader dr = OracleHelper.ExecuteReader(OracleHelper.ConnectionStringProfile, CommandType.Text,
+            SqlDataReader dr = SqlHelper.ExecuteReader(SqlHelper.ConnectionStringProfile, CommandType.Text,
                                            _sql, _param);
 
             while (dr.Read())
@@ -792,10 +793,10 @@ namespace SinoSZJS.CS.BizReport
         private bool CreateRsReport(MD_ReportName _reportItem, DateTime _startDate, DateTime _endDate)
         {
             string _sql = "HGZHTJ.bb";
-            OracleParameter[] _param = {
-                                new OracleParameter("dtTJRQ", OracleDbType.Date),
-                                new OracleParameter("strTJDW",OracleDbType.Varchar2),
-                                new OracleParameter("strBBMC_JS",OracleDbType.Varchar2), 
+            SqlParameter[] _param = {
+                                new SqlParameter("dtTJRQ", SqlDbType.Date),
+                                new SqlParameter("strTJDW",SqlDbType.VarChar),
+                                new SqlParameter("strBBMC_JS",SqlDbType.VarChar), 
                         };
             _param[0].Value = _startDate;
             _param[1].Value = SinoUserCtx.CurUser.CurrentPost.PostDWDM;
@@ -803,7 +804,7 @@ namespace SinoSZJS.CS.BizReport
 
 
 
-            OracleHelper.ExecuteNonQuery(OracleHelper.ConnectionStringProfile, CommandType.StoredProcedure, _sql, _param);
+            SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionStringProfile, CommandType.StoredProcedure, _sql, _param);
             return true;
         }
 
@@ -832,15 +833,15 @@ namespace SinoSZJS.CS.BizReport
         private bool ReBuildRsReport(MD_ReportItem _ritem)
         {
             string _sql = "HGZHTJ.bb";
-            OracleParameter[] _param = {
-                                new OracleParameter("dtTJRQ", OracleDbType.Date),
-                                new OracleParameter("strTJDW",OracleDbType.Varchar2),
-                                new OracleParameter("strBBMC_JS",OracleDbType.Varchar2), 
+            SqlParameter[] _param = {
+                                new SqlParameter("dtTJRQ", SqlDbType.Date),
+                                new SqlParameter("strTJDW",SqlDbType.VarChar),
+                                new SqlParameter("strBBMC_JS",SqlDbType.VarChar), 
                         };
             _param[0].Value = _ritem.StartDate;
             _param[1].Value = _ritem.ReportDWID;
             _param[2].Value = _ritem.ReportName.ReportName;
-            OracleHelper.ExecuteNonQuery(OracleHelper.ConnectionStringProfile, CommandType.StoredProcedure, _sql, _param);
+            SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionStringProfile, CommandType.StoredProcedure, _sql, _param);
             return true;
         }
 
@@ -868,14 +869,14 @@ namespace SinoSZJS.CS.BizReport
         private bool VerifyRsReport(MD_ReportItem _reportItem, DateTime _verifyDate)
         {
             string _CommandStr = "update BB_BBJLFJXXB SET TBR =:TBR,TBRQ =:TBRQ,TBDW =:TBDW  where TJDW =:TJDW AND NF=:NF AND YF=:YF AND BBMC=:BBMC ";
-            OracleParameter[] _param = {
-                                new OracleParameter(":TBR", OracleDbType.Varchar2),
-                                new OracleParameter(":TBRQ",OracleDbType.Date),
-                                 new OracleParameter(":TBDW",OracleDbType.Varchar2),
-                                 new OracleParameter(":TJDW",OracleDbType.Varchar2),
-                                 new OracleParameter(":NF",OracleDbType.Varchar2),
-                                 new OracleParameter(":YF",OracleDbType.Varchar2),
-                                 new OracleParameter(":BBMC",OracleDbType.Varchar2)                
+            SqlParameter[] _param = {
+                                new SqlParameter(":TBR", SqlDbType.VarChar),
+                                new SqlParameter(":TBRQ",SqlDbType.Date),
+                                 new SqlParameter(":TBDW",SqlDbType.VarChar),
+                                 new SqlParameter(":TJDW",SqlDbType.VarChar),
+                                 new SqlParameter(":NF",SqlDbType.VarChar),
+                                 new SqlParameter(":YF",SqlDbType.VarChar),
+                                 new SqlParameter(":BBMC",SqlDbType.VarChar)                
                          };
             _param[0].Value = SinoUserCtx.CurUser.UserName;
             _param[1].Value = _verifyDate;
@@ -885,16 +886,16 @@ namespace SinoSZJS.CS.BizReport
             _param[5].Value = _reportItem.StartDate.Month.ToString("D2");
             _param[6].Value = _reportItem.ReportName.ReportName;
 
-            OracleHelper.ExecuteNonQuery(OracleHelper.ConnectionStringProfile, CommandType.Text, _CommandStr, _param);
+            SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionStringProfile, CommandType.Text, _CommandStr, _param);
             return true;
         }
         private const string SQL_VerifySinoSZDefineReport = @"update TJ_ZDYBBFJXXB a set BBZT = '已审核' where a.BBMC = :BBMC AND a.TJDW=:TJDW 
                                                             AND a.KSRQ=:KSRQ AND a.JZRQ=:JZRQ";
         private bool VerifySinoSZDefineReport(MD_ReportItem _reportItem, DateTime _verifyDate)
         {
-            using (OracleConnection cn = OracleHelper.OpenConnection())
+            using (SqlConnection cn = SqlHelper.OpenConnection())
             {
-                OracleCommand _cmd = new OracleCommand();
+                SqlCommand _cmd = new SqlCommand();
                 _cmd.CommandText = SQL_VerifySinoSZDefineReport;
                 _cmd.Parameters.Add(":BBMC", _reportItem.ReportName.ReportName);
                 _cmd.Parameters.Add(":TJDW", _reportItem.ReportDWID);
@@ -912,13 +913,13 @@ namespace SinoSZJS.CS.BizReport
         public List<MD_ReportGuideLineItem> GetReportGuideLines(MD_ReportName _reportName)
         {
             List<MD_ReportGuideLineItem> _ret = new List<MD_ReportGuideLineItem>();
-            using (OracleConnection cn = OracleHelper.OpenConnection())
+            using (SqlConnection cn = SqlHelper.OpenConnection())
             {
                 try
                 {
-                    OracleCommand _cmd = new OracleCommand(SQL_GetReportGuideLines, cn);
+                    SqlCommand _cmd = new SqlCommand(SQL_GetReportGuideLines, cn);
                     _cmd.Parameters.Add(":ZTMC", _reportName.ReportName);
-                    OracleDataReader _dr = _cmd.ExecuteReader();
+                    SqlDataReader _dr = _cmd.ExecuteReader();
                     while (_dr.Read())
                     {
                         MD_ReportGuideLineItem _item = new MD_ReportGuideLineItem(
@@ -938,7 +939,7 @@ namespace SinoSZJS.CS.BizReport
                 catch (Exception ex)
                 {
                     string _err = string.Format("取报表指标项时出错，错误信息:{0}   SQL语句：{1}", ex.Message, SQL_GetReportGuideLines);
-                    OralceLogWriter.WriteSystemLog(_err, "ERROR");
+                    LogWriter.WriteSystemLog(_err, "ERROR");
                     throw ex;
                 }
             }
@@ -946,14 +947,14 @@ namespace SinoSZJS.CS.BizReport
             return _ret;
         }
 
-        private List<MD_ReportGuideLineItem> GetChildGuideLine(MD_ReportGuideLineItem _fitem, OracleConnection cn)
+        private List<MD_ReportGuideLineItem> GetChildGuideLine(MD_ReportGuideLineItem _fitem, SqlConnection cn)
         {
             List<MD_ReportGuideLineItem> _ret = new List<MD_ReportGuideLineItem>();
             string _sql = "select ID,FID,ZBMC,ZBZTMC from tj_zbcxdyb where fid =:FID and zbztmc =:ZTMC order by id ";
-            OracleCommand _cmd = new OracleCommand(_sql, cn);
+            SqlCommand _cmd = new SqlCommand(_sql, cn);
             _cmd.Parameters.Add(":FID", decimal.Parse(_fitem.ID));
             _cmd.Parameters.Add(":ZTMC", _fitem.ZTName);
-            OracleDataReader _dr = _cmd.ExecuteReader();
+            SqlDataReader _dr = _cmd.ExecuteReader();
             while (_dr.Read())
             {
                 MD_ReportGuideLineItem _item = new MD_ReportGuideLineItem(
@@ -976,13 +977,13 @@ namespace SinoSZJS.CS.BizReport
         public MD_ReportGuideLineDefine GetReportGuideLineDefine(string _id)
         {
             MD_ReportGuideLineDefine _ret = null;
-            using (OracleConnection cn = OracleHelper.OpenConnection())
+            using (SqlConnection cn = SqlHelper.OpenConnection())
             {
 
-                OracleParameter[] _param = { new OracleParameter(":ID",OracleDbType.Decimal)   
+                SqlParameter[] _param = { new SqlParameter(":ID",SqlDbType.Decimal)   
                          };
                 _param[0].Value = decimal.Parse(_id);
-                OracleDataReader _dr = OracleHelper.ExecuteReader(cn, CommandType.Text, SQL_GetReportGuideLineDefine, _param);
+                SqlDataReader _dr = SqlHelper.ExecuteReader(cn, CommandType.Text, SQL_GetReportGuideLineDefine, _param);
                 while (_dr.Read())
                 {
                     _ret = new MD_ReportGuideLineDefine(
@@ -1010,14 +1011,14 @@ namespace SinoSZJS.CS.BizReport
             string _zbsf = ReportGuideLineDefine.Method.Trim();
             try
             {
-                using (OracleConnection cn = OracleHelper.OpenConnection())
+                using (SqlConnection cn = SqlHelper.OpenConnection())
                 {
 
                     _zbsf = _zbsf.Replace("dtBegin", string.Format("to_date('{0}01','YYYYMMDD')", StartDate.ToString("yyyMM")));
                     _zbsf = _zbsf.Replace("dtEnd", string.Format("to_date('{0}235959','YYYYMMDDhh24miss')", EndDate.ToString("yyyMMdd")));
                     _zbsf = _zbsf.Replace("strTJDW", string.Format("'{0}'", DWDM));
 
-                    _ret = OracleHelper.FillDataTable(cn, CommandType.Text, _zbsf);
+                    _ret = SqlHelper.FillDataTable(cn, CommandType.Text, _zbsf);
 
                     cn.Close();
                 }
@@ -1027,7 +1028,7 @@ namespace SinoSZJS.CS.BizReport
             {
                 string _errmsg = string.Format("执行报表指标{2}[{3}]查询出错,错误信息为:{0}!\n查询语句为:{1}\n",
                                 e.Message, _zbsf, ReportGuideLineDefine.DisplayName, ReportGuideLineDefine.ID);
-                OralceLogWriter.WriteSystemLog(_errmsg, "ERROR");
+                LogWriter.WriteSystemLog(_errmsg, "ERROR");
                 return _ret;
             }
         }
@@ -1040,14 +1041,14 @@ namespace SinoSZJS.CS.BizReport
             string _zbsf = ReportGuideLineDefine.DetialMethod.Trim();
             try
             {
-                using (OracleConnection cn = OracleHelper.OpenConnection())
+                using (SqlConnection cn = SqlHelper.OpenConnection())
                 {
 
                     _zbsf = _zbsf.Replace("dtBegin", string.Format("to_date('{0}01','YYYYMMDD')", StartDate.ToString("yyyMM")));
                     _zbsf = _zbsf.Replace("dtEnd", string.Format("to_date('{0}235959','YYYYMMDDhh24miss')", EndDate.ToString("yyyMMdd")));
                     _zbsf = _zbsf.Replace("strTJDW", string.Format("'{0}'", DWDM));
 
-                    _ret = OracleHelper.FillDataTable(cn, CommandType.Text, _zbsf);
+                    _ret = SqlHelper.FillDataTable(cn, CommandType.Text, _zbsf);
 
                     cn.Close();
                 }
@@ -1057,7 +1058,7 @@ namespace SinoSZJS.CS.BizReport
             {
                 string _errmsg = string.Format("执行报表指标{2}[{3}]的详细记录查询出错,错误信息为:{0}!\n查询语句为:{1}\n",
                                 e.Message, _zbsf, ReportGuideLineDefine.DisplayName, ReportGuideLineDefine.ID);
-                OralceLogWriter.WriteSystemLog(_errmsg, "ERROR");
+                LogWriter.WriteSystemLog(_errmsg, "ERROR");
                 return _ret;
             }
         }

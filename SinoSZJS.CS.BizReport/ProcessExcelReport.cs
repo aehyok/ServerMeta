@@ -11,7 +11,7 @@ using SinoSZJS.DataAccess;
 using OfficeOpenXml;
 using OfficeOpenXml.FormulaParsing.Excel.Functions.Text;
 using DataTable = System.Data.DataTable;
-
+using SinoSZJS.DataAccess.Sql;
 
 namespace SinoSZJS.CS.BizReport
 {
@@ -185,7 +185,7 @@ namespace SinoSZJS.CS.BizReport
                 }
                 catch (Exception ex)
                 {
-                    OralceLogWriter.WriteSystemLog(string.Format("填入行名称时出错！{0}", ex.Message), "ERROR");
+                    LogWriter.WriteSystemLog(string.Format("填入行名称时出错！{0}", ex.Message), "ERROR");
                 }
 
                 //　2.行遍历，填写数据
@@ -220,7 +220,7 @@ namespace SinoSZJS.CS.BizReport
             }
             catch (Exception ex)
             {
-                OralceLogWriter.WriteSystemLog(string.Format("填入数据时出错！{0}", ex.Message), "ERROR");
+                LogWriter.WriteSystemLog(string.Format("填入数据时出错！{0}", ex.Message), "ERROR");
             }
             finally
             {
@@ -305,7 +305,7 @@ namespace SinoSZJS.CS.BizReport
             }
             catch(Exception ex)
             {
-                OralceLogWriter.WriteSystemLog(string.Format("填充超链接时出错！{0}", ex.Message), "ERROR");
+                LogWriter.WriteSystemLog(string.Format("填充超链接时出错！{0}", ex.Message), "ERROR");
             }
         }
 
@@ -375,14 +375,14 @@ namespace SinoSZJS.CS.BizReport
                 // Done
                 //package.SaveAs(oFInfo);
 
-                OralceLogWriter.WriteSystemLog(String.Format("文件生成成功！"), "INFO");
+                LogWriter.WriteSystemLog(String.Format("文件生成成功！"), "INFO");
                 return true;
             }
             catch (Exception exp)
             {
                 sMessage = exp.Message;
                 string eStr = string.Format(" 系统在依据报表模板生成报表时发生错误！\n  Error Message:{0}", exp.Message);
-                OralceLogWriter.WriteSystemLog(eStr, "ERROR");
+                LogWriter.WriteSystemLog(eStr, "ERROR");
                 return false;
             }
             finally
@@ -488,7 +488,7 @@ namespace SinoSZJS.CS.BizReport
             isBusy = true;
             if (times > 5999)
             {
-                OralceLogWriter.WriteSystemLog("Excel 程序忙！", "ERROR");
+                LogWriter.WriteSystemLog("Excel 程序忙！", "ERROR");
             }
 
             if (UseCount > 10)
@@ -510,7 +510,7 @@ namespace SinoSZJS.CS.BizReport
                 }
                 catch (Exception ex)
                 {
-                    OralceLogWriter.WriteSystemLog(String.Format("打开ExcelPackage时出错！{0},文件地址：{1}", ex.Message,m_sReportTemplate),"ERROR");
+                    LogWriter.WriteSystemLog(String.Format("打开ExcelPackage时出错！{0},文件地址：{1}", ex.Message,m_sReportTemplate),"ERROR");
                 }
                 afterTime = DateTime.Now;
             }
@@ -549,7 +549,7 @@ namespace SinoSZJS.CS.BizReport
 
                     //if (package != null)
                     //{
-                    //    OralceLogWriter.WriteSystemLog(string.Format("执行关闭package！ret = {0}", ret), "INFO");
+                    //    LogWriter.WriteSystemLog(string.Format("执行关闭package！ret = {0}", ret), "INFO");
                     //}
                 //m_oExcelApp = null;
                 package = null;
@@ -559,7 +559,7 @@ namespace SinoSZJS.CS.BizReport
                 worksheet = null;
                 //oCells = null;
 
-                //OralceLogWriter.WriteSystemLog("完成关闭EXCEL进程！", "INFO");
+                //LogWriter.WriteSystemLog("完成关闭EXCEL进程！", "INFO");
                 //GC.Collect();
                 isBusy = false;
                 //				GC.WaitForPendingFinalizers();
@@ -569,7 +569,7 @@ namespace SinoSZJS.CS.BizReport
             //}
             //catch (Exception e)
             //{
-            //    OralceLogWriter.WriteSystemLog(string.Format("关闭EXCEL进程时出错！{0}", e.Message), "ERROR");
+            //    LogWriter.WriteSystemLog(string.Format("关闭EXCEL进程时出错！{0}", e.Message), "ERROR");
             //}
             //finally
             //{
@@ -665,7 +665,7 @@ namespace SinoSZJS.CS.BizReport
         //    isBusy = true;
         //    if (times > 5999)
         //    {
-        //        OralceLogWriter.WriteSystemLog("Excel 程序忙！", "ERROR");
+        //        LogWriter.WriteSystemLog("Excel 程序忙！", "ERROR");
         //        return null;
         //    }
 
@@ -699,13 +699,13 @@ namespace SinoSZJS.CS.BizReport
                     //package.Quit();
                     ReleaseAllRef(package);
                     //_ret = System.Runtime.InteropServices.Marshal.ReleaseComObject(package);
-                    //OralceLogWriter.WriteSystemLog(string.Format("执行关闭package！ret = {0}", _ret), "INFO");
+                    //LogWriter.WriteSystemLog(string.Format("执行关闭package！ret = {0}", _ret), "INFO");
                     package = null;
                     GC.GetGeneration(package);
 
                 }
                 package = null;
-                OralceLogWriter.WriteSystemLog("完成关闭EXCEL进程！", "INFO");
+                LogWriter.WriteSystemLog("完成关闭EXCEL进程！", "INFO");
                 GC.Collect();
                 //				GC.WaitForPendingFinalizers();
                 //				GC.Collect();
@@ -714,7 +714,7 @@ namespace SinoSZJS.CS.BizReport
             }
             catch (Exception e)
             {
-                OralceLogWriter.WriteSystemLog(string.Format("关闭EXCEL进程时出错！{0}", e.Message), "ERROR");
+                LogWriter.WriteSystemLog(string.Format("关闭EXCEL进程时出错！{0}", e.Message), "ERROR");
             }
             finally
             {

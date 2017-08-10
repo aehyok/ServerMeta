@@ -69,9 +69,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="ReportingService.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="ReportingService.cs" />
     <Compile Include="ReportServerPlugin.cs" />
     <Compile Include="RsConfig.cs" />
     <Compile Include="SinoSZExcelReport.cs" />
@@ -83,13 +81,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SinoSZJS.DataAccess\SinoSZJS.DataAccess.csproj">
-      <Project>{C41251E4-BC9E-4A3C-92D0-22682FBAA541}</Project>
-      <Name>SinoSZJS.DataAccess</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SinoSZJS.Base\SinoSZJS.Base.csproj">
-      <Project>{29F48920-647F-48A2-A222-34276057D81A}</Project>
+      <Project>{76fc4ed1-a1d0-4167-9c82-2b69eff6a33b}</Project>
       <Name>SinoSZJS.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SinoSZJS.DataAccess.Sql\SinoSZJS.DataAccess.Sql.csproj">
+      <Project>{0ccdad03-d337-4437-bd04-62fffd03681a}</Project>
+      <Name>SinoSZJS.DataAccess.Sql</Name>
     </ProjectReference>
     <ProjectReference Include="..\SinoSZPluginFramework\SinoSZPluginFramework.csproj">
       <Project>{C855A639-511E-4B4F-8A71-3224083C5D40}</Project>

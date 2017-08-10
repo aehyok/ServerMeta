@@ -5,7 +5,6 @@ using System.Configuration;
 using System.Xml;
 using ChinaCustoms.Frameworks.Cupaa.Libraries.Core.EnumsDefines;
 using System.Data;
-using Oracle.DataAccess.Client;
 using SinoSZJS.Base.SystemLog;
 using System.Diagnostics;
 using SinoSZJS.Base.Misc;
@@ -13,6 +12,8 @@ using SinoSZJS.CS.BizAuthorize.OraSignOn;
 using SinoSZJS.DataAccess;
 using SinoSZJS.Base.Authorize.CUPPA;
 using System.Globalization;
+using SinoSZJS.DataAccess.Sql;
+using System.Data.SqlClient;
 
 namespace SinoSZJS.CS.BizAuthorize.Cuppa
 {
@@ -97,18 +98,18 @@ namespace SinoSZJS.CS.BizAuthorize.Cuppa
             catch (Exception ex)
             {
                 string _error = string.Format("解析XML数据取用户GUID失败！{0} {1}", ex.Message, (result == null) ? "" : result.OuterXml);
-                OralceLogWriter.WriteSystemLog(_error, "ERROR");
+                LogWriter.WriteSystemLog(_error, "ERROR");
                 if (CUPPAPassportConfig.CUPPA_Check_WriteLog) CUPPAPassportConfig.WriteCUPPALog(_error);
                 throw ex;
             }
 
 
             #region 通过USER_GUID取YHID
-            using (OracleConnection cn = OracleHelper.OpenConnection())
+            using (SqlConnection cn = SqlHelper.OpenConnection())
             {
                 try
                 {
-                    OracleCommand _cmd = new OracleCommand(CUPPAPassportConfig.SQL_GetYHIDByGUID, cn);
+                    SqlCommand _cmd = new SqlCommand(CUPPAPassportConfig.SQL_GetYHIDByGUID, cn);
                     _cmd.CommandType = CommandType.Text;
                     _cmd.Parameters.Add("GUID", User_Guid);
                     decimal _ret = (decimal)_cmd.ExecuteScalar();
@@ -118,7 +119,7 @@ namespace SinoSZJS.CS.BizAuthorize.Cuppa
                 catch (Exception ex)
                 {
                     string _error = string.Format("通过USER_GUID（{1}）取YHID失败！{0}", ex.Message, User_Guid);
-                    OralceLogWriter.WriteSystemLog(_error, "ERROR");
+                    LogWriter.WriteSystemLog(_error, "ERROR");
                     if (CUPPAPassportConfig.CUPPA_Check_WriteLog) CUPPAPassportConfig.WriteCUPPALog(_error);
                     throw ex;
                 }
@@ -131,18 +132,18 @@ namespace SinoSZJS.CS.BizAuthorize.Cuppa
         private const string SQL_GetUserGuidByJS = @"select t.yhguid from qx2_hgyh t where t.yhm=:YHM";
         private static string GetUserGuidByJS(string _name)
         {
-            using (OracleConnection cn = OracleHelper.OpenConnection())
+            using (SqlConnection cn = SqlHelper.OpenConnection())
             {
                 try
                 {
-                    OracleCommand _cmd = new OracleCommand(SQL_GetUserGuidByJS, cn);
+                    SqlCommand _cmd = new SqlCommand(SQL_GetUserGuidByJS, cn);
                     _cmd.Parameters.Add(":YHM", _name);
                     string ret = _cmd.ExecuteScalar().ToString();
                     return ret;
                 }
                 catch (Exception ex)
                 {
-                    OralceLogWriter.WriteSystemLog(string.Format("通过登录名称从数据库中取用户GUID失败！{0} {1}", ex.Message, _name), "ERROR");
+                    LogWriter.WriteSystemLog(string.Format("通过登录名称从数据库中取用户GUID失败！{0} {1}", ex.Message, _name), "ERROR");
                     throw ex;
                 }
             }

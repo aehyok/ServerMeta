@@ -6,7 +6,7 @@ using System.IO;
 using SinoSZJS.DataAccess;
 using SinoSZJS.Base.Authorize.CUPPA;
 using SinoSZJS.Base.Misc;
-
+using SinoSZJS.DataAccess.Sql;
 
 namespace SinoSZJS.CS.BizAuthorize.OraSignOn
 {
@@ -61,7 +61,7 @@ namespace SinoSZJS.CS.BizAuthorize.OraSignOn
             catch (Exception e1)
             {
                 string _error = string.Format("采用三统一平台验证口令出错:{0}\n Name={1} Pass={2}", e1.Message, _name, _pass);
-                OralceLogWriter.WriteSystemLog(_error, "ERROR");
+                LogWriter.WriteSystemLog(_error, "ERROR");
                 if (CUPPAPassportConfig.CUPPA_Check_WriteLog) CUPPAPassportConfig.WriteCUPPALog(_error);
                 return false;
             }

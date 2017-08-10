@@ -2,18 +2,15 @@
 using System.Collections.Generic;
 using System.Text;
 using SinoSZPluginFramework;
-using SinoSZJS.Base.Misc;
 using SinoSZPluginFramework.ServerPlugin;
-using SinoSZJS.Base.Authorize;
-using SinoSZJS.Base.SystemLog;
-using SinoSZJS.Base.UserLog;
 using System.Data;
 using System.Timers;
 using System.Diagnostics;
-using Oracle.DataAccess.Client;
-using SinoSZJS.DataAccess;
 using System.ServiceProcess;
 using System.Threading;
+using SinoSZJS.DataAccess.Sql;
+using System.Data.SqlClient;
+using SinoSZJS.Base.Misc;
 
 namespace SinoSZServerBase
 {
@@ -39,58 +36,57 @@ namespace SinoSZServerBase
 #if DEBUG
             SleepTime = 100;
 #endif
-            while (!OracleHelper.IsReady() && TestTimes-- > 0)
+            while (!SqlHelper.IsReady() && TestTimes-- > 0)
             {
                 Thread.Sleep(SleepTime);
             }
             if (TestTimes < 1)
             {
-                EventLogSystemLog _event = new EventLogSystemLog("SinoSZJSLog");
+                //EventLogSystemLog _event = new EventLogSystemLog("SinoSZJSLog");
                 string _log = "因数据库无法连接，启动服务失败！";
-                _event.WriteLog(_log, EventLogEntryType.Error);
+                LogWriter.WriteSystemLog(_log, "ERROR");
                 throw new Exception();
             }
             #endregion
 
-            ConfigFile.Client_ShowPendingAlert = LoadDB_CSB_Bool("Client_ShowPendingAlert");
+            //ConfigFile.Client_ShowPendingAlert = LoadDB_CSB_Bool("Client_ShowPendingAlert");
 
 
 
             //建立系统日志和用户日志的写入器
-            SystemLogWriter.ICS_SystemLog = new OraSysLogWriter();
-            UserLogWriter.ICS_UserLog = new OraUserLogWriter();
+            //SystemLogWriter.ICS_SystemLog = new OraSysLogWriter();
+            //UserLogWriter.ICS_UserLog = new OraUserLogWriter();
 
             application.WriteMessage("服务开始启动!");
 
             //清除验证票据缓存
-            TicketLib.Clear();
+            //TicketLib.Clear();
             // 加载代码表Cache
-            application.WriteMessage("开始加载代码表缓存!");
+            LogWriter.WriteSystemLog("开始加载代码表缓存!","Info");
             InitRefCodeCache();
-            application.WriteMessage("代码表缓存加载完毕!");
+            LogWriter.WriteSystemLog("代码表缓存加载完毕!","Info");
 
 
             // 加载授权信息Cache
-            application.WriteMessage("开始加载授权信息缓存!");
+            LogWriter.WriteSystemLog("开始加载授权信息缓存!","Info");
             InitPermissionCache();
-            application.WriteMessage("授权信息缓存加载完毕!");
+            LogWriter.WriteSystemLog("授权信息缓存加载完毕!","Info");
 
             // 初始化Remoting服务
-            application.WriteMessage("初始化Remoting服务!");
+            LogWriter.WriteSystemLog("初始化Remoting服务!","Info");
             //RemotingServerSvc.Init();
-            application.WriteMessage("Remoting服务初始化完毕!");
+            LogWriter.WriteSystemLog("Remoting服务初始化完毕!", "Info");
 
-            application.WriteMessage("注册Remoting服务工厂!");
+            LogWriter.WriteSystemLog("注册Remoting服务工厂!", "Info");
             //RemotingServerSvc.RegisterService(typeof(IServiceFactory), typeof(BizServiceFactory));
-            application.WriteMessage("Remoting服务工厂注册完毕!");
-
+            LogWriter.WriteSystemLog("Remoting服务工厂注册完毕!", "Info");
 
 
 
             // 启动任务服务
-            application.WriteMessage("初始化任务服务!");
+            LogWriter.WriteSystemLog("初始化任务服务!", "Info");
             InitTask();
-            application.WriteMessage("任务服务初始化完成!");
+            LogWriter.WriteSystemLog("任务服务初始化完成!", "Info");
 
             // 发出启动成功提示音
             ServerCommon.SvcBeep(SvcAction.Started);
@@ -112,9 +108,9 @@ namespace SinoSZServerBase
 
         private static string LoadDB_CSB_String(string pName)
         {
-            using (OracleConnection cn = OracleHelper.OpenConnection())
+            using (SqlConnection cn = SqlHelper.OpenConnection())
             {
-                OracleCommand _cmd = new OracleCommand(SQL_GetCSB, cn);
+                SqlCommand _cmd = new SqlCommand(SQL_GetCSB, cn);
                 _cmd.Parameters.Add(":CSNAME", pName);
                 object _ret = _cmd.ExecuteScalar();
                 if (_ret == null) return "";
@@ -160,7 +156,7 @@ namespace SinoSZServerBase
             string _log2 = string.Format("任务调用开始！");
             if (WriteTaskInfo)
             {
-                OralceLogWriter.WriteSystemLog(_log2, "INFO");
+                LogWriter.WriteSystemLog(_log2, "INFO");
             }
 
             //获取任务列表
@@ -179,7 +175,7 @@ namespace SinoSZServerBase
                     catch (Exception ex)
                     {
                         string _log = string.Format("任务调用时出现错误：{0}", ex.Message);
-                        OralceLogWriter.WriteSystemLog(_log, "ERROR");
+                        LogWriter.WriteSystemLog(_log, "ERROR");
                     }
                 }
             }
@@ -206,24 +202,24 @@ namespace SinoSZServerBase
         //	为Service发出声音
         public static void SvcBeep(SvcAction action)
         {
-            if (!ConfigFile.BeepOnSvcAction)
-                return;
-            switch (action)
-            {
-                case SvcAction.Starting:
-                    Win32API.Beep(4000, 200);
-                    break; //	Service开始启动
-                case SvcAction.Started:
-                    Win32API.Beep(1000, 400);
-                    Win32API.Beep(4000, 400);
-                    break; //	Service启动完毕
-                case SvcAction.Stopping:
-                    Win32API.Beep(1000, 200);
-                    break; //	Service开始停止
-                case SvcAction.Stopped:
-                    Win32API.Beep(4000, 200);
-                    break; //	Service停止完毕
-            }
+            //if (!ConfigFile.BeepOnSvcAction)
+            //    return;
+            //switch (action)
+            //{
+            //    case SvcAction.Starting:
+            //        Win32API.Beep(4000, 200);
+            //        break; //	Service开始启动
+            //    case SvcAction.Started:
+            //        Win32API.Beep(1000, 400);
+            //        Win32API.Beep(4000, 400);
+            //        break; //	Service启动完毕
+            //    case SvcAction.Stopping:
+            //        Win32API.Beep(1000, 200);
+            //        break; //	Service开始停止
+            //    case SvcAction.Stopped:
+            //        Win32API.Beep(4000, 200);
+            //        break; //	Service停止完毕
+            //}
         }
     }
 

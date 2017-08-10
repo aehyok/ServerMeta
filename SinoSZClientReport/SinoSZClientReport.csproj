@@ -431,7 +431,7 @@
       <Name>SinoSZClientBase</Name>
     </ProjectReference>
     <ProjectReference Include="..\SinoSZJS.Base\SinoSZJS.Base.csproj">
-      <Project>{29F48920-647F-48A2-A222-34276057D81A}</Project>
+      <Project>{76fc4ed1-a1d0-4167-9c82-2b69eff6a33b}</Project>
       <Name>SinoSZJS.Base</Name>
     </ProjectReference>
     <ProjectReference Include="..\SinoSZMetaDataQuery\SinoSZMetaDataQuery.csproj">

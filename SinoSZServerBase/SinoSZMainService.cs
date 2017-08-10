@@ -13,6 +13,7 @@ using System.Threading;
 using SinoSZJS.DataAccess;
 using System.ServiceModel;
 using SinoSZJS.Base.Misc;
+using SinoSZJS.DataAccess.Sql;
 
 namespace SinoSZServerBase
 {
@@ -32,12 +33,12 @@ namespace SinoSZServerBase
         protected override void OnStart(string[] args)
         {
             // TODO: Add code here to start your service.        
-            bool _oracleReady = OracleHelper.IsReady();
+            bool _oracleReady = SqlHelper.IsReady();
             int _count = 0;
             while (!_oracleReady && (_count < 15))
             {
                 Thread.Sleep(new System.TimeSpan(0, 1, 0));
-                _oracleReady = OracleHelper.IsReady();
+                _oracleReady = SqlHelper.IsReady();
                 if (!_oracleReady)
                 {
                     WriteMessage(string.Format("第{0}次测试ORACLE连接失败！", _count));

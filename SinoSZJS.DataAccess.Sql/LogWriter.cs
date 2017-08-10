@@ -24,7 +24,7 @@ namespace SinoSZJS.DataAccess.Sql
             using (SqlConnection cn = new SqlConnection(SqlHelper.ConnectionStringProfile))
             {
                 cn.Open();
-                //OracleTransaction _txn = cn.BeginTransaction();
+                //SqlTransaction _txn = cn.BeginTransaction();
                 SqlCommand comm = new SqlCommand(SQL_WriteSystemLog, cn);
                 comm.Parameters.Add("@ID", Guid.NewGuid().ToString());
                 comm.Parameters.Add("@LOGTYPE", _type);
@@ -61,7 +61,7 @@ namespace SinoSZJS.DataAccess.Sql
             using (SqlConnection cn = new SqlConnection(SqlHelper.ConnectionStringProfile))
             {
                 cn.Open();
-                //OracleTransaction _txn = cn.BeginTransaction();
+                //SqlTransaction _txn = cn.BeginTransaction();
                 SqlCommand comm = new SqlCommand(SQL_WriteUserLog, cn);
                 comm.Parameters.Add(":ID", Guid.NewGuid().ToString());
                 comm.Parameters.Add(":YHID", _yhid);

@@ -192,6 +192,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SinoSZJS.DataAccess.Sql\SinoSZJS.DataAccess.Sql.csproj">
+      <Project>{0CCDAD03-D337-4437-BD04-62FFFD03681A}</Project>
+      <Name>SinoSZJS.DataAccess.Sql</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SinoSZJS.DataAccess\SinoSZJS.DataAccess.csproj">
       <Project>{C41251E4-BC9E-4A3C-92D0-22682FBAA541}</Project>
       <Name>SinoSZJS.DataAccess</Name>

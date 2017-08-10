@@ -8,6 +8,8 @@ using SinoSZJS.Base.Misc;
 using SinoSZJS.Base.Authorize;
 using SinoSZJS.DataAccess;
 using SinoSZJS.Base.Report;
+using System.Data.SqlClient;
+using SinoSZJS.DataAccess.Sql;
 
 namespace SinoSZJS.CS.BizReport
 {
@@ -31,14 +33,14 @@ namespace SinoSZJS.CS.BizReport
             #region 生成报表统计数据
             if (!CreateReportData(_reportItem.ReportName, _sDate, _eDate, _dwdm))
             {
-                OralceLogWriter.WriteSystemLog(string.Format("生成报表发生错误({0},{1},{2},{3})", _reportItem.ReportName, _dwdm, _sDate, _eDate), "ERROR");
+                LogWriter.WriteSystemLog(string.Format("生成报表发生错误({0},{1},{2},{3})", _reportItem.ReportName, _dwdm, _sDate, _eDate), "ERROR");
                 return false;
             }
             #endregion
             #region 取报表统计结果数据
             if (!GetReportData(_reportItem.ReportName, _sDate, _eDate, _dwdm, out _rData))
             {
-                OralceLogWriter.WriteSystemLog(string.Format("取报表数据时发生错误({0},{1},{2},{3})", _reportItem.ReportName, _dwdm, _sDate, _eDate), "ERROR");
+                LogWriter.WriteSystemLog(string.Format("取报表数据时发生错误({0},{1},{2},{3})", _reportItem.ReportName, _dwdm, _sDate, _eDate), "ERROR");
                 return false;
             }
             #endregion
@@ -46,7 +48,7 @@ namespace SinoSZJS.CS.BizReport
             #region 取报表特殊行/列的结果数据
             if (!GetReportSpecialData(_reportItem.ReportName, _sDate, _eDate, _dwdm, out _cellData))
             {
-                OralceLogWriter.WriteSystemLog(string.Format("取报表数据特殊行列数据时发生错误({0},{1},{2},{3})", _reportItem.ReportName, _dwdm, _sDate, _eDate), "ERROR");
+                LogWriter.WriteSystemLog(string.Format("取报表数据特殊行列数据时发生错误({0},{1},{2},{3})", _reportItem.ReportName, _dwdm, _sDate, _eDate), "ERROR");
                 return false;
             }
             #endregion
@@ -54,7 +56,7 @@ namespace SinoSZJS.CS.BizReport
             #region 取报表定义
             if (!GetReportDefine(_reportItem.ReportName, _sDate, _eDate, _dwdm, out _hmcData))
             {
-                OralceLogWriter.WriteSystemLog(string.Format("取报表定义数据时发生错误({0},{1},{2},{3})", _reportItem.ReportName, _dwdm, _sDate, _eDate), "ERROR");
+                LogWriter.WriteSystemLog(string.Format("取报表定义数据时发生错误({0},{1},{2},{3})", _reportItem.ReportName, _dwdm, _sDate, _eDate), "ERROR");
                 return false;
             }
             #endregion
@@ -62,14 +64,14 @@ namespace SinoSZJS.CS.BizReport
             #region 取报表明细数据
             if (!GetReportMXData(_reportItem.ReportName, _sDate, _eDate, _dwdm, out _mxData))
             {
-                OralceLogWriter.WriteSystemLog(string.Format("取报表明细数据时发生错误({0},{1},{2},{3})", _reportItem.ReportName, _dwdm, _sDate, _eDate), "ERROR");
+                LogWriter.WriteSystemLog(string.Format("取报表明细数据时发生错误({0},{1},{2},{3})", _reportItem.ReportName, _dwdm, _sDate, _eDate), "ERROR");
                 return false;
             }
             #endregion
 
-            using (OracleConnection cn = OracleHelper.OpenConnection())
+            using (SqlConnection cn = SqlHelper.OpenConnection())
             {
-                OracleTransaction txn = cn.BeginTransaction();
+                SqlTransaction txn = cn.BeginTransaction();
                 try
                 {
                     //开始生成报表，并存入ORALCE　CLOB字段
@@ -99,14 +101,14 @@ namespace SinoSZJS.CS.BizReport
                         byte[] blob = new byte[fs.Length];
                         fs.Read(blob, 0, blob.Length);
                         fs.Close();
-                        OracleCommand _cmd = new OracleCommand();
+                        SqlCommand _cmd = new SqlCommand();
                         _cmd.CommandText = @"update TJ_ZDYBBFJXXB set TBR = :TBR,TBRQ = sysdate,TBDW=:TBDW,BBZT='未审核',BBJG_C=:HTMFILE,BBJG_B=:EXEFILE where 
                                                                         BBMC = :BBMC AND TJDW=:TJDW AND KSRQ=:KSRQ AND JZRQ=:JZRQ";
                         _cmd.CommandType = CommandType.Text;
                         _cmd.Parameters.Add(":TBR", SinoUserCtx.CurUser.UserName);
                         _cmd.Parameters.Add(":TBDW", SinoUserCtx.CurUser.QxszDWMC);
-                        _cmd.Parameters.Add(new OracleParameter(":HTMFILE", OracleDbType.Clob, strHtml.Length, ParameterDirection.Input, false, 0, 0, null, DataRowVersion.Current, strHtml));
-                        _cmd.Parameters.Add(new OracleParameter(":EXEFILE", OracleDbType.Blob, blob.Length, ParameterDirection.Input, false, 0, 0, null, DataRowVersion.Current, blob));
+                        //_cmd.Parameters.Add(new SqlParameter(":HTMFILE", SqlDbType.Clob, strHtml.Length, ParameterDirection.Input, false, 0, 0, null, DataRowVersion.Current, strHtml));
+                        //_cmd.Parameters.Add(new SqlParameter(":EXEFILE", SqlDbType.Blob, blob.Length, ParameterDirection.Input, false, 0, 0, null, DataRowVersion.Current, blob));
                         _cmd.Parameters.Add(":BBMC", _reportItem.ReportName);
                         _cmd.Parameters.Add(":TJDW", _dwdm);
                         _cmd.Parameters.Add(":KSRQ", _sDate);
@@ -133,7 +135,7 @@ namespace SinoSZJS.CS.BizReport
                 {
                     txn.Rollback();
                     string _eStr = string.Format(" 系统生成报表数据时发生错误！\n  Error Message:{0}", e.Message);
-                    OralceLogWriter.WriteSystemLog(_eStr, "ERROR");
+                    LogWriter.WriteSystemLog(_eStr, "ERROR");
                     return false;
                 }
             }
@@ -160,18 +162,18 @@ namespace SinoSZJS.CS.BizReport
         private static bool CreateReportData(string _reportName, DateTime _sDate, DateTime _eDate, string _dwdm)
         {
             int _ret = 0;
-            using (OracleConnection cn = OracleHelper.OpenConnection())
+            using (SqlConnection cn = SqlHelper.OpenConnection())
             {
                 try
                 {
-                    OracleCommand _cmd = new OracleCommand();
+                    SqlCommand _cmd = new SqlCommand();
                     _cmd.CommandText = "zhtj_zdybb.bb";
                     _cmd.CommandType = CommandType.StoredProcedure;
                     _cmd.Parameters.Add("strtjdw", _dwdm);
                     _cmd.Parameters.Add("dtbegin_p", _sDate);
                     _cmd.Parameters.Add("dtend_p", _eDate);
                     _cmd.Parameters.Add("strbbmc", _reportName);
-                    OracleParameter _p1 = _cmd.Parameters.Add("recret", OracleDbType.Decimal);
+                    SqlParameter _p1 = _cmd.Parameters.Add("recret", SqlDbType.Decimal);
                     _p1.Direction = ParameterDirection.Output;
                     _cmd.Connection = cn;
                     _cmd.ExecuteNonQuery();
@@ -184,7 +186,7 @@ namespace SinoSZJS.CS.BizReport
                 {
                     string _emsg = string.Format("生成统计报表（生成报表统计数据）时发生错误！reportName={0} _dwdm={1} DATE={2} - {3} ", _reportName, _dwdm, _sDate, _eDate);
                     _emsg += string.Format(" \n 错误信息：{0}", e.Message);
-                    OralceLogWriter.WriteSystemLog(_emsg, "ERROR");
+                    LogWriter.WriteSystemLog(_emsg, "ERROR");
                     return false;
                 }
             }
@@ -203,11 +205,11 @@ namespace SinoSZJS.CS.BizReport
         {
             _dt = new DataTable();
 
-            using (OracleConnection cn = OracleHelper.OpenConnection())
+            using (SqlConnection cn = SqlHelper.OpenConnection())
             {
                 try
                 {
-                    OracleCommand _cmd = new OracleCommand();
+                    SqlCommand _cmd = new SqlCommand();
                     _cmd.CommandText = "zhtj_zdybb.getbb";
                     _cmd.Connection = cn;
                     _cmd.CommandType = CommandType.StoredProcedure;
@@ -215,9 +217,9 @@ namespace SinoSZJS.CS.BizReport
                     _cmd.Parameters.Add("dtbegin_p", _sDate);
                     _cmd.Parameters.Add("dtend_p", _eDate);
                     _cmd.Parameters.Add("strbbmc", _reportName);
-                    _cmd.Parameters.Add("recret", OracleDbType.RefCursor, DBNull.Value, ParameterDirection.Output);
+                    //_cmd.Parameters.Add("recret", SqlDbType.RefCursor, DBNull.Value, ParameterDirection.Output);
 
-                    OracleDataAdapter _adapter = new OracleDataAdapter(_cmd);
+                    SqlDataAdapter _adapter = new SqlDataAdapter(_cmd);
                     _adapter.Fill(_dt);
                     cn.Close();
                     return true;
@@ -227,7 +229,7 @@ namespace SinoSZJS.CS.BizReport
                 {
                     string _emsg = string.Format("生成统计报表(取报表统计结果数据)时发生错误！reportName={0} _dwdm={1} DATE={2} - {3} ", _reportName, _dwdm, _sDate, _eDate);
                     _emsg += string.Format(" \n 错误信息：{0}", e.Message);
-                    OralceLogWriter.WriteSystemLog(_emsg, "ERROR");
+                    LogWriter.WriteSystemLog(_emsg, "ERROR");
                     return false;
                 }
             }
@@ -245,11 +247,11 @@ namespace SinoSZJS.CS.BizReport
         private static bool GetReportSpecialData(string _reportName, DateTime _sDate, DateTime _eDate, string _dwdm, out DataTable _dt)
         {
             _dt = new DataTable();
-            using (OracleConnection cn = OracleHelper.OpenConnection())
+            using (SqlConnection cn = SqlHelper.OpenConnection())
             {
                 try
                 {
-                    OracleCommand _cmd = new OracleCommand();
+                    SqlCommand _cmd = new SqlCommand();
                     _cmd.Connection = cn;
                     _cmd.CommandText = "ZHTJ_ZDYBB.GetBB_DYG";
                     _cmd.CommandType = CommandType.StoredProcedure;
@@ -257,9 +259,9 @@ namespace SinoSZJS.CS.BizReport
                     _cmd.Parameters.Add("dtbegin_p", _sDate);
                     _cmd.Parameters.Add("dtend_p", _eDate);
                     _cmd.Parameters.Add("strbbmc", _reportName);
-                    _cmd.Parameters.Add("recret", OracleDbType.RefCursor, DBNull.Value, ParameterDirection.Output);
+                    //_cmd.Parameters.Add("recret", SqlDbType.RefCursor, DBNull.Value, ParameterDirection.Output);
 
-                    OracleDataAdapter _adapter = new OracleDataAdapter(_cmd);
+                    SqlDataAdapter _adapter = new SqlDataAdapter(_cmd);
                     _adapter.Fill(_dt);
                     cn.Close();
                     return true;
@@ -268,7 +270,7 @@ namespace SinoSZJS.CS.BizReport
                 {
                     string _emsg = string.Format("生成统计报表(取报表统计结果特殊行、列数据)时发生错误！reportName={0} _dwdm={1} DATE={2} - {3} ", _reportName, _dwdm, _sDate, _eDate);
                     _emsg += string.Format(" \n 错误信息：{0}", e.Message);
-                    OralceLogWriter.WriteSystemLog(_emsg, "ERROR");
+                    LogWriter.WriteSystemLog(_emsg, "ERROR");
                     return false;
                 }
             }
@@ -288,22 +290,22 @@ namespace SinoSZJS.CS.BizReport
             _ds = new DataSet();
             try
             {
-                using (OracleConnection cn = OracleHelper.OpenConnection())
+                using (SqlConnection cn = SqlHelper.OpenConnection())
                 {
                     //取表定义
                     DataTable _dt = new DataTable("REPORT_DEFINE");
-                    OracleCommand _cmd = new OracleCommand();
+                    SqlCommand _cmd = new SqlCommand();
                     _cmd.Connection = cn;
                     _cmd.CommandText = "select * from TJ_ZDYBBMCB a where a.BBMC =:BBMC";
                     _cmd.CommandType = CommandType.Text;
                     _cmd.Parameters.Add(":BBMC", _reportName);
-                    OracleDataAdapter _adapter = new OracleDataAdapter(_cmd);
+                    SqlDataAdapter _adapter = new SqlDataAdapter(_cmd);
                     _adapter.Fill(_dt);
                     _ds.Tables.Add(_dt);
 
                     //取列定义
                     DataTable _coldt = new DataTable("COL_DEFINE");
-                    _cmd = new OracleCommand();
+                    _cmd = new SqlCommand();
                     _cmd.Connection = cn;
                     _cmd.CommandText = "select * from TJ_ZDYBBDYB_DTLJL a where a.bbmc =:BBMC and TJDW = :TJDW and KSRQ = :KSRQ and JZRQ = :JZRQ order by LX";
                     _cmd.CommandType = CommandType.Text;
@@ -312,13 +314,13 @@ namespace SinoSZJS.CS.BizReport
                     _cmd.Parameters.Add(":KSRQ", _sDate);
                     _cmd.Parameters.Add(":JZRQ", _eDate);
 
-                    _adapter = new OracleDataAdapter(_cmd);
+                    _adapter = new SqlDataAdapter(_cmd);
                     _adapter.Fill(_coldt);
                     _ds.Tables.Add(_coldt);
 
                     //取行定义
                     DataTable _rowdt = new DataTable("ROW_DEFINE");
-                    _cmd = new OracleCommand();
+                    _cmd = new SqlCommand();
                     _cmd.Connection = cn;
                     _cmd.CommandText = "select * from TJ_ZDYBBDYB_DTHJL a where a.bbmc =:BBMC and TJDW = :TJDW and KSRQ = :KSRQ and JZRQ = :JZRQ order by HX";
                     _cmd.CommandType = CommandType.Text;
@@ -327,7 +329,7 @@ namespace SinoSZJS.CS.BizReport
                     _cmd.Parameters.Add(":KSRQ", _sDate);
                     _cmd.Parameters.Add(":JZRQ", _eDate);
 
-                    _adapter = new OracleDataAdapter(_cmd);
+                    _adapter = new SqlDataAdapter(_cmd);
                     _adapter.Fill(_rowdt);
                     _ds.Tables.Add(_rowdt);
                     cn.Close();
@@ -338,7 +340,7 @@ namespace SinoSZJS.CS.BizReport
             {
                 string _emsg = string.Format("生成统计报表(取报表定义数据)时发生错误！reportName={0} _dwdm={1} DATE={2} - {3} ", _reportName, _dwdm, _sDate, _eDate);
                 _emsg += string.Format(" \n 错误信息：{0}", e.Message);
-                OralceLogWriter.WriteSystemLog(_emsg, "ERROR");
+                LogWriter.WriteSystemLog(_emsg, "ERROR");
                 return false;
             }
         }
@@ -356,11 +358,11 @@ namespace SinoSZJS.CS.BizReport
         private static bool GetReportMXData(string _reportName, DateTime _sDate, DateTime _eDate, string _dwdm, out DataTable _dt)
         {
             _dt = new DataTable();
-            using (OracleConnection cn = OracleHelper.OpenConnection())
+            using (SqlConnection cn = SqlHelper.OpenConnection())
             {
                 try
                 {
-                    OracleCommand _cmd = new OracleCommand();
+                    SqlCommand _cmd = new SqlCommand();
                     _cmd.Connection = cn;
                     _cmd.CommandText = "select hx,lx from TJ_ZDYBBJLB_MX where BBMC=:BBMC AND TJDW=:TJDW AND KSRQ=:KSRQ and JZRQ=:JZRQ and MX is not null";
                     _cmd.CommandType = CommandType.Text;
@@ -369,7 +371,7 @@ namespace SinoSZJS.CS.BizReport
                     _cmd.Parameters.Add(":KSRQ", _sDate);
                     _cmd.Parameters.Add(":JZRQ", _eDate);
 
-                    OracleDataAdapter _adapter = new OracleDataAdapter(_cmd);
+                    SqlDataAdapter _adapter = new SqlDataAdapter(_cmd);
                     _adapter.Fill(_dt);
                     cn.Close();
                     return true;
@@ -378,7 +380,7 @@ namespace SinoSZJS.CS.BizReport
                 {
                     string _emsg = string.Format("生成统计报表(取报表明细数据)时发生错误！reportName={0} _dwdm={1} DATE={2} - {3} ", _reportName, _dwdm, _sDate, _eDate);
                     _emsg += string.Format(" \n 错误信息：{0}", e.Message);
-                    OralceLogWriter.WriteSystemLog(_emsg, "ERROR");
+                    LogWriter.WriteSystemLog(_emsg, "ERROR");
                     return false;
                 }
             }
@@ -394,11 +396,11 @@ namespace SinoSZJS.CS.BizReport
         /// <returns></returns>
         private static string GetReportID(string _reportName, DateTime _sDate, DateTime _eDate, string _dwdm)
         {
-            using (OracleConnection cn = OracleHelper.OpenConnection())
+            using (SqlConnection cn = SqlHelper.OpenConnection())
             {
                 try
                 {
-                    OracleCommand _cmd = new OracleCommand();
+                    SqlCommand _cmd = new SqlCommand();
                     _cmd.Connection = cn;
                     _cmd.CommandText = "select ID from TJ_ZDYBBFJXXB where BBMC=:BBMC AND TJDW=:TJDW AND KSRQ=:KSRQ and JZRQ=:JZRQ ";
                     _cmd.CommandType = CommandType.Text;
@@ -414,7 +416,7 @@ namespace SinoSZJS.CS.BizReport
                 {
                     string _emsg = string.Format("生成统计报表(报生成的报表ID)时发生错误！reportName={0} _dwdm={1} DATE={2} - {3} ", _reportName, _dwdm, _sDate, _eDate);
                     _emsg += string.Format(" \n 错误信息：{0}", e.Message);
-                    OralceLogWriter.WriteSystemLog(_emsg, "ERROR");
+                    LogWriter.WriteSystemLog(_emsg, "ERROR");
                     return "";
                 }
             }

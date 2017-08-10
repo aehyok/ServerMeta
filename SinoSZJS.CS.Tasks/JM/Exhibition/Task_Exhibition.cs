@@ -10,6 +10,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Web.Script.Serialization;
 using Oracle.DataAccess.Client;
 using SinoSZJS.DataAccess;
+using SinoSZJS.DataAccess.Sql;
 
 namespace SinoSZJS.CS.Tasks.JM.Exhibition
 {
@@ -83,7 +84,7 @@ namespace SinoSZJS.CS.Tasks.JM.Exhibition
             }
             catch (Exception ex)
             {
-                OralceLogWriter.WriteSystemLog(String.Format("江门任务失败！{0}", ex.Message), "ERROR");
+                LogWriter.WriteSystemLog(String.Format("江门任务失败！{0}", ex.Message), "ERROR");
             }
 
         }
@@ -131,32 +132,32 @@ namespace SinoSZJS.CS.Tasks.JM.Exhibition
         {
             try
             {
-                using (OracleConnection cn = OracleHelper.OpenConnection())
+                using (SqlConnection cn = SqlHelper.OpenConnection())
                 {
 
-                    OracleCommand cmd = new OracleCommand
+                    SqlCommand cmd = new SqlCommand
                     {
                         CommandText = "tj_zdybb_yyddjz.Temp_ZDYBB",
                         CommandType = CommandType.StoredProcedure,
                         Connection = cn
                     };
 
-                    OracleParameter p1 = cmd.Parameters.Add("strTJDW", OracleDbType.Varchar2);
+                    SqlParameter p1 = cmd.Parameters.Add("strTJDW", SqlDbType.VarChar);
                     p1.Value = dwdm;
 
-                    OracleParameter p2 = cmd.Parameters.Add("dtbegin_p", OracleDbType.Date);
+                    SqlParameter p2 = cmd.Parameters.Add("dtbegin_p", SqlDbType.Date);
                     p2.Value = sdate;
 
-                    OracleParameter p3 = cmd.Parameters.Add("dtedate_p", OracleDbType.Date);
+                    SqlParameter p3 = cmd.Parameters.Add("dtedate_p", SqlDbType.Date);
                     p3.Value = edate;
 
-                    OracleParameter p4 = cmd.Parameters.Add("strbbmc", OracleDbType.Varchar2);
+                    SqlParameter p4 = cmd.Parameters.Add("strbbmc", SqlDbType.VarChar);
                     p4.Value = reportName;
 
-                    OracleParameter p5 = cmd.Parameters.Add("nvalidhours", OracleDbType.Decimal);
+                    SqlParameter p5 = cmd.Parameters.Add("nvalidhours", SqlDbType.Decimal);
                     p5.Value = 12;
 
-                    OracleParameter p6 = cmd.Parameters.Add("nret", OracleDbType.Decimal);
+                    SqlParameter p6 = cmd.Parameters.Add("nret", SqlDbType.Decimal);
                     p6.Direction = ParameterDirection.Output;
                     cmd.ExecuteNonQuery();
                     var ret = p6.Value.ToString();
@@ -260,31 +261,31 @@ namespace SinoSZJS.CS.Tasks.JM.Exhibition
         {
             try
             {
-                using (OracleConnection cn = OracleHelper.OpenConnection())
+                using (SqlConnection cn = SqlHelper.OpenConnection())
                 {
-                    OracleCommand cmd = new OracleCommand
+                    SqlCommand cmd = new SqlCommand
                     {
                         CommandText = "zhtj_zdybb.bb_checkvalidtime",
                         CommandType = CommandType.StoredProcedure,
                         Connection = cn
                     };
 
-                    OracleParameter p1 = cmd.Parameters.Add("strtjdw", OracleDbType.Varchar2);
+                    SqlParameter p1 = cmd.Parameters.Add("strtjdw", SqlDbType.VarChar);
                     p1.Value = dwdm;
 
-                    OracleParameter p2 = cmd.Parameters.Add("dtbegin_p", OracleDbType.Date);
+                    SqlParameter p2 = cmd.Parameters.Add("dtbegin_p", SqlDbType.Date);
                     p2.Value = sdate;
 
-                    OracleParameter p3 = cmd.Parameters.Add("dtend_p", OracleDbType.Date);
+                    SqlParameter p3 = cmd.Parameters.Add("dtend_p", SqlDbType.Date);
                     p3.Value = edate;
 
-                    OracleParameter p4 = cmd.Parameters.Add("strbbmc", OracleDbType.Varchar2);
+                    SqlParameter p4 = cmd.Parameters.Add("strbbmc", SqlDbType.VarChar);
                     p4.Value = reportName;
 
-                    OracleParameter p5 = cmd.Parameters.Add("nvalidhours", OracleDbType.Decimal);
+                    SqlParameter p5 = cmd.Parameters.Add("nvalidhours", SqlDbType.Decimal);
                     p5.Value = decimal.Parse("24");
 
-                    OracleParameter p6 = cmd.Parameters.Add("nret", OracleDbType.Decimal);
+                    SqlParameter p6 = cmd.Parameters.Add("nret", SqlDbType.Decimal);
                     p6.Direction = ParameterDirection.Output;
                     cmd.ExecuteNonQuery();
                     var ret = p6.Value.ToString();
@@ -381,30 +382,30 @@ namespace SinoSZJS.CS.Tasks.JM.Exhibition
             DataTable dt = new DataTable("ReportData");
             try
             {
-                using (OracleConnection cn = OracleHelper.OpenConnection())
+                using (SqlConnection cn = SqlHelper.OpenConnection())
                 {
-                    OracleCommand cmd = new OracleCommand
+                    SqlCommand cmd = new SqlCommand
                               {
                                   CommandText = "zhtj_zdybb.getbb",
                                   CommandType = CommandType.StoredProcedure,
                                   Connection = cn
                               };
 
-                    OracleParameter p1 = cmd.Parameters.Add("strtjdw", OracleDbType.Varchar2);
+                    SqlParameter p1 = cmd.Parameters.Add("strtjdw", SqlDbType.VarChar);
                     p1.Value = dwdm;
 
-                    OracleParameter p2 = cmd.Parameters.Add("dtbegin_p", OracleDbType.Date);
+                    SqlParameter p2 = cmd.Parameters.Add("dtbegin_p", SqlDbType.Date);
                     p2.Value = sdate;
 
-                    OracleParameter p3 = cmd.Parameters.Add("dtedate_p", OracleDbType.Date);
+                    SqlParameter p3 = cmd.Parameters.Add("dtedate_p", SqlDbType.Date);
                     p3.Value = edate;
 
-                    OracleParameter p4 = cmd.Parameters.Add("strbbmc", OracleDbType.Varchar2);
+                    SqlParameter p4 = cmd.Parameters.Add("strbbmc", SqlDbType.VarChar);
                     p4.Value = reportName;
 
-                    cmd.Parameters.Add("recret", OracleDbType.RefCursor, DBNull.Value, ParameterDirection.Output);
+                    //cmd.Parameters.Add("recret", SqlDbType.RefCursor, DBNull.Value, ParameterDirection.Output);
 
-                    OracleDataAdapter adapter = new OracleDataAdapter(cmd);
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                     adapter.Fill(dt);
 
                     dt.PrimaryKey = new DataColumn[] { dt.Columns["HX"] };

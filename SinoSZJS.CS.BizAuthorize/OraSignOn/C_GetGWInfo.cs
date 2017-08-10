@@ -2,11 +2,11 @@ using System;
 using System.Collections;
 using System.Data;
 using System.Text;
-using Oracle.DataAccess.Client;
 using System.Collections.Generic;
-using SinoSZJS.DataAccess;
 using SinoSZJS.Base.Authorize;
 using SinoSZJS.Base.Misc;
+using System.Data.SqlClient;
+using SinoSZJS.DataAccess.Sql;
 
 namespace SinoSZJS.CS.BizAuthorize.OraSignOn
 {
@@ -33,14 +33,14 @@ namespace SinoSZJS.CS.BizAuthorize.OraSignOn
 		{
 			string _sql = string.Format(" select a.jsid,a.jsmc,a.jssm,a.ssdwid from qx2_gwjsgxb t,qx_jsdyb a ");
 			_sql += string.Format("where a.jsid = t.jsid and t.gwid = :GWID");
-			OracleParameter[] _param = {
-                                new OracleParameter(":GWID", OracleDbType.Decimal),
+			SqlParameter[] _param = {
+                                new SqlParameter(":GWID", SqlDbType.Decimal),
                         };
 			_param[0].Value = decimal.Parse(_postid);
 
 			List<SinoRole> roles = new List<SinoRole>();
 
-			OracleDataReader dr = OracleHelper.ExecuteReader(OracleHelper.ConnectionStringProfile, CommandType.Text, _sql, _param);
+			SqlDataReader dr = SqlHelper.ExecuteReader(SqlHelper.ConnectionStringProfile, CommandType.Text, _sql, _param);
 
 			while (dr.Read())
 			{
@@ -68,15 +68,15 @@ namespace SinoSZJS.CS.BizAuthorize.OraSignOn
 		{
 			string _sql = string.Format("insert into QX2_GWDYB (GWID,GWDWID,GWMC,GWMS,SSDWID) values ");
 			_sql += " (SEQ_QX2.NEXTVAL,:GWDWID,:GWMC,:GWMS,null) ";
-			OracleParameter[] _param = {
-                                new OracleParameter(":GWDWID", OracleDbType.Decimal),
-                                new OracleParameter(":GWMC",OracleDbType.Varchar2),
-                                new OracleParameter(":GWMS",OracleDbType.Varchar2)                           
+			SqlParameter[] _param = {
+                                new SqlParameter(":GWDWID", SqlDbType.Decimal),
+                                new SqlParameter(":GWMC",SqlDbType.VarChar),
+                                new SqlParameter(":GWMS",SqlDbType.VarChar)                           
                         };
 			_param[0].Value = decimal.Parse(_dwid);
 			_param[1].Value = gwmc;
 			_param[2].Value = gwms;
-			OracleHelper.ExecuteNonQuery(OracleHelper.ConnectionStringProfile, CommandType.Text, _sql, _param);
+			SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionStringProfile, CommandType.Text, _sql, _param);
 			return true;
 		}
 
@@ -88,7 +88,7 @@ namespace SinoSZJS.CS.BizAuthorize.OraSignOn
 		public static bool Del_Posts(string _gwids)
 		{
 			string _sql = string.Format("delete QX2_GWDYB where GWID in ({0})", _gwids);
-			OracleHelper.ExecuteNonQuery(OracleHelper.ConnectionStringProfile, CommandType.Text, _sql);
+			SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionStringProfile, CommandType.Text, _sql);
 			return true;
 		}
 		/// <summary>
@@ -102,7 +102,7 @@ namespace SinoSZJS.CS.BizAuthorize.OraSignOn
 			foreach (SinoRole _sr in _roles)
 			{
 				string _ins = string.Format("insert into qx2_gwjsgxb (id,gwid,jsid) values (seq_qx2.nextval,{0},{1}) ", postid, _sr.RoleID);
-				OracleHelper.ExecuteNonQuery(OracleHelper.ConnectionStringProfile, CommandType.Text, _ins);
+				SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionStringProfile, CommandType.Text, _ins);
 			}
 			return true;
 		}
@@ -115,14 +115,14 @@ namespace SinoSZJS.CS.BizAuthorize.OraSignOn
 		public static bool Del_RoleFromPost(string postid, string roleid)
 		{
 			string _sql = "delete from qx2_gwjsgxb where gwid=:GWID and jsid=:JSID";
-			OracleParameter[] _param = {
-                                new OracleParameter(":GWID", OracleDbType.Decimal),
-                                new OracleParameter(":JSID",OracleDbType.Varchar2)                  
+			SqlParameter[] _param = {
+                                new SqlParameter(":GWID", SqlDbType.Decimal),
+                                new SqlParameter(":JSID",SqlDbType.VarChar)                  
                         };
 			_param[0].Value = decimal.Parse(postid);
 			_param[1].Value = decimal.Parse(roleid);
 
-			OracleHelper.ExecuteNonQuery(OracleHelper.ConnectionStringProfile, CommandType.Text, _sql, _param);
+			SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionStringProfile, CommandType.Text, _sql, _param);
 			return true;
 		}
 
@@ -136,22 +136,22 @@ namespace SinoSZJS.CS.BizAuthorize.OraSignOn
 		{
 			Dictionary<string, UserRightItem> _ret = new Dictionary<string, UserRightItem>();
 			DataTable _dt = new DataTable();
-			using (OracleConnection cn = OracleHelper.OpenConnection())
+			using (SqlConnection cn = SqlHelper.OpenConnection())
 			{
-				OracleCommand _cmd = new OracleCommand();
+				SqlCommand _cmd = new SqlCommand();
 				_cmd.CommandText = "zhtj_zzjg2.Get_GWCZQX_OWN";
 				_cmd.CommandType = CommandType.StoredProcedure;
 				_cmd.Connection = cn;
 
-				OracleParameter _p1 = _cmd.Parameters.Add("ngwid", OracleDbType.Decimal);
+				SqlParameter _p1 = _cmd.Parameters.Add("ngwid", SqlDbType.Decimal);
 				_p1.Value = decimal.Parse(postid);
 
-				OracleParameter _p2 = _cmd.Parameters.Add("strqxlx", OracleDbType.Varchar2, 1000);
+				SqlParameter _p2 = _cmd.Parameters.Add("strqxlx", SqlDbType.VarChar, 1000);
 				_p2.Value = _qxlx;
 
-				_cmd.Parameters.Add("curQXDW", OracleDbType.RefCursor, DBNull.Value, ParameterDirection.Output);
+				//_cmd.Parameters.Add("curQXDW", SqlDbType.RefCursor, DBNull.Value, ParameterDirection.Output);
 
-				OracleDataAdapter _adapter = new OracleDataAdapter(_cmd);
+				SqlDataAdapter _adapter = new SqlDataAdapter(_cmd);
 				_adapter.Fill(_dt);
 				cn.Close();
 			}
@@ -172,19 +172,19 @@ namespace SinoSZJS.CS.BizAuthorize.OraSignOn
 		public static DataTable GetRightsFromPost(string postid)
 		{
 			DataTable _dt = new DataTable();
-			using (OracleConnection cn = OracleHelper.OpenConnection())
+			using (SqlConnection cn = SqlHelper.OpenConnection())
 			{
-				OracleCommand _cmd = new OracleCommand();
+				SqlCommand _cmd = new SqlCommand();
 				_cmd.CommandText = "zhtj_zzjg2.Get_GWCZQX";
 				_cmd.CommandType = CommandType.StoredProcedure;
 				_cmd.Connection = cn;
 
-				OracleParameter _p1 = _cmd.Parameters.Add("ngwid", OracleDbType.Decimal);
+				SqlParameter _p1 = _cmd.Parameters.Add("ngwid", SqlDbType.Decimal);
 				_p1.Value = decimal.Parse(postid);
 
-				_cmd.Parameters.Add("curQX", OracleDbType.RefCursor, DBNull.Value, ParameterDirection.Output);
+				//_cmd.Parameters.Add("curQX", SqlDbType.RefCursor, DBNull.Value, ParameterDirection.Output);
 
-				OracleDataAdapter _adapter = new OracleDataAdapter(_cmd);
+				SqlDataAdapter _adapter = new SqlDataAdapter(_cmd);
 				_adapter.Fill(_dt);
 				return _dt;
 				cn.Close();
@@ -204,13 +204,13 @@ namespace SinoSZJS.CS.BizAuthorize.OraSignOn
 		{
 			List<SinoPost> _ret = new List<SinoPost>();
 
-			OracleParameter[] _param = {
-                                new OracleParameter(":YHID", OracleDbType.Decimal),
-				new OracleParameter(":SSDWID",OracleDbType.Decimal)
+			SqlParameter[] _param = {
+                                new SqlParameter(":YHID", SqlDbType.Decimal),
+				new SqlParameter(":SSDWID",SqlDbType.Decimal)
                         };
 			_param[0].Value = decimal.Parse(yhid);
 			_param[1].Value = decimal.Parse(ConfigFile.SystemID);
-			OracleDataReader dr = OracleHelper.ExecuteReader(OracleHelper.ConnectionStringProfile, CommandType.Text, SQL_Get_PostsByYHID, _param);
+			SqlDataReader dr = SqlHelper.ExecuteReader(SqlHelper.ConnectionStringProfile, CommandType.Text, SQL_Get_PostsByYHID, _param);
 			while (dr.Read())
 			{
 				SinoPost _sp = new SinoPost(dr.GetString(0),
@@ -220,7 +220,7 @@ namespace SinoSZJS.CS.BizAuthorize.OraSignOn
 					dr.IsDBNull(4) ? "" : dr.GetString(4),
 					dr.IsDBNull(5) ? "" : dr.GetString(5),
 					dr.IsDBNull(7) ? (int)0 : Convert.ToInt32(dr.GetDecimal(7)),
-					dr.IsDBNull(6) ? false : (((decimal)dr.GetOracleDecimal(6).Value == 1) ? true : false));
+					dr.IsDBNull(6) ? false : (((decimal)dr.GetSqlDecimal(6).Value == 1) ? true : false));
 				_sp.Roles = Get_RolesOfGW(_sp.PostID);
 				_ret.Add(_sp);
 			}
@@ -243,14 +243,14 @@ namespace SinoSZJS.CS.BizAuthorize.OraSignOn
 		public static bool Add_PostToYH(string postid, string yhid)
 		{
 			string _sql = "insert into QX_YHGWGXB (ID,GWID,YHID,IS_DEFAULT) values (seq_qx2.nextval,:GWID,:YHID,0) ";
-			OracleParameter[] _param = {
-                                  new OracleParameter(":GWID",OracleDbType.Decimal),
-                                new OracleParameter(":YHID", OracleDbType.Decimal)          
+			SqlParameter[] _param = {
+                                  new SqlParameter(":GWID",SqlDbType.Decimal),
+                                new SqlParameter(":YHID", SqlDbType.Decimal)          
                         };
 			_param[0].Value = decimal.Parse(postid);
 			_param[1].Value = decimal.Parse(yhid);
 
-			OracleHelper.ExecuteNonQuery(OracleHelper.ConnectionStringProfile, CommandType.Text, _sql, _param);
+			SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionStringProfile, CommandType.Text, _sql, _param);
 			return true;
 		}
 
@@ -263,11 +263,11 @@ namespace SinoSZJS.CS.BizAuthorize.OraSignOn
 		public static bool Del_PostsOfUser(string _gwids, string yhid)
 		{
 			string _sql = string.Format("delete QX_YHGWGXB where GWID in ({0}) and YHID=:YHID", _gwids);
-			OracleParameter[] _param = {
-                                  new OracleParameter(":YHID",OracleDbType.Decimal)
+			SqlParameter[] _param = {
+                                  new SqlParameter(":YHID",SqlDbType.Decimal)
                         };
 			_param[0].Value = decimal.Parse(yhid);
-			OracleHelper.ExecuteNonQuery(OracleHelper.ConnectionStringProfile, CommandType.Text, _sql, _param);
+			SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionStringProfile, CommandType.Text, _sql, _param);
 			return true;
 		}
 
@@ -280,20 +280,20 @@ namespace SinoSZJS.CS.BizAuthorize.OraSignOn
 		public static bool Set_UserDefaultPost(string postid, string yhid)
 		{
 			string _clear = "update QX_YHGWGXB set IS_DEFAULT = 0 where yhid = :YHID ";
-			OracleParameter[] _param = {
-                                  new OracleParameter(":YHID",OracleDbType.Decimal)
+			SqlParameter[] _param = {
+                                  new SqlParameter(":YHID",SqlDbType.Decimal)
                         };
 			_param[0].Value = decimal.Parse(yhid);
-			OracleHelper.ExecuteNonQuery(OracleHelper.ConnectionStringProfile, CommandType.Text, _clear, _param);
+			SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionStringProfile, CommandType.Text, _clear, _param);
 
 			string _sql = "update QX_YHGWGXB set IS_DEFAULT = 1 where gwid=:GWID and yhid =:YHID";
-			OracleParameter[] _param2 = {
-                                  new OracleParameter(":GWID",OracleDbType.Decimal),
-                                new OracleParameter(":YHID", OracleDbType.Decimal)          
+			SqlParameter[] _param2 = {
+                                  new SqlParameter(":GWID",SqlDbType.Decimal),
+                                new SqlParameter(":YHID", SqlDbType.Decimal)          
                         };
 			_param2[0].Value = decimal.Parse(postid);
 			_param2[1].Value = decimal.Parse(yhid);
-			OracleHelper.ExecuteNonQuery(OracleHelper.ConnectionStringProfile, CommandType.Text, _sql, _param2);
+			SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionStringProfile, CommandType.Text, _sql, _param2);
 			return true;
 		}
 
@@ -305,9 +305,9 @@ namespace SinoSZJS.CS.BizAuthorize.OraSignOn
 		/// <returns>ÐÂ¸ÚÎ»ID</returns>
 		public static string CopyPost(string _spid, string _dwid)
 		{
-			using (OracleConnection cn = OracleHelper.OpenConnection())
+			using (SqlConnection cn = SqlHelper.OpenConnection())
 			{
-				OracleCommand _cmd = new OracleCommand();
+				SqlCommand _cmd = new SqlCommand();
 				_cmd.CommandText = "zhtj_zzjg2.replicategw";
 				_cmd.CommandType = CommandType.StoredProcedure;
 				_cmd.Connection = cn;
@@ -315,7 +315,7 @@ namespace SinoSZJS.CS.BizAuthorize.OraSignOn
 				_cmd.Parameters.Add("ngwid", decimal.Parse(_spid));
 				_cmd.Parameters.Add("nnewdwid", decimal.Parse(_dwid));
 
-				OracleParameter _p1 = _cmd.Parameters.Add("nnewgwid", OracleDbType.Decimal);
+				SqlParameter _p1 = _cmd.Parameters.Add("nnewgwid", SqlDbType.Decimal);
 				_p1.Direction = ParameterDirection.Output;
 				_cmd.ExecuteNonQuery();
 				cn.Close();
@@ -333,9 +333,9 @@ namespace SinoSZJS.CS.BizAuthorize.OraSignOn
 		{
 			string _sql = "select zhtj_zzjg2.GWRightWithViewName(:POSTID,:NS,:VIEWNAME) from dual ";
 			string[] vs = _viewname.Split('.');
-			using (OracleConnection cn = OracleHelper.OpenConnection())
+			using (SqlConnection cn = SqlHelper.OpenConnection())
 			{
-				OracleCommand _cmd = new OracleCommand(_sql, cn);
+				SqlCommand _cmd = new SqlCommand(_sql, cn);
 				_cmd.CommandType = CommandType.Text;
 				_cmd.Parameters.Add(":POSTID", decimal.Parse(_postid));
 				_cmd.Parameters.Add(":NS", vs[0]);
@@ -356,9 +356,9 @@ namespace SinoSZJS.CS.BizAuthorize.OraSignOn
 		public static bool Rename_Post(string _postid, string _gwmc, string _gwms)
 		{
 			string _sql = "update QX2_GWDYB set GWMC=:GWMC,GWMS=:GWMS where GWID=:GWID";
-			using (OracleConnection cn = OracleHelper.OpenConnection())
+			using (SqlConnection cn = SqlHelper.OpenConnection())
 			{
-				OracleCommand _cmd = new OracleCommand(_sql, cn);
+				SqlCommand _cmd = new SqlCommand(_sql, cn);
 				_cmd.Parameters.Add(":GWMC", _gwmc);
 				_cmd.Parameters.Add(":GWMS", _gwms);
 				_cmd.Parameters.Add(":GWID", decimal.Parse(_postid));
@@ -382,11 +382,11 @@ namespace SinoSZJS.CS.BizAuthorize.OraSignOn
 		{
 			
 			DataTable _dt = new DataTable();
-			using (OracleConnection cn = OracleHelper.OpenConnection())
+			using (SqlConnection cn = SqlHelper.OpenConnection())
 			{
-                OracleCommand _cmd = new OracleCommand(SQL_Get_QVRightsOfPost, cn);
+                SqlCommand _cmd = new SqlCommand(SQL_Get_QVRightsOfPost, cn);
 				_cmd.Parameters.Add(":GWID", decimal.Parse(_postid));
-				OracleDataAdapter _adapter = new OracleDataAdapter(_cmd);
+				SqlDataAdapter _adapter = new SqlDataAdapter(_cmd);
 				_adapter.Fill(_dt);
 				cn.Close();
 			}
@@ -404,11 +404,11 @@ namespace SinoSZJS.CS.BizAuthorize.OraSignOn
 		public static DataTable GetUserOfPost(string _postid)
 		{			
 			DataTable _dt = new DataTable();
-			using (OracleConnection cn = OracleHelper.OpenConnection())
+			using (SqlConnection cn = SqlHelper.OpenConnection())
 			{
-                OracleCommand _cmd = new OracleCommand(SQL_GetUserOfPost, cn);
+                SqlCommand _cmd = new SqlCommand(SQL_GetUserOfPost, cn);
 				_cmd.Parameters.Add(":GWID", decimal.Parse(_postid));
-				OracleDataAdapter _adapter = new OracleDataAdapter(_cmd);
+				SqlDataAdapter _adapter = new SqlDataAdapter(_cmd);
 				_adapter.Fill(_dt);
 				cn.Close();
 			}
